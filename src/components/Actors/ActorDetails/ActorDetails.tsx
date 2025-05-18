@@ -1,9 +1,9 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { MovieCard, Rating } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Navigation]);
+SwiperCore.use([Autoplay]);
 import styles from './ActorDetails.module.css'
 
 const ActorDetails = () => {
@@ -43,7 +43,6 @@ const ActorDetails = () => {
                                 840: { slidesPerView: 4 },
                                 1200: { slidesPerView: 5 },
                             }}
-                            navigation
                         >
                             {selectedActor.known_for.map((movie) => (
                                 <SwiperSlide key={movie.id}>

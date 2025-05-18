@@ -21,9 +21,8 @@ const LibraryPage = () => {
 
   return (
     <section>
-      <div className='container'>
-        <LibraryHeader />
-
+      <LibraryHeader />
+      <div style={{maxWidth: '1240px', margin: 'auto', minHeight: '50vh'}}>
         {library.length === 0 ? (
           <div className={styles.emptyLibrary}>
             <p>We are very sorry!</p>

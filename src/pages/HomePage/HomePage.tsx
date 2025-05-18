@@ -16,7 +16,7 @@ const HomePage = () => {
   }, [selectedLanguage])
 
   return (
-    <section className='container'>
+    <section>
       <Header />
       <MoviesSlider movies={latestMovies} title={'latest'} />
       <MoviesSlider movies={popularMovies} title={'popular'} />

@@ -1,5 +1,5 @@
 footer{
-    background-color: var(--bg-color-secondary);
+    background-color: rgb(0,0,0,0.1);
 }
 
 .footerContainer{
@@ -10,7 +10,7 @@ footer{
 }
 
 .footerText{
-    color: var(--text-color-gray);
+    color: var(--text-color-primary);
     font-weight: 300;
     letter-spacing: .6px;
 }

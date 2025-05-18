@@ -37,13 +37,13 @@ const MoviesPage = () => {
 
   return (
     <section>
-      <div className='container'>
         {
           moviesByGenre.length > 0
           ? <MoviesPageSlider movies={moviesByGenre} />
           : <MoviesPageSlider movies={movies} />
         }
-        <div style={{ display: 'flex', gap: '24px', paddingBottom: '24px'}}>
+      <div className='container'>
+        <div style={{ display: 'flex', gap: '24px', padding: '28px 0'}}>
           <SelectGenre />
           <SearchMovie />
         </div>

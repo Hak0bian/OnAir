@@ -1,11 +1,15 @@
 .actorsSlideDiv{
-    padding-bottom: 40px;
+    background-color: var(--bg-color-main);
 }
 
 .actorsSlide{
+    max-width: 1240px;
+    margin: auto;
+    padding: 20px 0;
     display: flex;
     gap: 40px;
     align-items: center;
+    color: var(--text-color-main);
 
     img{
         min-width: 320px;

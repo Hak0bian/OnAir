@@ -1,5 +1,15 @@
+.moviesSlideSec{
+    background-color: var(--bg-color-main);
+}
+
 .moviesSlideDiv{
-    padding-bottom: 40px;
+    max-width: 1240px;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    color: var(--text-color-main);
 }
 
 .moviesSlide{

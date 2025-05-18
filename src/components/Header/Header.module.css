@@ -1,5 +1,9 @@
 .header{
-    width: 1240px;
+    background-color: var(--bg-color-main);
+}
+
+.headerContainer{
+    max-width: 1240px;
     height: 560px;
     margin: auto;
     background-image: url(../../assets/images/home-desktop.png);
@@ -12,6 +16,7 @@
 
 .headerTitleDiv{
     width: 480px;
+    color: var(--text-color-main);
 }
 
 .headerTitle{

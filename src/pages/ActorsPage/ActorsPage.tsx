@@ -33,8 +33,8 @@ const ActorsPage = () => {
 
     return (
         <section>
+            <ActorsPageSlider actors={actors} />
             <div className='container'>
-                <ActorsPageSlider actors={actors} />
                 <SearchActor/>
                 <Box
                     sx={{

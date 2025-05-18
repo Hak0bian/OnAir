@@ -22,6 +22,7 @@ const Paginationn = ({ page, totalPages, handleChangePage }: IPaginationPropsTyp
                     height: { xs: 28, sm: 28, md: 32 },
                     fontSize: { xs: 12, sm: 14, md: 16 },
                     borderRadius: '0%',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
                     border: '1px solid var(--text-color-gray)',
                     color: 'var(--text-color-gray)',
                     transition: '0.3s',
@@ -49,7 +50,7 @@ const Paginationn = ({ page, totalPages, handleChangePage }: IPaginationPropsTyp
                 '& .Mui-selected': {
                     color: 'var(--text-color-secondary)',
                     border: '1px solid var(--text-color-secondary)',
-                    fontWeight: 600,
+                    backgroundColor: 'rgba(0, 0, 0, 0)'
                 },
             }}
         />

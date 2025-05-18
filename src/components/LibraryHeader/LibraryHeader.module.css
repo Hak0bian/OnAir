@@ -1,18 +1,24 @@
 .libraryHeader{
-    margin: 0 auto 40px;
+    background-color: #000000;
+    color: var(--text-color-main);
+    margin-bottom: 40px;
+}
+
+.libraryContainer{
+    max-width: 1240px;
+    margin: auto;
     display: flex;
     align-items: center;
-    background-color: var(--bg-color-secondary);
+    padding: 40px 0;
 }
 
 .libraryImg img{
-    height: 440px;
+    height: 480px;
     display: block;
 }
 
-.libraryTitleDiv{
-    width: 480px;
-    padding-left: 40px;
+.libraryText{
+    width: 440px;
 }
 
 .libraryTitle{

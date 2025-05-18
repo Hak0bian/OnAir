@@ -3,6 +3,7 @@
     max-height: 336px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 4px var(--bg-color-main);
     
     img {
         width: 100%;

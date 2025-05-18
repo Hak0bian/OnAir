@@ -1,7 +1,7 @@
 .slideSection{
     max-width: 1280px;
     margin: auto;
-    padding: 60px 20px 0;
+    padding-top: 60px;
 }
 
 .slideTopDiv{
@@ -46,5 +46,5 @@
 
 :global(.swiper-button-next:hover),
 :global(.swiper-button-prev:hover) {
-    color: var(--text-color-primary);
+    color: var(--text-color-main);
 }
