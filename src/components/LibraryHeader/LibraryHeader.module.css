@@ -1,0 +1,29 @@
+.libraryHeader{
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color-secondary);
+}
+
+.libraryImg img{
+    height: 440px;
+    display: block;
+}
+
+.libraryTitleDiv{
+    width: 480px;
+    padding-left: 40px;
+}
+
+.libraryTitle{
+    width: 300px;
+    font-size: 52px;
+}
+
+.libraryText{
+    padding: 8px 0 16px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .4px;
+    line-height: 1.4;
+}

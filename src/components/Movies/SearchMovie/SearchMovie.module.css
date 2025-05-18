@@ -1,0 +1,16 @@
+.searchDiv{
+    position: relative;
+}
+
+.searchInput{
+    width: 300px;
+    height: 40px;
+    outline: none;
+    font-size: 16px;
+    padding-left: 8px;
+    border: 1px solid var(--text-color-secondary);
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    letter-spacing: .4px;
+
+}

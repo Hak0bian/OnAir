@@ -1,0 +1,33 @@
+.moviesSlideDiv{
+    padding-bottom: 40px;
+}
+
+.moviesSlide{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    img{
+        min-width: 320px;
+        max-width: 320px;
+        min-height: 440px;
+        max-height: 440px;
+    }
+
+    h2{
+        font-size: 44px;
+        padding-bottom: 8px;
+    }
+
+    p{
+        width: 70%;
+        padding: 12px 0 16px 0;
+        letter-spacing: .4px;
+    }
+}
+
+.buttonsDiv{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

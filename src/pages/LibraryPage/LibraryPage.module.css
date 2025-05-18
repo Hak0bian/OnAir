@@ -1,0 +1,16 @@
+.emptyLibrary{
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: .4px;
+}
+
+.moviesDiv{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    padding-bottom: 40px;
+}
+
+.clearBtnDiv{
+    text-align: center;
+}

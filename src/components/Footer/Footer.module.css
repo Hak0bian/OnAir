@@ -1,0 +1,16 @@
+footer{
+    background-color: var(--bg-color-secondary);
+}
+
+.footerContainer{
+    max-width: 1240px;
+    margin: auto;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.footerText{
+    color: var(--text-color-gray);
+    font-weight: 300;
+    letter-spacing: .6px;
+}

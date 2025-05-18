@@ -1,0 +1,40 @@
+.actorDetailsSec{
+    padding-top: 20px;
+}
+
+.actorDetailsDiv{
+    display: flex;
+    gap: 40px;
+    letter-spacing: .4px;
+}
+
+.actorPosterDiv{
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.actorTitle{
+    font-size: 28px;
+}
+
+.knownAS{
+    padding: 4px 0;
+}
+
+.biography{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.secondary{
+    padding: 12px 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: var(--text-color-gray);
+}
+
+.noKnownFor{
+    font-size: 18px;
+    letter-spacing: .4px;
+    font-weight: 300;
+}

@@ -1,0 +1,11 @@
+.langSelect{
+    width: 120px;
+    height: 24px;
+    outline: none;
+    padding: 0 4px;
+    border: 1px solid var(--text-color-secondary);
+    background-color: var(--bg-color);
+    color: var(--text-color-primary);
+    letter-spacing: .4px;
+    border-radius: 20px;
+}

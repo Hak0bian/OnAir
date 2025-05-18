@@ -1,0 +1,16 @@
+.mainBtn{
+    width: 180px;
+    height: 40px;
+    background: var(--buttons-gradient);
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    cursor: pointer;
+    transition: .3s linear;
+    
+    &:hover{
+        color: var(--text-color-primary);
+    }
+}

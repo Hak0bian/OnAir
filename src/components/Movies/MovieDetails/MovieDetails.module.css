@@ -1,0 +1,32 @@
+.detailsSection{
+    padding-top: 20px;
+}
+
+.movieDetailsDiv{
+    display: flex;
+    gap: 28px;
+    padding-bottom: 20px;
+    letter-spacing: .4px;
+}
+
+.detailsTitle{
+    font-size: 28px;
+}
+
+.posterDiv{
+    min-width: 340px;
+    max-width: 340px;
+    background-color: var(--bg-color-options);
+}
+
+.secondary{
+    padding: 8px 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: var(--text-color-gray);
+}
+
+.about{
+    font-weight: 300;
+    padding-bottom: 16px;
+}
