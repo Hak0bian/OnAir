@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { addToLibrary, removeFromLibrary } from '../../../store/slices';
 import { IMoviesType } from '../../../types';
@@ -7,6 +8,10 @@ const LibraryButton = ({ movie }: { movie: IMoviesType }) => {
   const dispatch = useAppDispatch();
   const { library } = useAppSelector(state => state.libraryData);
   const isInLibrary = library.some(m => m.id === movie.id);
+  const currentTheme = document.body.getAttribute('data-theme');
+
+  const location = useLocation();
+  const isOnMovieDetailsPage = location.pathname.startsWith('/Movies/movie/');
 
   const handleClick = () => {
     if (isInLibrary) {
@@ -17,11 +22,16 @@ const LibraryButton = ({ movie }: { movie: IMoviesType }) => {
   };
 
   return (
-    <div className={styles.btnDiv}>
-      <button className={styles.libraryBtn} onClick={handleClick}>
-        {isInLibrary ? "Remove from library" : "Add to my library"}
-      </button>
-    </div>
+    <button
+      onClick={handleClick}
+      className={currentTheme === 'dark'
+        ? styles.libraryBtn
+        : isOnMovieDetailsPage
+          ? styles.libraryBtnLight2
+          : styles.libraryBtnLight}
+      >
+      {isInLibrary ? "Remove from library" : "Add to my library"}
+    </button>
   )
 }
 

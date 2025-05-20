@@ -1,0 +1,22 @@
+.slideTopDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    
+    .slideTitle{
+        text-transform: uppercase;
+        font-weight: normal;
+        color: var(--text-color-gray);
+    }
+
+    .seeAll{
+        font-size: 18px;
+        color: var(--text-color-secondary);
+        transition: .3s;
+
+        &:hover{
+            color: var(--text-color-primary);
+        }
+    }
+}

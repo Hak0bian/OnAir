@@ -9,16 +9,11 @@
     margin: auto;
     display: flex;
     align-items: center;
-    padding: 40px 0;
 }
 
 .libraryImg img{
     height: 480px;
     display: block;
-}
-
-.libraryText{
-    width: 440px;
 }
 
 .libraryTitle{
@@ -27,6 +22,7 @@
 }
 
 .libraryText{
+    width: 440px;
     padding: 8px 0 16px;
     font-size: 14px;
     font-weight: 300;

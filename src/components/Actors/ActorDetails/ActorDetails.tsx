@@ -30,11 +30,11 @@ const ActorDetails = () => {
             <div className={styles.knownForBox}>
                 <h3 className={styles.secondary}>Known For</h3>
                 {
-                    selectedActor.known_for.length > 0 
+                    selectedActor?.known_for && selectedActor?.known_for?.length > 0 
                     ?   (<Swiper
                             spaceBetween={20}
                             slidesPerView={5}
-                            loop={selectedActor.known_for.length > 5}
+                            loop={selectedActor?.known_for?.length > 5}
                             autoplay={{ delay: 2000 }}
                             breakpoints={{
                                 0: { slidesPerView: 1 },
@@ -44,7 +44,7 @@ const ActorDetails = () => {
                                 1200: { slidesPerView: 5 },
                             }}
                         >
-                            {selectedActor.known_for.map((movie) => (
+                            {selectedActor?.known_for?.map((movie) => (
                                 <SwiperSlide key={movie.id}>
                                     <MovieCard movie={movie} />
                                 </SwiperSlide>

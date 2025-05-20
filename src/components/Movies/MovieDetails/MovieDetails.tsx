@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
-import { LibraryButton, MovieTable, Rating, Trailer } from '../..'
+import { LibraryButton, MovieCastSlider, MovieTable, Rating, Trailer } from '../..'
 import styles from './MovieDetails.module.css'
 
 const MovieDetails = () => {
@@ -22,12 +22,16 @@ const MovieDetails = () => {
                     <MovieTable selectedMovie={selectedMovie} />
                     <h3 className={styles.secondary}>Overview</h3>
                     <p className={styles.about}>{selectedMovie?.overview}</p>
-                    <LibraryButton movie={selectedMovie} />
+
+                    <div className={styles.buttonsDiv}>
+                        <Trailer trailerKey={key} />
+                        <LibraryButton movie={selectedMovie} />
+                    </div>
+
                 </div>
             </div>
+            <MovieCastSlider movieId={selectedMovie?.id} />
 
-            <h3 className={styles.secondary}>Trailer</h3>
-            <Trailer trailerKey={key} />
         </section>
     )
 }

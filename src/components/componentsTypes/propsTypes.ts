@@ -20,10 +20,6 @@ export type IPaginationPropsType = {
     handleChangePage: (newPage: number) => void
 }
 
-export interface ITrailerPropsType {
-    trailerKey: string | null
-}
-
 export interface IMainButtonPropsType {
     text: string, 
     onClick?: () => void

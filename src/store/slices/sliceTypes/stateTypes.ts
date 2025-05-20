@@ -16,11 +16,39 @@ export interface IMoviesStateType {
     movies: Array<IMoviesType>,
     movieVideos: Array<IMovieVideosResultsType>,
     selectedMovie: IMoviesType | null,
+    movieCast: Array<ICastAndCrewType>,
     page: number,
     totalPages: number,
     isLoading: boolean,
     error: null | string
 }
+
+// *********************************************
+
+export interface ICastAndCrewType {
+    adult: boolean;
+    gender: number;
+    id: number;
+    known_for_department: string;
+    name: string;
+    original_name: string;
+    popularity: number;
+    profile_path: string | null;
+    cast_id: number;
+    credit_id: string;
+    character?: string;
+    order?: number;
+    job?: string;
+    department?: string;
+}
+
+export interface IMovieCreditsType {
+    id: number;
+    cast: Array<ICastAndCrewType>;
+    crew: Array<ICastAndCrewType>;
+}
+
+// *********************************************
 
 export interface IGenresType {
     id: number, 
@@ -43,6 +71,8 @@ export type ILibraryStateType = {
     library: Array<IMoviesType>;
 }
 
+// *********************************************
+
 export interface ISearchMoviesStateType {
     searchedMovies: Array<IMoviesType>,
     isLoading: boolean,
@@ -56,6 +86,8 @@ export interface ISearchActorsStateType {
     notFound: null | string,
     error: null | string
 }
+
+// *********************************************
 
 export interface IlanguagesType {
     english_name: string
@@ -100,7 +132,7 @@ export interface ISelectedActorType {
     popularity: number,
     also_known_as: [],
     homepage: number | null,
-    known_for: Array<IMoviesType>;
+    known_for?: Array<IMoviesType>;
 }
 
 export type IActorsStateType = {

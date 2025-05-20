@@ -34,10 +34,12 @@ const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
                         <td className={styles.key}>Companies</td>
                         <td>{selectedMovie?.production_companies?.map(c => c?.name).join(', ') || '—'}</td>
                     </tr>
-                    <tr>
-                        <td className={styles.key}>Adult</td>
-                        <td>{selectedMovie?.adult === false ? "No" : "Yes"}</td>
-                    </tr>
+                    {selectedMovie?.adult && (
+                        <tr>
+                            <td className={styles.key}>Adult</td>
+                            <td>Yes</td>
+                        </tr>
+                    )}
                     {selectedMovie?.runtime !== 0 && (
                         <tr>
                             <td className={styles.key}>Runtime</td>

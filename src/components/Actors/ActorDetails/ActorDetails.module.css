@@ -13,6 +13,10 @@
     max-width: 300px;
 }
 
+.actorPosterDiv img {
+    font-size: 0;
+}
+
 .actorTitle{
     font-size: 28px;
 }

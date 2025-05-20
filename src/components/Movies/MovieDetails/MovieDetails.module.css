@@ -14,9 +14,8 @@
 }
 
 .posterDiv{
-    min-width: 340px;
-    max-width: 340px;
-    background-color: var(--bg-color-options);
+    min-width: 300px;
+    max-width: 300px;
 }
 
 .secondary{
@@ -29,4 +28,10 @@
 .about{
     font-weight: 300;
     padding-bottom: 16px;
+}
+
+.buttonsDiv{
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

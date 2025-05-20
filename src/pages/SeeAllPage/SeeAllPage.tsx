@@ -10,7 +10,7 @@ const SeeAllPage = () => {
     const navigate = useNavigate()
     const { category, pageNum } = useParams();
     const { latestMovies, popularMovies, page, totalPages } = useAppSelector((state) => state.homeMovies);
-      const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData);
 
     const handleChangePage = (newPage: number) => {
         if (newPage !== page) {

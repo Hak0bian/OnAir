@@ -11,6 +11,7 @@ import MoviesPageSlider from "./Movies/MoviesPageSlider/MoviesPageSlider";
 import MovieCard from "./Movies/MovieCard/MovieCard";
 import MovieDetails from "./Movies/MovieDetails/MovieDetails";
 import MovieTable from "./Movies/MovieTable/MovieTable";
+import MovieCastSlider from "./Movies/MovieCastSlider/MovieCastSlider";
 import Trailer from "./Movies/Trailer/Trailer";
 import RedirectToFirstPage from "./Movies/RedirectToFirstPage/RedirectToFirstPage";
 import SelectGenre from "./Movies/SelectGenre/SelectGenre";
@@ -23,6 +24,6 @@ import SearchActor from "./Actors/SearchActor/SearchActor";
 import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryButton, Rating, MoviesPageSlider, MovieCard, MovieDetails, 
-    MovieTable, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
+    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
     ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider
 }
