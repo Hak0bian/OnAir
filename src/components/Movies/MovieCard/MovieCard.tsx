@@ -9,7 +9,7 @@ const MovieCard = ({ movie }: { movie: IMoviesType }) => {
             <div className={styles.movieCard}>
                 <img src={`https://image.tmdb.org/t/p/w400${movie?.poster_path}`} className={styles.slideImg}/>
                 <div className={styles.titleDiv}>
-                    <h3>{movie?.title}</h3>
+                    <h4>{movie?.title}</h4>
                     <div className={styles.dateAndStars}>
                         <p>{movie?.release_date}</p>
                         <Rating value={movie?.vote_average} type="vote"/>

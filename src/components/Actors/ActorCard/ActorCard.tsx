@@ -7,11 +7,9 @@ const ActorCard = ({ actor }: { actor: IActorType }) => {
   return (
     <NavLink to={`/Actors/actor/${actor?.id}`}>
       <div className={styles.actorCard}>
-        <div>
-          <img src={`https://image.tmdb.org/t/p/w400${actor?.profile_path}`} />
-        </div>
+        <img src={`https://image.tmdb.org/t/p/w400${actor?.profile_path}`} />
         <div className={styles.titleDiv}>
-          <h3>{actor?.name}</h3>
+          <h4>{actor?.name}</h4>
           <Rating value={actor?.popularity} type="popularity" />
         </div>
       </div>

@@ -26,13 +26,15 @@ img {
 
 body {
     color: var(--text-color-primary);
-    background-color: var(--bg-color);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position:  0 0 ;    
     font-family: 'Roboto', sans-serif;
     user-select: none;
 }
 
 .active {
-    color: var(--text-color-secondary);
+    background-color: var(--buttons-color);
 }
 
 .container{
@@ -42,24 +44,34 @@ body {
     padding-bottom: 60px;
 }
 
+.loading, 
+.notFound{
+    color: var(--text-color-primary);
+    text-align: center;
+    letter-spacing: .4px;
+    padding: 20px 0;
+}
+
 :root {
     --text-color-main: #ffffff;
     --text-color-primary: #ffffff;
-    --text-color-secondary: #f87719;
+    --text-color-secondary: #E13C52;
     --text-color-gray: #b7b7b7;
     --bg-color: #111111;
     --bg-color-main: #111111;
     --bg-color-secondary: #000000;
     --bg-color-options: #282828;
-    --buttons-gradient: linear-gradient(to bottom right, #ffc226, #f84119); 
+    --buttons-color: #E13C52; 
+    --background-image: url(./assets/images/bg-img.png);
 }
 
 [data-theme="light"] {
     --text-color-primary: #000000;
-    --text-color-secondary: #f86619;
+    --text-color-secondary: #E13C52;
     --text-color-gray: #666666;
     --bg-color: #ffffff;
     --bg-color-secondary: #ffffff;
     --bg-color-options: #e5e5e5;
-    --buttons-gradient: linear-gradient(to bottom right, #ffc226, #f84119);
+    --buttons-color: #E13C52;
+    --background-image: none;
 }

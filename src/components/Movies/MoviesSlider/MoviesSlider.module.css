@@ -29,8 +29,8 @@
 
 :global(.swiper-button-prev),
 :global(.swiper-button-next){
-    color: var(--text-color-secondary);
-    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--text-color-main);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 32px;
     height: 56px;
     transition: 0.3s;
@@ -46,5 +46,5 @@
 
 :global(.swiper-button-next:hover),
 :global(.swiper-button-prev:hover) {
-    color: var(--text-color-main);
+    color: var(--text-color-secondary);
 }

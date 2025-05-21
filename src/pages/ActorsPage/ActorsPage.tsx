@@ -14,15 +14,15 @@ const ActorsPage = () => {
     useEffect(() => {
         dispatch(actorsThunk({ page, selectedLanguage }))
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [page])
+    }, [page, selectedLanguage])
 
     useEffect(() => {
         actors.forEach((actor) => {
             if (!actor.biography) {
-                dispatch(actorBiographyThunk(actor.id));
+                dispatch(actorBiographyThunk({id: actor.id, selectedLanguage}));
             }
         });
-    }, [actors]);
+    }, [actors, selectedLanguage]);
 
     const handleChangePage = (newPage: number) => {
         if (newPage !== page) {
@@ -41,10 +41,10 @@ const ActorsPage = () => {
                         display: 'grid', gap: 2, justifyContent: 'center',
                         gridTemplateColumns: {
                             xs: 'repeat(1, 1fr)',
-                            sm: 'repeat(2, 1fr)',
-                            md: 'repeat(3, 1fr)',
-                            lg: 'repeat(4, 1fr)',
-                            xl: 'repeat(5, 1fr)',
+                            sm: 'repeat(3, 1fr)',
+                            md: 'repeat(4, 1fr)',
+                            lg: 'repeat(5, 1fr)',
+                            xl: 'repeat(6, 1fr)',
                         }
                     }}
                 >

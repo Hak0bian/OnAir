@@ -4,6 +4,7 @@ import styles from './MovieDetails.module.css'
 
 const MovieDetails = () => {
     const { movieVideos, selectedMovie, isLoading } = useAppSelector((state => state.moviesData))
+    const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const trailer = movieVideos.find(video => video.type === "Trailer")
     let key = trailer ? trailer?.key : null;
 
@@ -20,7 +21,7 @@ const MovieDetails = () => {
                     <h2 className={styles.detailsTitle}>{selectedMovie?.title}</h2>
                     <Rating value={selectedMovie?.vote_average} type="vote"/>
                     <MovieTable selectedMovie={selectedMovie} />
-                    <h3 className={styles.secondary}>Overview</h3>
+                    <h3 className={styles.secondary}>{selectedLanguage === 'en' ? 'Overview' : 'Обзор'}</h3>
                     <p className={styles.about}>{selectedMovie?.overview}</p>
 
                     <div className={styles.buttonsDiv}>
@@ -31,7 +32,6 @@ const MovieDetails = () => {
                 </div>
             </div>
             <MovieCastSlider movieId={selectedMovie?.id} />
-
         </section>
     )
 }

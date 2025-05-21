@@ -87,19 +87,9 @@ export interface ISearchActorsStateType {
     error: null | string
 }
 
-// *********************************************
-
-export interface IlanguagesType {
-    english_name: string
-    iso_639_1: string
-    name: string
-}
-
 export interface IԼanguagesStateType {
-    languages: Array<IlanguagesType>,
     selectedLanguage: string,
-    isLoading: boolean,
-    error: null | string
+    isLoading: boolean
 }
 
 // *********************************************
@@ -130,7 +120,7 @@ export interface ISelectedActorType {
     gender: number,
     known_for_department: string
     popularity: number,
-    also_known_as: [],
+    also_known_as: string[],
     homepage: number | null,
     known_for?: Array<IMoviesType>;
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
-import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType } from "../types";
-import { IActorsReturnType, IGenresReturnType, IlanguagesType, IMovieCreditsType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
+import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType, IPropsTypeToo } from "../types";
+import { IActorsReturnType, IGenresReturnType, IMovieCreditsType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCEPT = import.meta.env.VITE_ACCEPT;
 const AUTHORIZATION = import.meta.env.VITE_AUTHORIZATION;
@@ -23,8 +23,8 @@ export const API = {
     getMovies({page, selectedLanguage}: IPropsType){
         return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&language=${selectedLanguage}&page=${page}`)
     },
-    getMovieById(id: number){
-        return instance.get<IMoviesType>(`/movie/${id}`)
+    getMovieById({id, selectedLanguage}: IPropsTypeToo){
+        return instance.get<IMoviesType>(`/movie/${id}?language=${selectedLanguage}`)
     },
     getMovieCrew(movieId: number){
         return instance.get<IMovieCreditsType>(`/movie/${movieId}/credits`)
@@ -41,17 +41,14 @@ export const API = {
     searchMovie(text: string){
         return instance.get<IMoviesReturnType>(`search/movie?query=${text}`)
     },
-    getLanguages(){
-        return instance.get<IlanguagesType[]>(`/configuration/languages`)
-    },
     getActors({page, selectedLanguage}: IPropsType){
         return instance.get<IActorsReturnType>(`/person/popular?language=${selectedLanguage}&page=${page}`)
     },
-    getActorById(id: number){
-        return instance.get<ISelectedActorType>(`/person/${id}`)
+    getActorById({id, selectedLanguage}: IPropsTypeToo){
+        return instance.get<ISelectedActorType>(`/person/${id}?language=${selectedLanguage}`)
     },
-    getActorKnownFor(id: number){
-        return instance.get(`/person/${id}/movie_credits`)
+    getActorKnownFor({id, selectedLanguage}: IPropsTypeToo){
+        return instance.get(`/person/${id}/movie_credits?language=${selectedLanguage}`)
     },
     searchActor(text: string){
         return instance.get<IActorsReturnType>(`/search/person?query=${text}`)

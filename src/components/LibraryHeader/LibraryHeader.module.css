@@ -1,23 +1,20 @@
 .libraryHeader{
-    background-color: #000000;
     color: var(--text-color-main);
     margin-bottom: 40px;
+    background-image: url(../../assets/images/library-desktop.png);
+    background-size: cover;
 }
 
 .libraryContainer{
     max-width: 1240px;
+    height: 540px;
     margin: auto;
     display: flex;
     align-items: center;
 }
 
-.libraryImg img{
-    height: 480px;
-    display: block;
-}
-
 .libraryTitle{
-    width: 300px;
+    width: 340px;
     font-size: 52px;
 }
 

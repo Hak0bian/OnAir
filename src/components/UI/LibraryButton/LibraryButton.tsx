@@ -7,6 +7,7 @@ import styles from './LibraryButton.module.css'
 const LibraryButton = ({ movie }: { movie: IMoviesType }) => {
   const dispatch = useAppDispatch();
   const { library } = useAppSelector(state => state.libraryData);
+  const { selectedLanguage } = useAppSelector((state) => state.languagesData)
   const isInLibrary = library.some(m => m.id === movie.id);
   const currentTheme = document.body.getAttribute('data-theme');
 
@@ -29,8 +30,12 @@ const LibraryButton = ({ movie }: { movie: IMoviesType }) => {
         : isOnMovieDetailsPage
           ? styles.libraryBtnLight2
           : styles.libraryBtnLight}
-      >
-      {isInLibrary ? "Remove from library" : "Add to my library"}
+    >
+      {
+        selectedLanguage === 'en'
+          ? (isInLibrary ? "Remove from library" : "Add to my library")
+          : (isInLibrary ? "Удалить из библиотеки" : "Добавить в библиотеку")
+      }
     </button>
   )
 }

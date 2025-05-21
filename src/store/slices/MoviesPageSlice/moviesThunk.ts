@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType } from "../../../types"
+import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType, IPropsTypeToo } from "../../../types"
 import { IMovieCreditsType } from "../sliceTypes/stateTypes"
 import { API } from "../../../api/api"
 
@@ -15,11 +15,11 @@ export const moviesThunk = createAsyncThunk<IMoviesReturnType, IPropsType>(
     }
 )
 
-export const movieByIdThunk = createAsyncThunk<IMoviesType, number>(
+export const movieByIdThunk = createAsyncThunk<IMoviesType, IPropsTypeToo>(
     "movieByIdThunk",
-    async (id, { rejectWithValue }) => {
+    async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {
-            const res = await API.getMovieById(id)
+            const res = await API.getMovieById({id, selectedLanguage})
             return res.data
         } catch (err: any) {
             return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch selected movie")

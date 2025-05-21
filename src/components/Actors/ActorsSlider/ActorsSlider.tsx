@@ -6,27 +6,43 @@ SwiperCore.use([Autoplay, Navigation]);
 import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import ActorCard from '../ActorCard/ActorCard';
 import styles from './ActorsSlider.module.css';
+import { useAppSelector } from '../../../store/hooks/hooks';
 
 const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+
     return (
         <section className={styles.slideSection}>
-            <div className={styles.slideTopDiv}>
-                <h2 className={styles.slideTitle}>Popular Actors</h2>
-                <NavLink to={`/Actors/page/1`} className={styles.seeAll}>See All</NavLink>
-            </div>
+            {
+                selectedLanguage === 'en'
+                ? (
+                    <div className={styles.slideTopDiv}>
+                        <h2 className={styles.slideTitle}>Popular Actors</h2>
+                        <NavLink to={`/Actors/page/1`} className={styles.seeAll}>See All</NavLink>
+                    </div>
+                ) : (
+                    <div className={styles.slideTopDiv}>
+                        <h2 className={styles.slideTitle}>Популярные актеры</h2>
+                        <NavLink to={`/Actors/page/1`} className={styles.seeAll}>Смотреть все</NavLink>
+                    </div>
+                )
+            }
+
             {
                 actors.length > 0
-                ?   (<Swiper
-                        spaceBetween={20}
-                        slidesPerView={5}
+                ? (
+                    <Swiper
+                        spaceBetween={16}
+                        slidesPerView={6}
                         loop={true}
                         autoplay={{ delay: 2000 }}
                         breakpoints={{
-                            0: { slidesPerView: 1 },
-                            480: { slidesPerView: 2 },
+                            340: { slidesPerView: 1 },
+                            440: { slidesPerView: 2 },
                             640: { slidesPerView: 3 },
                             840: { slidesPerView: 4 },
-                            1200: { slidesPerView: 5 }
+                            1040: { slidesPerView: 5 },
+                            1240: { slidesPerView: 6 }
                         }}
                         navigation
                     >
@@ -35,8 +51,8 @@ const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
                                 <ActorCard actor={actor} />
                             </SwiperSlide>
                         ))}
-                    </Swiper>)
-                :   (<p className={styles.noMovies}>Actors not found</p>)
+                    </Swiper>
+                ): (<p className={styles.noMovies}>Actors not found</p>)
             }
         </section>
     );

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { IActorsReturnType, ISelectedActorType } from "../sliceTypes/stateTypes";
-import { IPropsType } from "../../../types";
+import { IPropsType, IPropsTypeToo } from "../../../types";
 import { API } from "../../../api/api";
 
 export const actorsThunk = createAsyncThunk<IActorsReturnType, IPropsType>(
@@ -16,13 +16,13 @@ export const actorsThunk = createAsyncThunk<IActorsReturnType, IPropsType>(
     }
 )
 
-export const actorFullInfoThunk = createAsyncThunk<ISelectedActorType, number>(
+export const actorFullInfoThunk = createAsyncThunk<ISelectedActorType, IPropsTypeToo>(
     "actorFullInfoThunk",
-    async (id, { rejectWithValue }) => {
+    async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {
             const [actorRes, knownForRes] = await Promise.all([
-                API.getActorById(id),
-                API.getActorKnownFor(id)
+                API.getActorById({id, selectedLanguage}),
+                API.getActorKnownFor({id, selectedLanguage})
             ]);
             return {
                 ...actorRes.data,
@@ -34,16 +34,14 @@ export const actorFullInfoThunk = createAsyncThunk<ISelectedActorType, number>(
     }
 )
 
-
-export const actorBiographyThunk = createAsyncThunk(
-    'actors/fetchBiography',
-    async (id: number, { rejectWithValue }) => {
+export const actorBiographyThunk = createAsyncThunk<{ id: number; biography: string }, IPropsTypeToo>(
+    'actorBiographyThunk',
+    async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {
-            const response = await API.getActorById(id)
-            return { id, biography: response.data.biography };
+            const res = await API.getActorById({id, selectedLanguage})
+            return { id, biography: res.data.biography };
         } catch (err: any) {
             return rejectWithValue(err?.response?.data?.status_message || 'Failed to fetch biography');
         }
     }
 );
-

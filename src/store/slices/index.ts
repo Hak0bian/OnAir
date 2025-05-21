@@ -7,7 +7,6 @@ import { moviesThunk, movieByIdThunk, movieCrewThunk, movieVideosThunk } from ".
 import { changeMoviesPageNumber } from "./MoviesPageSlice/moviesSlice";
 import { searchMovieThunk } from "./SearchMovieSlice/searchMovieThunk";
 import { clearResults } from "./SearchMovieSlice/searchMovieSlice";
-import { languagesThunk } from "./LanguagesSlice/languagesThunk";
 import { changeLanguages } from "./LanguagesSlice/languagesSlice";
 
 import { actorsThunk } from "./ActorsPageSlice/actorsThunk";
@@ -19,6 +18,6 @@ import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
 
 export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setLibrary, addToLibrary, removeFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, movieCrewThunk,
-    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearResults, languagesThunk, changeLanguages, 
+    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearResults, changeLanguages, 
     actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults
 }

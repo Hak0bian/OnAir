@@ -1,6 +1,6 @@
 .langSelect{
-    width: 120px;
-    height: 24px;
+    width: 100px;
+    height: 26px;
     outline: none;
     padding: 0 4px;
     border: 1px solid var(--text-color-secondary);

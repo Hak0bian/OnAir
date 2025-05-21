@@ -1,26 +1,26 @@
 .header{
-    background-color: var(--bg-color-main);
-}
+    background-image: url(../../assets/images/onair-header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+} 
 
 .headerContainer{
     max-width: 1240px;
-    height: 560px;
+    height: 580px;
     margin: auto;
-    background-image: url(../../assets/images/home-desktop.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .headerTitleDiv{
-    width: 480px;
+    width: 420px;
     color: var(--text-color-main);
 }
 
 .headerTitle{
-    font-size: 52px;
+    font-size: 48px;
 }
 
 .headerText{

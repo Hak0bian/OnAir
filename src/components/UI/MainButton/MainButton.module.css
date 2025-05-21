@@ -1,7 +1,7 @@
 .mainBtn{
     width: 180px;
     height: 40px;
-    background: var(--buttons-gradient);
+    background: var(--buttons-color);
     border: none;
     border-radius: 40px;
     font-size: 15px;
@@ -9,8 +9,9 @@
     letter-spacing: .4px;
     cursor: pointer;
     transition: .3s linear;
+    color: var(--text-color-main);
     
     &:hover{
-        color: var(--text-color-primary);
+        color: #000000;
     }
 }

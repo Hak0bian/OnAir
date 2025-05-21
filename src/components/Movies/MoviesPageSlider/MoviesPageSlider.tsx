@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { LibraryButton, MainButton, Rating } from '../..'
+import { useAppSelector } from '../../../store/hooks/hooks';
 import { IMoviesType } from '../../../types'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
@@ -9,8 +10,10 @@ import styles from './MoviesPageSlider.module.css'
 
 
 const MoviesPageSlider = ({ movies }: { movies: IMoviesType[] }) => {
+  const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+
   return (
-    <section className={styles.moviesSlideSec}>
+    <section>
       <div className={styles.moviesSlideDiv}>
         <Swiper
           slidesPerView={1}
@@ -28,7 +31,7 @@ const MoviesPageSlider = ({ movies }: { movies: IMoviesType[] }) => {
 
                   <div className={styles.buttonsDiv}>
                     <NavLink to={`/Movies/movie/${movie?.id}`}>
-                      <MainButton text={'More Details'} />
+                      <MainButton text={selectedLanguage === 'en' ? 'More Details' : 'Подробнее'} />
                     </NavLink>
                     <LibraryButton movie={movie} />
                   </div>

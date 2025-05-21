@@ -2,7 +2,9 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    padding: 4px 0;
     background-color: var(--bg-color-secondary);
+    border-bottom: 1px solid var(--text-color-secondary);
 }
 
 .navContainer{
@@ -12,27 +14,27 @@
     justify-content: space-between;
     align-items: center;
     padding: 4px 20px;
+    cursor: pointer;
 }
 
 .logoDiv{
     display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pageName{
-    font-size: 24px;
-    color: var(--text-color-primary);
 }
 
 .logo{
-    min-width: 48px;
+    max-width: 100px;
 }
 
 .navMenu{
     display: flex;
-    gap: 40px;
+    gap: 20px;
+    
+    a{
+        padding: 4px 16px;
+        border-radius: 20px;
+    }
 }
+
 
 .navButtonsDiv{
     display: flex;
@@ -41,9 +43,11 @@
 }
 
 .themeBtn{
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     background: none;
-    border: none;
-    border-radius: 20px;
-    font-size: 0;
     cursor: pointer;
+    border: 1px solid var(--text-color-secondary);
 }

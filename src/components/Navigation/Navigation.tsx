@@ -1,16 +1,18 @@
 import { useAppSelector } from '../../store/hooks/hooks'
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
-import darkMode from '../../assets/images/dark-mode.png'
-import lightMode from '../../assets/images/light-mode.png'
+import { NavLink, useNavigate } from 'react-router-dom'
+import logo from '../../assets/images/onair-logo.png'
+import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import styles from './Navigation.module.css'
 
 const Navigation = () => {
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
-    const [ theme, setTheme ] = useState<boolean>(false)
+    const [theme, setTheme] = useState<boolean>(false)
+    const navigate = useNavigate()
 
     const scrollToTopPage = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,16 +25,16 @@ const Navigation = () => {
         localStorage.setItem('theme', newTheme);
         currentTheme === 'dark' ? setTheme(true) : setTheme(false)
     };
-    
+
     return (
         <nav className={styles.navigation}>
             <div className={styles.navContainer}>
-                <NavLink to='/' onClick={scrollToTopPage}>
-                    <div className={styles.logoDiv}>
-                        <img src={logo} alt="Logo" className={styles.logo} />
-                        <span className={styles.pageName}>Cinemania</span>
-                    </div>
-                </NavLink>
+                <div className={styles.logoDiv} onClick={() => {
+                    scrollToTopPage()
+                    navigate('/')
+                }}>
+                    <img src={theme ? logoForLight : logo} className={styles.logo} />
+                </div>
 
                 <div className={styles.navMenu}>
                     <NavLink to={`/`} onClick={scrollToTopPage}>HOME</NavLink>
@@ -43,8 +45,25 @@ const Navigation = () => {
 
                 <div className={styles.navButtonsDiv}>
                     <SelectLanguage />
-                    <button onClick={toggleTheme} className={styles.themeBtn}>
-                        <img src={theme ? lightMode : darkMode} alt="Dark mode icon" />
+
+                    <button className={styles.themeBtn} onClick={toggleTheme}>
+                        <DarkModeIcon 
+                            sx={{
+                                color: theme ? 'black' : 'white',
+                                backgroundColor: theme ? 'white' : '#E13C52', 
+                                fontSize: '24px', 
+                                borderRadius: '50%',
+                                padding: '4px'
+                            }}
+                        />
+                        <LightModeIcon 
+                            sx={{
+                                color: theme ? 'black' : 'white',
+                                backgroundColor: theme ? '#E13C52' : '#111111', 
+                                fontSize: '24px',
+                                borderRadius: '50%',
+                                padding: '4px'
+                            }}/>
                     </button>
                 </div>
             </div>

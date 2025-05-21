@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { clearActorsResults, searchActorThunk } from '../../../store/slices'
-import { useAppDispatch } from '../../../store/hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks'
 import styles from './SearchActor.module.css'
 import SearchedActorsList from '../SearchedActorsList/SearchedActorsList'
 
 const SearchActor = () => {
     const dispatch = useAppDispatch();
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const [inputValue, setInputValue] = useState<string>("");
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +28,7 @@ const SearchActor = () => {
         <div className={styles.searchDiv}>
             <input
                 type="text"
-                placeholder='Search Actor'
+                placeholder={selectedLanguage === 'en' ? 'Search Actor' : 'Поиск актера'}
                 value={inputValue}
                 onChange={(e) => handleSearch(e)}
                 className={styles.searchActorInput}

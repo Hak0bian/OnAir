@@ -49,8 +49,18 @@ export interface IMovieVideosReturnType {
 
 export interface IPropsType {
     genreId?: number, 
-    page: number, 
+    page?: number, 
     selectedLanguage: string
+}
+
+export interface IPropsTypeToo {
+    id: number, 
+    selectedLanguage: string
+}
+
+export interface IActorBiography {
+    id: number;
+    biography: string;
 }
 
 type ICompaniesType = {

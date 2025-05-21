@@ -6,6 +6,7 @@ import styles from './LibraryPage.module.css'
 
 const LibraryPage = () => {
   const dispatch = useAppDispatch()
+  const { selectedLanguage } = useAppSelector((state) => state.languagesData)
   const { library } = useAppSelector(state => state.libraryData);
 
   useEffect(() => {
@@ -19,14 +20,22 @@ const LibraryPage = () => {
     dispatch(clearLibrary());
   };
 
+  const isEn = selectedLanguage === 'en';
+  const emptyTitle = isEn
+    ? 'Your library is empty for now.'
+    : 'Ваша библиотека пока пуста.';
+  const emptySubtitle = isEn
+    ? 'Add your favorite movies to get started!'
+    : 'Добавьте любимые фильмы, чтобы начать!';
+
   return (
     <section>
       <LibraryHeader />
-      <div style={{maxWidth: '1240px', margin: 'auto', minHeight: '50vh'}}>
+      <div style={{ maxWidth: '1240px', margin: 'auto', minHeight: '50vh' }}>
         {library.length === 0 ? (
           <div className={styles.emptyLibrary}>
-            <p>We are very sorry!</p>
-            <p>You don’t have any movies at your library.</p>
+            <p>{emptyTitle}</p>
+            <p>{emptySubtitle}</p>
           </div>
         ) : (
           <div className={styles.libraryDiv}>
@@ -38,7 +47,7 @@ const LibraryPage = () => {
               }
             </div>
             <div className={styles.clearBtnDiv}>
-              <MainButton text={'Clear library'} onClick={handleClearLibrary} />
+              <MainButton text={selectedLanguage === 'en' ? 'Clear library' : 'Очистить все'} onClick={handleClearLibrary} />
             </div>
           </div>
         )}

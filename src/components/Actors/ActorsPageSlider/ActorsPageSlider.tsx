@@ -6,11 +6,14 @@ import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay]);
 import styles from './ActorsPageSlider.module.css'
+import { useAppSelector } from '../../../store/hooks/hooks';
 
 
 const ActorsPageSlider = ({ actors }: { actors: IActorType[] }) => {
+  const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+
   return (
-    <section className={styles.actorsSlideSec}>
+    <section>
       <div className={styles.actorsSlideDiv}>
         <Swiper
           slidesPerView={1}
@@ -30,13 +33,13 @@ const ActorsPageSlider = ({ actors }: { actors: IActorType[] }) => {
                         ? actor.biography.length > 500
                           ? actor.biography.slice(0, 600) + '...'
                           : actor.biography
-                        : "No biography available"
+                        : selectedLanguage === 'en' ? "No biography available" : "Биография отсутствует"
                     }
                   </p>
 
                   <div className={styles.buttonsDiv}>
                     <NavLink to={`/Actors/actor/${actor?.id}`}>
-                      <MainButton text={'More Details'} />
+                      <MainButton text={selectedLanguage === 'en' ? 'More Details' : 'Подробнее'} />
                     </NavLink>
                   </div>
                 </div>

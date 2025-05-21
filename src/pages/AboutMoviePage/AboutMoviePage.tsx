@@ -1,18 +1,19 @@
 import { useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { useAppDispatch } from '../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { movieByIdThunk, movieCrewThunk, movieVideosThunk } from '../../store//slices';
 import { MovieDetails } from '../../components';
 
 const AboutMoviePage = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch()
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData)
 
     useEffect(() => {
-        dispatch(movieByIdThunk(Number(id)))
+        dispatch(movieByIdThunk({ id: Number(id), selectedLanguage}))
         dispatch(movieVideosThunk(Number(id)))
         dispatch(movieCrewThunk(Number(id)))
-    }, [])
+    }, [selectedLanguage])
 
     return (
         <section className='container'>

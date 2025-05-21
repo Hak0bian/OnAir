@@ -5,6 +5,7 @@ import styles from './SelectGenre.module.css'
 
 const SelectGenre = () => {
     const { genres, selectedGenreId } = useAppSelector((state) => state.genresData);
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const dispatch = useAppDispatch();
     const navigate = useNavigate()
 
@@ -21,8 +22,8 @@ const SelectGenre = () => {
                 onChange={(e) => handleChange(Number(e.target.value))}
                 className={styles.select}
             >
-                <option value={0} disabled hidden className={styles.option}>Genre</option>
-                <option value={1} className={styles.option}>All</option>
+                <option value={0} disabled hidden className={styles.option}>{selectedLanguage === 'en' ? 'Genre' : 'Жанр'}</option>
+                <option value={1} className={styles.option}>{selectedLanguage === 'en' ? 'All' : 'Все'}</option>
                 {genres.map((genre) => (
                     <option key={genre.id} value={genre.id} className={styles.option}> {genre.name} </option>
                 ))}
