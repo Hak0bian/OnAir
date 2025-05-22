@@ -2,9 +2,9 @@ import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { MovieCard, Rating } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Autoplay, Pagination]);
 import styles from './ActorDetails.module.css'
 
 const ActorDetails = () => {
@@ -33,8 +33,8 @@ const ActorDetails = () => {
             <div className={styles.knownForBox}>
                 <h3 className={styles.secondary}>{t.knownFor}</h3>
                 {
-                    selectedActor?.known_for && selectedActor?.known_for?.length > 0 
-                    ?   (<Swiper
+                    selectedActor?.known_for && selectedActor?.known_for?.length > 0
+                        ? (<Swiper
                             spaceBetween={20}
                             slidesPerView={6}
                             loop={selectedActor?.known_for?.length > 5}
@@ -46,14 +46,27 @@ const ActorDetails = () => {
                                 840: { slidesPerView: 4 },
                                 1240: { slidesPerView: 6 },
                             }}
+                            pagination={{
+                                el: `.swiper-pagination-knownFor`,
+                                clickable: true,
+                                dynamicBullets: false,
+                                type: 'bullets',
+                            }}
                         >
-                            {selectedActor?.known_for?.map((movie) => (
-                                <SwiperSlide key={movie.id}>
-                                    <MovieCard movie={movie} />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>) 
-                    : ( <p className={styles.noKnownFor}>{t.noKnownFor}</p>)
+                            {selectedActor?.known_for && (
+                                (selectedActor.known_for.length > 20
+                                    ? selectedActor.known_for.slice(0, 20)
+                                    : selectedActor.known_for
+                                ).map((movie) => (
+                                    <SwiperSlide key={movie.id}>
+                                        <MovieCard movie={movie} />
+                                    </SwiperSlide>
+                                ))
+                            )}
+
+                            <div className='swiper-pagination-knownFor'></div>
+                        </Swiper>)
+                        : (<p className={styles.noKnownFor}>{t.noKnownFor}</p>)
                 }
             </div>
         </section>

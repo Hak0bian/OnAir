@@ -1,3 +1,7 @@
+.slideSection{
+    padding: 20px 0 40px;
+}
+
 .slideTopDiv{
     display: flex;
     justify-content: space-between;

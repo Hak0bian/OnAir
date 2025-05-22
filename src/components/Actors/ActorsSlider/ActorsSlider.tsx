@@ -3,9 +3,9 @@ import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Navigation]);
+SwiperCore.use([Autoplay, Pagination]);
 import ActorCard from '../ActorCard/ActorCard';
 import styles from './ActorsSlider.module.css';
 
@@ -21,8 +21,7 @@ const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
             </div>
             {
                 actors.length > 0
-                ? (
-                    <Swiper
+                ?   (<Swiper
                         spaceBetween={16}
                         slidesPerView={6}
                         loop={true}
@@ -35,15 +34,21 @@ const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
                             1040: { slidesPerView: 5 },
                             1240: { slidesPerView: 6 }
                         }}
-                        navigation
-                    >
+                        pagination={{
+                            el: `.swiper-pagination-actors`,
+                            clickable: true,           
+                            dynamicBullets: false,    
+                            type: 'bullets',              
+                        }}
+                        >
                         {actors.map((actor) => (
                             <SwiperSlide key={actor.id}>
                                 <ActorCard actor={actor} />
                             </SwiperSlide>
                         ))}
+                        <div className='swiper-pagination-actors'></div>
                     </Swiper>
-                ): (<p className={styles.noMovies}>Actors not found</p>)
+                ):  (<p className={styles.noMovies}>Actors not found</p>)
             }
         </section>
     );

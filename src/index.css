@@ -30,7 +30,6 @@ body {
     background-size: cover;
     background-position:  0 0 ;    
     font-family: 'Roboto', sans-serif;
-    /* user-select: none; */
 }
 
 .active {
@@ -51,6 +50,7 @@ body {
     letter-spacing: .4px;
     padding: 20px 0;
 }
+
 
 :root {
     --text-color-main: #ffffff;
@@ -74,4 +74,32 @@ body {
     --bg-color-options: #e5e5e5;
     --buttons-color: #E13C52;
     --background-image: none;
+}
+
+
+/* ***************************************** */
+
+.swiper-pagination-movies, .swiper-pagination-actors,
+.swiper-pagination-cast, .swiper-pagination-knownFor {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination-movies .swiper-pagination-bullet,
+.swiper-pagination-actors .swiper-pagination-bullet,
+.swiper-pagination-cast .swiper-pagination-bullet,
+.swiper-pagination-knownFor .swiper-pagination-bullet {
+    margin: 0 4px;
+    background: var(--text-color-gray);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.swiper-pagination-movies .swiper-pagination-bullet-active,
+.swiper-pagination-actors .swiper-pagination-bullet-active,
+.swiper-pagination-cast .swiper-pagination-bullet-active,
+.swiper-pagination-knownFor .swiper-pagination-bullet-active {
+    background: #E13C52; 
+    opacity: 1;
 }

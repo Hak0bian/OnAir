@@ -1,0 +1,61 @@
+.planSection{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.planTitle{
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    padding-bottom: 20px;
+}
+
+.planContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 80px;
+}
+
+.planDiv{
+    width: 100%;
+    padding: 28px;
+    background-color: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: 0 0 6px #ff489d;
+}
+
+.planTitleDiv{
+    display: flex;
+    justify-content: space-between;
+    
+    .planName{
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    .plan{
+        font-weight: 300;
+        color: #ff489d;
+    }
+}
+
+.planList{
+    padding: 20px;
+
+    li{
+        list-style: disc;
+        padding: 8px 0;
+        color: var(--text-color-gray);
+        letter-spacing: .4px;
+    }
+}
+
+.planList li::marker{
+    color: #ff489d;
+}
+
+.planBtnDiv{
+    text-align: center;
+}

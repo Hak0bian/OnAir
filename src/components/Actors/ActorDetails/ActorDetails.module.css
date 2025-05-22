@@ -30,6 +30,10 @@
     font-weight: 300;
 }
 
+.knownForBox{
+    padding: 20px 0 40px;
+}
+
 .secondary{
     padding: 12px 0;
     text-transform: uppercase;

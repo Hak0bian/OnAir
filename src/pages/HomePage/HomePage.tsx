@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ActorsSlider, Header, MoviesSlider } from '../../components'
+import { ActorsSlider, Header, MoviesSlider, SelectPlan } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { actorsThunk, latestMoviesThunk, popularMoviesThunk } from '../../store/slices'
 
@@ -21,6 +21,7 @@ const HomePage = () => {
       <MoviesSlider movies={latestMovies} title={'latest'} />
       <MoviesSlider movies={popularMovies} title={'popular'} />
       <ActorsSlider actors={actors} />
+      <SelectPlan/>
     </section>
   )
 }

@@ -22,8 +22,9 @@ import ActorDetails from "./Actors/ActorDetails/ActorDetails";
 import ActorsPageSlider from "./Actors/ActorsPageSlider/ActorsPageSlider";
 import SearchActor from "./Actors/SearchActor/SearchActor";
 import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
+import SelectPlan from "./SelectPlan/SelectPlan";
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryButton, Rating, MoviesPageSlider, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
-    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider
+    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan
 }

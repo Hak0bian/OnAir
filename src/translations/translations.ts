@@ -23,6 +23,37 @@ export const translations: any = {
             seeAll: "See All"
         },
 
+        selectPlan: {
+            planTitle: "Select Your Plan",
+            planName1: "Starter",
+            planName2: "Premium",
+            planName3: "Ultra",
+            plan: "Free",
+            btn1: "Register",
+            btn2: "Choose Plan",
+            planList1: {
+                listItem1: "7 days",
+                listItem2: "720p Resolution",
+                listItem3: "Limited Availability",
+                listItem4: "Desktop Only",
+                listItem5: "Limited Support",
+            },
+            planList2: {
+                listItem1: "1 Month",
+                listItem2: "Full HD",
+                listItem3: "Lifetime Availability",
+                listItem4: "TV & Desktop",
+                listItem5: "24/7 Support",
+            },
+            planList3: {
+                listItem1: "2 Month",
+                listItem2: "Ultra HD",
+                listItem3: "Lifetime Availability",
+                listItem4: "Any Device",
+                listItem5: "24/7 Support",
+            }
+        },
+
         movies: {
             genre: "Genre",
             all: "All",
@@ -93,6 +124,37 @@ export const translations: any = {
             title2: "ПОПУЛЯРНЫЕ ФИЛЬМЫ",
             actorTitle: "Популярные актеры",
             seeAll: "Смотреть все"
+        },
+
+        selectPlan: {
+            planTitle: "Выберите свой план",
+            planName1: "Пробный",
+            planName2: "Премиум",
+            planName3: "Ультра",
+            plan: "Бесплатно",
+            btn1: "Зарегистрироваться",
+            btn2: "Выбрать план",
+            planList1: {
+                listItem1: "7 дней",
+                listItem2: "Разрешение 720p",
+                listItem3: "Ограниченная доступность",
+                listItem4: "Только для ПК",
+                listItem5: "Ограниченная поддержка",
+            },
+            planList2: {
+                listItem1: "1 месяц",
+                listItem2: "Полный HD",
+                listItem3: "Пожизненная доступность",
+                listItem4: "Телевизор и ПК",
+                listItem5: "Поддержка 24/7",
+            },
+            planList3: {
+                listItem1: "2 месяца",
+                listItem2: "Ультра HD",
+                listItem3: "Пожизненная доступность",
+                listItem4: "Любое устройство",
+                listItem5: "Поддержка 24/7",
+            }
         },
 
         movies: {

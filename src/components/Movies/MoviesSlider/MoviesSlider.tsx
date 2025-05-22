@@ -3,9 +3,9 @@ import { IMovieSliderPropsType } from '../../componentsTypes/propsTypes';
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Navigation]);
+SwiperCore.use([Autoplay, Pagination]);
 import MovieCard from '../MovieCard/MovieCard';
 import styles from './MoviesSlider.module.css';
 
@@ -39,13 +39,19 @@ const MoviesSlider = ({ movies, title }: IMovieSliderPropsType) => {
                             1040: { slidesPerView: 5 },
                             1240: { slidesPerView: 6 }
                         }}
-                        navigation
+                        pagination={{
+                            el: `.swiper-pagination-movies`,
+                            clickable: true,           
+                            dynamicBullets: false,    
+                            type: 'bullets',              
+                        }}
                     >
                         {filteredMovies.map((movie) => (
                             <SwiperSlide key={movie.id}>
                                 <MovieCard movie={movie} />
                             </SwiperSlide>
                         ))}
+                        <div className='swiper-pagination-movies'></div>
                     </Swiper>) 
                 :   (<p className={styles.noMovies}>Movies not found</p>)
             }

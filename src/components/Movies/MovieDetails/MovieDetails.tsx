@@ -30,7 +30,6 @@ const MovieDetails = () => {
                         <Trailer trailerKey={key} />
                         <LibraryButton movie={selectedMovie} />
                     </div>
-
                 </div>
             </div>
             <MovieCastSlider movieId={selectedMovie?.id} />

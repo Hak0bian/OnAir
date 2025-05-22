@@ -1,5 +1,6 @@
 footer{
     background-color: rgb(0,0,0,0.2);
+    border-top: 1px solid var(--text-color-secondary);
 }
 
 .footerContainer{

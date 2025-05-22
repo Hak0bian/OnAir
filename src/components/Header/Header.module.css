@@ -3,6 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 50%;
+    margin-bottom: 80px;
 } 
 
 .headerContainer{
@@ -16,7 +17,7 @@
 }
 
 .headerTitleDiv{
-    width: 400px;
+    width: 420px;
     color: var(--text-color-main);
 }
 
