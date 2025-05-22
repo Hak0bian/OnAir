@@ -1,22 +1,24 @@
 import { NavLink } from 'react-router-dom';
+import { useAppSelector } from '../../../store/hooks/hooks';
+import { translations } from '../../../translations/translations';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay, Navigation]);
 import CastCard from '../CastCard/CastCard';
 import styles from './MovieCastSlider.module.css';
-import { useAppSelector } from '../../../store/hooks/hooks';
 
 const MovieCastSlider = ({ movieId }: { movieId: number }) => {
     const { movieCast } = useAppSelector((state => state.moviesData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
+    const t = translations[selectedLanguage]
     const filteredMoviecast = movieCast.slice(0, 15);
 
     return (
         <section className={styles.slideSection}>
             <div className={styles.slideTopDiv}>
-                <h3 className={styles.slideTitle}>{selectedLanguage === 'en' ? 'Cast' : 'Актерский состав'}</h3>
-                <NavLink to={`/Movies/movie/${movieId}/cast`} className={styles.seeAll}>{selectedLanguage === 'en' ? 'See All' : 'Смотреть все'}</NavLink>
+                <h3 className={styles.slideTitle}>{t.movies.cast}</h3>
+                <NavLink to={`/Movies/movie/${movieId}/cast`} className={styles.seeAll}>{t.slider.seeAll}</NavLink>
             </div>
             {
                 filteredMoviecast.length > 0
@@ -40,7 +42,7 @@ const MovieCastSlider = ({ movieId }: { movieId: number }) => {
                             </SwiperSlide>
                         ))}
                     </Swiper>)
-                    : (<p className={styles.noMovies}>{selectedLanguage === 'en' ? 'Cast not found' : 'Актерский состав не найдено'}</p>)
+                    : (<p className={styles.noMovies}>{t.movies.castNotFound}</p>)
             }
         </section>
     );

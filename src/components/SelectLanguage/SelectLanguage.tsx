@@ -9,6 +9,7 @@ const SelectLanguage = () => {
 
     const handleChange = (leng: string) => {
         dispatch(changeLanguages(leng))
+        localStorage.setItem('language', leng);
     }
 
     return (

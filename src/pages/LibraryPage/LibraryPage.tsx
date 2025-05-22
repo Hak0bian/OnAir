@@ -2,12 +2,14 @@ import { useEffect } from "react";
 import { LibraryHeader, MainButton, MovieCard } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { setLibrary, clearLibrary } from "../../store/slices";
+import { translations } from "../../translations/translations";
 import styles from './LibraryPage.module.css'
 
 const LibraryPage = () => {
   const dispatch = useAppDispatch()
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)
   const { library } = useAppSelector(state => state.libraryData);
+  const t = translations[selectedLanguage].library
 
   useEffect(() => {
     const storedLibrary = localStorage.getItem('library');
@@ -20,13 +22,6 @@ const LibraryPage = () => {
     dispatch(clearLibrary());
   };
 
-  const isEn = selectedLanguage === 'en';
-  const emptyTitle = isEn
-    ? 'Your library is empty for now.'
-    : 'Ваша библиотека пока пуста.';
-  const emptySubtitle = isEn
-    ? 'Add your favorite movies to get started!'
-    : 'Добавьте любимые фильмы, чтобы начать!';
 
   return (
     <section>
@@ -34,8 +29,8 @@ const LibraryPage = () => {
       <div style={{ maxWidth: '1240px', margin: 'auto', minHeight: '50vh' }}>
         {library.length === 0 ? (
           <div className={styles.emptyLibrary}>
-            <p>{emptyTitle}</p>
-            <p>{emptySubtitle}</p>
+            <p>{t.emptyTitle}</p>
+            <p>{t.emptySubtitle}</p>
           </div>
         ) : (
           <div className={styles.libraryDiv}>
@@ -47,7 +42,7 @@ const LibraryPage = () => {
               }
             </div>
             <div className={styles.clearBtnDiv}>
-              <MainButton text={selectedLanguage === 'en' ? 'Clear library' : 'Очистить все'} onClick={handleClearLibrary} />
+              <MainButton text={t.clearBtn} onClick={handleClearLibrary} />
             </div>
           </div>
         )}

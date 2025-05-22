@@ -18,13 +18,13 @@ const Rating = ({ value, type }: IRatingPropsType) => {
     const stars = [];
 
     for (let i = 0; i < fullStars; i++) {
-        stars.push(<StarIcon key={`full-${i}`} sx={{ color: '#f87719', fontSize: '18px' }} />);
+        stars.push(<StarIcon key={`full-${i}`} sx={{ color: '#E13C52', fontSize: '18px' }} />);
     }
     if (hasHalfStar) {
-        stars.push(<StarHalfIcon key="half" sx={{ color: '#f87719', fontSize: '18px' }} />);
+        stars.push(<StarHalfIcon key="half" sx={{ color: '#E13C52', fontSize: '18px' }} />);
     }
     for (let i = 0; i < emptyStars; i++) {
-        stars.push(<StarBorderIcon key={`empty-${i}`} sx={{ color: '#f87719', fontSize: '18px' }} />);
+        stars.push(<StarBorderIcon key={`empty-${i}`} sx={{ color: '#E13C52', fontSize: '18px' }} />);
     }
 
     return <div>{stars}</div>;

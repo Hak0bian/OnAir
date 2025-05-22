@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { IMovieSliderPropsType } from '../../componentsTypes/propsTypes';
 import { useAppSelector } from '../../../store/hooks/hooks';
+import { translations } from '../../../translations/translations';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -10,24 +11,19 @@ import styles from './MoviesSlider.module.css';
 
 const MoviesSlider = ({ movies, title }: IMovieSliderPropsType) => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const t = translations[selectedLanguage].slider
     const filteredMovies = movies.filter((movie) => movie.poster_path);
 
     return (
         <section className={styles.slideSection}>
-            {
-                selectedLanguage === 'en' 
-                ? (
-                    <div className={styles.slideTopDiv}>
-                        <h2 className={styles.slideTitle}>{`${title} Movies`}</h2>
-                        <NavLink to={`/Movies/${title}`} className={styles.seeAll}>See All</NavLink>
-                    </div>
-                ) : (
-                    <div className={styles.slideTopDiv}>
-                        <h2 className={styles.slideTitle}>{`${title}` === 'latest' ? 'ПОСЛЕДНИЕ ФИЛЬМЫ' : 'ПОПУЛЯРНЫЕ ФИЛЬМЫ'}</h2>
-                        <NavLink to={`/Movies/${title}`} className={styles.seeAll}>Смотреть все</NavLink>
-                    </div>
-                )
-            }
+            <div className={styles.slideTopDiv}>
+                {
+                    selectedLanguage === 'en' 
+                    ? <h2 className={styles.slideTitle}>{`${title} ${t.title}`}</h2>
+                    : <h2 className={styles.slideTitle}>{`${title}` === 'latest' ? `${t.title1}` : `${t.title2}`}</h2>
+                }
+                <NavLink to={`/Movies/${title}`} className={styles.seeAll}>{t.seeAll}</NavLink>
+            </div>
             {
                 filteredMovies.length > 0 
                 ?   (<Swiper

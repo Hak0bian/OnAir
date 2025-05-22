@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
+import { translations } from '../../../translations/translations';
 import { MovieCard, Rating } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
@@ -9,6 +10,7 @@ import styles from './ActorDetails.module.css'
 const ActorDetails = () => {
     const { selectedActor, isLoading } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
+    const t = translations[selectedLanguage].actors
     if (isLoading) return <h2 className='loading'>Loading...</h2>;
     if (!selectedActor) return <h3 className='notFound'>Actor not found...</h3>;
 
@@ -29,7 +31,7 @@ const ActorDetails = () => {
             </div>
 
             <div className={styles.knownForBox}>
-                <h3 className={styles.secondary}>{selectedLanguage === 'en' ? 'Known For' : 'Известен(а) по'}</h3>
+                <h3 className={styles.secondary}>{t.knownFor}</h3>
                 {
                     selectedActor?.known_for && selectedActor?.known_for?.length > 0 
                     ?   (<Swiper
@@ -51,7 +53,7 @@ const ActorDetails = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>) 
-                    : ( <p className={styles.noKnownFor}>{selectedLanguage === 'en' ? 'No known works for this actor.' : 'Нет известных работ.'}</p>)
+                    : ( <p className={styles.noKnownFor}>{t.noKnownFor}</p>)
                 }
             </div>
         </section>

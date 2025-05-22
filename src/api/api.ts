@@ -39,7 +39,7 @@ export const API = {
         return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&language=${selectedLanguage}&with_genres=${genreId}&page=${page}`)
     },
     searchMovie(text: string){
-        return instance.get<IMoviesReturnType>(`search/movie?query=${text}`)
+        return instance.get<IMoviesReturnType>(`/search/movie?query=${text}`)
     },
     getActors({page, selectedLanguage}: IPropsType){
         return instance.get<IActorsReturnType>(`/person/popular?language=${selectedLanguage}&page=${page}`)

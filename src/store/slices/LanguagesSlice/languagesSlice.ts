@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { IԼanguagesStateType } from "../../slices/sliceTypes/stateTypes"
 
 const initialState: IԼanguagesStateType = {
-    selectedLanguage: "en",
+    selectedLanguage: localStorage.getItem('language') || 'en',
     isLoading: false,
 }
 

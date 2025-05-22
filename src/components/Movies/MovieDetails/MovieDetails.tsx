@@ -1,10 +1,12 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { LibraryButton, MovieCastSlider, MovieTable, Rating, Trailer } from '../..'
+import { translations } from '../../../translations/translations';
 import styles from './MovieDetails.module.css'
 
 const MovieDetails = () => {
     const { movieVideos, selectedMovie, isLoading } = useAppSelector((state => state.moviesData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
+    const t = translations[selectedLanguage].movies
     const trailer = movieVideos.find(video => video.type === "Trailer")
     let key = trailer ? trailer?.key : null;
 
@@ -21,7 +23,7 @@ const MovieDetails = () => {
                     <h2 className={styles.detailsTitle}>{selectedMovie?.title}</h2>
                     <Rating value={selectedMovie?.vote_average} type="vote"/>
                     <MovieTable selectedMovie={selectedMovie} />
-                    <h3 className={styles.secondary}>{selectedLanguage === 'en' ? 'Overview' : 'Обзор'}</h3>
+                    <h3 className={styles.secondary}>{t.overview}</h3>
                     <p className={styles.about}>{selectedMovie?.overview}</p>
 
                     <div className={styles.buttonsDiv}>

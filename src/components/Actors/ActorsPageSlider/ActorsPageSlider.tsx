@@ -1,16 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import { MainButton, Rating } from '../..'
+import { useAppSelector } from '../../../store/hooks/hooks';
+import { translations } from '../../../translations/translations';
 import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay]);
 import styles from './ActorsPageSlider.module.css'
-import { useAppSelector } from '../../../store/hooks/hooks';
 
 
 const ActorsPageSlider = ({ actors }: { actors: IActorType[] }) => {
   const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+  const t = translations[selectedLanguage]
 
   return (
     <section>
@@ -33,13 +35,13 @@ const ActorsPageSlider = ({ actors }: { actors: IActorType[] }) => {
                         ? actor.biography.length > 500
                           ? actor.biography.slice(0, 600) + '...'
                           : actor.biography
-                        : selectedLanguage === 'en' ? "No biography available" : "Биография отсутствует"
+                        : t.actors.noBiography
                     }
                   </p>
 
                   <div className={styles.buttonsDiv}>
                     <NavLink to={`/Actors/actor/${actor?.id}`}>
-                      <MainButton text={selectedLanguage === 'en' ? 'More Details' : 'Подробнее'} />
+                      <MainButton text={t.moreDetailsBtn} />
                     </NavLink>
                   </div>
                 </div>

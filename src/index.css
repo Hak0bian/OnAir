@@ -30,7 +30,7 @@ body {
     background-size: cover;
     background-position:  0 0 ;    
     font-family: 'Roboto', sans-serif;
-    user-select: none;
+    /* user-select: none; */
 }
 
 .active {

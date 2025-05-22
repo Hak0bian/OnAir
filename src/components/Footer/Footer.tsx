@@ -1,14 +1,16 @@
 import { useAppSelector } from '../../store/hooks/hooks'
+import { translations } from '../../translations/translations';
 import styles from './Footer.module.css'
 
 const Footer = () => {
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+  const t = translations[selectedLanguage].footer;
 
   return (
     <footer>
       <div className={styles.footerContainer}>
-        <p className={styles.footerText}>{selectedLanguage === 'en' ? "OnAir is always waiting for you. Come back to discover new genres and stories!" : "OnAir всегда ждёт тебя. Возвращайся, чтобы открыть новые жанры и истории!"} </p>
-        <p className={styles.footerText}>{selectedLanguage === 'en' ? "© 2025 | All Rights Reserved | Developed by Garik Hakobyan" : "© 2025 | Все права защищены | Разработка: Гарик Акобян"}</p>
+        <p className={styles.footerText}>{t.line1}</p>
+        <p className={styles.footerText}>{t.line2}</p>
       </div>
     </footer>
   )

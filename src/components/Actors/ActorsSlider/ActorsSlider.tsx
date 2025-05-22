@@ -1,33 +1,24 @@
 import { NavLink } from 'react-router-dom';
+import { useAppSelector } from '../../../store/hooks/hooks';
+import { translations } from '../../../translations/translations';
+import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay, Navigation]);
-import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import ActorCard from '../ActorCard/ActorCard';
 import styles from './ActorsSlider.module.css';
-import { useAppSelector } from '../../../store/hooks/hooks';
 
 const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const t = translations[selectedLanguage].slider
 
     return (
         <section className={styles.slideSection}>
-            {
-                selectedLanguage === 'en'
-                ? (
-                    <div className={styles.slideTopDiv}>
-                        <h2 className={styles.slideTitle}>Popular Actors</h2>
-                        <NavLink to={`/Actors/page/1`} className={styles.seeAll}>See All</NavLink>
-                    </div>
-                ) : (
-                    <div className={styles.slideTopDiv}>
-                        <h2 className={styles.slideTitle}>Популярные актеры</h2>
-                        <NavLink to={`/Actors/page/1`} className={styles.seeAll}>Смотреть все</NavLink>
-                    </div>
-                )
-            }
-
+            <div className={styles.slideTopDiv}>
+                <h2 className={styles.slideTitle}>{t.actorTitle}</h2>
+                <NavLink to={`/Actors/page/1`} className={styles.seeAll}>{t.seeAll}</NavLink>
+            </div>
             {
                 actors.length > 0
                 ? (

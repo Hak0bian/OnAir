@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../store/hooks/hooks'
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { translations } from '../../translations/translations'
 import logo from '../../assets/images/onair-logo.png'
 import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
@@ -11,6 +12,8 @@ import styles from './Navigation.module.css'
 const Navigation = () => {
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
+    const { selectedLanguage} = useAppSelector((state) => state.languagesData)
+    const t = translations[selectedLanguage].navigation
     const [theme, setTheme] = useState<boolean>(false)
     const navigate = useNavigate()
 
@@ -37,10 +40,10 @@ const Navigation = () => {
                 </div>
 
                 <div className={styles.navMenu}>
-                    <NavLink to={`/`} onClick={scrollToTopPage}>HOME</NavLink>
-                    <NavLink to={`/Movies/page/${moviesPage}`} onClick={scrollToTopPage}>MOVIES</NavLink>
-                    <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>ACTORS</NavLink>
-                    <NavLink to={`/Library`} onClick={scrollToTopPage}>MY LIBRARY</NavLink>
+                    <NavLink to={`/`} onClick={scrollToTopPage}>{t.home}</NavLink>
+                    <NavLink to={`/Movies/page/${moviesPage}`} onClick={scrollToTopPage}>{t.movies}</NavLink>
+                    <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
+                    <NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink>
                 </div>
 
                 <div className={styles.navButtonsDiv}>
