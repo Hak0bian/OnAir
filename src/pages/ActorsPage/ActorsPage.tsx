@@ -49,9 +49,7 @@ const ActorsPage = () => {
                     }}
                 >
                     {
-                        actors
-                            .filter((actor) => actor.profile_path)
-                            .map((actor) => (
+                        actors?.map((actor) => (
                                 <ActorCard key={actor.id} actor={actor} />
                             ))
                     }

@@ -1,32 +1,28 @@
-import { useAppSelector } from '../../store/hooks/hooks'
-import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { translations } from '../../translations/translations'
-import logo from '../../assets/images/onair-logo.png'
+import { toggleTheme } from '../../store/slices'
+import logoForDark from '../../assets/images/onair-logo.png'
 import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
 import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import styles from './Navigation.module.css'
 
 const Navigation = () => {
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
-    const { selectedLanguage} = useAppSelector((state) => state.languagesData)
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const { mode } = useAppSelector((state) => state.theme)
     const t = translations[selectedLanguage].navigation
-    const [theme, setTheme] = useState<boolean>(false)
-    const navigate = useNavigate()
 
     const scrollToTopPage = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    const toggleTheme = () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        currentTheme === 'dark' ? setTheme(true) : setTheme(false)
+    const toggle = () => {
+        dispatch(toggleTheme())
     };
 
     return (
@@ -36,7 +32,7 @@ const Navigation = () => {
                     scrollToTopPage()
                     navigate('/')
                 }}>
-                    <img src={theme ? logoForLight : logo} className={styles.logo} />
+                    <img src={mode === 'dark' ? logoForDark : logoForLight} className={styles.logo} />
                 </div>
 
                 <div className={styles.navMenu}>
@@ -48,25 +44,19 @@ const Navigation = () => {
 
                 <div className={styles.navButtonsDiv}>
                     <SelectLanguage />
-
-                    <button className={styles.themeBtn} onClick={toggleTheme}>
-                        <DarkModeIcon 
+                    <button className={styles.themeBtn} onClick={toggle}>
+                        <LightModeIcon
                             sx={{
-                                color: theme ? 'black' : 'white',
-                                backgroundColor: theme ? 'white' : '#E13C52', 
-                                fontSize: '24px', 
+                                color: mode === 'dark' ? 'white' : 'black',
+                                fontSize: '28px',
                                 borderRadius: '50%',
-                                padding: '4px'
-                            }}
-                        />
-                        <LightModeIcon 
-                            sx={{
-                                color: theme ? 'black' : 'white',
-                                backgroundColor: theme ? '#E13C52' : '#111111', 
-                                fontSize: '24px',
-                                borderRadius: '50%',
-                                padding: '4px'
-                            }}/>
+                                padding: '4px',
+                                transition: '.3s',
+                                '&:hover': {
+                                    color: '#ffffff',
+                                    backgroundColor: '#E13C52',
+                                }
+                            }} />
                     </button>
                 </div>
             </div>

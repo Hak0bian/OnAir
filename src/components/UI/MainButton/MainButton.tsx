@@ -3,7 +3,7 @@ import styles from './MainButton.module.css'
 
 const MainButton = ({text, onClick} : IMainButtonPropsType) => {
   return (
-    <button className={styles.mainBtn} onClick={onClick}>{text}</button>
+    <button type='submit' onClick={onClick} className={styles.mainBtn}>{text}</button>
   )
 }
 

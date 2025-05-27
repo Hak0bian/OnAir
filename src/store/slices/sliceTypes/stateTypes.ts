@@ -140,3 +140,7 @@ export interface IActorsReturnType {
     total_pages: number
     total_results: number
 }
+
+export type IThemeStateType = {
+    mode: 'light' | 'dark';
+}

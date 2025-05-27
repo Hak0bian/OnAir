@@ -12,7 +12,7 @@ import styles from './MoviesSlider.module.css';
 const MoviesSlider = ({ movies, title }: IMovieSliderPropsType) => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].slider
-    const filteredMovies = movies.filter((movie) => movie.poster_path);
+    const filteredMovies = movies.filter((movie) => movie?.poster_path);
 
     return (
         <section className={styles.slideSection}>
@@ -20,7 +20,7 @@ const MoviesSlider = ({ movies, title }: IMovieSliderPropsType) => {
                 {
                     selectedLanguage === 'en' 
                     ? <h2 className={styles.slideTitle}>{`${title} ${t.title}`}</h2>
-                    : <h2 className={styles.slideTitle}>{`${title}` === 'latest' ? `${t.title1}` : `${t.title2}`}</h2>
+                    : <h2 className={styles.slideTitle}>{`${title}` === 'Latest' ? `${t.title1}` : `${t.title2}`}</h2>
                 }
                 <NavLink to={`/Movies/${title}`} className={styles.seeAll}>{t.seeAll}</NavLink>
             </div>

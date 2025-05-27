@@ -1,6 +1,6 @@
 .langSelect{
     width: 100px;
-    height: 26px;
+    height: 22px;
     outline: none;
     padding: 0 4px;
     border: 1px solid var(--text-color-secondary);
@@ -8,4 +8,48 @@
     color: var(--text-color-primary);
     letter-spacing: .4px;
     border-radius: 20px;
+}
+
+.customSelect {
+    position: relative;
+    width: 20px;
+}
+
+.selected {
+    background: none;
+    border: none;
+    color: var(--text-color-primary);
+    cursor: pointer;
+}
+
+.languageList {
+    width: 120px;
+    position: absolute;
+    top: 50px;
+    padding: 8px;
+    background: var(--bg-color-options);
+    border-top: 2px solid var(--text-color-secondary);
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+
+    li{
+        font-weight: 300;
+        padding: 6px 0;
+        letter-spacing: .4px;
+        transition: .3s;
+    }
+
+    li:hover{
+        color: var(--text-color-secondary);
+    }
+}
+
+.show {
+    max-height: 100px; 
+    opacity: 1;
+    pointer-events: auto;
 }

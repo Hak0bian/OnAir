@@ -5,12 +5,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay, Pagination]);
+import darkProfile from '../../../assets/images/dark-profile.png'
+import lightProfile from '../../../assets/images/light-profile.png'
 import styles from './ActorDetails.module.css'
 
 const ActorDetails = () => {
     const { selectedActor, isLoading } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
+    const { mode } = useAppSelector((state) => state.theme)
+    const profileImg = mode === 'dark' ? darkProfile : lightProfile
     const t = translations[selectedLanguage].actors
+
     if (isLoading) return <h2 className='loading'>Loading...</h2>;
     if (!selectedActor) return <h3 className='notFound'>Actor not found...</h3>;
 
@@ -18,7 +23,7 @@ const ActorDetails = () => {
         <section className={styles.actorDetailsSec}>
             <div className={styles.actorDetailsDiv}>
                 <div className={styles.actorPosterDiv}>
-                    <img src={`https://image.tmdb.org/t/p/w500${selectedActor?.profile_path}`} />
+                    <img src={selectedActor?.profile_path ? `https://image.tmdb.org/t/p/w400${selectedActor?.profile_path}` : profileImg} />
                 </div>
                 <div>
                     <h2 className={styles.actorTitle}>{selectedActor?.name}</h2>
@@ -26,13 +31,14 @@ const ActorDetails = () => {
                     <p className={styles.knownAS}>
                         {selectedActor?.also_known_as?.map((names, ind) => (<span key={ind}> {names}, </span>))}
                     </p>
-                    <p className={styles.biography}>{selectedActor?.biography.slice(0, 3000)}</p>
+                    <p className={styles.biography}>{selectedActor?.biography}</p>
                 </div>
             </div>
 
             <div className={styles.knownForBox}>
                 <h3 className={styles.secondary}>{t.knownFor}</h3>
                 {
+
                     selectedActor?.known_for && selectedActor?.known_for?.length > 0
                         ? (<Swiper
                             spaceBetween={20}

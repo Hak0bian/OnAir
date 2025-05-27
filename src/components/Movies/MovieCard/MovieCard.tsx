@@ -9,7 +9,7 @@ const MovieCard = ({ movie }: { movie: IMoviesType }) => {
             <div className={styles.movieCard}>
                 <img src={`https://image.tmdb.org/t/p/w400${movie?.poster_path}`} className={styles.slideImg}/>
                 <div className={styles.titleDiv}>
-                    <h4>{movie?.title.length > 20 ? movie?.title.slice(0, 20) + "..." : movie?.title}</h4>
+                    <h4>{movie?.title.length > 20 ? movie?.title.slice(0, 15) + "..." : movie?.title}</h4>
                     <div className={styles.dateAndRate}>
                         <p className={styles.date}>{movie?.release_date}</p>
                         <p className={styles.rating}>

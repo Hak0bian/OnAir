@@ -4,8 +4,7 @@
 }
 
 .planTitle{
-    font-weight: 400;
-    text-transform: uppercase;
+    font-weight: normal;
     letter-spacing: .4px;
     padding-bottom: 20px;
 }
@@ -23,7 +22,7 @@
     padding: 28px;
     background-color: var(--bg-color);
     border-radius: 12px;
-    box-shadow: 0 0 6px #ff489d;
+    box-shadow: 0 0 4px var(--text-color-secondary);
 }
 
 .planTitleDiv{
@@ -37,7 +36,7 @@
 
     .plan{
         font-weight: 300;
-        color: #ff489d;
+        color: var(--text-color-secondary);
     }
 }
 
@@ -53,9 +52,13 @@
 }
 
 .planList li::marker{
-    color: #ff489d;
+    color: var(--text-color-secondary);
 }
 
 .planBtnDiv{
     text-align: center;
+}
+
+.actualPlan{
+    border-top: 2px solid var(--text-color-secondary);
 }

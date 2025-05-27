@@ -1,9 +1,11 @@
 import axios from "axios";
 import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType, IPropsTypeToo } from "../types";
 import { IActorsReturnType, IGenresReturnType, IMovieCreditsType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
+
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCEPT = import.meta.env.VITE_ACCEPT;
 const AUTHORIZATION = import.meta.env.VITE_AUTHORIZATION;
+const today = new Date().toISOString().split('T')[0];
 
 const instance = axios.create({
     baseURL: BASE_URL,
@@ -15,7 +17,7 @@ const instance = axios.create({
 
 export const API = {
     getLatestMovies({page, selectedLanguage}: IPropsType) {
-        return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&sort_by=release_date.desc&language=${selectedLanguage}&page=${page}`)
+        return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&release_date.lte=${today}&language=${selectedLanguage}&page=${page}`)
     },
     getPopularMovies({page, selectedLanguage}: IPropsType) {
         return instance.get<IMoviesReturnType>(`/movie/popular?include_adult=false&language=${selectedLanguage}&page=${page}`)

@@ -1,0 +1,69 @@
+.swiper-pagination-movies, .swiper-pagination-actors,
+.swiper-pagination-cast, .swiper-pagination-knownFor {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiper-pagination-movies .swiper-pagination-bullet,
+.swiper-pagination-actors .swiper-pagination-bullet,
+.swiper-pagination-cast .swiper-pagination-bullet,
+.swiper-pagination-knownFor .swiper-pagination-bullet {
+    margin: 0 4px;
+    background: var(--text-color-gray);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.swiper-pagination-movies .swiper-pagination-bullet-active,
+.swiper-pagination-actors .swiper-pagination-bullet-active,
+.swiper-pagination-cast .swiper-pagination-bullet-active,
+.swiper-pagination-knownFor .swiper-pagination-bullet-active {
+    background: #E13C52; 
+    opacity: 1;
+}
+
+/* ********************************************************** */
+
+.MuiOutlinedInput-root {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--text-color-primary) !important;
+    background-color: var(--bg-color-options);
+    transition: 0.3s ease;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline,
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--text-color-secondary) !important;
+}
+
+.MuiInputLabel-root {
+    color: #777 !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+    color: var(--text-color-secondary) !important;
+}
+
+.MuiList-root {
+    padding: 8px 0;
+    border: 1px solid var(--text-color-gray);
+    background-color: var(--bg-color-options);
+}
+
+.MuiMenuItem-root {
+    font-size: 14px !important;
+    color: var(--text-color-primary) !important;
+    transition: .3s;
+}
+
+.MuiMenuItem-root:hover {
+    color: var(--text-color-secondary) !important;
+}
+
+.MuiSelect-iconOutlined {
+    color: var(--text-color-secondary) !important;
+}

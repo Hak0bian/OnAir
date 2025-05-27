@@ -29,3 +29,27 @@ export interface IRatingPropsType {
     value: number;
     type: string;
 }
+
+export interface IRegisterFormPropsType {
+    openSignUpForm: boolean; 
+    handleCloseSignUp: () => void;
+    handleOpenSignUp: () => void;
+}
+
+export interface ISignInFormPropsType {
+    openSignIn: boolean;
+    handleCloseSignIn: () => void;
+    handleOpenSignUp: () => void;
+    handleOpenSignIn: () => void;
+}
+
+export interface IForgotPassFormPropsType {
+    openForgot: boolean;
+    handleCloseForgot: () => void;
+    handleOpenSignIn: () => void;
+}
+
+export interface ISelectPlanFormPromsType {
+    openSelectPlan: boolean;
+    handleCloseSelectPlan: () => void;
+}

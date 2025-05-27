@@ -37,7 +37,7 @@ body {
 }
 
 .container{
-    max-width: 1240px;
+    max-width: 1280px;
     min-height: 100vh;
     margin: auto;
     padding-bottom: 60px;
@@ -55,7 +55,7 @@ body {
 :root {
     --text-color-main: #ffffff;
     --text-color-primary: #ffffff;
-    --text-color-secondary: #E13C52;
+    --text-color-secondary: #FF5690;
     --text-color-gray: #b7b7b7;
     --bg-color: #111111;
     --bg-color-main: #111111;
@@ -67,39 +67,11 @@ body {
 
 [data-theme="light"] {
     --text-color-primary: #000000;
-    --text-color-secondary: #E13C52;
+    --text-color-secondary: #FF5690;
     --text-color-gray: #666666;
     --bg-color: #ffffff;
     --bg-color-secondary: #ffffff;
     --bg-color-options: #e5e5e5;
     --buttons-color: #E13C52;
     --background-image: none;
-}
-
-
-/* ***************************************** */
-
-.swiper-pagination-movies, .swiper-pagination-actors,
-.swiper-pagination-cast, .swiper-pagination-knownFor {
-    position: relative;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.swiper-pagination-movies .swiper-pagination-bullet,
-.swiper-pagination-actors .swiper-pagination-bullet,
-.swiper-pagination-cast .swiper-pagination-bullet,
-.swiper-pagination-knownFor .swiper-pagination-bullet {
-    margin: 0 4px;
-    background: var(--text-color-gray);
-    opacity: 0.6;
-    transition: 0.3s;
-}
-
-.swiper-pagination-movies .swiper-pagination-bullet-active,
-.swiper-pagination-actors .swiper-pagination-bullet-active,
-.swiper-pagination-cast .swiper-pagination-bullet-active,
-.swiper-pagination-knownFor .swiper-pagination-bullet-active {
-    background: #E13C52; 
-    opacity: 1;
 }

@@ -40,15 +40,11 @@
 .navButtonsDiv{
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .themeBtn{
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    border: none;
     background: none;
     cursor: pointer;
-    border: 1px solid var(--text-color-secondary);
 }

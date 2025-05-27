@@ -7,6 +7,7 @@ import searchMovieSlice from "./slices/SearchMovieSlice/searchMovieSlice"
 import languagesSlice from "./slices/LanguagesSlice/languagesSlice"
 import actorsSlice from "./slices/ActorsPageSlice/actorsSlice"
 import searchActorSlice from "./slices/SearchActorSlice/searchActorSlice"
+import themeSlice from "./slices/ThemeSlice/themeSlice"
 
 export const store = configureStore({
     reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
         searchedMoviesData: searchMovieSlice,
         languagesData: languagesSlice,
         actorsData: actorsSlice,
-        searchedActorsData: searchActorSlice
+        searchedActorsData: searchActorSlice,
+        theme: themeSlice
     }
 })
 

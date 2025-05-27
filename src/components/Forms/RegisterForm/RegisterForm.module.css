@@ -1,0 +1,93 @@
+.registerFormDiv{
+    padding: 40px;
+    background-color: var(--bg-color);
+    border-top: 3px solid var(--text-color-secondary);
+    letter-spacing: .4px;
+}
+
+.logoDiv{
+    text-align: center;
+    padding-bottom: 32px;
+    
+    .logo{
+        max-width: 100px;
+    }
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--text-color-gray);
+}
+
+.inp{
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    color: var(--text-color-primary);
+    background-color: var(--bg-color-options);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 0 12px;
+    letter-spacing: .4px;
+    transition: box-shadow 0.3s ease;
+}
+
+.inp:focus,
+.inp:hover{
+    box-shadow: 0 0 0 1px var(--text-color-secondary);
+}
+
+.agreeLabel{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    input{
+        width: 16px;
+        height: 16px;
+    }
+
+    .agreeBtn{
+        border: none;
+        background: none;
+        font-size: 16px;
+        color: var(--text-color-secondary);
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .agreeBtn:hover{
+        color: var(--text-color-primary);
+    }
+}
+
+.btnLabel button{
+    width: 100%;
+}
+
+.signInLabel{
+    text-align: center;
+
+    .signIn{
+        border: none;
+        background: none;
+        font-size: 16px;
+        padding-left: 4px;
+        color: var(--text-color-secondary);
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .signIn:hover{
+        color: var(--text-color-primary);
+    }
+}
+
+.error{
+    font-size: 12px;
+    padding-top: 4px;
+    color: var(--text-color-secondary);
+}
