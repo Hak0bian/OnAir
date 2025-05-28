@@ -7,6 +7,7 @@ import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
 import LightModeIcon from '@mui/icons-material/LightMode';
 import styles from './Navigation.module.css'
+import MorePages from '../MorePages/MorePages'
 
 const Navigation = () => {
     const dispatch = useAppDispatch()
@@ -38,8 +39,10 @@ const Navigation = () => {
                 <div className={styles.navMenu}>
                     <NavLink to={`/`} onClick={scrollToTopPage}>{t.home}</NavLink>
                     <NavLink to={`/Movies/page/${moviesPage}`} onClick={scrollToTopPage}>{t.movies}</NavLink>
+                    <NavLink to={`TV`}>{t.tv}</NavLink>
                     <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
                     <NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink>
+                    <MorePages/>
                 </div>
 
                 <div className={styles.navButtonsDiv}>
@@ -48,13 +51,10 @@ const Navigation = () => {
                         <LightModeIcon
                             sx={{
                                 color: mode === 'dark' ? 'white' : 'black',
-                                fontSize: '28px',
-                                borderRadius: '50%',
-                                padding: '4px',
+                                fontSize: '20px',
                                 transition: '.3s',
                                 '&:hover': {
-                                    color: '#ffffff',
-                                    backgroundColor: '#E13C52',
+                                    color: 'var(--buttons-color)',
                                 }
                             }} />
                     </button>

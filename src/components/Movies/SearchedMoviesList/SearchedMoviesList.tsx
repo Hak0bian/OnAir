@@ -2,12 +2,12 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { clearResults } from "../../../store/slices";
-import { ISearchedMoviesPropsType } from "../../componentsTypes/propsTypes";
-import Rating from "../../UI/Rating/Rating";
+import { ISearchPropsType } from "../../componentsTypes/propsTypes";
+import GradeIcon from '@mui/icons-material/Grade';
 import styles from './SearchedMoviesList.module.css'
 
 
-const SearchedMoviesList = ({ inputValue, setInputValue }: ISearchedMoviesPropsType) => {
+const SearchedMoviesList = ({ inputValue, setInputValue }: ISearchPropsType) => {
     const dispatch = useAppDispatch();
     const { searchedMovies } = useAppSelector((state) => state.searchedMoviesData);
     const [notFound, setNotFound] = useState<boolean>(false)
@@ -37,8 +37,11 @@ const SearchedMoviesList = ({ inputValue, setInputValue }: ISearchedMoviesPropsT
                                 <img src={`https://image.tmdb.org/t/p/w400${movie?.backdrop_path}`} />
                                 <div>
                                     <p>{movie?.title}</p>
+                                    <p className={styles.rating}>
+                                        <GradeIcon sx={{ fontSize: '16px', color: '#E13C52' }} />
+                                        {movie?.vote_average.toFixed(1)}
+                                    </p>
                                     <span className={styles.date}>{movie?.release_date}</span>
-                                    <Rating value={movie?.vote_average} type="vote"/>
                                 </div>
                             </li>
                             <li>

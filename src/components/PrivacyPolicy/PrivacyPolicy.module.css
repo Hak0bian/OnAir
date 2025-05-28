@@ -1,0 +1,35 @@
+.privacyContainer{
+    max-width: 1280px;
+    margin: auto;
+    padding: 80px 0;
+    letter-spacing: .4px;
+    line-height: 1.5;
+    color: var(--text-color-gray);
+}
+
+.privacyDiv{
+    
+    h2{
+        color: var(--text-color-primary);
+        padding: 20px 0 8px;
+    }
+
+    ul{
+        padding-left: 20px;
+    }
+
+    li{
+        list-style: disc;
+        width: 80%;
+    }
+    
+    li::marker{
+        font-size: 18px;
+        color: var(--text-color-secondary);
+    }
+}
+
+.mainText{
+    font-size: 18px;
+    color: var(--text-color-primary);
+}

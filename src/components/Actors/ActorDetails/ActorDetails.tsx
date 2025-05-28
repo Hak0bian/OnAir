@@ -1,10 +1,11 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
-import { MovieCard, Rating } from '../../../components';
+import { MovieCard } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay, Pagination]);
+import GradeIcon from '@mui/icons-material/Grade';
 import darkProfile from '../../../assets/images/dark-profile.png'
 import lightProfile from '../../../assets/images/light-profile.png'
 import styles from './ActorDetails.module.css'
@@ -27,7 +28,14 @@ const ActorDetails = () => {
                 </div>
                 <div>
                     <h2 className={styles.actorTitle}>{selectedActor?.name}</h2>
-                    <Rating value={selectedActor?.popularity} type="popularity" />
+                    {
+                        selectedActor.known_for_department && 
+                        <p className={styles.department}>{selectedActor.known_for_department}</p>
+                    }
+                    <p className={styles.rating}>
+                        <GradeIcon sx={{ fontSize: '18px', color: '#E13C52' }} />
+                        {selectedActor?.popularity.toFixed(1)}
+                    </p>
                     <p className={styles.knownAS}>
                         {selectedActor?.also_known_as?.map((names, ind) => (<span key={ind}> {names}, </span>))}
                     </p>

@@ -1,6 +1,5 @@
 import Layout from "./Layout/Layout";
 import Header from "./Header/Header";
-import Rating from "./UI/Rating/Rating";
 import Paginationn from "./UI/Pagination/Pagination";
 import MainButton from "./UI/MainButton/MainButton"
 import LibraryHeader from "./LibraryHeader/LibraryHeader";
@@ -25,7 +24,7 @@ import ActorsPageSlider from "./Actors/ActorsPageSlider/ActorsPageSlider";
 import SearchActor from "./Actors/SearchActor/SearchActor";
 import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 
-export { Layout, Header, MoviesSlider, MainButton, LibraryButton, Rating, MoviesPageSlider, MovieCard, MovieDetails, 
+export { Layout, Header, MoviesSlider, MainButton, LibraryButton, MoviesPageSlider, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
     ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features
 }

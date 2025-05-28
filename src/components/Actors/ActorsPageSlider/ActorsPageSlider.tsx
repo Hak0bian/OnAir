@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { MainButton, Rating } from '../..'
+import { MainButton } from '../..'
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 SwiperCore.use([Autoplay]);
+import GradeIcon from '@mui/icons-material/Grade';
 import styles from './ActorsPageSlider.module.css'
 
 
@@ -28,8 +29,11 @@ const ActorsPageSlider = ({ actors }: { actors: IActorType[] }) => {
                 <img src={`https://image.tmdb.org/t/p/w400${actor?.profile_path}`} />
                 <div>
                   <h2>{actor?.name}</h2>
-                  <Rating value={actor?.popularity} type="popularity" />
-                  <p>
+                  <p className={styles.rating}>
+                    <GradeIcon sx={{ fontSize: '18px', color: '#E13C52' }} />
+                    {actor?.popularity.toFixed(1)}
+                  </p>
+                  <p className={styles.biography}>
                     {
                       actor.biography
                         ? actor.biography.length > 500

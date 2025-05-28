@@ -67,3 +67,34 @@
 .MuiSelect-iconOutlined {
     color: var(--text-color-secondary) !important;
 }
+
+
+
+.sectionHeader{
+    height: 280px;
+    background-image: url(.././assets/images/section-bg.jpg);
+    background-size: cover;
+    background-position: 0 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--text-color-secondary);
+}
+
+.sectionTitle{
+    font-size: 48px;
+    padding-left: 100px;
+    font-weight: normal;
+    color: var(--text-color-main);
+}
+
+.featuresSec{
+    max-width: 1280px;
+    margin: auto;
+    padding-bottom: 80px;
+
+    h2{
+        font-weight: normal;
+        letter-spacing: .4px;
+    }
+}

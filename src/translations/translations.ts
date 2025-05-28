@@ -7,8 +7,16 @@ export const translations: any = {
         navigation: {
             home: "Home",
             movies: "Movies",
+            tv: "TV Series",
             actors: "Actors",
-            library: "Library"
+            library: "Library",
+            morePages: {
+                more: "More",
+                help: "Help Center",
+                features: "Our Features",
+                contact: "Contact Us",
+                privacy: "Privacy Policy"
+            }
         },
 
         header: {
@@ -176,6 +184,90 @@ export const translations: any = {
             emptySubtitle: "Add your favorite movies to get started!"
         },
 
+        helpCenter: {
+            summary1: "Why is a video is not loading?",
+            details1: "If the video is not loading, please check if you have a stable internet connection. If your connection is fine, the video stream might be temporarily unavailable or a browser extension might be interfering. Try refreshing the page or using a different browser.",
+
+            summary2: "Why isn't there a HD version of this video?",
+            details2: "The HD version may not be available for several reasons. It’s possible the uploader didn’t provide a high-resolution file, or the video is still being processed. In some cases, your current internet speed or device settings might automatically limit the playback quality.",
+
+            summary3: "Why is the sound distorted?",
+            details3: "Sound distortion can happen due to several reasons. The original audio might have been recorded with poor equipment or at high volume. It could also be an issue with your speakers, headphones, or internet connection causing playback glitches.",
+
+            summary4: "Why is the Video stuttering or randomly stopping?",
+            details4: "Video stuttering or buffering usually happens because of a slow or unstable internet connection. It can also occur if your device is running too many apps at once, or if the video server is experiencing heavy traffic. Lowering the video quality may help improve playback.",
+
+            summary5: "What should I do if I forgot my password?",
+            details5: "If you forgot your password, go to the Sign In page and click on “Forgot password? We’ll send you a password reset link via email. If you don’t receive the email, please check your Spam or Junk folder.",
+
+            summary6: "What browsers are supported?",
+            details6: "Our platform supports all major modern browsers, including Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari. For the best experience, we recommend using the latest version of your browser.",
+
+            summary7: "How do you handle my privacy?",
+            details7: "We take your privacy seriously. Your personal information is securely stored and used only in accordance with our Privacy Policy. We never share your data with third parties without your consent. All data transmissions are encrypted to ensure your security.",
+
+            summary8: "How can I contact you?",
+            details8: "You can contact us through our support page, live chat, or by emailing us at support@example.com. You can also send us a message via the Contacts section of our website. We aim to respond to all inquiries within 24 hours.",
+
+            summary9: "Why can I only watch trailers and not full movies?",
+            details9: "Currently, full versions of some movies are not available on our platform due to licensing restrictions. We provide trailers to help you decide whether you'd like to watch a particular movie. Full versions may become available in the future.",
+
+            summary10: "Can I download the movie?",
+            details10: "Generally, movies on our site are available for streaming only, and downloading is restricted due to copyright laws. If a movie is available for download, it will be indicated in a special section or during registration.",
+
+            summary11: "How can I subscribe to a Premium plan?",
+            details11: "From the main menu or the “Pricing” page, choose the Premium plan. Select your payment method (Visa, MasterCard, or other) and confirm. Once payment is completed, your account will be upgraded to Premium.",
+
+            summary12: "Can I change my subscription plan later?",
+            details12: "Yes, you can change your subscription plan anytime from your account settings. The changes will take effect starting from your next billing cycle."
+        },
+
+        privacy: {
+            mainText: `Welcome to OnAir ("we", "our", "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our streaming platform.`,
+
+            title1: "Information We Collect",
+            item1_1: "Personal Information: When you register or subscribe, we collect personal data such as your name, email address, payment information, and account credentials.",
+            item1_2: "Usage Data: We automatically collect information about how you interact with our site, including your IP address, browser type, device information, pages viewed, and video playback activity.",
+            item1_3: "Cookies and Tracking Technologies: We use cookies and similar technologies to improve your experience, personalize content, and analyze traffic.",
+
+            title2: "How We Use Your Information",
+            item2_1: "To provide and maintain our streaming services.",
+            item2_2: "To process your payments and manage your subscription.",
+            item2_3: "To communicate with you, including sending account updates, promotions, and support messages.",
+            item2_4: "To personalize content and recommend videos based on your viewing history.",
+            item2_5: "To monitor and analyze site usage and improve our services.",
+            item2_6: "To comply with legal obligations and prevent fraudulent activity.",
+
+            title3: "Sharing Your Information",
+            item3_1: "We do not sell your personal data to third parties.",
+            item3_2: "We may share your data with trusted service providers (e.g., payment processors, hosting providers) strictly to operate our service.",
+            item3_3: "We may disclose information if required by law or to protect our rights.",
+
+            title4: "Your Choices and Rights",
+            item4_1: "Account Access: You can update or delete your account information anytime via your profile settings.",
+            item4_2: "Marketing Preferences: You can opt out of promotional emails by following the unsubscribe instructions.",
+            item4_3: "Cookies: You can manage cookie preferences via your browser settings, though some features may be limited.",
+            item4_4: "Data Requests: You have the right to request access to, correction, or deletion of your personal data.",
+
+            title5: "Data Security",
+            item5_1: "We implement industry-standard security measures (encryption, firewalls) to protect your information.",
+            item5_2: "However, no method of internet transmission is 100% secure, and we cannot guarantee absolute security.",
+
+            title6: "Children’s Privacy",
+            item6_1: "Our service is not intended for children under 13 years old.",
+            item6_2: "We do not knowingly collect personal information from children under 13.",
+
+            title7: "Changes to This Privacy Policy",
+            item7_1: "We may update this policy occasionally.",
+            item7_2: "Changes will be posted on this page with the updated date.",
+            item7_3: "We encourage you to review this policy periodically.",
+
+            title8: "Contact Us",
+            item8_1: "If you have questions or concerns about this Privacy Policy, please contact us at:",
+            item8_2: "Email: support@example.com",
+            item8_3: "Contact form: Available on our website’s Contact page."
+        },
+
         footer: {
             line1: "OnAir is always waiting for you. Come back to discover new genres and stories!",
             line2: "© 2025 | All Rights Reserved | Developed by Garik Hakobyan",
@@ -194,8 +286,16 @@ export const translations: any = {
         navigation: {
             home: "Главная ",
             movies: "Фильмы",
+            tv: "Сериалы",
             actors: "Актеры",
-            library: "Библиотека"
+            library: "Библиотека",
+            morePages: {
+                more: "Еще",
+                help: "Центр помощи",
+                features: "Наши возможности",
+                contact: "Связаться с нами",
+                privacy: "Конфиденциальность"
+            },
         },
 
         header: {
@@ -362,6 +462,90 @@ export const translations: any = {
             clearBtn: "Очистить все",
             emptyTitle: "Ваша библиотека пока пуста.",
             emptySubtitle: "Добавьте любимые фильмы, чтобы начать!"
+        },
+
+        helpCenter: {
+            summary1: "Почему видео не загружается?",
+            details1: "Если видео не загружается, проверьте, есть ли у вас стабильное интернет-соединение. Если соединение в порядке, возможно, видеопоток временно недоступен или расширение браузера мешает воспроизведению. Попробуйте обновить страницу или использовать другой браузер.",
+
+            summary2: "Почему нет версии видео в HD?",
+            details2: "Версия в HD может быть недоступна по нескольким причинам. Возможно, загрузчик не предоставил файл высокого разрешения, или видео ещё обрабатывается. В некоторых случаях ваша текущая скорость интернета или настройки устройства могут автоматически ограничивать качество воспроизведения.",
+
+            summary3: "Почему звук искажен?",
+            details3: "Искажение звука может происходить по нескольким причинам. Исходный аудиофайл мог быть записан на плохом оборудовании или с высокой громкостью. Также это может быть проблема с вашими колонками, наушниками или нестабильным интернет-соединением, вызывающим сбои воспроизведения.",
+
+            summary4: "Почему видео дергается или случайно останавливается?",
+            details4: "Дергание или буферизация видео обычно связаны с медленным или нестабильным интернет-соединением. Это может также происходить, если на устройстве запущено слишком много приложений или сервер видео испытывает высокую нагрузку. Понижение качества видео может улучшить воспроизведение.",
+
+            summary5: "Что делать, если я забыл пароль?",
+            details5: "Если вы забыли пароль, перейдите на страницу входа и нажмите «Забыли пароль?». Мы отправим вам ссылку для сброса пароля по электронной почте. Если письмо не приходит, проверьте папки «Спам» или «Нежелательная почта».",
+
+            summary6: "Какие браузеры поддерживаются?",
+            details6: "Наша платформа поддерживает все основные современные браузеры, включая Google Chrome, Mozilla Firefox, Microsoft Edge и Safari. Для лучшего опыта рекомендуем использовать последнюю версию браузера.",
+
+            summary7: "Как вы защищаете мою конфиденциальность?",
+            details7: "Мы серьезно относимся к вашей конфиденциальности. Ваша личная информация надежно хранится и используется только в соответствии с нашей Политикой конфиденциальности. Мы никогда не передаем ваши данные третьим лицам без вашего согласия. Все передачи данных шифруются для обеспечения безопасности.",
+
+            summary8: "Как с вами связаться?",
+            details8: "Вы можете связаться с нами через страницу поддержки, в онлайн-чате или написав на support@example.com. Также вы можете отправить сообщение через раздел Контакты на нашем сайте. Мы стремимся ответить на все запросы в течение 24 часов.",
+
+            summary9: "Почему я могу смотреть только трейлеры, а не полные фильмы?",
+            details9: "В настоящее время полные версии некоторых фильмов недоступны на нашей платформе из-за лицензионных ограничений. Мы предоставляем трейлеры, чтобы помочь вам решить, хотите ли вы посмотреть фильм. Полные версии могут появиться в будущем.",
+
+            summary10: "Могу ли я скачать фильм?",
+            details10: "Как правило, фильмы на нашем сайте доступны только для просмотра в потоковом режиме, скачивание ограничено из-за авторских прав. Если фильм доступен для скачивания, об этом будет указано в специальном разделе или при регистрации.",
+
+            summary11: "Как подписаться на план Premium?",
+            details11: "В главном меню или на странице «Цены» выберите план Premium. Выберите способ оплаты (Visa, MasterCard или другой) и подтвердите. После успешной оплаты ваш аккаунт будет обновлен до Premium.",
+
+            summary12: "Могу ли я изменить свой тарифный план позже?",
+            details12: "Да, вы можете изменить тарифный план в любое время в настройках аккаунта. Изменения вступят в силу с начала следующего расчетного периода."
+        },
+
+        privacy: {
+            mainText: `Добро пожаловать на OnAir ("мы", "наш", "нас"). Мы обязуемся защищать вашу конфиденциальность и обеспечивать положительный опыт использования нашего веб-сайта. В этой Политике конфиденциальности объясняется, как мы собираем, используем, раскрываем и защищаем вашу информацию при посещении нашей платформы потокового вещания.`,
+
+            title1: "Информация, которую мы собираем",
+            item1_1: "Личные данные: При регистрации или подписке мы собираем личную информацию, такую как ваше имя, адрес электронной почты, платежные данные и учетные данные.",
+            item1_2: "Данные об использовании: Мы автоматически собираем информацию о том, как вы взаимодействуете с нашим сайтом, включая ваш IP-адрес, тип браузера, информацию об устройстве, просмотренные страницы и активность воспроизведения видео.",
+            item1_3: "Файлы cookie и технологии отслеживания: Мы используем файлы cookie и аналогичные технологии для улучшения вашего опыта, персонализации контента и анализа трафика.",
+
+            title2: "Как мы используем вашу информацию",
+            item2_1: "Для предоставления и поддержки наших услуг потокового вещания.",
+            item2_2: "Для обработки ваших платежей и управления подпиской.",
+            item2_3: "Для связи с вами, включая отправку обновлений аккаунта, рекламных акций и сообщений службы поддержки.",
+            item2_4: "Для персонализации контента и рекомендаций видео на основе вашей истории просмотров.",
+            item2_5: "Для мониторинга и анализа использования сайта и улучшения наших услуг.",
+            item2_6: "Для соблюдения правовых обязательств и предотвращения мошенничества.",
+
+            title3: "Передача вашей информации",
+            item3_1: "Мы не продаем ваши личные данные третьим лицам.",
+            item3_2: "Мы можем делиться вашими данными с надежными поставщиками услуг (например, процессорами платежей, хостинг-провайдерами) строго для работы нашего сервиса.",
+            item3_3: "Мы можем раскрывать информацию, если это требуется по закону или для защиты наших прав.",
+
+            title4: "Ваши выборы и права",
+            item4_1: "Доступ к аккаунту: Вы можете в любое время обновить или удалить информацию своего аккаунта через настройки профиля.",
+            item4_2: "Предпочтения маркетинга: Вы можете отказаться от рекламных писем, следуя инструкциям по отписке.",
+            item4_3: "Файлы cookie: Вы можете управлять файлами cookie через настройки браузера, хотя некоторые функции могут быть ограничены.",
+            item4_4: "Запросы данных: Вы имеете право запрашивать доступ к своим персональным данным, их исправление или удаление.",
+
+            title5: "Безопасность данных",
+            item5_1: "Мы применяем стандартные меры безопасности (шифрование, файрволы) для защиты вашей информации.",
+            item5_2: "Однако никакой метод передачи данных в интернете не является на 100% безопасным, и мы не можем гарантировать абсолютную безопасность.",
+
+            title6: "Конфиденциальность детей",
+            item6_1: "Наш сервис не предназначен для детей младше 13 лет.",
+            item6_2: "Мы сознательно не собираем личную информацию от детей младше 13 лет.",
+
+            title7: "Изменения в Политике конфиденциальности",
+            item7_1: "Мы можем время от времени обновлять эту политику.",
+            item7_2: "Изменения будут опубликованы на этой странице с обновленной датой.",
+            item7_3: "Мы рекомендуем периодически просматривать эту политику.",
+
+            title8: "Свяжитесь с нами",
+            item8_1: "Если у вас есть вопросы или замечания по этой Политике конфиденциальности, пожалуйста, свяжитесь с нами:",
+            item8_2: "Электронная почта: support@example.com",
+            item8_3: "Форма обратной связи: доступна на странице Контакты нашего сайта."
         },
 
         footer: {

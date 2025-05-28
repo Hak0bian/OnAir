@@ -10,7 +10,6 @@ const Features = () => {
     return (
         <section>
             <div className={styles.featuresContainer}>
-                <h2 className={styles.featuresTitle}>{t.featureTitle}</h2>
                 <p className={styles.featuresText}>{t.featureText}</p>
 
                 <div className={styles.svgsDiv}>

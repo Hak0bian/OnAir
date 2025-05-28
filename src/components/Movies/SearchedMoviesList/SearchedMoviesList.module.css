@@ -58,6 +58,14 @@
     border: 1px solid var(--text-color-gray);
 }
 
+.rating{
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+    padding-top: 2px;
+    color: var(--text-color-primary);
+}
+
 .date{
     font-size: 12px;
     color: var(--text-color-gray);

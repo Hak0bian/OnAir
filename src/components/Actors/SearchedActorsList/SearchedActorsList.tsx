@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { clearActorsResults } from "../../../store/slices";
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
-import Rating from "../../UI/Rating/Rating";
+import GradeIcon from '@mui/icons-material/Grade';
 import styles from './SearchedActorsList.module.css'
 
 
@@ -37,8 +37,11 @@ const SearchedActorsList = ({ inputValue, setInputValue }: ISearchPropsType) => 
                                 <img src={`https://image.tmdb.org/t/p/w400${actor?.profile_path}`} />
                                 <div>
                                     <p>{actor?.name}</p>
+                                    <p className={styles.rating}>
+                                        <GradeIcon sx={{ fontSize: '16px', color: '#E13C52' }} />
+                                        {actor?.popularity.toFixed(1)}
+                                    </p>
                                     <p className={styles.department}>{actor?.known_for_department}</p>
-                                    <Rating value={actor?.popularity} type="popularity"/>
                                 </div>
                             </li>
                             <li>

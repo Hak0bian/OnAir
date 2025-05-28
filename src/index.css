@@ -33,7 +33,7 @@ body {
 }
 
 .active {
-    background-color: var(--buttons-color);
+    color: var(--text-color-secondary);
 }
 
 .container{

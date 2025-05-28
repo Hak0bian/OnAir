@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
-import { LibraryButton, MovieCastSlider, MovieTable, Rating, Trailer } from '../..'
+import { LibraryButton, MovieCastSlider, MovieTable, Trailer } from '../..'
 import { translations } from '../../../translations/translations';
+import GradeIcon from '@mui/icons-material/Grade';
 import styles from './MovieDetails.module.css'
 
 const MovieDetails = () => {
@@ -21,7 +22,14 @@ const MovieDetails = () => {
                 </div>
                 <div>
                     <h2 className={styles.detailsTitle}>{selectedMovie?.title}</h2>
-                    <Rating value={selectedMovie?.vote_average} type="vote"/>
+                    {
+                        selectedMovie.genres && selectedMovie.genres.length > 0 && 
+                        <p className={styles.genre}>{selectedMovie?.genres?.map(g => g?.name).join(', ')}</p>
+                    }
+                    <p className={styles.rating}>
+                        <GradeIcon sx={{fontSize: '18px', color: '#E13C52'}}/>
+                        {selectedMovie?.vote_average.toFixed(1)}
+                    </p>
                     <MovieTable selectedMovie={selectedMovie} />
                     <h3 className={styles.secondary}>{t.overview}</h3>
                     <p className={styles.about}>{selectedMovie?.overview}</p>

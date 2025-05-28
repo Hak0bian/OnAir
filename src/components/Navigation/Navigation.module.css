@@ -22,20 +22,22 @@
 }
 
 .logo{
-    max-width: 100px;
+    max-width: 90px;
 }
 
 .navMenu{
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 32px;
+}
     
-    a{
-        padding: 4px 16px;
-        border-radius: 20px;
-        font-size: 18px;
+.navMenu a{
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-secondary);
     }
 }
-
 
 .navButtonsDiv{
     display: flex;

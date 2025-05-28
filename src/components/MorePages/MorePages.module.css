@@ -1,31 +1,22 @@
-.langSelect{
-    width: 100px;
-    height: 22px;
-    outline: none;
-    padding: 0 4px;
-    border: 1px solid var(--text-color-secondary);
-    background-color: var(--bg-color);
-    color: var(--text-color-primary);
-    letter-spacing: .4px;
-    border-radius: 20px;
-}
 
-.customSelect {
-    position: relative;
-    width: 20px;
-}
-
-.selected {
+.moreBtn{
+    all: unset;
+    font-size: 16px;
     background: none;
     border: none;
     color: var(--text-color-primary);
-    cursor: pointer;
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-secondary);
+    }
 }
 
-.languageList {
-    width: 100px;
+
+.morePagesList {
+    width: 180px;
     position: absolute;
-    top: 44px;
+    top: 64px;
     padding: 8px;
     background: var(--bg-color-options);
     border-top: 2px solid var(--text-color-secondary);
@@ -39,18 +30,23 @@
     li{
         font-size: 14px;
         font-weight: 300;
-        padding: 6px 0;
         letter-spacing: .4px;
         transition: .3s;
     }
-
+    
     li:hover{
         color: var(--text-color-secondary);
+    }
+    
+    a{
+        width: 100%;
+        padding: 6px 0;
+        display: inline-block;
     }
 }
 
 .show {
-    max-height: 100px; 
+    max-height: 500px; 
     opacity: 1;
     pointer-events: auto;
 }

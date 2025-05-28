@@ -6,5 +6,9 @@ import AboutMoviePage from "./AboutMoviePage/AboutMoviePage";
 import ActorsPage from "./ActorsPage/ActorsPage";
 import AboutActorPage from "./AboutActorPage/AboutActorPage";
 import SeeAllCastPage from "./SeeAllCastPage/SeeAllCastPage";
+import HelpCenterPage from "./HelpCenterPage/HelpCenterPage";
+import PrivacyPolicyPage from "./PrivacyPolicyPage/PrivacyPolicyPage";
+import FeaturesPage from "./FeaturesPage/FeaturesPage";
 
-export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, SeeAllCastPage }
+export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
+    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage }
