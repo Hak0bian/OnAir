@@ -4,13 +4,14 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { IRegisterFormPropsType } from '../../componentsTypes/propsTypes';
 import { translations } from '../../../translations/translations';
+import { NavLink } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
 import MainButton from '../../UI/MainButton/MainButton'
-import validation from '../validation';
 import styles from './RegisterForm.module.css'
 import SignInForm from '../SignInForm/SignInForm';
+import registerValidation from '../validations/registerValidation';
 
 
 const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: IRegisterFormPropsType) => {
@@ -25,6 +26,12 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
         handleCloseSignUp()
         handleOpenSignIn()
     }
+
+    const handleSubmit = (_: any, { resetForm }: { resetForm: () => void }) => {
+        alert("You have successfully registered.");
+        resetForm();
+        handleCloseSignUp()
+    };
 
     return (
         <div>
@@ -50,8 +57,8 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
                                 pass: "",
                                 agree: false
                             }}
-                            onSubmit = {() => handleCloseSignUp()}
-                            validationSchema = {validation(selectedLanguage)}
+                            onSubmit = {handleSubmit}
+                            validationSchema = {registerValidation(selectedLanguage)}
                         >
                             <Form className={styles.registerForm}>
                                 <label>
@@ -73,7 +80,7 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
                                 <label className={styles.agreeLabel}>
                                     <Field type="checkbox" name="agree" />
                                     {t.agree}
-                                    <button className={styles.agreeBtn}>{t.privacy}</button>
+                                    <NavLink to={`/Privacy-Policy`} className={styles.agreeBtn}> {t.privacy} </NavLink>
                                 </label>
                                 <label className={styles.btnLabel}>
                                     <MainButton text={t.signUp} />

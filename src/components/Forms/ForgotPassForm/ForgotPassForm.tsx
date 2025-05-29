@@ -1,9 +1,10 @@
 import { Dialog, DialogContent, IconButton } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import { useAppSelector } from '../../../store/hooks/hooks';
-import { IForgotPassFormPropsType } from '../../componentsTypes/propsTypes'
 import { translations } from '../../../translations/translations';
-import validation from '../validation';
+import { IForgotPassFormPropsType } from '../../componentsTypes/propsTypes'
+import { NavLink } from 'react-router-dom';
+import forgotValidation from '../validations/forgotValidation';
 import CloseIcon from '@mui/icons-material/Close';
 import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
@@ -20,6 +21,12 @@ const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IFo
         handleCloseForgot()
         handleOpenSignIn()
     }
+
+    const handleSubmit = (_: any, { resetForm }: { resetForm: () => void }) => {
+        alert("We have sent the link to your email.");
+        resetForm();
+        handleCloseForgot()
+    };
 
     return (
         <div>
@@ -42,8 +49,8 @@ const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IFo
                                 email: "",
                                 agree: false
                             }}
-                            onSubmit = {() => handleCloseForgot()}
-                            validationSchema = {validation(selectedLanguage)}
+                            onSubmit = {handleSubmit}
+                            validationSchema = {forgotValidation(selectedLanguage)}
                         >
                             <Form className={styles.forgotForm}>
                                 <label>
@@ -53,7 +60,7 @@ const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IFo
                                 <label className={styles.agreeLabel}>
                                     <Field type="checkbox" name="agree" />
                                     {t.agree}
-                                    <button className={styles.agreeBtn}>{t.privacy}</button>
+                                    <NavLink to={`/Privacy-Policy`} className={styles.agreeBtn}> {t.privacy} </NavLink>
                                 </label>
                                 <label className={styles.btnLabel}>
                                     <MainButton text={t.recover} />

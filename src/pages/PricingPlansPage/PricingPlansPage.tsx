@@ -1,25 +1,28 @@
-import { useEffect } from 'react'
+import { HowItWorks, SelectPlan } from '../../components'
 import { useAppSelector } from '../../store/hooks/hooks'
 import { translations } from '../../translations/translations'
-import HelpCenter from '../../components/HelpCenter/HelpCenter'
 import '../../components/global.css'
+import { useEffect } from 'react'
 
-const HelpCenterPage = () => {
+const PricingPlansPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, [])
-    
+
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.help}</h2>
+                <h2 className='sectionTitle'>{t.plans}</h2>
             </div>
-            <HelpCenter/>
+            <div style={{ paddingTop: '80px' }}>
+                <SelectPlan />
+                <HowItWorks />
+            </div>
         </section>
     )
 }
 
-export default HelpCenterPage
+export default PricingPlansPage

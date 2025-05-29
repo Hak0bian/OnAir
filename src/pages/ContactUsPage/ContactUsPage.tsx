@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
+import { useEffect } from 'react'
+import { ContactUs } from '../../components';
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 import '../../components/global.css'
 
-const PrivacyPolicyPage = () => {
+const ContactUsPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles
 
@@ -15,11 +15,11 @@ const PrivacyPolicyPage = () => {
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.privacy}</h2>
+                <h2 className='sectionTitle'>{t.contacts}</h2>
             </div>
-            <PrivacyPolicy />
+            <ContactUs/>
         </section>
     )
 }
 
-export default PrivacyPolicyPage
+export default ContactUsPage

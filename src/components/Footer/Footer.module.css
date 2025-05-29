@@ -4,14 +4,60 @@ footer{
 }
 
 .footerContainer{
-    max-width: 1240px;
+    max-width: 840px;
     margin: auto;
-    text-align: center;
-    padding: 60px 0;
+    padding: 40px 0 20px;
+
+    p{
+        font-weight: 300;
+        letter-spacing: .4px;
+        line-height: 1.5;
+        padding: 20px 0 8px;
+        color: var(--text-color-primary);
+    }
 }
 
-.footerText{
-    color: var(--text-color-primary);
+.footerTopDiv{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.logoDiv{
+    width: 240px;
+}
+
+
+.footerListDiv{
+    letter-spacing: .8px;
     font-weight: 300;
-    letter-spacing: .6px;
+    color: var(--text-color-primary);
+    
+    h3{
+        font-weight: 300;
+        padding-bottom: 12px;
+    }
+
+    li{
+        padding: 4px 0;
+        color: var(--text-color-gray);
+    }
+
+    a{
+        transition: .3s;
+    
+        &:hover{
+            color: var(--text-color-secondary);
+        }
+    }
+}
+
+.footerBottomDiv{
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid var(--text-color-gray);
+    
+    .text2{
+        color: var(--text-color-gray);
+    }
 }

@@ -12,10 +12,6 @@
     color: var(--text-color-gray);
 }
 
-.featuresTitle, h3{
-    font-weight: normal;
-    letter-spacing: .4px;
-}
 
 .svgsDiv{
     display: grid;
@@ -28,9 +24,14 @@
     align-items: flex-start;
     gap: 20px;
 
+    h3{
+        font-size: 20px;
+        font-weight: normal;
+        letter-spacing: .4px;
+    }
+
     p{
         padding-top: 8px;
         color: var(--text-color-gray);
     }
-
 }

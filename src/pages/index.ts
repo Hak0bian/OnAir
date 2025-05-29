@@ -9,6 +9,8 @@ import SeeAllCastPage from "./SeeAllCastPage/SeeAllCastPage";
 import HelpCenterPage from "./HelpCenterPage/HelpCenterPage";
 import PrivacyPolicyPage from "./PrivacyPolicyPage/PrivacyPolicyPage";
 import FeaturesPage from "./FeaturesPage/FeaturesPage";
+import ContactUsPage from "./ContactUsPage/ContactUsPage";
+import PricingPlansPage from "./PricingPlansPage/PricingPlansPage";
 
 export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
-    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage }
+    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage }

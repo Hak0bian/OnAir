@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
-import styles from './MorePages.module.css'
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
+import styles from './MorePages.module.css'
 
 const MorePages = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
@@ -41,7 +41,8 @@ const MorePages = () => {
                 <ul ref={ulRef} className={styles.morePagesList}>
                     <li><NavLink to={`/Help-Center`} onClick={closeDropdown}>{t.help}</NavLink></li>
                     <li><NavLink to={`/Features`} onClick={closeDropdown}>{t.features}</NavLink></li>
-                    <li><NavLink to={`/Contact`} onClick={closeDropdown}>{t.contact}</NavLink></li>
+                    <li><NavLink to={`/Pricing-Plans`} onClick={closeDropdown}>{t.plans}</NavLink></li>
+                    <li><NavLink to={`/Contact-Us`} onClick={closeDropdown}>{t.contact}</NavLink></li>
                     <li><NavLink to={`/Privacy-Policy`} onClick={closeDropdown}>{t.privacy}</NavLink></li>
                 </ul>
             </div>

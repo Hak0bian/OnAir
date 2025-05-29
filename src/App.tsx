@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
-  SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage } from './pages'
+  SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, 
+  PricingPlansPage} from './pages'
 import { useEffect } from 'react';
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
           <Route path='/Movies/movie/:movieId/cast' element={<SeeAllCastPage />} />
           <Route path='/Help-Center' element={<HelpCenterPage/>} />
           <Route path='/Features' element={<FeaturesPage/>} />
+          <Route path='/Pricing-Plans' element={<PricingPlansPage/>} />
+          <Route path='/Contact-Us' element={<ContactUsPage/>}/>
           <Route path='/Privacy-Policy' element={<PrivacyPolicyPage/>} />
         </Route>
       </Routes>

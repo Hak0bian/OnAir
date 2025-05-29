@@ -14,6 +14,7 @@ export const translations: any = {
                 more: "More",
                 help: "Help Center",
                 features: "Our Features",
+                plans: "Pricing Plans",
                 contact: "Contact Us",
                 privacy: "Privacy Policy"
             }
@@ -105,8 +106,11 @@ export const translations: any = {
             recover: "Recover",
             willSend: "We will send a link to your email",
             back: "Go back",
+            subject: "Subject",
+            message: "Type your message...",
             signUp: "Sign up",
             signIn: "Sign in",
+            send: "Send",
 
             choose: "Choose Plan",
             premium: "Premium $19.99",
@@ -119,7 +123,7 @@ export const translations: any = {
         },
 
         validation: {
-            min: "Min length 5",
+            min: "Min length 3",
             max: "Max length 20",
             name: {
                 req: "Name is required",
@@ -142,7 +146,11 @@ export const translations: any = {
                 matches2: "Password must contain one lowercase letter",
                 matches3: "Password must contain one number"
             },
-            plan: "Plan is required"
+            plan: "Plan is required",
+            message: "Message is required",
+            min20: "Min length — 20",
+            max300: "Max length — 300",
+            max50: "Max length — 50"
         },
 
         movies: {
@@ -268,9 +276,54 @@ export const translations: any = {
             item8_3: "Contact form: Available on our website’s Contact page."
         },
 
+        howItWorks: {
+            mainTitle: "How It Works",
+            title_01: "Create an account",
+            text_01: "Start your movie-watching journey by creating a personalized account on our platform. Sign up easily and gain access to a world of entertainment.",
+
+            title_02: "Choose your plan",
+            text_02: "Select the perfect plan that suits your preferences and watching habits. We offer a range of subscription options from basic plans to premium plans.",
+
+            title_03: "Enjoy OnAir",
+            text_03: "Immerse yourself in the world of OnAir, where unlimited movie streaming awaits. With our vast collection of movies there's something for everyone.",
+        },
+
+        pageTitles: {
+            help: "Help Center",
+            features: "Our Features",
+            plans: "Pricing Plans",
+            contacts: "Contact Us",
+            privacy: "Privacy Policy"
+        },
+
+        contactUs: {
+            getInTouchTitle: "Get In Touch",
+            getInTouchText: "We are always happy to help and provide more information about our services. You can contact us through email, phone, or by filling out the form on our website. Thank you for considering us!"
+        },
+
         footer: {
-            line1: "OnAir is always waiting for you. Come back to discover new genres and stories!",
-            line2: "© 2025 | All Rights Reserved | Developed by Garik Hakobyan",
+            browse: "Browse",
+            home: "Home",
+            movies: "Movies",
+            tv: "TV Series",
+            actors: "Actors",
+            library: "Library",
+
+            resources: "Resources",
+            help: "Help Center",
+            features: "Our Features",
+            plans: "Pricing Plans",
+            contact: "Contact Us",
+            privacy: "Privacy Policy",
+
+            profile: "Profile",
+            signUp: "Sign Up",
+            signIn: "Sign In",
+            forgot: "Forgot Password",
+            choose: "Choose Plan",
+
+            text1: "OnAir is always waiting for you. Come back to discover new genres and stories!",
+            text2: "© 2025 | All Rights Reserved | Developed by Garik Hakobyan",
         }
     },
 
@@ -293,6 +346,7 @@ export const translations: any = {
                 more: "Еще",
                 help: "Центр помощи",
                 features: "Наши возможности",
+                plans: "Тарифные планы",
                 contact: "Связаться с нами",
                 privacy: "Конфиденциальность"
             },
@@ -385,8 +439,11 @@ export const translations: any = {
             recover: "Восстановить",
             willSend: "Мы отправим ссылку на вашу почту",
             back: "Назад",
+            subject: "Тема",
+            message: "Введите ваше сообщение...",
             signUp: "Зарегистрироваться",
             signIn: "Войти",
+            send: "Отправить",
 
             choose: "Выберите план",
             premium: "Премиум $19.99",
@@ -399,7 +456,7 @@ export const translations: any = {
         },
 
         validation: {
-            min: "Минимальная длина — 5",
+            min: "Минимальная длина — 3",
             max: "Максимальная длина — 20",
             name: {
                 req: "Имя обязательно",
@@ -422,7 +479,11 @@ export const translations: any = {
                 matches2: "Пароль должен содержать одну строчную букву",
                 matches3: "Пароль должен содержать одну цифру"
             },
-            plan: "Необходимо выбрать план"
+            plan: "Необходимо выбрать план",
+            message: "Сообщение обязательно",
+            min20: "Минимальная длина — 20",
+            max300: "Максимальная длина — 300",
+            max50: "Максимальная длина — 50"
         },
 
         movies: {
@@ -548,9 +609,54 @@ export const translations: any = {
             item8_3: "Форма обратной связи: доступна на странице Контакты нашего сайта."
         },
 
+        howItWorks: {
+            mainTitle: "Как это работает",
+            title_01: "Создайте аккаунт",
+            text_01: "Начните своё путешествие в мире кино, создав персональный аккаунт на нашей платформе. Зарегистрируйтесь легко и получите доступ к миру развлечений.",
+
+            title_02: "Выберите план",
+            text_02: "Выберите идеальный тариф, соответствующий вашим предпочтениям и привычкам просмотра. Мы предлагаем различные варианты подписки — от базовых до премиум-планов.",
+
+            title_03: "Наслаждайтесь OnAir",
+            text_03: "Погрузитесь в мир OnAir, где вас ждёт безлимитный стриминг фильмов. В нашей огромной коллекции найдётся что-то для каждого.",
+        },
+
+        pageTitles: {
+            help: "Центр помощи",
+            features: "Наши возможности",
+            plans: "Тарифные планы",
+            contacts: "Связаться с нами",
+            privacy: "Политика конфиденциальности"
+        },
+
+        contactUs: {
+            getInTouchTitle: "Свяжитесь с нами",
+            getInTouchText: "Мы всегда рады помочь и предоставить дополнительную информацию о наших услугах. Вы можете связаться с нами по электронной почте, телефону или заполнив форму на нашем сайте. Спасибо, что выбрали нас!"
+        },
+
         footer: {
-            line1: "OnAir всегда ждёт тебя. Возвращайся, чтобы открыть новые жанры и истории!",
-            line2: "© 2025 | Все права защищены | Разработка: Гарик Акобян",
+            browse: "Обзор",
+            home: "Главная",
+            movies: "Фильмы",
+            tv: "Сериалы",
+            actors: "Актеры",
+            library: "Библиотека",
+
+            resources: "Ресурсы",
+            help: "Центр поддержки",
+            features: "Наши функции",
+            plans: "Тарифные планы",
+            contact: "Контакты",
+            privacy: "Политика конфиденциальности",
+
+            profile: "Профиль",
+            signUp: "Регистрация",
+            signIn: "Вход",
+            forgot: "Забыли пароль",
+            choose: "Выбрать тариф",
+
+            text1: "OnAir всегда ждет вас. Возвращайтесь, чтобы открыть новые жанры и истории!",
+            text2: "© 2025 | Все права защищены | Разработка: Гарик Акобян"
         }
     }
 };

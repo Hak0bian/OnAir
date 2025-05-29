@@ -6,6 +6,8 @@ import LibraryHeader from "./LibraryHeader/LibraryHeader";
 import LibraryButton from "./UI/LibraryButton/LibraryButton";
 import SelectPlan from "./SelectPlan/SelectPlan";
 import Features from "./Features/Features";
+import HowItWorks from "./HowItWorks/HowItWorks";
+import ContactUs from "./ContactUs/ContactUs";
 
 import MoviesSlider from "./Movies/MoviesSlider/MoviesSlider";
 import MoviesPageSlider from "./Movies/MoviesPageSlider/MoviesPageSlider";
@@ -26,5 +28,5 @@ import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryButton, MoviesPageSlider, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
-    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features
+    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs
 }

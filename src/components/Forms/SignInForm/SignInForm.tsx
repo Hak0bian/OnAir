@@ -4,7 +4,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik"
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { ISignInFormPropsType } from '../../componentsTypes/propsTypes';
 import { translations } from '../../../translations/translations';
-import validation from '../validation';
 import CloseIcon from '@mui/icons-material/Close';
 import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
@@ -53,8 +52,8 @@ const SignInForm = ({ openSignIn, handleCloseSignIn, handleOpenSignUp, handleOpe
                                 password: "",
                                 remember: false
                             }}
-                            onSubmit = {() => handleCloseSignIn()}
-                            validationSchema = {validation(selectedLanguage)}
+                            onSubmit = {(values) => console.log(values)}
+                            
                         >
                             <Form className={styles.signInForm}>
                                 <label>

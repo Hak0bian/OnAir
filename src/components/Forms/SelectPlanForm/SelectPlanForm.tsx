@@ -5,7 +5,7 @@ import { ISelectPlanFormPromsType } from '../../componentsTypes/propsTypes';
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import CloseIcon from '@mui/icons-material/Close';
-import validation from '../validation';
+import validation from '../validations/registerValidation';
 import MainButton from '../../UI/MainButton/MainButton';
 import styles from './SelectPlanForm.module.css'
 import '../../global.css'

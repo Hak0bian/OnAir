@@ -1,0 +1,10 @@
+.iconsDiv a{
+    display: inline-block;
+    margin: 0 4px;
+    color: var(--text-color-gray);
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-secondary);
+    }
+}

@@ -1,0 +1,42 @@
+.howSection{
+    max-width: 1280px;
+    margin: auto;
+    padding-bottom: 80px;
+}
+
+.howContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.howTitle{
+    width: 100%;
+    font-size: 36px;
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+
+.howBox{
+    letter-spacing: .4px;
+
+    span{
+        font-size: 48px;
+        font-weight: 600;
+        background-image: linear-gradient(to right, #FF5690, #E13C52);
+        background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    h3{
+        font-size: 20px;
+        font-weight: normal;
+        padding: 8px 0;
+    }
+
+    p{
+        line-height: 1.5;
+        color: var(--text-color-gray);
+    }
+}

@@ -1,0 +1,25 @@
+.contactUsContainer{
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px 0;
+}
+
+.getInTouchDiv{
+    width: 35%;
+    letter-spacing: .4px;
+}
+
+.getInTouchTitle{
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.getInTouchText{
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 20px 0;
+    color: var(--text-color-gray);
+}
