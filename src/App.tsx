@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Layout, RedirectToFirstPage } from './components'
+import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
   SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, 
   PricingPlansPage} from './pages'
@@ -31,6 +31,7 @@ function App() {
           <Route path='/Privacy-Policy' element={<PrivacyPolicyPage/>} />
         </Route>
       </Routes>
+      <FormsPortal />
     </section>
   )
 }

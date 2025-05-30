@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useAppDispatch } from '../../store/hooks/hooks'
 import { changeLanguages } from '../../store/slices'
-import LanguageIcon from '@mui/icons-material/Language';
+import { GrLanguage } from "react-icons/gr";
 import styles from './SelectLanguage.module.css'
 
 const SelectLanguage = () => {
@@ -38,15 +38,7 @@ const SelectLanguage = () => {
 
     return (
         <div className={styles.customSelect} ref={wrapperRef}>
-            <button className={styles.selected} onClick={toggleDropdown}>
-                <LanguageIcon 
-                    sx={{ fontSize: '20px', transition: '.3s', transform: 'translateY(1px)',
-                        '&:hover': {
-                            color: 'var(--buttons-color)',
-                        }
-                    }} 
-                />
-            </button>
+            <GrLanguage className={styles.langBtn} onClick={toggleDropdown} />
             <div>
                 <ul ref={ulRef} className={styles.languageList}>
                     <li onClick={() => handleChange("en")}>English</li>

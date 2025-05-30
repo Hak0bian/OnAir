@@ -1,8 +1,7 @@
 import { Dialog, DialogContent, IconButton } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { useAppSelector } from '../../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
-import { IForgotPassFormPropsType } from '../../componentsTypes/propsTypes'
 import { NavLink } from 'react-router-dom';
 import forgotValidation from '../validations/forgotValidation';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,14 +9,21 @@ import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
 import MainButton from '../../UI/MainButton/MainButton'
 import styles from './ForgotPassForm.module.css'
+import { showForgotPassForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 
 
-const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IForgotPassFormPropsType) => {
-    const { mode } = useAppSelector((state) => state.theme)
+const ForgetPassForm = ({ handleOpenSignIn }: {handleOpenSignIn: () => void}) => {
+    const { forgotPass } = useAppSelector((state) => state.formsData)
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const { mode } = useAppSelector((state) => state.theme)
     const t = translations[selectedLanguage].forms
+    const dispatch = useAppDispatch()
 
-    const showSignInForm = () => {
+    const handleCloseForgot = () => {
+        dispatch(showForgotPassForm(false))
+    };
+
+    const toggleForms = () => {
         handleCloseForgot()
         handleOpenSignIn()
     }
@@ -30,7 +36,7 @@ const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IFo
 
     return (
         <div>
-            <Dialog open={openForgot} onClose={handleCloseForgot} maxWidth="xs" fullWidth>
+            <Dialog open={forgotPass} onClose={handleCloseForgot} maxWidth="xs" fullWidth>
                 <DialogContent sx={{ position: 'relative', p: 0 }}>
                     <IconButton onClick={handleCloseForgot}
                         sx={{
@@ -67,7 +73,7 @@ const ForgetPassForm = ({ openForgot, handleCloseForgot, handleOpenSignIn }: IFo
                                 </label>
                                 <label className={styles.linkLabel}>{t.willSend}</label>
                                 <label className={styles.backLabel}>
-                                    <button onClick={showSignInForm} className={styles.backBtn}>{t.back}</button>
+                                    <button onClick={toggleForms} className={styles.backBtn}>{t.back}</button>
                                 </label>
                             </Form>
                         </Formik>

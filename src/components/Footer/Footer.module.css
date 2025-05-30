@@ -52,6 +52,21 @@ footer{
     }
 }
 
+.openFormBtn{
+    all: unset;
+    font-size: 16px;
+    background: none;
+    border: none;
+    letter-spacing: .4px;
+    color: var(--text-color-gray);
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-secondary);
+    }
+}
+
 .footerBottomDiv{
     text-align: center;
     margin-top: 40px;

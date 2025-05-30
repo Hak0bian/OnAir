@@ -1,30 +1,36 @@
-import { useState } from 'react';
 import { Dialog, DialogContent, IconButton } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { useAppSelector } from '../../../store/hooks/hooks';
-import { IRegisterFormPropsType } from '../../componentsTypes/propsTypes';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { NavLink } from 'react-router-dom';
+import { showSignInForm, showSignUpForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 import CloseIcon from '@mui/icons-material/Close';
 import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
 import MainButton from '../../UI/MainButton/MainButton'
-import styles from './RegisterForm.module.css'
 import SignInForm from '../SignInForm/SignInForm';
 import registerValidation from '../validations/registerValidation';
+import styles from './RegisterForm.module.css'
 
 
-const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: IRegisterFormPropsType) => {
+const RegisterForm = ({ handleOpenSignUp }: {handleOpenSignUp: () => void}) => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
-    const t = translations[selectedLanguage].forms
+    const { signUp } = useAppSelector((state) => state.formsData)
     const { mode } = useAppSelector((state) => state.theme)
-    const [openSignIn, setOpenSignIn] = useState(false);
-    const handleOpenSignIn = () => setOpenSignIn(true);
-    const handleCloseSignIn = () => setOpenSignIn(false);
+    const t = translations[selectedLanguage].forms
+    const dispatch = useAppDispatch()
 
-    const showSignInForm = () => {
-        handleCloseSignUp()
+    const handleCloseSignUp = () => {
+        dispatch(showSignUpForm(false))
+    }
+
+    const handleOpenSignIn = () => {
+        dispatch(showSignInForm(true))
+    };
+
+    const toggleForms = () => {
         handleOpenSignIn()
+        handleCloseSignUp()
     }
 
     const handleSubmit = (_: any, { resetForm }: { resetForm: () => void }) => {
@@ -35,7 +41,7 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
 
     return (
         <div>
-            <Dialog open={openSignUpForm} onClose={handleCloseSignUp} maxWidth="xs" fullWidth>
+            <Dialog open={signUp} onClose={handleCloseSignUp} maxWidth="xs" fullWidth>
                 <DialogContent sx={{ position: 'relative', p: 0 }}>
                     <IconButton onClick={handleCloseSignUp}
                         sx={{
@@ -57,8 +63,8 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
                                 pass: "",
                                 agree: false
                             }}
-                            onSubmit = {handleSubmit}
-                            validationSchema = {registerValidation(selectedLanguage)}
+                            onSubmit={handleSubmit}
+                            validationSchema={registerValidation(selectedLanguage)}
                         >
                             <Form className={styles.registerForm}>
                                 <label>
@@ -87,7 +93,7 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
                                 </label>
                                 <label className={styles.signInLabel}>
                                     {t.have}
-                                    <button className={styles.signIn} onClick={showSignInForm}>{t.signIn}</button>
+                                    <button className={styles.signIn} onClick={toggleForms}>{t.signIn}</button>
                                 </label>
                             </Form>
                         </Formik>
@@ -95,11 +101,9 @@ const RegisterForm = ({ openSignUpForm, handleCloseSignUp, handleOpenSignUp }: I
                 </DialogContent>
             </Dialog>
 
-            <SignInForm 
-                openSignIn={openSignIn} 
-                handleCloseSignIn={handleCloseSignIn}
-                handleOpenSignUp={handleOpenSignUp}
+            <SignInForm
                 handleOpenSignIn={handleOpenSignIn}
+                handleOpenSignUp={handleOpenSignUp}
             />
         </div>
     )

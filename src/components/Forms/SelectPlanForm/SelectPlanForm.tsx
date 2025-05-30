@@ -1,8 +1,10 @@
-import { Dialog, DialogContent, IconButton, FormControl, InputLabel, 
-    Select, MenuItem, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import {
+    Dialog, DialogContent, IconButton, FormControl, InputLabel,
+    Select, MenuItem, RadioGroup, FormControlLabel, Radio
+} from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { ISelectPlanFormPromsType } from '../../componentsTypes/propsTypes';
-import { useAppSelector } from '../../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
+import { showSelectPlanForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 import { translations } from '../../../translations/translations';
 import CloseIcon from '@mui/icons-material/Close';
 import validation from '../validations/registerValidation';
@@ -11,13 +13,19 @@ import styles from './SelectPlanForm.module.css'
 import '../../global.css'
 
 
-const SelectPlanForm = ({ openSelectPlan, handleCloseSelectPlan }: ISelectPlanFormPromsType) => {
+const SelectPlanForm = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const { selectPlan } = useAppSelector((state) => state.formsData)
     const t = translations[selectedLanguage].forms
+    const dispatch = useAppDispatch()
+
+    const handleCloseSelectPlan = () => {
+        dispatch(showSelectPlanForm(false))
+    }
 
     return (
         <div>
-            <Dialog open={openSelectPlan} onClose={handleCloseSelectPlan} maxWidth="xs" fullWidth>
+            <Dialog open={selectPlan} onClose={handleCloseSelectPlan} maxWidth="xs" fullWidth>
                 <DialogContent sx={{ position: 'relative', p: 0 }}>
                     <IconButton onClick={handleCloseSelectPlan}
                         sx={{
@@ -61,17 +69,17 @@ const SelectPlanForm = ({ openSelectPlan, handleCloseSelectPlan }: ISelectPlanFo
                                     <RadioGroup>
                                         <FormControlLabel value={t.visa} label={t.visa}
                                             control={<Radio size='small'
-                                                sx={{color: '#FF5690', '&.Mui-checked': {color: '#FF5690'}}} />
+                                                sx={{ color: '#FF5690', '&.Mui-checked': { color: '#FF5690' } }} />
                                             }
                                         />
                                         <FormControlLabel value={t.mastercard} label={t.mastercard}
                                             control={<Radio size='small'
-                                                sx={{color: '#FF5690', '&.Mui-checked': {color: '#FF5690'}}} />
+                                                sx={{ color: '#FF5690', '&.Mui-checked': { color: '#FF5690' } }} />
                                             }
                                         />
                                         <FormControlLabel value={t.other} label={t.other}
                                             control={<Radio size='small'
-                                                sx={{color: '#FF5690', '&.Mui-checked': {color: '#FF5690'}}} />
+                                                sx={{ color: '#FF5690', '&.Mui-checked': { color: '#FF5690' } }} />
                                             }
                                         />
                                     </RadioGroup>

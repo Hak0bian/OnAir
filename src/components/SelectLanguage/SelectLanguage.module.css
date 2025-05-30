@@ -49,6 +49,11 @@
     }
 }
 
+.langBtn{
+    font-size: 18px;
+    transform: translateY(2px);
+}
+
 .show {
     max-height: 100px; 
     opacity: 1;

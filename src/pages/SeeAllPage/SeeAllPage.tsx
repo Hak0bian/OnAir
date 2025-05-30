@@ -25,15 +25,15 @@ const SeeAllPage = () => {
     }, [category])
 
     useEffect(() => {
-        if (category === 'latest') {
+        if (category === 'Latest') {
             dispatch(latestMoviesThunk({page, selectedLanguage}));
-        } else if (category === 'popular') {
+        } else if (category === 'Popular') {
             dispatch(popularMoviesThunk({page, selectedLanguage}));
         }
         window.scrollTo({ top: 0, behavior: "smooth" });
     }, [category, page]);
 
-    const movies = category === 'latest' ? latestMovies : category === 'popular' ? popularMovies : [];
+    const movies = category === 'Latest' ? latestMovies : category === 'Popular' ? popularMovies : [];
     const filteredMovies = movies.filter((movie) => movie.poster_path);
 
     return (

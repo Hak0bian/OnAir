@@ -2,12 +2,15 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { translations } from '../../translations/translations'
 import { toggleTheme } from '../../store/slices'
+import { showSignUpForm } from '../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice'
+import { LuCircleUserRound } from "react-icons/lu";
+import { MdSunny } from "react-icons/md";
 import logoForDark from '../../assets/images/onair-logo.png'
 import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
-import LightModeIcon from '@mui/icons-material/LightMode';
-import styles from './Navigation.module.css'
 import MorePages from '../MorePages/MorePages'
+import styles from './Navigation.module.css'
+
 
 const Navigation = () => {
     const dispatch = useAppDispatch()
@@ -26,6 +29,10 @@ const Navigation = () => {
         dispatch(toggleTheme())
     };
 
+    const openSignUpForm = () => {
+        dispatch(showSignUpForm(true))
+    }
+
     return (
         <nav className={styles.navigation}>
             <div className={styles.navContainer}>
@@ -42,22 +49,13 @@ const Navigation = () => {
                     <NavLink to={`TV`}>{t.tv}</NavLink>
                     <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
                     <NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink>
-                    <MorePages/>
+                    <MorePages />
                 </div>
 
                 <div className={styles.navButtonsDiv}>
                     <SelectLanguage />
-                    <button className={styles.themeBtn} onClick={toggle}>
-                        <LightModeIcon
-                            sx={{
-                                color: mode === 'dark' ? 'white' : 'black',
-                                fontSize: '20px',
-                                transition: '.3s',
-                                '&:hover': {
-                                    color: 'var(--buttons-color)',
-                                }
-                            }} />
-                    </button>
+                    <MdSunny className={styles.themeBtn} onClick={toggle}/>
+                    <LuCircleUserRound onClick={openSignUpForm} className={styles.profileBtn}/>
                 </div>
             </div>
         </nav>

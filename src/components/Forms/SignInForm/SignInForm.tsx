@@ -1,38 +1,45 @@
-import { useState } from 'react';
 import { Dialog, DialogContent, IconButton } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
-import { useAppSelector } from '../../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { ISignInFormPropsType } from '../../componentsTypes/propsTypes';
 import { translations } from '../../../translations/translations';
+import { showForgotPassForm, showSignInForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 import CloseIcon from '@mui/icons-material/Close';
 import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
 import MainButton from '../../UI/MainButton/MainButton'
-import styles from './SignInForm.module.css'
 import ForgetPassForm from '../ForgotPassForm/ForgotPassForm';
+import styles from './SignInForm.module.css'
 
 
-const SignInForm = ({ openSignIn, handleCloseSignIn, handleOpenSignUp, handleOpenSignIn } : ISignInFormPropsType) => {
-    const { mode } = useAppSelector((state) => state.theme)
+const SignInForm = ({ handleOpenSignIn, handleOpenSignUp } : ISignInFormPropsType) => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const { signIn } = useAppSelector((state) => state.formsData)
+    const { mode } = useAppSelector((state) => state.theme)
     const t = translations[selectedLanguage].forms
-    const [openForgot, setOpenForgot] = useState(false);
-    const handleOpenForgot = () => setOpenForgot(true);
-    const handleCloseForgot = () => setOpenForgot(false);
+    const dispatch = useAppDispatch()
 
-    const showSignUpForm = () => {
+    const handleCloseSignIn = () => {
+        dispatch(showSignInForm(false))
+    };
+
+    const handleOpenForgot = () => {
+        dispatch(showForgotPassForm(true))
+    };
+
+    const toggleForms = () => {
         handleCloseSignIn()
         handleOpenSignUp()
-    }
+    };
 
-    const showForgotPassForm = () => {
+    const showForgotPass = () => {
         handleCloseSignIn()
         handleOpenForgot()
     }
 
     return (
         <div>
-            <Dialog open={openSignIn} onClose={handleCloseSignIn} maxWidth="xs" fullWidth>
+            <Dialog open={signIn} onClose={handleCloseSignIn} maxWidth="xs" fullWidth>
                 <DialogContent sx={{ position: 'relative', p: 0 }}>
                     <IconButton onClick={handleCloseSignIn}
                         sx={{
@@ -73,9 +80,9 @@ const SignInForm = ({ openSignIn, handleCloseSignIn, handleOpenSignUp, handleOpe
                                 </label>
                                 <label className={styles.signUpLabel}>
                                     {t.dontHave}
-                                    <button className={styles.signUp} onClick={showSignUpForm}>{t.signUp}</button>
+                                    <button className={styles.signUp} onClick={toggleForms}>{t.signUp}</button>
                                 </label>
-                                <button className={styles.signUp} onClick={showForgotPassForm}>{t.forgot}</button>
+                                <button className={styles.signUp} onClick={showForgotPass}>{t.forgot}</button>
                             </Form>
                         </Formik>
                     </div>
@@ -83,8 +90,6 @@ const SignInForm = ({ openSignIn, handleCloseSignIn, handleOpenSignUp, handleOpe
             </Dialog>
 
             <ForgetPassForm
-                openForgot={openForgot}
-                handleCloseForgot={handleCloseForgot}
                 handleOpenSignIn={handleOpenSignIn}
             />
         </div>

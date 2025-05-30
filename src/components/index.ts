@@ -8,6 +8,7 @@ import SelectPlan from "./SelectPlan/SelectPlan";
 import Features from "./Features/Features";
 import HowItWorks from "./HowItWorks/HowItWorks";
 import ContactUs from "./ContactUs/ContactUs";
+import FormsPortal from "./FormsPortal/FormsPortal";
 
 import MoviesSlider from "./Movies/MoviesSlider/MoviesSlider";
 import MoviesPageSlider from "./Movies/MoviesPageSlider/MoviesPageSlider";
@@ -28,5 +29,6 @@ import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryButton, MoviesPageSlider, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
-    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs
+    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs,
+    FormsPortal
 }

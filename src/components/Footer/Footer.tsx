@@ -1,4 +1,6 @@
-import { useAppSelector } from '../../store/hooks/hooks'
+import { showForgotPassForm, showSelectPlanForm, showSignInForm, showSignUpForm 
+  } from '../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { translations } from '../../translations/translations';
 import { NavLink } from 'react-router-dom';
 import footerLogo from '../../assets/images/onair-logo-white.png'
@@ -8,9 +10,26 @@ import ContactsIcons from '../ContactsIcons/ContactsIcons';
 const Footer = () => {
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)
   const t = translations[selectedLanguage].footer;
+  const dispatch = useAppDispatch()
 
   const scrollToTopPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  const openSignUpForm = () => {
+    dispatch(showSignUpForm(true))
+  }
+
+  const openSignInForm = () => {
+    dispatch(showSignInForm(true))
+  }
+
+  const openforgotPassForm = () => {
+    dispatch(showForgotPassForm(true))
+  }
+
+  const openSelectPlanForm = () => {
+    dispatch(showSelectPlanForm(true))
   }
 
   return (
@@ -49,10 +68,10 @@ const Footer = () => {
           <div className={styles.footerListDiv}>
             <h3>{t.profile}</h3>
             <ul>
-              <li>{t.signUp}</li>
-              <li>{t.signIn}</li>
-              <li>{t.forgot}</li>
-              <li>{t.choose}</li>
+              <li><button className={styles.openFormBtn} onClick={openSignUpForm}>{t.signUp}</button></li>
+              <li><button className={styles.openFormBtn} onClick={openSignInForm}>{t.signIn}</button></li>
+              <li><button className={styles.openFormBtn} onClick={openforgotPassForm}>{t.forgot}</button></li>
+              <li><button className={styles.openFormBtn} onClick={openSelectPlanForm}>{t.choose}</button></li>
             </ul>
           </div>
         </div>

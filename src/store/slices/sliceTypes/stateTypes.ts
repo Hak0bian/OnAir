@@ -144,3 +144,10 @@ export interface IActorsReturnType {
 export type IThemeStateType = {
     mode: 'light' | 'dark';
 }
+
+export type IOpenCloseFormsStateType = {
+    signUp: boolean;
+    signIn: boolean;
+    forgotPass: boolean;
+    selectPlan:boolean;
+}
