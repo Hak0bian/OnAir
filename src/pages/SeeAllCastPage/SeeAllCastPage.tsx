@@ -31,8 +31,7 @@ const SeeAllCastPage = () => {
                 }}
                 >
                     {
-                        movieCast.length > 0 &&
-                        movieCast.map((actor) => (
+                        movieCast.length > 0 && movieCast.map((actor) => (
                             <CastCard actor={actor} />
                         ))
                     }

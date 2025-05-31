@@ -19,16 +19,15 @@ import MovieCastSlider from "./Movies/MovieCastSlider/MovieCastSlider";
 import Trailer from "./Movies/Trailer/Trailer";
 import RedirectToFirstPage from "./Movies/RedirectToFirstPage/RedirectToFirstPage";
 import SelectGenre from "./Movies/SelectGenre/SelectGenre";
-import SearchMovie from "./Movies/SearchMovie/SearchMovie";
+import Search from "./Movies/Search/Search";
 
 import ActorCard from "./Actors/ActorCard/ActorCard";
 import ActorDetails from "./Actors/ActorDetails/ActorDetails";
 import ActorsPageSlider from "./Actors/ActorsPageSlider/ActorsPageSlider";
-import SearchActor from "./Actors/SearchActor/SearchActor";
 import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryButton, MoviesPageSlider, MovieCard, MovieDetails, 
-    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, SearchMovie,
-    ActorCard, ActorDetails, ActorsPageSlider, SearchActor, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs,
+    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, Search,
+    ActorCard, ActorDetails, ActorsPageSlider, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs,
     FormsPortal
 }

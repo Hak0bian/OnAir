@@ -1,40 +1,29 @@
-import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
 import { NavLink } from 'react-router-dom'
-import { useEffect, useState } from "react";
-import { clearActorsResults } from "../../../store/slices";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
+import { clearActorsResults, clearMovieResults } from "../../../store/slices";
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './SearchedActorsList.module.css'
 
 
-const SearchedActorsList = ({ inputValue, setInputValue }: ISearchPropsType) => {
-    const dispatch = useAppDispatch();
+const SearchedActorsList = ({ showResults, inputValue, setInputValue }: ISearchPropsType) => {
     const { searchedActors } = useAppSelector((state) => state.searchedActorsData);
-    const [notFound, setNotFound] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
 
-    const handleCleareResults = () => {
-        setInputValue("");
-        dispatch(clearActorsResults());
+    const handleClick = () => {
+        setInputValue('');
+        dispatch(clearMovieResults())
+        dispatch(clearActorsResults())
     }
 
-    useEffect(() => {
-        setNotFound(false);
-        const delayNotFound = setTimeout(() => {
-            if (inputValue.trim() && searchedActors.length === 0) {
-                setNotFound(true);
-            }
-        }, 1000);
-        return () => clearTimeout(delayNotFound);
-    }, [inputValue, searchedActors]);
-
     return (
-        <div>
+        <div className={showResults ? styles.hideDiv : ''}>
             {searchedActors.length > 0 && (
                 <ul className={styles.resultList}>
                     {searchedActors?.map((actor, ind) => (
-                        <NavLink to={`/Actors/actor/${actor?.id}`} key={ind} onClick={handleCleareResults}>
+                        <NavLink to={`/Actors/actor/${actor?.id}`} key={ind} onClick={handleClick} >
                             <li key={actor?.id} className={styles.actorListItem}>
-                                <img src={`https://image.tmdb.org/t/p/w400${actor?.profile_path}`} />
+                                <img src={`https://image.tmdb.org/t/p/w200${actor?.profile_path}`} />
                                 <div>
                                     <p>{actor?.name}</p>
                                     <p className={styles.rating}>
@@ -44,13 +33,13 @@ const SearchedActorsList = ({ inputValue, setInputValue }: ISearchPropsType) => 
                                     <p className={styles.department}>{actor?.known_for_department}</p>
                                 </div>
                             </li>
-                            <li>
-                            </li>
                         </NavLink>
                     ))}
+                    <li className={styles.seeResults}>
+                        <NavLink to={`/Search-Results?query=${encodeURIComponent(inputValue)}`} >See all results</NavLink>
+                    </li>
                 </ul>
             )}
-            {notFound && <p className={styles.notFound}>Actor not found...</p>}
         </div>
     )
 }

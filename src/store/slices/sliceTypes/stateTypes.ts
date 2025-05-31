@@ -75,15 +75,16 @@ export type ILibraryStateType = {
 
 export interface ISearchMoviesStateType {
     searchedMovies: Array<IMoviesType>,
-    isLoading: boolean,
-    notFound: null | string,
+    inputValue: string,
+    movieIsLoading: boolean,
+    movieNotFound: boolean;
     error: null | string
 }
 
 export interface ISearchActorsStateType {
     searchedActors: Array<IActorType>,
-    isLoading: boolean,
-    notFound: null | string,
+    actorIsLoading: boolean,
+    actorNotFound: boolean,
     error: null | string
 }
 

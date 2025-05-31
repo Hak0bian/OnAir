@@ -1,32 +1,5 @@
 .resultList{
-    position: absolute;
-    z-index: 10;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-color-options);
-    max-height: 400px;
-    overflow-y: auto;
     border: 1px solid var(--text-color-gray);
-}
-
-.resultList::-webkit-scrollbar {
-    width: 8px; 
-}
-
-.resultList::-webkit-scrollbar-track {
-    background-color: var(--text-color-gray);
-    border-radius: 12px;
-}
-
-.resultList::-webkit-scrollbar-thumb {
-    background-color: var(--buttons-color);
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.resultList::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-color-secondary);
 }
 
 .actorListItem{
@@ -34,7 +7,7 @@
     align-items: center;
     gap: 8px;
     transition: .3s;
-    border-bottom: 1px solid var(--text-color-gray);
+    border-bottom: 1px solid #444;
     padding: 8px;
     letter-spacing: .4px;
 
@@ -43,8 +16,8 @@
     }
 
     img{
-        width: 70px;
-        height: 100px;
+        width: 60px;
+        height: 90px;
     }
 
     .department{
@@ -54,20 +27,30 @@
     }
 }
 
-.notFound{
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    font-size: 18px;
-    padding: 8px;
-    background-color: var(--bg-color-options);
-    border: 1px solid var(--text-color-gray);
-}
-
 .rating{
     display: flex;
     gap: 4px;
     font-size: 14px;
     padding-top: 2px;
     color: var(--text-color-primary);
+}
+
+.seeResults{
+    text-align: center;
+    transition: .3s;
+    
+    &:hover{
+        color: var(--text-color-secondary);
+    }
+    
+    a{
+        display: inline-block;
+        width: 100%;
+        letter-spacing: .4px;
+        padding: 8px 0;
+    }
+}
+
+.hideDiv{
+    display: none;
 }

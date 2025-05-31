@@ -1,32 +1,5 @@
 .resultList{
-    position: absolute;
-    z-index: 10;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-color-options);
-    max-height: 400px;
-    overflow-y: auto;
     border: 1px solid var(--text-color-gray);
-}
-
-.resultList::-webkit-scrollbar {
-    width: 8px; 
-}
-
-.resultList::-webkit-scrollbar-track {
-    background-color: var(--text-color-gray);
-    border-radius: 12px;
-}
-
-.resultList::-webkit-scrollbar-thumb {
-    background-color: var(--buttons-color);
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.resultList::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-color-secondary);
 }
 
 .movieListItem{
@@ -34,9 +7,9 @@
     align-items: center;
     gap: 8px;
     transition: .3s;
-    border-bottom: 1px solid var(--text-color-gray);
     padding: 8px;
     letter-spacing: .4px;
+    border-bottom: 1px solid #444;
 
     &:hover{
         color: var(--text-color-secondary);
@@ -46,16 +19,6 @@
         width: 120px;
         height: 75px;
     }
-}
-
-.notFound{
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    font-size: 18px;
-    padding: 8px;
-    background-color: var(--bg-color-options);
-    border: 1px solid var(--text-color-gray);
 }
 
 .rating{
@@ -69,4 +32,24 @@
 .date{
     font-size: 12px;
     color: var(--text-color-gray);
+}
+
+.seeResults{
+    text-align: center;
+    transition: .3s;
+    
+    &:hover{
+        color: var(--text-color-secondary);
+    }
+    
+    a{
+        display: inline-block;
+        width: 100%;
+        letter-spacing: .4px;
+        padding: 8px 0;
+    }
+}
+
+.hideDiv{
+    display: none;
 }

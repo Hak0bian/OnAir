@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks"
 import { moviesThunk, changeMoviesPageNumber, genresListThunk, moviesByGenreThunk, clearmoviesByGenre } from "../../store/slices"
-import { MovieCard, MoviesPageSlider, Paginationn, SearchMovie, SelectGenre } from "../../components"
+import { MovieCard, MoviesPageSlider, Paginationn, SelectGenre } from "../../components"
 import { Box } from "@mui/material"
 
 const MoviesPage = () => {
@@ -43,10 +43,7 @@ const MoviesPage = () => {
           : <MoviesPageSlider movies={movies} />
         }
       <div className='container'>
-        <div style={{ display: 'flex', gap: '24px', padding: '28px 0'}}>
-          <SelectGenre />
-          <SearchMovie />
-        </div>
+        <SelectGenre />
 
         <Box sx={{ display: 'grid', gap: 2, justifyContent: 'center', 
           gridTemplateColumns: {

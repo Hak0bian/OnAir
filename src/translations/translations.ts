@@ -156,7 +156,7 @@ export const translations: any = {
         movies: {
             genre: "Genre",
             all: "All",
-            search: "Search movie",
+            search: "Search",
             overview: "Overview",
             trailer: "Watch Trailer",
             cast: "Cast",
@@ -489,7 +489,7 @@ export const translations: any = {
         movies: {
             genre: "Жанр",
             all: "Все",
-            search: "Поиск фильма",
+            search: "Поиск",
             overview: "Обзор",
             trailer: "Смотреть трейлер",
             cast: "Актерский состав",

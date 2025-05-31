@@ -2,7 +2,8 @@ import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
   SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, 
-  PricingPlansPage} from './pages'
+  PricingPlansPage,
+  SearchResultsPage} from './pages'
 import { useEffect } from 'react';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/Pricing-Plans' element={<PricingPlansPage/>} />
           <Route path='/Contact-Us' element={<ContactUsPage/>}/>
           <Route path='/Privacy-Policy' element={<PrivacyPolicyPage/>} />
+          <Route path='/Search-Results' element={<SearchResultsPage/>} />
         </Route>
       </Routes>
       <FormsPortal />

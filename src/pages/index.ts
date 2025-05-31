@@ -11,6 +11,9 @@ import PrivacyPolicyPage from "./PrivacyPolicyPage/PrivacyPolicyPage";
 import FeaturesPage from "./FeaturesPage/FeaturesPage";
 import ContactUsPage from "./ContactUsPage/ContactUsPage";
 import PricingPlansPage from "./PricingPlansPage/PricingPlansPage";
+import SearchResultsPage from "./SearchResultsPage/SearchResultsPage";
 
 export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
-    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage }
+    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, 
+    SearchResultsPage 
+}

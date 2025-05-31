@@ -9,7 +9,7 @@ import { changeSelectedGenreId, clearmoviesByGenre } from "./MovieGenresSlice/mo
 import { moviesThunk, movieByIdThunk, movieCrewThunk, movieVideosThunk } from "./MoviesPageSlice/moviesThunk";
 import { changeMoviesPageNumber } from "./MoviesPageSlice/moviesSlice";
 import { searchMovieThunk } from "./SearchMovieSlice/searchMovieThunk";
-import { clearResults } from "./SearchMovieSlice/searchMovieSlice";
+import { clearMovieResults, handleInputValue } from "./SearchMovieSlice/searchMovieSlice";
 
 import { actorsThunk } from "./ActorsPageSlice/actorsThunk";
 import { actorFullInfoThunk } from "./ActorsPageSlice/actorsThunk";
@@ -20,6 +20,6 @@ import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
 
 export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setLibrary, addToLibrary, removeFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, movieCrewThunk,
-    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearResults, changeLanguages, setTheme, toggleTheme,
+    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearMovieResults, handleInputValue, changeLanguages, setTheme, toggleTheme,
     actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults
 }

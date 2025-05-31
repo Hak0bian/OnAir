@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { useEffect } from 'react'
 import { actorBiographyThunk, actorsThunk, changeActorsPageNumber } from '../../store/slices'
-import { ActorCard, ActorsPageSlider, Paginationn, SearchActor } from '../../components'
+import { ActorCard, ActorsPageSlider, Paginationn } from '../../components'
 import { useNavigate } from 'react-router-dom'
 
 const ActorsPage = () => {
@@ -35,7 +35,6 @@ const ActorsPage = () => {
         <section>
             <ActorsPageSlider actors={actors} />
             <div className='container'>
-                <SearchActor/>
                 <Box
                     sx={{
                         display: 'grid', gap: 2, justifyContent: 'center',

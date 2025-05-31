@@ -4,8 +4,8 @@ import { searchActorThunk } from "./searchActorThunk";
 
 const initialState: ISearchActorsStateType = {
     searchedActors: [],
-    isLoading: false,
-    notFound: null,
+    actorIsLoading: false,
+    actorNotFound: false,
     error: null
 }
 
@@ -21,13 +21,15 @@ const searchActorSlice = createSlice({
         builder
         .addCase(searchActorThunk.fulfilled, (state, action: PayloadAction<IActorsReturnType>) => {
             state.searchedActors = action.payload.results
-            state.isLoading = false
+            state.actorNotFound = action.payload.results.length === 0;
+            state.actorIsLoading = false
         })
         .addCase(searchActorThunk.pending, (state) => {
-            state.isLoading = true
+            state.actorIsLoading = true
+            state.actorNotFound = false
         })
         .addCase(searchActorThunk.rejected, (state, action) => {
-            state.isLoading = false
+            state.actorIsLoading = false
             state.error = action.payload as string;
         })
     },
