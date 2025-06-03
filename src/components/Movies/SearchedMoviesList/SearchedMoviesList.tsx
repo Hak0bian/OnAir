@@ -27,7 +27,7 @@ const SearchedMoviesList = ({ showResults, inputValue, setInputValue }: ISearchP
                                 <div>
                                     <p>{movie?.title}</p>
                                     <p className={styles.rating}>
-                                        <GradeIcon sx={{ fontSize: '16px', color: '#E13C52' }} />
+                                        <GradeIcon className={styles.starIcon} />
                                         {movie?.vote_average.toFixed(1)}
                                     </p>
                                     <span className={styles.date}>{movie?.release_date}</span>

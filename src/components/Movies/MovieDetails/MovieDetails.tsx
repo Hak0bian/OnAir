@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
-import { LibraryButton, MovieCastSlider, MovieTable, Trailer } from '../..'
+import { LibraryMovieBtn, MovieCastSlider, MovieTable, Trailer } from '../..'
 import { translations } from '../../../translations/translations';
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './MovieDetails.module.css'
@@ -27,7 +27,7 @@ const MovieDetails = () => {
                         <p className={styles.genre}>{selectedMovie?.genres?.map(g => g?.name).join(', ')}</p>
                     }
                     <p className={styles.rating}>
-                        <GradeIcon sx={{fontSize: '18px', color: '#E13C52'}}/>
+                        <GradeIcon className={styles.starIcon} />
                         {selectedMovie?.vote_average.toFixed(1)}
                     </p>
                     <MovieTable selectedMovie={selectedMovie} />
@@ -36,7 +36,7 @@ const MovieDetails = () => {
 
                     <div className={styles.buttonsDiv}>
                         <Trailer trailerKey={key} />
-                        <LibraryButton movie={selectedMovie} />
+                        { selectedMovie && <LibraryMovieBtn movie={selectedMovie} /> }
                     </div>
                 </div>
             </div>

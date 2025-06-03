@@ -1,6 +1,7 @@
 import { latestMoviesThunk, popularMoviesThunk } from "./HomePageSlice/homeMoviesThunk";
 import { changeSeeAllPageNumber } from "./HomePageSlice/homeMoviesSlice";
-import { setLibrary, addToLibrary, removeFromLibrary, clearLibrary } from "./LibraryPageSlice/librarySlice";
+import { setMovieinLibrary, addMovieToLibrary, removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, 
+    removeSeriaFromLibrary, clearLibrary } from "./LibraryPageSlice/librarySlice";
 import { genresListThunk, moviesByGenreThunk } from "./MovieGenresSlice/movieGenresThunk";
 import { changeLanguages } from "./LanguagesSlice/languagesSlice";
 import { setTheme, toggleTheme } from "./ThemeSlice/themeSlice"
@@ -18,8 +19,14 @@ import { changeActorsPageNumber } from "./ActorsPageSlice/actorsSlice";
 import { searchActorThunk } from "./SearchActorSlice/searchActorThunk";
 import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
 
-export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setLibrary, addToLibrary, removeFromLibrary, clearLibrary, 
+import { tvSeriesThunk } from "./TvSeriesSlice/tvSeriesThunk";
+import { changeTvSeriesPageNumber } from "./TvSeriesSlice/tvSeriesSlice";
+import { tvSeriaByIdThunk } from "./TvSeriesSlice/tvSeriesThunk";
+
+export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setMovieinLibrary, addMovieToLibrary, 
+    removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, movieCrewThunk,
-    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearMovieResults, handleInputValue, changeLanguages, setTheme, toggleTheme,
-    actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults
+    movieVideosThunk, changeMoviesPageNumber, searchMovieThunk, clearMovieResults, handleInputValue, changeLanguages, setTheme, 
+    toggleTheme, actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
+    tvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk
 }

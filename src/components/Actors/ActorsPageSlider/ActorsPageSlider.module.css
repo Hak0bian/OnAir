@@ -38,3 +38,8 @@
     padding-bottom: 8px;
     font-size: 15px;
 }
+
+.starIcon{
+    font-size: 18px !important;
+    color: var(--buttons-color);
+}

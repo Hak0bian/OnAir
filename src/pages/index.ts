@@ -12,8 +12,10 @@ import FeaturesPage from "./FeaturesPage/FeaturesPage";
 import ContactUsPage from "./ContactUsPage/ContactUsPage";
 import PricingPlansPage from "./PricingPlansPage/PricingPlansPage";
 import SearchResultsPage from "./SearchResultsPage/SearchResultsPage";
+import TvSeriesPage from "./TvSeriesPage/TvSeriesPage";
+import AboutTvSeriaPage from "./AboutTvSeriaPage/AboutTvSeriaPage";
 
 export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
     SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, 
-    SearchResultsPage 
+    SearchResultsPage , TvSeriesPage, AboutTvSeriaPage
 }

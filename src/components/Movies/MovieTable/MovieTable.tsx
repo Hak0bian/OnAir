@@ -24,10 +24,6 @@ const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
                         <td>{selectedMovie?.popularity || '—'}</td>
                     </tr>
                     <tr>
-                        <td className={styles.key}>{t.genre}</td>
-                        <td>{selectedMovie?.genres?.map(g => g?.name).join(', ') || '—'}</td>
-                    </tr>
-                    <tr>
                         <td className={styles.key}>{t.language}</td>
                         <td>{selectedMovie?.original_language || '—'}</td>
                     </tr>

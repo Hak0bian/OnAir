@@ -19,7 +19,7 @@ const ActorCard = ({ actor }: { actor: IActorType }) => {
           <div className={styles.dateAndRate}>
             <p className={styles.department}>{actor?.known_for_department}</p>
             <p className={styles.rating}>
-              <GradeIcon sx={{ fontSize: '18px', color: '#E13C52' }} />
+              <GradeIcon className={styles.starIcon} />
               {actor?.popularity.toFixed(1)}
             </p>
           </div>

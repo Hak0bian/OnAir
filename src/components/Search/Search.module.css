@@ -1,5 +1,11 @@
 .searchDiv{
     position: relative;
+    margin-right: 12px;
+    border-radius: 8px;
+    background-color: var(--bg-color-options);
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
 }
 
 .searchInput{
@@ -9,7 +15,6 @@
     font-size: 16px;
     padding-left: 8px;
     border-radius: 8px;
-    margin-right: 12px;
     border: none;
     background-color: var(--bg-color-options);
     color: var(--text-color-primary);
@@ -48,4 +53,13 @@
 .notFound{
     padding: 8px;
     border: 1px solid var(--text-color-gray);
+}
+
+.resetIcon{
+    color: var(--text-color-gray);
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-primary);
+    }
 }

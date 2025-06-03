@@ -54,7 +54,7 @@ const moviesSlice = createSlice({
 
         // getMoviesCredits
         .addCase(movieCrewThunk.fulfilled, (state, action: PayloadAction<IMovieCreditsType>) => {
-            state.movieCast = [ ...action.payload.cast, ...action.payload.crew ]
+            state.movieCast = action.payload.cast
             state.isLoading = false
         })
         .addCase(movieCrewThunk.pending, (state => {

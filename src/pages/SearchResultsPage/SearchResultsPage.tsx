@@ -35,7 +35,6 @@ const SearchResultsPage = () => {
                     }
                 </div>
 
-
                 <h2 className={styles.searchedTitle}>Searched actors</h2>
                 <div className={styles.actorsDiv}>
                     {

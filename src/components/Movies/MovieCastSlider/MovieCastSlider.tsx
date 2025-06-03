@@ -8,6 +8,7 @@ SwiperCore.use([Autoplay, Pagination]);
 import CastCard from '../CastCard/CastCard';
 import styles from './MovieCastSlider.module.css';
 
+
 const MovieCastSlider = ({ movieId }: { movieId: number }) => {
     const { movieCast } = useAppSelector((state => state.moviesData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))

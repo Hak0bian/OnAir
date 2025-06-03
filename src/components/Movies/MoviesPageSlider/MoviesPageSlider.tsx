@@ -1,54 +1,47 @@
 import { NavLink } from 'react-router-dom';
-import { LibraryButton, MainButton } from '../..'
-import { useAppSelector } from '../../../store/hooks/hooks';
-import { translations } from '../../../translations/translations';
 import { IMoviesType } from '../../../types'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay]);
-import GradeIcon from '@mui/icons-material/Grade';
+SwiperCore.use([Autoplay, Pagination]);
 import styles from './MoviesPageSlider.module.css'
+import '../../global.css';
 
 
-const MoviesPageSlider = ({ movies }: { movies: IMoviesType[] }) => {
-  const { selectedLanguage } = useAppSelector((state) => state.languagesData)
-  const t = translations[selectedLanguage]
+const MoviesPageSlider = ({movies}: {movies: IMoviesType[]}) => {
 
   return (
-    <section>
-      <div className={styles.moviesSlideDiv}>
-        <Swiper
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 3000 }}
-        >
-          {movies.map((movie) => (
-            <SwiperSlide key={movie.id}>
-              <div className={styles.moviesSlide}>
-                <img src={`https://image.tmdb.org/t/p/w400${movie?.poster_path}`} alt={movie?.title} />
-                <div>
-                  <h2>{movie?.title}</h2>
-                  <p className={styles.rating}>
-                    <GradeIcon sx={{ fontSize: '18px', color: '#E13C52' }} />
-                    {movie?.vote_average.toFixed(1)}
-                  </p>
-                  <p className={styles.owerview}>{movie?.overview}</p>
+    <Swiper
+      slidesPerView={5}
+      centeredSlides={true}
+      loop={true}
+      pagination={{ clickable: true }}
+      onSlideChange={(swiper: any) => {
+        const slides = swiper.slides;
+        if (!slides || !slides.length) return;
+        
+        slides.forEach((slide: any) => slide.classList.remove('prev-slide', 'next-slide', 'far-prev', 'far-next'));
+        const active = swiper.activeIndex;
+        const total = slides.length;
 
-                  <div className={styles.buttonsDiv}>
-                    <NavLink to={`/Movies/movie/${movie?.id}`}>
-                      <MainButton text={t.moreDetailsBtn} />
-                    </NavLink>
-                    <LibraryButton movie={movie} />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
-  )
+        const mod = (i: any) => (i + total) % total;
+        slides[mod(active - 1)].classList.add('prev-slide');
+        slides[mod(active + 1)].classList.add('next-slide');
+        slides[mod(active - 2)].classList.add('far-prev');
+        slides[mod(active + 2)].classList.add('far-next');
+      }}
+      onSwiper={(swiper: any) => swiper.emit('slideChange')}
+      className="custom-carousel"
+    >
+      {movies.map((movie) => (
+        <SwiperSlide key={movie.id}>
+          <NavLink to={`/Movies/movie/${movie.id}`}>
+            <img src={`https://image.tmdb.org/t/p/w400${movie?.poster_path}`} className={styles.slideImg}/>
+          </NavLink>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
 }
 
 export default MoviesPageSlider

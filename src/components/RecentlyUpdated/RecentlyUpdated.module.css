@@ -1,0 +1,13 @@
+
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 2;
+    gap: 40px 16px;
+}
+
+.catalogBtn{
+    text-align: center;
+    padding: 48px 0 20px;
+}

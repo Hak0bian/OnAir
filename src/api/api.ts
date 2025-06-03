@@ -43,6 +43,8 @@ export const API = {
     searchMovie(text: string){
         return instance.get<IMoviesReturnType>(`/search/movie?query=${text}`)
     },
+
+
     getActors({page, selectedLanguage}: IPropsType){
         return instance.get<IActorsReturnType>(`/person/popular?language=${selectedLanguage}&page=${page}`)
     },
@@ -54,5 +56,14 @@ export const API = {
     },
     searchActor(text: string){
         return instance.get<IActorsReturnType>(`/search/person?query=${text}`)
+    },
+
+
+    getTvSeries({page, selectedLanguage}: IPropsType){
+        return instance.get(`/discover/tv?language=${selectedLanguage}&page=${page}&first_air_date_year=2025`)
+    },
+    getTvSeriaById({id, selectedLanguage}: IPropsTypeToo){
+        return instance.get(`/tv/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
     }
+    
 }

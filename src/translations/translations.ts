@@ -159,7 +159,10 @@ export const translations: any = {
             search: "Search",
             overview: "Overview",
             trailer: "Watch Trailer",
+            last: "Last episode ",
             cast: "Cast",
+            seeAll: "See all",
+            recommendations: "Recommendations",
             castNotFound: "Cast not found",
             movieTable: {
                 date: "Date",
@@ -173,7 +176,11 @@ export const translations: any = {
                 tagline: "Tagline",
                 adult: "Adult",
                 minutes: "minutes",
-                yes: "Yes"
+                yes: "Yes",
+                season: "Season/Episode",
+                type: "Type",
+                status: "Status",
+                created: "Created by"
             },
         },
 
@@ -492,7 +499,10 @@ export const translations: any = {
             search: "Поиск",
             overview: "Обзор",
             trailer: "Смотреть трейлер",
+            last: "Последный эпизод",
             cast: "Актерский состав",
+            seeAll: "Смотреть все",
+            recommendations: "Рекомендации",
             castNotFound: "Актерский состав не найдено",
             movieTable: {
                 date: "Дата",
@@ -506,7 +516,11 @@ export const translations: any = {
                 tagline: "Слоган",
                 adult: "",
                 minutes: "минут",
-                yes: "Да"
+                yes: "Да",
+                season: "Сезон/Эпизод",
+                type: "Тип",
+                status: "Статус",
+                created: "Создано"
             },
         },
 

@@ -27,7 +27,7 @@ const SearchedActorsList = ({ showResults, inputValue, setInputValue }: ISearchP
                                 <div>
                                     <p>{actor?.name}</p>
                                     <p className={styles.rating}>
-                                        <GradeIcon sx={{ fontSize: '16px', color: '#E13C52' }} />
+                                        <GradeIcon className={styles.starIcon} />
                                         {actor?.popularity.toFixed(1)}
                                     </p>
                                     <p className={styles.department}>{actor?.known_for_department}</p>

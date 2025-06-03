@@ -35,6 +35,11 @@
     color: var(--text-color-primary);
 }
 
+.starIcon{
+    font-size: 18px !important;
+    color: var(--buttons-color);
+}
+
 .seeResults{
     text-align: center;
     transition: .3s;

@@ -50,4 +50,9 @@
         gap: 4px;
         color: var(--text-color-main);
     }
+
+    .starIcon{
+        font-size: 18px !important;
+        color: var(--buttons-color);
+    }
 }

@@ -1,7 +1,7 @@
 .swiper-pagination-movies, .swiper-pagination-actors,
 .swiper-pagination-cast, .swiper-pagination-knownFor {
     position: relative;
-    margin-top: 20px;
+    margin-top: 28px;
     text-align: center;
 }
 
@@ -21,7 +21,8 @@
 .swiper-pagination-knownFor .swiper-pagination-bullet-active {
     background: #E13C52; 
     opacity: 1;
-}
+} 
+
 
 /* ********************************************************** */
 
@@ -68,7 +69,16 @@
     color: var(--text-color-secondary) !important;
 }
 
+/* *************************************************** */
 
+.gridDiv{
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    padding: 20px 0 60px;
+}
 
 .sectionHeader{
     height: 280px;
@@ -97,4 +107,24 @@
         font-weight: normal;
         letter-spacing: .4px;
     }
+}
+
+/* ******************************************** */
+
+.tabItem {
+    font-size: 16px !important;
+    color: var(--text-color-primary) !important;
+    transition: .2s;
+}
+
+.tabItem.Mui-selected {
+    color: var(--text-color-secondary) !important;
+}
+
+.tabItem:hover {
+    color: var(--text-color-secondary) !important;
+}
+
+.MuiTabs-indicator {
+    background-color: var(--text-color-secondary) !important;
 }

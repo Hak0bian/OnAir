@@ -2,9 +2,9 @@ import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { MovieCard } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Pagination]);
+// import SwiperCore, { Autoplay, Pagination } from 'swiper';
+// import 'swiper/swiper-bundle.min.css';
+// SwiperCore.use([Autoplay, Pagination]);
 import GradeIcon from '@mui/icons-material/Grade';
 import darkProfile from '../../../assets/images/dark-profile.png'
 import lightProfile from '../../../assets/images/light-profile.png'
@@ -33,7 +33,7 @@ const ActorDetails = () => {
                         <p className={styles.department}>{selectedActor.known_for_department}</p>
                     }
                     <p className={styles.rating}>
-                        <GradeIcon sx={{ fontSize: '18px', color: '#E13C52' }} />
+                        <GradeIcon className={styles.starIcon} />
                         {selectedActor?.popularity.toFixed(1)}
                     </p>
                     <p className={styles.knownAS}>
@@ -46,7 +46,6 @@ const ActorDetails = () => {
             <div className={styles.knownForBox}>
                 <h3 className={styles.secondary}>{t.knownFor}</h3>
                 {
-
                     selectedActor?.known_for && selectedActor?.known_for?.length > 0
                         ? (<Swiper
                             spaceBetween={20}

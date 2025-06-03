@@ -1,4 +1,4 @@
-import { IMoviesType, IMovieVideosResultsType } from "../../../types";
+import { IMoviesType, IVideosResultsType, ITvDetailsResponse, ITvSeriesType } from "../../../types";
 
 export interface IHomeMoviesStateType {
     latestMovies: Array<IMoviesType>,
@@ -14,9 +14,9 @@ export interface IHomeMoviesStateType {
 
 export interface IMoviesStateType {
     movies: Array<IMoviesType>,
-    movieVideos: Array<IMovieVideosResultsType>,
+    movieVideos: Array<IVideosResultsType>,
     selectedMovie: IMoviesType | null,
-    movieCast: Array<ICastAndCrewType>,
+    movieCast: Array<ICastType>,
     page: number,
     totalPages: number,
     isLoading: boolean,
@@ -25,7 +25,7 @@ export interface IMoviesStateType {
 
 // *********************************************
 
-export interface ICastAndCrewType {
+export interface ICastType {
     adult: boolean;
     gender: number;
     id: number;
@@ -34,8 +34,8 @@ export interface ICastAndCrewType {
     original_name: string;
     popularity: number;
     profile_path: string | null;
-    cast_id: number;
     credit_id: string;
+    cast_id?: number;
     character?: string;
     order?: number;
     job?: string;
@@ -44,8 +44,7 @@ export interface ICastAndCrewType {
 
 export interface IMovieCreditsType {
     id: number;
-    cast: Array<ICastAndCrewType>;
-    crew: Array<ICastAndCrewType>;
+    cast: Array<ICastType>;
 }
 
 // *********************************************
@@ -68,7 +67,8 @@ export interface IGenresReturnType {
 }
 
 export type ILibraryStateType = {
-    library: Array<IMoviesType>;
+    moviesInibrary: Array<IMoviesType>,
+    seriesInLibrary: Array<ITvDetailsResponse>
 }
 
 // *********************************************
@@ -150,5 +150,18 @@ export type IOpenCloseFormsStateType = {
     signUp: boolean;
     signIn: boolean;
     forgotPass: boolean;
-    selectPlan:boolean;
+    selectPlan: boolean;
+}
+
+
+// ********************************************
+
+
+export type ITvSeriesStateType = {
+    tvSeries: Array<ITvSeriesType>
+    selectedSeria: ITvDetailsResponse | null,
+    page: number,
+    totalPages: number,
+    isLoading: boolean
+    error: null | string
 }

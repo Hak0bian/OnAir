@@ -13,7 +13,7 @@ const MovieCard = ({ movie }: { movie: IMoviesType }) => {
                     <div className={styles.dateAndRate}>
                         <p className={styles.date}>{movie?.release_date}</p>
                         <p className={styles.rating}>
-                            <GradeIcon sx={{fontSize: '18px', color: '#E13C52'}}/>
+                            <GradeIcon className={styles.starIcon}/>
                             {movie?.vote_average.toFixed(1)}
                         </p>
                     </div>

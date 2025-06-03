@@ -9,7 +9,7 @@ import logoForDark from '../../assets/images/onair-logo.png'
 import logoForLight from '../../assets/images/onair-logo-light.png'
 import SelectLanguage from '../SelectLanguage/SelectLanguage'
 import MorePages from '../MorePages/MorePages'
-import Search from '../Movies/Search/Search'
+import Search from '../Search/Search'
 import styles from './Navigation.module.css'
 
 
@@ -18,6 +18,7 @@ const Navigation = () => {
     const navigate = useNavigate()
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
+    const { page: tvPage } = useAppSelector((state) => state.tvSeriesData)
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const { mode } = useAppSelector((state) => state.theme)
     const t = translations[selectedLanguage].navigation
@@ -47,7 +48,7 @@ const Navigation = () => {
                 <div className={styles.navMenu}>
                     <NavLink to={`/`} onClick={scrollToTopPage}>{t.home}</NavLink>
                     <NavLink to={`/Movies/page/${moviesPage}`} onClick={scrollToTopPage}>{t.movies}</NavLink>
-                    <NavLink to={`TV`}>{t.tv}</NavLink>
+                    <NavLink to={`/TV/page/${tvPage}`} onClick={scrollToTopPage}>{t.tv}</NavLink>
                     <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
                     <NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink>
                     <MorePages />

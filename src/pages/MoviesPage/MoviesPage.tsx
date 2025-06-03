@@ -37,11 +37,11 @@ const MoviesPage = () => {
 
   return (
     <section>
-        {
+        {/* {
           moviesByGenre.length > 0
           ? <MoviesPageSlider movies={moviesByGenre} />
           : <MoviesPageSlider movies={movies} />
-        }
+        } */}
       <div className='container'>
         <SelectGenre />
 

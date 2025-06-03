@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
-  SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, 
-  PricingPlansPage,
-  SearchResultsPage} from './pages'
+  SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage,
+  SearchResultsPage, TvSeriesPage, 
+  AboutTvSeriaPage} from './pages'
 import { useEffect } from 'react';
 
 function App() {
@@ -20,6 +20,11 @@ function App() {
           <Route path='/Movies/page/:pageNum' element={<MoviesPage />} />
           <Route path='/Movies/movie/:id' element={<AboutMoviePage />} />
           <Route path='/Movies/:category' element={<RedirectToFirstPage />} />
+
+          <Route path='/TV/page/:pageNum' element={<TvSeriesPage />} />
+          <Route path='/TV/Seria/:id' element={<AboutTvSeriaPage />} />
+          <Route path='/TV/Seria/:seriaId/cast' element={<SeeAllCastPage />} />
+
           <Route path='/Actors/page/:pageNum' element={<ActorsPage />} />
           <Route path='/Actors/actor/:id' element={<AboutActorPage />} />
           <Route path='/Library' element={<LibraryPage />} />

@@ -1,0 +1,58 @@
+.seriaCard {
+    min-height: 320px;
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 4px var(--bg-color-main);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        background-color: var(--bg-color-options);
+    }
+}
+
+.nameDiv{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    h4{
+        font-weight: 300;
+        color: var(--text-color-main);
+    }
+
+    .dateAndRate{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;   
+        font-size: 14px;
+    }
+    
+    .date{
+        font-size: 14px;
+        letter-spacing: .4px;
+        color: var(--text-color-gray);
+        padding: 4px 0;
+    }
+
+    .rating{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--text-color-main);
+    }
+
+    .starIcon{
+        font-size: 18px !important;
+        color: var(--buttons-color);
+    }
+}

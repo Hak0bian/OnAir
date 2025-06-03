@@ -1,4 +1,4 @@
-import { IMoviesType } from "../../types";
+import { IMoviesType, ITvDetailsResponse } from "../../types";
 
 export interface IMovieSliderPropsType {
     movies: Array<IMoviesType>, 
@@ -34,4 +34,8 @@ export interface IRatingPropsType {
 export interface ISignInFormPropsType {
     handleOpenSignUp: () => void;
     handleOpenSignIn: () => void;
+}
+
+export interface ITvSeriaTablePropsType {
+    selectedSeria: ITvDetailsResponse | null
 }

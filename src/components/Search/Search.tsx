@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { searchMovieThunk, searchActorThunk, clearMovieResults, clearActorsResults } from '../../../store/slices'
-import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks'
-import { translations } from '../../../translations/translations'
+import { searchMovieThunk, searchActorThunk, clearMovieResults, clearActorsResults } from '../../store/slices'
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
+import { translations } from '../../translations/translations'
 import { useLocation } from 'react-router-dom'
-import SearchedMoviesList from '../SearchedMoviesList/SearchedMoviesList'
-import SearchedActorsList from '../../Actors/SearchedActorsList/SearchedActorsList'
+import { IoMdClose } from "react-icons/io";
+import SearchedMoviesList from '../Movies/SearchedMoviesList/SearchedMoviesList'
+import SearchedActorsList from '../Actors/SearchedActorsList/SearchedActorsList'
 import styles from './Search.module.css'
 
 
@@ -55,6 +56,7 @@ const SearchMovie = () => {
                 onChange={(e) => handleSearch(e)}
                 className={styles.searchInput}
             />
+            <IoMdClose className={styles.resetIcon} onClick={() => setInputValue('')}/>
             <div className={styles.resultsDiv}>
                 {
                     !movieIsLoading && movieNotFound && showResults

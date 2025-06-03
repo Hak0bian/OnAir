@@ -3,9 +3,9 @@ import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { IActorType } from '../../../store/slices/sliceTypes/stateTypes';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Pagination]);
+// import SwiperCore, { Autoplay, Pagination } from 'swiper';
+// import 'swiper/swiper-bundle.min.css';
+// SwiperCore.use([Autoplay, Pagination]);
 import ActorCard from '../ActorCard/ActorCard';
 import styles from './ActorsSlider.module.css';
 

@@ -3,9 +3,9 @@ import { IMovieSliderPropsType } from '../../componentsTypes/propsTypes';
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.min.css';
-SwiperCore.use([Autoplay, Pagination]);
+// import SwiperCore, { Autoplay, Pagination } from 'swiper';
+// import 'swiper/swiper-bundle.min.css';
+// SwiperCore.use([Autoplay, Pagination]);
 import MovieCard from '../MovieCard/MovieCard';
 import styles from './MoviesSlider.module.css';
 

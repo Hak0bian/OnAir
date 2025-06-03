@@ -1,0 +1,45 @@
+.episodeDiv{
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.episodeInfo{
+    letter-spacing: .4px;
+    font-weight: 300;
+
+    p, span{
+        padding: 4px 0;
+    }
+}
+
+.episodeNum{
+    color: var(--text-color-secondary);
+}
+
+.flexDiv{
+    display: flex;
+    gap: 20px;
+
+    span{
+        font-size: 14px;
+        color: var(--text-color-gray);
+    }
+}
+
+.about{
+    width: 70%;
+}
+
+
+.rating{
+    display: flex;
+    gap: 4px;
+    color: var(--text-color-primary);
+    font-size: 15px;
+}
+
+.starIcon{
+    font-size: 18px !important;
+    color: var(--buttons-color);
+}
