@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IMoviesType, ITvDetailsResponse } from '../../../types';
+import { IDetailsByIdType } from '../../../types';
 import { ILibraryStateType } from '../sliceTypes/stateTypes';
 
 const initialState: ILibraryStateType = {
@@ -11,10 +11,10 @@ const librarySlice = createSlice({
     name: 'librarySlice',
     initialState,
     reducers: {
-        setMovieinLibrary(state, action: PayloadAction<IMoviesType[]>) {
+        setMovieinLibrary(state, action: PayloadAction<IDetailsByIdType[]>) {
             state.moviesInibrary = action.payload;
         },
-        addMovieToLibrary(state, action: PayloadAction<IMoviesType>) {
+        addMovieToLibrary(state, action: PayloadAction<IDetailsByIdType>) {
             const existingMovies = state.moviesInibrary.find((movie) => movie.id === action.payload.id);
             if (!existingMovies) {
                 state.moviesInibrary.push(action.payload);
@@ -26,18 +26,18 @@ const librarySlice = createSlice({
             localStorage.setItem('library', JSON.stringify(state.moviesInibrary));
         },
 
-        setSeriainLibrary(state, action: PayloadAction<ITvDetailsResponse[]>) {
+        setSeriainLibrary(state, action: PayloadAction<IDetailsByIdType[]>) {
             state.seriesInLibrary = action.payload;
         },
-        addSeriaToLibrary(state, action: PayloadAction<ITvDetailsResponse>) {
-            const existingMovies = state.moviesInibrary.find((movie) => movie.id === action.payload.id);
-            if (!existingMovies) {
+        addSeriaToLibrary(state, action: PayloadAction<IDetailsByIdType>) {
+            const existingSeries = state.seriesInLibrary.find((movie) => movie.id === action.payload.id);
+            if (!existingSeries) {
                 state.seriesInLibrary.push(action.payload);
                 localStorage.setItem('librarySeries', JSON.stringify(state.seriesInLibrary));
             }
         },
         removeSeriaFromLibrary(state, action: PayloadAction<number>) {
-            state.seriesInLibrary = state.seriesInLibrary.filter((movie) => movie.id !== action.payload);
+            state.seriesInLibrary = state.seriesInLibrary.filter((movie: {id: number}) => movie.id !== action.payload);
             localStorage.setItem('library', JSON.stringify(state.seriesInLibrary));
         },
         clearLibrary(state) {

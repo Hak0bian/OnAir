@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { tvSeriaByIdThunk, tvSeriesThunk } from "./tvSeriesThunk";
 import { ITvSeriesStateType } from "../sliceTypes/stateTypes";
-import { ITvDetailsResponse, ITvSeriesReturnType } from "../../../types";
+import { IDetailsByIdType, ITvSeriesReturnType } from "../../../types";
 
 const initialState: ITvSeriesStateType = {
     tvSeries: [],
@@ -38,7 +38,7 @@ const tvSeriesSlice = createSlice({
         })
 
         // getTvSeriaById
-        .addCase(tvSeriaByIdThunk.fulfilled, (state, action: PayloadAction<ITvDetailsResponse>) => {
+        .addCase(tvSeriaByIdThunk.fulfilled, (state, action: PayloadAction<IDetailsByIdType>) => {
             state.selectedSeria = action.payload
             state.isLoading = true
         })

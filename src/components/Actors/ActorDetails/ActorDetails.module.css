@@ -70,7 +70,7 @@
 
 .department{
     font-size: 14px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
     font-weight: 300;
     color: var(--text-color-secondary);
 }
@@ -86,4 +86,30 @@
 .starIcon{
     font-size: 18px !important;
     color: var(--buttons-color);
+}
+
+
+
+.slideTopDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 20px;
+    position: relative;
+}
+
+.slideTitle{
+    font-weight: normal;
+    letter-spacing: .4px;
+    color: var(--text-color-gray);
+}
+
+.seeAll{
+    font-size: 18px;
+    color: var(--text-color-secondary);
+    transition: .3s;
+
+    &:hover{
+        color: var(--text-color-primary);
+    }
 }

@@ -1,23 +1,24 @@
-import TvSeriesCard from '../TvSeriesCard/TvSeriesCard';
-import { useAppSelector } from '../../../store/hooks/hooks';
+import { useAppSelector } from '../../../store/hooks/hooks'
+import { translations } from '../../../translations/translations';
+import { MovieCard } from '../../../components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Pagination]);
 import 'swiper/swiper-bundle.min.css';
 
-
-const TvSeriesSimilarSlider = () => {
-    const { selectedSeria } = useAppSelector((state) => state.tvSeriesData)
-    const recSeries = selectedSeria?.similar?.results?.slice(0, 12)
+const KnownForSlider = () => {
+    const { selectedActor } = useAppSelector((state => state.actorsData))
+    const { selectedLanguage } = useAppSelector((state => state.languagesData))
+    const t = translations[selectedLanguage].actors
 
     return (
         <div>
             {
-                recSeries && recSeries.length > 0
+                selectedActor?.known_for && selectedActor?.known_for?.length > 0
                 ? (<Swiper
                     spaceBetween={20}
                     slidesPerView={6}
-                    loop={recSeries.length > 8}
+                    loop={selectedActor?.known_for?.length > 8}
                     autoplay={{ delay: 2000 }}
                     breakpoints={{
                         0: { slidesPerView: 1 },
@@ -33,20 +34,23 @@ const TvSeriesSimilarSlider = () => {
                         type: 'bullets',
                     }}
                 >
-                    {
-                        recSeries && recSeries.map((seria) => (
-                            <SwiperSlide key={seria.id}>
-                                <TvSeriesCard seria={seria}/>
+                    {selectedActor?.known_for && (
+                        (selectedActor.known_for.length > 12
+                            ? selectedActor.known_for.slice(0, 12)
+                            : selectedActor.known_for
+                        ).map((movie) => (
+                            <SwiperSlide>
+                                <MovieCard key={movie.id} movie={movie} />
                             </SwiperSlide>
                         ))
-                    }
+                    )}
 
                     <div className='swiper-pagination-knownFor'></div>
                 </Swiper>)
-                : (<p>No recommendations series</p>)
+                : (<p>{t.noKnownFor}</p>)
             }
         </div>
     )
 }
 
-export default TvSeriesSimilarSlider
+export default KnownForSlider

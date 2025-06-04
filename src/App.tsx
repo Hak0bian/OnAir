@@ -3,7 +3,8 @@ import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
   SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage,
   SearchResultsPage, TvSeriesPage, 
-  AboutTvSeriaPage} from './pages'
+  AboutTvSeriaPage,
+  RecommendationsPage} from './pages'
 import { useEffect } from 'react';
 
 function App() {
@@ -20,16 +21,18 @@ function App() {
           <Route path='/Movies/page/:pageNum' element={<MoviesPage />} />
           <Route path='/Movies/movie/:id' element={<AboutMoviePage />} />
           <Route path='/Movies/:category' element={<RedirectToFirstPage />} />
+          <Route path='/Movies/:category/page/:pageNum' element={<SeeAllPage />} />
+          <Route path='/Movies/movie/:movieId/cast' element={<SeeAllCastPage />} />
+          <Route path='/Movies/movie/:movieId/recommendations' element={<RecommendationsPage />} />
 
           <Route path='/TV/page/:pageNum' element={<TvSeriesPage />} />
           <Route path='/TV/Seria/:id' element={<AboutTvSeriaPage />} />
           <Route path='/TV/Seria/:seriaId/cast' element={<SeeAllCastPage />} />
+          <Route path='//TV/Seria/:seriaId/recommendations' element={<RecommendationsPage />} />
 
           <Route path='/Actors/page/:pageNum' element={<ActorsPage />} />
           <Route path='/Actors/actor/:id' element={<AboutActorPage />} />
           <Route path='/Library' element={<LibraryPage />} />
-          <Route path='/Movies/:category/page/:pageNum' element={<SeeAllPage />} />
-          <Route path='/Movies/movie/:movieId/cast' element={<SeeAllCastPage />} />
           <Route path='/Help-Center' element={<HelpCenterPage/>} />
           <Route path='/Features' element={<FeaturesPage/>} />
           <Route path='/Pricing-Plans' element={<PricingPlansPage/>} />

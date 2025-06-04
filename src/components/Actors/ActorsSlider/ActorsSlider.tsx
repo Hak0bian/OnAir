@@ -24,7 +24,7 @@ const ActorsSlider = ({ actors }: { actors: IActorType[] }) => {
                 ?   (<Swiper
                         spaceBetween={16}
                         slidesPerView={6}
-                        loop={true}
+                        loop={actors.length > 6}
                         autoplay={{ delay: 2000 }}
                         breakpoints={{
                             340: { slidesPerView: 1 },

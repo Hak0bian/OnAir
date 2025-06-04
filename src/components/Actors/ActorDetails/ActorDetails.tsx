@@ -1,24 +1,19 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
-import { MovieCard } from '../../../components';
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import SwiperCore, { Autoplay, Pagination } from 'swiper';
-// import 'swiper/swiper-bundle.min.css';
-// SwiperCore.use([Autoplay, Pagination]);
+import { NavLink } from 'react-router-dom';
 import GradeIcon from '@mui/icons-material/Grade';
 import darkProfile from '../../../assets/images/dark-profile.png'
 import lightProfile from '../../../assets/images/light-profile.png'
 import styles from './ActorDetails.module.css'
+import KnownForSlider from '../KnownForSlider/KnownForSlider';
 
 const ActorDetails = () => {
-    const { selectedActor, isLoading } = useAppSelector((state => state.actorsData))
+    const { selectedActor } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const { mode } = useAppSelector((state) => state.theme)
     const profileImg = mode === 'dark' ? darkProfile : lightProfile
     const t = translations[selectedLanguage].actors
 
-    if (isLoading) return <h2 className='loading'>Loading...</h2>;
-    if (!selectedActor) return <h3 className='notFound'>Actor not found...</h3>;
 
     return (
         <section className={styles.actorDetailsSec}>
@@ -29,7 +24,7 @@ const ActorDetails = () => {
                 <div>
                     <h2 className={styles.actorTitle}>{selectedActor?.name}</h2>
                     {
-                        selectedActor.known_for_department && 
+                        selectedActor?.known_for_department &&
                         <p className={styles.department}>{selectedActor.known_for_department}</p>
                     }
                     <p className={styles.rating}>
@@ -44,43 +39,14 @@ const ActorDetails = () => {
             </div>
 
             <div className={styles.knownForBox}>
-                <h3 className={styles.secondary}>{t.knownFor}</h3>
-                {
-                    selectedActor?.known_for && selectedActor?.known_for?.length > 0
-                        ? (<Swiper
-                            spaceBetween={20}
-                            slidesPerView={6}
-                            loop={selectedActor?.known_for?.length > 5}
-                            autoplay={{ delay: 2000 }}
-                            breakpoints={{
-                                0: { slidesPerView: 1 },
-                                440: { slidesPerView: 2 },
-                                640: { slidesPerView: 3 },
-                                840: { slidesPerView: 4 },
-                                1240: { slidesPerView: 6 },
-                            }}
-                            pagination={{
-                                el: `.swiper-pagination-knownFor`,
-                                clickable: true,
-                                dynamicBullets: false,
-                                type: 'bullets',
-                            }}
-                        >
-                            {selectedActor?.known_for && (
-                                (selectedActor.known_for.length > 20
-                                    ? selectedActor.known_for.slice(0, 20)
-                                    : selectedActor.known_for
-                                ).map((movie) => (
-                                    <SwiperSlide key={movie.id}>
-                                        <MovieCard movie={movie} />
-                                    </SwiperSlide>
-                                ))
-                            )}
-
-                            <div className='swiper-pagination-knownFor'></div>
-                        </Swiper>)
-                        : (<p className={styles.noKnownFor}>{t.noKnownFor}</p>)
-                }
+                <div className={styles.slideTopDiv}>
+                    <h3 className={styles.slideTitle}>{t.knownFor}</h3>
+                    {
+                        selectedActor?.known_for && selectedActor?.known_for?.length > 8 &&
+                        <NavLink to={`/Actors/actor/${selectedActor.id}/cast`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    }
+                </div>
+                <KnownForSlider />
             </div>
         </section>
     )

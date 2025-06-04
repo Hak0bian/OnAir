@@ -1,15 +1,15 @@
-import TvSeriesCard from '../TvSeriesCard/TvSeriesCard';
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Pagination]);
 import 'swiper/swiper-bundle.min.css';
+import MovieSimilarCard from '../MovieSimilarCard/MovieSimilarCard';
 
 
-const TvSeriesSimilarSlider = () => {
-    const { selectedSeria } = useAppSelector((state) => state.tvSeriesData)
-    const recSeries = selectedSeria?.similar?.results?.slice(0, 12)
-
+const MoviesSimilarSlider = () => {
+    const { selectedMovie } = useAppSelector((state) => state.moviesData)
+    const recSeries = selectedMovie?.similar?.results?.slice(0, 12)
+    
     return (
         <div>
             {
@@ -34,9 +34,9 @@ const TvSeriesSimilarSlider = () => {
                     }}
                 >
                     {
-                        recSeries && recSeries.map((seria) => (
-                            <SwiperSlide key={seria.id}>
-                                <TvSeriesCard seria={seria}/>
+                        recSeries && recSeries.map((movie) => (
+                            <SwiperSlide key={movie.id}>
+                                <MovieSimilarCard movie={movie}/>
                             </SwiperSlide>
                         ))
                     }
@@ -49,4 +49,4 @@ const TvSeriesSimilarSlider = () => {
     )
 }
 
-export default TvSeriesSimilarSlider
+export default MoviesSimilarSlider

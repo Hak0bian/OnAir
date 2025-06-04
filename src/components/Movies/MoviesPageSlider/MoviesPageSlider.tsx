@@ -9,7 +9,6 @@ import '../../global.css';
 
 
 const MoviesPageSlider = ({movies}: {movies: IMoviesType[]}) => {
-
   return (
     <Swiper
       slidesPerView={5}

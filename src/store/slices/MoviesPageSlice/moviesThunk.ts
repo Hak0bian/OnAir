@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType, IPropsTypeToo } from "../../../types"
-import { IMovieCreditsType } from "../sliceTypes/stateTypes"
+import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo } from "../../../types"
 import { API } from "../../../api/api"
 
 export const moviesThunk = createAsyncThunk<IMoviesReturnType, IPropsType>(
@@ -15,7 +14,7 @@ export const moviesThunk = createAsyncThunk<IMoviesReturnType, IPropsType>(
     }
 )
 
-export const movieByIdThunk = createAsyncThunk<IMoviesType, IPropsTypeToo>(
+export const movieByIdThunk = createAsyncThunk<IDetailsByIdType, IPropsTypeToo>(
     "movieByIdThunk",
     async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {
@@ -23,30 +22,6 @@ export const movieByIdThunk = createAsyncThunk<IMoviesType, IPropsTypeToo>(
             return res.data
         } catch (err: any) {
             return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch selected movie")
-        }
-    }
-)
-
-export const movieCrewThunk = createAsyncThunk<IMovieCreditsType, number>(
-    "movieCrewThunk",
-    async (movieId, { rejectWithValue }) => {
-        try {
-            const res = await API.getMovieCrew(movieId)
-            return res.data
-        } catch (err: any) {
-            return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch movie crew")
-        }
-    }
-)
-
-export const movieVideosThunk = createAsyncThunk<IMovieVideosReturnType, number>(
-    "movieVideosThunk",
-    async (id, { rejectWithValue }) => {
-        try {
-            const res = await API.getMovieVideos(id)
-            return res.data
-        } catch (err: any) {
-            return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch movie trailer")
         }
     }
 )

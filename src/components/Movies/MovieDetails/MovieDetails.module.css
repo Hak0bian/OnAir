@@ -1,57 +1,41 @@
 .detailsSection{
-    padding-top: 20px;
+    position: relative;
+    padding-bottom: 40px;
 }
 
-.movieDetailsDiv{
+.detailsSection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+}
+
+.detailsSection > * {
+    position: relative;
+    z-index: 1;
+}
+
+.slideTopDiv{
     display: flex;
-    gap: 28px;
-    padding-bottom: 20px;
-    letter-spacing: .4px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 20px;
+    position: relative;
 }
 
-.detailsTitle{
-    font-size: 28px;
-}
-
-.posterDiv{
-    min-width: 300px;
-    max-width: 300px;
-}
-
-.secondary{
-    padding: 8px 0;
-    text-transform: uppercase;
+.slideTitle{
     font-weight: normal;
+    letter-spacing: .4px;
     color: var(--text-color-gray);
 }
 
-.about{
-    font-weight: 300;
-    padding-bottom: 16px;
-}
-
-.buttonsDiv{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.genre{
-    font-size: 14px;
-    padding-bottom: 4px;
-    font-weight: 300;
+.seeAll{
+    font-size: 18px;
     color: var(--text-color-secondary);
-}
+    transition: .3s;
 
-.rating{
-    display: flex;
-    gap: 4px;
-    color: var(--text-color-primary);
-    padding-bottom: 8px;
-    font-size: 15px;
-}
-
-.starIcon{
-    font-size: 18px !important;
-    color: var(--buttons-color);
+    &:hover{
+        color: var(--text-color-primary);
+    }
 }

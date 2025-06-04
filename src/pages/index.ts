@@ -14,8 +14,9 @@ import PricingPlansPage from "./PricingPlansPage/PricingPlansPage";
 import SearchResultsPage from "./SearchResultsPage/SearchResultsPage";
 import TvSeriesPage from "./TvSeriesPage/TvSeriesPage";
 import AboutTvSeriaPage from "./AboutTvSeriaPage/AboutTvSeriaPage";
+import RecommendationsPage from "./RecommendationsPage/RecommendationsPage";
 
 export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
     SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, 
-    SearchResultsPage , TvSeriesPage, AboutTvSeriaPage
+    SearchResultsPage , TvSeriesPage, AboutTvSeriaPage, RecommendationsPage
 }

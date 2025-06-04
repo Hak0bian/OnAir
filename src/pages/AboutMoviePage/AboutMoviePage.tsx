@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
-import { movieByIdThunk, movieCrewThunk, movieVideosThunk } from '../../store//slices';
+import { movieByIdThunk, moviesThunk } from '../../store//slices';
 import { MovieDetails } from '../../components';
 
 const AboutMoviePage = () => {
@@ -11,12 +11,10 @@ const AboutMoviePage = () => {
 
     useEffect(() => {
         dispatch(movieByIdThunk({ id: Number(id), selectedLanguage}))
-        dispatch(movieVideosThunk(Number(id)))
-        dispatch(movieCrewThunk(Number(id)))
     }, [selectedLanguage])
 
     return (
-        <section className='container'>
+        <section>
             <MovieDetails />
         </section>
     )

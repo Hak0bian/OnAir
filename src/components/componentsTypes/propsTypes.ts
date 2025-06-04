@@ -1,12 +1,12 @@
-import { IMoviesType, ITvDetailsResponse } from "../../types";
+import { IDetailsByIdType, IMoviesType } from "../../types";
 
-export interface IMovieSliderPropsType {
+export type IMovieSliderPropsType = {
     movies: Array<IMoviesType>, 
     title: string
 }
 
-export interface IMovieTablePropsType {
-    selectedMovie: IMoviesType | null
+export type IMovieTablePropsType = {
+    selectedMovie: IDetailsByIdType | null
 }
 
 export type ISearchPropsType = {
@@ -21,21 +21,25 @@ export type IPaginationPropsType = {
     handleChangePage: (newPage: number) => void
 }
 
-export interface IMainButtonPropsType {
+export type IMainButtonPropsType = {
     text: string, 
     onClick?: () => void
 }
 
-export interface IRatingPropsType {
+export type IRatingPropsType = {
     value: number;
     type: string;
 }
 
-export interface ISignInFormPropsType {
+export type ISignInFormPropsType = {
     handleOpenSignUp: () => void;
     handleOpenSignIn: () => void;
 }
 
-export interface ITvSeriaTablePropsType {
-    selectedSeria: ITvDetailsResponse | null
+export type ITvSeriaTablePropsType = {
+    selectedSeria: IDetailsByIdType | null
+}
+
+export type IMovieCardPropsType = {
+    movie: IDetailsByIdType | IMoviesType
 }

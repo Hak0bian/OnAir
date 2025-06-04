@@ -12,10 +12,6 @@ const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
             <table>
                 <tbody>
                     <tr>
-                        <td className={styles.key}>{t.date}</td>
-                        <td>{selectedMovie?.release_date || '—'}</td>
-                    </tr>
-                    <tr>
                         <td className={styles.key}>{t.vote}</td>
                         <td>{selectedMovie?.vote_average?.toFixed(1) || '—'} / {selectedMovie?.vote_count || '—'}</td>
                     </tr>
@@ -35,12 +31,6 @@ const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
                         <td className={styles.key}>{t.companies}</td>
                         <td>{selectedMovie?.production_companies?.map(c => c?.name).join(', ') || '—'}</td>
                     </tr>
-                    {selectedMovie?.adult && (
-                        <tr>
-                            <td className={styles.key}>{t.adult}</td>
-                            <td>{t.yes}</td>
-                        </tr>
-                    )}
                     {selectedMovie?.runtime !== 0 && (
                         <tr>
                             <td className={styles.key}>{t.runtime}</td>

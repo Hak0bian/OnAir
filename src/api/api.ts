@@ -1,6 +1,6 @@
 import axios from "axios";
-import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType, IPropsType, IPropsTypeToo } from "../types";
-import { IActorsReturnType, IGenresReturnType, IMovieCreditsType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
+import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo } from "../types";
+import { IActorsReturnType, IGenresReturnType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCEPT = import.meta.env.VITE_ACCEPT;
@@ -26,13 +26,7 @@ export const API = {
         return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&language=${selectedLanguage}&page=${page}`)
     },
     getMovieById({id, selectedLanguage}: IPropsTypeToo){
-        return instance.get<IMoviesType>(`/movie/${id}?language=${selectedLanguage}`)
-    },
-    getMovieCrew(movieId: number){
-        return instance.get<IMovieCreditsType>(`/movie/${movieId}/credits`)
-    },
-    getMovieVideos(id: number){
-        return instance.get<IMovieVideosReturnType>(`/movie/${id}/videos`)
+        return instance.get<IDetailsByIdType>(`/movie/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
     },
     getGenres(selectedLanguage: string){
         return instance.get<IGenresReturnType>(`/genre/movie/list?language=${selectedLanguage}`)

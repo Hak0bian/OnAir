@@ -1,16 +1,19 @@
-.seriaDetailsDiv{
+.seriaDetails{
     max-width: 1280px;
     margin: auto;
+}
+
+.seriaDetailsDiv{
     display: flex;
     gap: 28px;
-    padding: 20px 0 40px;
+    padding-top: 20px;
     letter-spacing: .4px;
     position: relative;
 }
 
 .posterDiv{
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 280px;
+    max-width: 280px;
 }
 
 .detailsTitle{
@@ -35,7 +38,7 @@
 }
 
 .secondary{
-    padding: 8px 0;
+    padding: 16px 0 8px;
     text-transform: capitalize;
     font-weight: normal;
     color: var(--text-color-gray);
@@ -44,12 +47,14 @@
 .about{
     font-weight: 300;
     padding-bottom: 16px;
+    width: 80%;
 }
 
 .buttonsDiv{
     display: flex;
     align-items: center;
     gap: 8px;
+    padding-top: 12px;
 }
 
 .rating{

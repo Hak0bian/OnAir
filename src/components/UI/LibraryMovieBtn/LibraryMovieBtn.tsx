@@ -1,11 +1,11 @@
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { addMovieToLibrary, removeMovieFromLibrary } from '../../../store/slices';
 import { translations } from '../../../translations/translations';
+import { IDetailsByIdType } from '../../../types';
 import styles from './LibraryMovieBtn.module.css'
-import { IMoviesType } from '../../../types';
 
 
-const LibraryMovieBtn = ({ movie }: { movie: IMoviesType }) => {
+const LibraryMovieBtn = ({ movie }: { movie: IDetailsByIdType }) => {
   const dispatch = useAppDispatch();
   const { moviesInibrary } = useAppSelector(state => state.libraryData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)

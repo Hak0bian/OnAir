@@ -1,4 +1,4 @@
-import { IMoviesType, IVideosResultsType, ITvDetailsResponse, ITvSeriesType } from "../../../types";
+import { ICastType, IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../../types";
 
 export interface IHomeMoviesStateType {
     latestMovies: Array<IMoviesType>,
@@ -14,32 +14,11 @@ export interface IHomeMoviesStateType {
 
 export interface IMoviesStateType {
     movies: Array<IMoviesType>,
-    movieVideos: Array<IVideosResultsType>,
-    selectedMovie: IMoviesType | null,
-    movieCast: Array<ICastType>,
+    selectedMovie: IDetailsByIdType | null,
     page: number,
     totalPages: number,
     isLoading: boolean,
     error: null | string
-}
-
-// *********************************************
-
-export interface ICastType {
-    adult: boolean;
-    gender: number;
-    id: number;
-    known_for_department: string;
-    name: string;
-    original_name: string;
-    popularity: number;
-    profile_path: string | null;
-    credit_id: string;
-    cast_id?: number;
-    character?: string;
-    order?: number;
-    job?: string;
-    department?: string;
 }
 
 export interface IMovieCreditsType {
@@ -49,13 +28,8 @@ export interface IMovieCreditsType {
 
 // *********************************************
 
-export interface IGenresType {
-    id: number, 
-    name: string
-}
-
 export interface IMovieGenresStateType {
-    genres: Array<IGenresType>,
+    genres: { id: number; name: string }[];
     moviesByGenre: Array<IMoviesType>,
     isLoading: boolean,
     selectedGenreId: number,
@@ -63,12 +37,12 @@ export interface IMovieGenresStateType {
 }
 
 export interface IGenresReturnType {
-    genres: Array<IGenresType>
+    genres: { id: number; name: string }[];
 }
 
 export type ILibraryStateType = {
-    moviesInibrary: Array<IMoviesType>,
-    seriesInLibrary: Array<ITvDetailsResponse>
+    moviesInibrary: Array<IDetailsByIdType>,
+    seriesInLibrary: Array<IDetailsByIdType>
 }
 
 // *********************************************
@@ -159,7 +133,7 @@ export type IOpenCloseFormsStateType = {
 
 export type ITvSeriesStateType = {
     tvSeries: Array<ITvSeriesType>
-    selectedSeria: ITvDetailsResponse | null,
+    selectedSeria: IDetailsByIdType | null,
     page: number,
     totalPages: number,
     isLoading: boolean

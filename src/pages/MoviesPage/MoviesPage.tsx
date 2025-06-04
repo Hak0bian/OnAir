@@ -11,6 +11,7 @@ const MoviesPage = () => {
   const { movies, page, totalPages } = useAppSelector((state) => state.moviesData)
   const { selectedGenreId, moviesByGenre } = useAppSelector((state) => state.genresData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+  
 
   useEffect(() => {
     dispatch(genresListThunk(selectedLanguage));

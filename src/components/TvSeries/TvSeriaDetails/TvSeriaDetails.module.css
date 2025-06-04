@@ -3,25 +3,38 @@
     padding-bottom: 40px;
 }
 
+.detailsSection::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0;
+}
+
+.detailsSection > * {
+    position: relative;
+    z-index: 1;
+}
+
 .last{
-    padding-bottom: 20px;
+    padding: 40px 0 20px;
     font-weight: normal;
     color: var(--text-color-gray);
     position: relative;
 }
 
+
 .slideTopDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
+    padding: 40px 0 20px;
     position: relative;
 }
 
 .slideTitle{
     font-weight: normal;
     letter-spacing: .4px;
-    padding-top: 40px;
     color: var(--text-color-gray);
 }
 

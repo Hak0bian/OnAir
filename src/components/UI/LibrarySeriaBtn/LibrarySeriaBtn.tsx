@@ -1,11 +1,11 @@
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { addSeriaToLibrary, removeSeriaFromLibrary } from '../../../store/slices';
 import { translations } from '../../../translations/translations';
-import { ITvDetailsResponse } from '../../../types';
+import { IDetailsByIdType } from '../../../types';
 import styles from './LibrarySeriaBtn.module.css'
 
 
-const LibrarySeriaBtn = ({ seria }: { seria: ITvDetailsResponse }) => {
+const LibrarySeriaBtn = ({ seria }: { seria: IDetailsByIdType }) => {
   const dispatch = useAppDispatch();
   const { seriesInLibrary } = useAppSelector(state => state.libraryData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)

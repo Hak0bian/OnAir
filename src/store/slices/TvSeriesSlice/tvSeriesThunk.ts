@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IPropsType, IPropsTypeToo, ITvDetailsResponse, ITvSeriesReturnType } from "../../../types";
+import { IDetailsByIdType, IPropsType, IPropsTypeToo, ITvSeriesReturnType } from "../../../types";
 import { API } from "../../../api/api";
 
 export const tvSeriesThunk = createAsyncThunk<ITvSeriesReturnType, IPropsType>(
@@ -14,7 +14,7 @@ export const tvSeriesThunk = createAsyncThunk<ITvSeriesReturnType, IPropsType>(
     }
 )
 
-export const tvSeriaByIdThunk = createAsyncThunk<ITvDetailsResponse, IPropsTypeToo>(
+export const tvSeriaByIdThunk = createAsyncThunk<IDetailsByIdType, IPropsTypeToo>(
     'tvSeriaByIdThunk',
     async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {

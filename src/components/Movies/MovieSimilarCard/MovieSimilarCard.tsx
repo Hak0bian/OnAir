@@ -1,9 +1,9 @@
-import { IMovieCardPropsType } from '../../componentsTypes/propsTypes';
 import { NavLink } from 'react-router-dom'
 import GradeIcon from '@mui/icons-material/Grade';
-import styles from './MovieCard.module.css'
+import styles from './MovieSimilarCard.module.css'
+import { ISimilarResultsType } from '../../../types';
 
-const MovieCard = ({ movie }: IMovieCardPropsType ) => {
+const MovieSimilarCard = ({ movie }: {movie: ISimilarResultsType}) => {
     return (
         <NavLink to={`/Movies/movie/${movie?.id}`}>
             <div className={styles.movieCard}>
@@ -23,4 +23,4 @@ const MovieCard = ({ movie }: IMovieCardPropsType ) => {
     )
 }
 
-export default MovieCard
+export default MovieSimilarCard

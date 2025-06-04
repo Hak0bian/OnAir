@@ -188,7 +188,8 @@ export const translations: any = {
             search: "Search actor",
             knownFor: "Known for",
             noKnownFor: "No known works for this actor.",
-            noBiography: "No biography available"
+            noBiography: "No biography available",
+            seeAll: "See all",
         },
 
         library: {
@@ -528,7 +529,8 @@ export const translations: any = {
             search: "Поиск актера",
             knownFor: "Известность за",
             noKnownFor: "Нет известных работ.",
-            noBiography: "Биография отсутствует"
+            noBiography: "Биография отсутствует",
+            seeAll: "Смотреть все",
         },
 
         library: {

@@ -1,14 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { movieByIdThunk, movieCrewThunk, moviesThunk, movieVideosThunk } from "./moviesThunk";
-import { IMoviesReturnType, IMoviesType, IMovieVideosReturnType } from "../../../types";
-import { IMovieCreditsType, IMoviesStateType } from "../sliceTypes/stateTypes";
+import { movieByIdThunk, moviesThunk } from "./moviesThunk";
+import { IDetailsByIdType, IMoviesReturnType } from "../../../types";
+import { IMoviesStateType } from "../sliceTypes/stateTypes";
 
 
 const initialState: IMoviesStateType = {
     movies: [],
-    movieVideos: [],
     selectedMovie: null,
-    movieCast: [],
     page: 1,
     totalPages: 0,
     isLoading: false,
@@ -40,7 +38,7 @@ const moviesSlice = createSlice({
         })
 
         // getMovieById
-        .addCase(movieByIdThunk.fulfilled, (state, action: PayloadAction<IMoviesType>) => {
+        .addCase(movieByIdThunk.fulfilled, (state, action: PayloadAction<IDetailsByIdType>) => {
             state.selectedMovie = action.payload
             state.isLoading = false
         })
@@ -48,32 +46,6 @@ const moviesSlice = createSlice({
             state.isLoading = true
         })
         .addCase(movieByIdThunk.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.isLoading = false
-        })
-
-        // getMoviesCredits
-        .addCase(movieCrewThunk.fulfilled, (state, action: PayloadAction<IMovieCreditsType>) => {
-            state.movieCast = action.payload.cast
-            state.isLoading = false
-        })
-        .addCase(movieCrewThunk.pending, (state => {
-            state.isLoading = true
-        }))
-        .addCase(movieCrewThunk.rejected, (state, action) => {
-             state.error = action.payload as string;
-            state.isLoading = false
-        })
-
-        // getMoviesVideos
-        .addCase(movieVideosThunk.fulfilled, (state, action: PayloadAction<IMovieVideosReturnType>) => {
-            state.movieVideos = action.payload.results
-            state.isLoading = false
-        })
-        .addCase(movieVideosThunk.pending, (state) => {
-            state.isLoading = true
-        })
-        .addCase(movieVideosThunk.rejected, (state, action) => {
             state.error = action.payload as string;
             state.isLoading = false
         })
