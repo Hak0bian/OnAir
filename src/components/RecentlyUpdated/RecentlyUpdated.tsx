@@ -15,7 +15,7 @@ import '../global.css'
 import TvSeriesCard from '../TvSeries/TvSeriesCard/TvSeriesCard';
 
 const RecentlyUpdated = () => {
-    const [value, setValue] = React.useState('1');
+    const [ value, setValue ] = React.useState('1');
     const { latestMovies, page } = useAppSelector((state) => state.homeMovies);
     const { actors } = useAppSelector((state) => state.actorsData)
     const { tvSeries } = useAppSelector((state) => state.tvSeriesData)
@@ -41,7 +41,7 @@ const RecentlyUpdated = () => {
                         <Tab label="Actors" value="3" className="tabItem" />
                     </TabList>
                 </Box>
-                <TabPanel value="1" sx={{ padding: '48px 0 0' }}>
+                <TabPanel value="1" sx={{ padding: '28px 0 0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {
@@ -58,7 +58,7 @@ const RecentlyUpdated = () => {
                     </section>
                 </TabPanel>
 
-                <TabPanel value="2" sx={{ padding: '48px 0 0' }}>
+                <TabPanel value="2" sx={{ padding: '28px 0 0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {
@@ -75,7 +75,7 @@ const RecentlyUpdated = () => {
                     </section>
                 </TabPanel>
 
-                <TabPanel value="3" sx={{ padding: '48px 0 0' }}>
+                <TabPanel value="3" sx={{ padding: '28px 0 0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {

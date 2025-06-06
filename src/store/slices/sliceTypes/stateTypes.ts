@@ -139,3 +139,12 @@ export type ITvSeriesStateType = {
     isLoading: boolean
     error: null | string
 }
+
+
+export type ISerachTvSeriesStateType = {
+    searchedSeries: Array<ITvSeriesType>,
+    inputValue: string,
+    seriaIsLoading: boolean,
+    seriaNotFound: boolean,
+    error: null | string,
+}

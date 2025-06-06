@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-import { searchMovieThunk, searchActorThunk, clearMovieResults, clearActorsResults } from '../../store/slices'
+import { searchMovieThunk, searchActorThunk, clearMovieResults, clearActorsResults, searchTvSeriesThunk, clearTvSeriesResults } from '../../store/slices'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
+import { SearchedMoviesList, SearchedSeriesList, SearchedActorsList } from '../index'
 import { translations } from '../../translations/translations'
 import { useLocation } from 'react-router-dom'
 import { IoMdClose } from "react-icons/io";
-import SearchedMoviesList from '../Movies/SearchedMoviesList/SearchedMoviesList'
-import SearchedActorsList from '../Actors/SearchedActorsList/SearchedActorsList'
 import styles from './Search.module.css'
 
 
@@ -13,8 +12,9 @@ const SearchMovie = () => {
     const dispatch = useAppDispatch();
     const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const { movieNotFound, movieIsLoading } = useAppSelector((state) => state.searchedMoviesData);
+    const { seriaNotFound, seriaIsLoading } = useAppSelector((state) => state.searchSeriesData);
     const { actorNotFound, actorIsLoading } = useAppSelector((state) => state.searchedActorsData);
-    const t = translations[selectedLanguage].movies
+    const t = translations[selectedLanguage].search
     const [inputValue, setInputValue] = useState<string>("");
     const [showResults, setShowResults] = useState(false)
     const location = useLocation();
@@ -37,10 +37,12 @@ const SearchMovie = () => {
             if (inputValue.trim()) {
                 dispatch(searchMovieThunk(inputValue))
                 dispatch(searchActorThunk(inputValue))
+                dispatch(searchTvSeriesThunk(inputValue))
             } 
             else {
                 dispatch(clearMovieResults())
                 dispatch(clearActorsResults())
+                dispatch(clearTvSeriesResults())
             }
         }, 500);
         return () => clearTimeout(delaySearch);
@@ -59,16 +61,25 @@ const SearchMovie = () => {
             <IoMdClose className={styles.resetIcon} onClick={() => setInputValue('')}/>
             <div className={styles.resultsDiv}>
                 {
-                    !movieIsLoading && movieNotFound && showResults
-                        ? <p className={styles.notFound}>No movies found for “{inputValue}”</p>
-                        : <SearchedMoviesList 
+                    !movieIsLoading && movieNotFound && showResults && inputValue.trim()
+                        ? <p className={styles.notFound}>{t.noFoundMovies} “{inputValue}”</p>
+                        : 
+                        <SearchedMoviesList
                             showResults={showResults}
                             inputValue={inputValue} 
                             setInputValue={setInputValue} />
                 }
                 {
-                    !actorIsLoading && actorNotFound && showResults
-                        ? <p className={styles.notFound}>No actors found for “{inputValue}”</p>
+                    !seriaIsLoading && seriaNotFound && showResults && inputValue.trim()
+                        ? <p className={styles.notFound}>{t.noFoundSeries} “{inputValue}”</p>
+                        : <SearchedSeriesList
+                            showResults={showResults}
+                            inputValue={inputValue} 
+                            setInputValue={setInputValue} />
+                }
+                {
+                    !actorIsLoading && actorNotFound && showResults && inputValue.trim()
+                        ? <p className={styles.notFound}>{t.noFoundActors} “{inputValue}”</p>
                         : <SearchedActorsList 
                             showResults={showResults}
                             inputValue={inputValue} 

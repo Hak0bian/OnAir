@@ -15,9 +15,14 @@ const ContactUsPage = () => {
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.contacts}</h2>
+                <div className='headerDiv'>
+                    <h2 className='sectionTitle'>{t.contactsTitle}</h2>
+                    <p className='sectionText'>{t.contactsText}</p>
+                </div>
             </div>
-            <ContactUs/>
+            <div style={{padding: '40px 0 20px'}}>
+                <ContactUs/>
+            </div>
         </section>
     )
 }

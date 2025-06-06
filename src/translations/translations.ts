@@ -9,9 +9,9 @@ export const translations: any = {
             movies: "Movies",
             tv: "TV Series",
             actors: "Actors",
-            library: "Library",
             morePages: {
                 more: "More",
+                library: "Library",
                 help: "Help Center",
                 features: "Our Features",
                 plans: "Pricing Plans",
@@ -197,7 +197,9 @@ export const translations: any = {
             libraryText: "Your movie library — a place where memories and cinema come together. Preserve your collection, organize your watchlist, and revisit your favorite moments anytime.",
             clearBtn: "Clear library",
             emptyTitle: "Your library is empty for now.",
-            emptySubtitle: "Add your favorite movies to get started!"
+            emptySubtitle: "Add your favorite movies to get started!",
+            savedMovies: "Saved movies",
+            savedSeries: "Saved Series"
         },
 
         helpCenter: {
@@ -297,16 +299,36 @@ export const translations: any = {
         },
 
         pageTitles: {
-            help: "Help Center",
-            features: "Our Features",
-            plans: "Pricing Plans",
-            contacts: "Contact Us",
-            privacy: "Privacy Policy"
+            helpTitle: "We're Here to Help",
+            helpText: "Whether you have questions, need technical support, or want guidance on using our platform — the Help Center is your trusted resource. Find answers quickly, explore detailed guides, and get back to enjoying your experience with confidence.",
+            featuresTitle: "Our Features",
+            featuresText: "Explore a powerful set of features crafted to elevate your entertainment experience. From personalized watchlists to smart recommendations and seamless syncing — every tool is here to help you enjoy cinema your way.",
+            plansTitle: "Unlock the Full Experience",
+            plansText: "Flexible pricing for every kind of viewer. Whether you're a casual fan or a devoted cinephile, our plans are tailored to match your needs. Enjoy premium features, ad-free viewing, and exclusive content — all at a price that works for you.",
+            contactsTitle: "Let’s Connect",
+            contactsText: "Have a question, suggestion, or just want to say hello? We’d love to hear from you. Reach out to our team anytime — your thoughts help us grow, improve, and serve you better every step of the way.",
+            privacyTitle: "Privacy Policy",
+            privacyText: "We are committed to protecting your personal information and digital privacy. Our Privacy Policy explains what data we collect, how we use it, and the choices you have. Transparency and trust are at the heart of everything we do."
         },
 
         contactUs: {
             getInTouchTitle: "Get In Touch",
             getInTouchText: "We are always happy to help and provide more information about our services. You can contact us through email, phone, or by filling out the form on our website. Thank you for considering us!"
+        },
+
+        search: {
+            search: "Search",
+            movies: "Movies",
+            series: "Tv series",
+            actors: "Actors",
+            searchedMovies: "Searched movies",
+            searchedSeries: "Searched series",
+            searchedActors: "Searched actors",
+            noResults: "No results",
+            seeResults: "See all results",
+            noFoundMovies: "No movies found for ",
+            noFoundSeries: "No series found for ",
+            noFoundActors: "No actors found for ",
         },
 
         footer: {
@@ -349,9 +371,9 @@ export const translations: any = {
             movies: "Фильмы",
             tv: "Сериалы",
             actors: "Актеры",
-            library: "Библиотека",
             morePages: {
                 more: "Еще",
+                library: "Библиотека",
                 help: "Центр помощи",
                 features: "Наши возможности",
                 plans: "Тарифные планы",
@@ -538,7 +560,9 @@ export const translations: any = {
             libraryText: "Ваша кинобиблиотека — место, где воспоминания и кино сливаются воедино. Сохраняйте свою коллекцию, организуйте список для просмотра и возвращайтесь к любимым моментам в любое время.",
             clearBtn: "Очистить все",
             emptyTitle: "Ваша библиотека пока пуста.",
-            emptySubtitle: "Добавьте любимые фильмы, чтобы начать!"
+            emptySubtitle: "Добавьте любимые фильмы, чтобы начать!",
+            savedMovies: "Сохраненные фильмы",
+            savedSeries: "Сохраненные серии"
         },
 
         helpCenter: {
@@ -638,16 +662,40 @@ export const translations: any = {
         },
 
         pageTitles: {
-            help: "Центр помощи",
-            features: "Наши возможности",
-            plans: "Тарифные планы",
-            contacts: "Связаться с нами",
-            privacy: "Политика конфиденциальности"
+            helpTitle: "Мы всегда готовы помочь",
+            helpText: "Есть вопросы, нужна техническая поддержка или советы по использованию платформы? Центр помощи — ваш надежный источник. Быстро находите ответы, изучайте подробные инструкции и с уверенностью продолжайте пользоваться сервисом.",
+
+            featuresTitle: "Наши возможности",
+            featuresText: "Ознакомьтесь с мощным набором функций, созданных для улучшения вашего развлекательного опыта. Персонализированные списки, умные рекомендации и удобная синхронизация — всё для того, чтобы вы наслаждались кино так, как хотите вы.",
+
+            plansTitle: "Откройте полный доступ",
+            plansText: "Гибкие тарифы для каждого зрителя. Независимо от того, случайный ли вы зритель или страстный киноман — наши планы адаптированы под ваши нужды. Получите доступ к премиум-функциям, просмотру без рекламы и эксклюзивному контенту — по цене, которая вам подходит.",
+
+            contactsTitle: "Давайте свяжемся",
+            contactsText: "Есть вопрос, предложение или просто хотите поздороваться? Нам будет приятно услышать вас. Свяжитесь с нашей командой в любое время — ваши мысли помогают нам расти, улучшаться и служить вам ещё лучше.",
+
+            privacyTitle: "Политика конфиденциальности",
+            privacyText: "Мы стремимся защитить вашу личную информацию и цифровую конфиденциальность. Наша политика объясняет, какие данные мы собираем, как их используем и какие у вас есть права. Прозрачность и доверие — в основе всего, что мы делаем."
         },
 
         contactUs: {
             getInTouchTitle: "Свяжитесь с нами",
             getInTouchText: "Мы всегда рады помочь и предоставить дополнительную информацию о наших услугах. Вы можете связаться с нами по электронной почте, телефону или заполнив форму на нашем сайте. Спасибо, что выбрали нас!"
+        },
+
+        search: {
+            search: "Поиск",
+            movies: "Фильмы",
+            series: "Сериалы",
+            actors: "Актёры",
+            searchedMovies: "Найденные фильмы",
+            searchedSeries: "Найденные сериалы",
+            searchedActors: "Найденные актёры",
+            noResults: "Нет результатов",
+            seeResults: "Смотреть все результаты",
+            noFoundMovies: "Фильмы не найдены по запросу ",
+            noFoundSeries: "Сериалы не найдены по запросу ",
+            noFoundActors: "Актёры не найдены по запросу ",
         },
 
         footer: {

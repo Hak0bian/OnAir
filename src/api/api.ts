@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo } from "../types";
+import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo, ITvSeriesReturnType } from "../types";
 import { IActorsReturnType, IGenresReturnType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -58,6 +58,8 @@ export const API = {
     },
     getTvSeriaById({id, selectedLanguage}: IPropsTypeToo){
         return instance.get(`/tv/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
-    }
-    
+    },
+    searchTvSeria(text: string){
+        return instance.get<ITvSeriesReturnType>(`/search/tv?query=${text}`)
+    },
 }

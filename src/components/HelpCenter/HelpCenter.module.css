@@ -8,7 +8,7 @@
 }
 
 .accordion {
-    max-width: 620px;
+    max-width: 626px;
     background-color: var(--bg-color-options) !important;
     border: 1px solid var(--text-color-gray);
     border-radius: 8px !important;

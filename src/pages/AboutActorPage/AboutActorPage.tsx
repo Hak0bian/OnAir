@@ -11,6 +11,7 @@ const AboutActorPage = () => {
     
     useEffect(() => {
         dispatch(actorFullInfoThunk({id: Number(id), selectedLanguage}))
+        window.scrollTo({ top: 0, behavior: "smooth" })
     }, [selectedLanguage])
 
     return (

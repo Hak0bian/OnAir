@@ -1,18 +1,21 @@
 import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
-import { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
+import {
+  HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage,
   SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage,
-  SearchResultsPage, TvSeriesPage, 
+  SearchResultsPage, TvSeriesPage,
   AboutTvSeriaPage,
-  RecommendationsPage} from './pages'
+  RecommendationsPage
+} from './pages'
 import { useEffect } from 'react';
+
 
 function App() {
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'dark';
     document.body.setAttribute('data-theme', theme);
   }, []);
-
+  
   return (
     <section>
       <Routes>
@@ -33,12 +36,12 @@ function App() {
           <Route path='/Actors/page/:pageNum' element={<ActorsPage />} />
           <Route path='/Actors/actor/:id' element={<AboutActorPage />} />
           <Route path='/Library' element={<LibraryPage />} />
-          <Route path='/Help-Center' element={<HelpCenterPage/>} />
-          <Route path='/Features' element={<FeaturesPage/>} />
-          <Route path='/Pricing-Plans' element={<PricingPlansPage/>} />
-          <Route path='/Contact-Us' element={<ContactUsPage/>}/>
-          <Route path='/Privacy-Policy' element={<PrivacyPolicyPage/>} />
-          <Route path='/Search-Results' element={<SearchResultsPage/>} />
+          <Route path='/Help-Center' element={<HelpCenterPage />} />
+          <Route path='/Features' element={<FeaturesPage />} />
+          <Route path='/Pricing-Plans' element={<PricingPlansPage />} />
+          <Route path='/Contact-Us' element={<ContactUsPage />} />
+          <Route path='/Privacy-Policy' element={<PrivacyPolicyPage />} />
+          <Route path='/Search-Results' element={<SearchResultsPage />} />
         </Route>
       </Routes>
       <FormsPortal />

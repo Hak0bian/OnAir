@@ -26,6 +26,7 @@
     width: 100px;
     position: absolute;
     top: 44px;
+    z-index: 5;
     padding: 8px;
     background: var(--bg-color-options);
     border-top: 2px solid var(--text-color-secondary);

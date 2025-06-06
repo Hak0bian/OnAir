@@ -1,0 +1,10 @@
+.featuresSec{
+    max-width: 1280px;
+    margin: auto;
+    padding-bottom: 80px;
+
+    h2{
+        font-weight: normal;
+        letter-spacing: .4px;
+    }
+}

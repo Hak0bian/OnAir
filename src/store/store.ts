@@ -10,6 +10,7 @@ import searchActorSlice from "./slices/SearchActorSlice/searchActorSlice"
 import themeSlice from "./slices/ThemeSlice/themeSlice"
 import openCloseFormsSlice from "./slices/OpenCloseFormsSlice/OpenCloseFormsSlice"
 import tvSeriesSlice from "./slices/TvSeriesSlice/tvSeriesSlice"
+import searchTvSeriesSlice from "./slices/SearchTvSeriesSlice/SearchTvSeriesSlice"
 
 export const store = configureStore({
     reducer: {
@@ -23,7 +24,8 @@ export const store = configureStore({
         searchedActorsData: searchActorSlice,
         theme: themeSlice,
         formsData: openCloseFormsSlice,
-        tvSeriesData: tvSeriesSlice
+        tvSeriesData: tvSeriesSlice,
+        searchSeriesData: searchTvSeriesSlice
     }
 })
 

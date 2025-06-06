@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { LibraryHeader, MainButton, MovieCard } from "../../components";
+import { MainButton, MovieCard } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { setMovieinLibrary, clearLibrary, setSeriainLibrary } from "../../store/slices";
 import { translations } from "../../translations/translations";
-import styles from './LibraryPage.module.css'
 import TvSeriesCard from "../../components/TvSeries/TvSeriesCard/TvSeriesCard";
-import Test from "../test/Test";
+import styles from './LibraryPage.module.css'
+// import Test from "../test/Test";
 
 const LibraryPage = () => {
   const dispatch = useAppDispatch()
@@ -22,6 +22,7 @@ const LibraryPage = () => {
     if (storedSeries) {
       dispatch(setSeriainLibrary(JSON.parse(storedSeries)))
     }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const handleClearLibrary = () => {
@@ -32,39 +33,48 @@ const LibraryPage = () => {
   return (
     <section>
       {/* <Test/> */}
-      <LibraryHeader />
+      <div className='sectionHeader'>
+        <div className='headerDiv'>
+          <h2 className='sectionTitle'>{t.libraryTitle}</h2>
+          <p className='sectionText'>{t.libraryText}</p>
+        </div>
+      </div>
+
       <div className={styles.libraryContainer}>
-        {moviesInibrary.length === 0 && seriesInLibrary.length === 0
-          ? (
-            <div className={styles.emptyLibrary}>
-              <p>{t.emptyTitle}</p>
-              <p>{t.emptySubtitle}</p>
-            </div>
-          ) : (
-            <div className={styles.libraryDiv}>
-              <h2>Seved movies</h2>
-              <div className={styles.moviesDiv}>
-                {
-                  moviesInibrary.map(movie => (
+        {moviesInibrary.length === 0 && seriesInLibrary.length === 0 ? (
+          <div className={styles.emptyLibrary}>
+            <p>{t.emptyTitle}</p>
+            <p>{t.emptySubtitle}</p>
+          </div>
+        ) : (
+          <>
+            {moviesInibrary.length > 0 && (
+              <div>
+                <h3 className={styles.blockTitle}>{t.savedMovies}</h3>
+                <div className={styles.block}>
+                  {moviesInibrary.map(movie => (
                     <MovieCard key={movie.id} movie={movie} />
-                  ))
-                }
+                  ))}
+                </div>
               </div>
+            )}
 
-              <h2>Seved series</h2>
-              <div className={styles.moviesDiv}>
-                {
-                  seriesInLibrary.map(seria => (
+            {seriesInLibrary.length > 0 && (
+              <div>
+                <h3 className={styles.blockTitle}>{t.savedSeries}</h3>
+                <div className={styles.block}>
+                  {seriesInLibrary.map(seria => (
                     <TvSeriesCard key={seria.id} seria={seria} />
-                  ))
-                }
+                  ))}
+                </div>
               </div>
+            )}
 
-              <div className={styles.clearBtnDiv}>
-                <MainButton text={t.clearBtn} onClick={handleClearLibrary} />
-              </div>
+            <div className={styles.clearBtnDiv}>
+              <MainButton text={t.clearBtn} onClick={handleClearLibrary} />
             </div>
-          )}
+          </>
+        )}
       </div>
     </section>
   )

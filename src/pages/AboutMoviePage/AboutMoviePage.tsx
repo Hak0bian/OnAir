@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
-import { movieByIdThunk, moviesThunk } from '../../store//slices';
+import { movieByIdThunk } from '../../store//slices';
 import { MovieDetails } from '../../components';
 
 const AboutMoviePage = () => {
@@ -11,6 +11,7 @@ const AboutMoviePage = () => {
 
     useEffect(() => {
         dispatch(movieByIdThunk({ id: Number(id), selectedLanguage}))
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }, [selectedLanguage])
 
     return (

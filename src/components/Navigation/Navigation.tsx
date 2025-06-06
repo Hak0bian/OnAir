@@ -50,7 +50,6 @@ const Navigation = () => {
                     <NavLink to={`/Movies/page/${moviesPage}`} onClick={scrollToTopPage}>{t.movies}</NavLink>
                     <NavLink to={`/TV/page/${tvPage}`} onClick={scrollToTopPage}>{t.tv}</NavLink>
                     <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
-                    <NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink>
                     <MorePages />
                 </div>
 

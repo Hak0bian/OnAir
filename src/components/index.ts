@@ -2,7 +2,6 @@ import Layout from "./Layout/Layout";
 import Header from "./Header/Header";
 import Paginationn from "./UI/Pagination/Pagination";
 import MainButton from "./UI/MainButton/MainButton"
-import LibraryHeader from "./LibraryHeader/LibraryHeader";
 import LibraryMovieBtn from "./UI/LibraryMovieBtn/LibraryMovieBtn";
 import LibrarySeriaBtn from "./UI/LibrarySeriaBtn/LibrarySeriaBtn";
 import SelectPlan from "./SelectPlan/SelectPlan";
@@ -29,10 +28,13 @@ import ActorsPageSlider from "./Actors/ActorsPageSlider/ActorsPageSlider";
 import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
 import TvSeriaDetails from "./TvSeries/TvSeriaDetails/TvSeriaDetails";
 import TvSeriaTable from "./TvSeries/TvSeriaTable/TvSeriaTable";
+import SearchedMoviesList from "./Movies/SearchedMoviesList/SearchedMoviesList";
+import SearchedSeriesList from "./TvSeries/SearchedSeriesList/SearchedSeriesList";
+import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 
 
 export { Layout, Header, MoviesSlider, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MoviesPageSlider, MovieCard, MovieDetails, 
-    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, LibraryHeader, SelectGenre, Search, ActorCard, 
+    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, Search, ActorCard, 
     ActorDetails, ActorsPageSlider, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, 
-    TvSeriaDetails, TvSeriaTable
+    TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList
 }

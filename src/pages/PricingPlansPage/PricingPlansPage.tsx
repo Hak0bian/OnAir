@@ -15,7 +15,10 @@ const PricingPlansPage = () => {
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.plans}</h2>
+                <div className='headerDiv'>
+                    <h2 className='sectionTitle'>{t.plansTitle}</h2>
+                    <p className='sectionText'>{t.plansText}</p>
+                </div>
             </div>
             <div style={{ paddingTop: '80px' }}>
                 <SelectPlan />

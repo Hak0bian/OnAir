@@ -1,14 +1,19 @@
 import { useEffect } from 'react';
 import { ActorCard, MovieCard } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
-import { searchActorThunk, searchMovieThunk } from '../../store/slices';
+import { searchActorThunk, searchMovieThunk, searchTvSeriesThunk } from '../../store/slices';
 import { useSearchParams } from 'react-router-dom';
+import { translations } from '../../translations/translations';
+import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard';
 import styles from './SearchResultsPage.module.css'
 
 
 const SearchResultsPage = () => {
     const { searchedMovies, movieIsLoading, movieNotFound } = useAppSelector((state) => state.searchedMoviesData);
     const { searchedActors, actorIsLoading, actorNotFound } = useAppSelector((state) => state.searchedActorsData);
+    const { searchedSeries, seriaIsLoading, seriaNotFound } = useAppSelector((state) => state.searchSeriesData);
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+    const t = translations[selectedLanguage].search
     const [searchParams] = useSearchParams();
     const query = searchParams.get('query') || '';
     const dispatch = useAppDispatch();
@@ -17,6 +22,7 @@ const SearchResultsPage = () => {
         if (query.trim()) {
             dispatch(searchMovieThunk(query));
             dispatch(searchActorThunk(query));
+            dispatch(searchTvSeriesThunk(query));
         }
     }, []);
 
@@ -24,24 +30,34 @@ const SearchResultsPage = () => {
     return (
         <section>
             <div className='container'>
-                <h2 className={styles.searchedTitle}>Searched movies</h2>
+                <h3 className={styles.searchedTitle}>{t.searchedMovies}</h3>
                 <div className={styles.moviesDiv}>
                     {
                         movieIsLoading ? (
-                            <p>Loading movies...</p>
+                            <p>Loading ...</p>
                         ) : movieNotFound ? (
-                            <p>No results for movies</p>
+                            <p>{t.noResults}</p>
                         ) : searchedMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
                     }
                 </div>
 
-                <h2 className={styles.searchedTitle}>Searched actors</h2>
+                <h3 className={styles.searchedTitle}>{t.searchedSeries}</h3>
+                <div className={styles.moviesDiv}>
+                    {
+                        seriaIsLoading ? (
+                            <p>Loading...</p>
+                        ) : seriaNotFound ? (
+                            <p>{t.noResults}</p>
+                        ) : searchedSeries.map((seria) => <TvSeriesCard key={seria.id} seria={seria} />)
+                    }
+                </div>
+                <h3 className={styles.searchedTitle}>{t.searchedActors}</h3>
                 <div className={styles.actorsDiv}>
                     {
                         actorIsLoading ? (
-                            <p>Loading actors...</p>
+                            <p>Loading...</p>
                         ) : actorNotFound ? (
-                            <p>No results for actors</p>
+                            <p>{t.noResults}</p>
                         ) : searchedActors.map((actor) => <ActorCard key={actor.id} actor={actor} />)
                     }
                 </div>

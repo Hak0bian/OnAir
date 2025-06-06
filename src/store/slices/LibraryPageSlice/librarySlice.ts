@@ -23,7 +23,7 @@ const librarySlice = createSlice({
         },
         removeMovieFromLibrary(state, action: PayloadAction<number>) {
             state.moviesInibrary = state.moviesInibrary.filter((movie) => movie.id !== action.payload);
-            localStorage.setItem('library', JSON.stringify(state.moviesInibrary));
+            localStorage.setItem('libraryMovies', JSON.stringify(state.moviesInibrary));
         },
 
         setSeriainLibrary(state, action: PayloadAction<IDetailsByIdType[]>) {
@@ -38,7 +38,7 @@ const librarySlice = createSlice({
         },
         removeSeriaFromLibrary(state, action: PayloadAction<number>) {
             state.seriesInLibrary = state.seriesInLibrary.filter((movie: {id: number}) => movie.id !== action.payload);
-            localStorage.setItem('library', JSON.stringify(state.seriesInLibrary));
+            localStorage.setItem('librarySeries', JSON.stringify(state.seriesInLibrary));
         },
         clearLibrary(state) {
             state.moviesInibrary = []

@@ -11,6 +11,7 @@ const AboutTvSeriaPage = () => {
 
     useEffect(() => {
         dispatch(tvSeriaByIdThunk({ id: Number(id), selectedLanguage }))
+        window.scrollTo({ top: 0, behavior: "smooth" })
     }, [selectedLanguage, id])
 
 

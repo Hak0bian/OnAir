@@ -10,7 +10,7 @@ import { changeSelectedGenreId, clearmoviesByGenre } from "./MovieGenresSlice/mo
 import { moviesThunk, movieByIdThunk } from "./MoviesPageSlice/moviesThunk";
 import { changeMoviesPageNumber } from "./MoviesPageSlice/moviesSlice";
 import { searchMovieThunk } from "./SearchMovieSlice/searchMovieThunk";
-import { clearMovieResults, handleInputValue } from "./SearchMovieSlice/searchMovieSlice";
+import { clearMovieResults } from "./SearchMovieSlice/searchMovieSlice";
 
 import { actorsThunk } from "./ActorsPageSlice/actorsThunk";
 import { actorFullInfoThunk } from "./ActorsPageSlice/actorsThunk";
@@ -22,11 +22,13 @@ import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
 import { tvSeriesThunk } from "./TvSeriesSlice/tvSeriesThunk";
 import { changeTvSeriesPageNumber } from "./TvSeriesSlice/tvSeriesSlice";
 import { tvSeriaByIdThunk } from "./TvSeriesSlice/tvSeriesThunk";
+import { searchTvSeriesThunk } from "./SearchTvSeriesSlice/SearchTvSeriesThunk";
+import { clearTvSeriesResults } from "./SearchTvSeriesSlice/SearchTvSeriesSlice";
 
 export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setMovieinLibrary, addMovieToLibrary, 
     removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, 
-    changeMoviesPageNumber, searchMovieThunk, clearMovieResults, handleInputValue, changeLanguages, setTheme, 
+    changeMoviesPageNumber, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
     toggleTheme, actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
-    tvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk
+    tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults
 }

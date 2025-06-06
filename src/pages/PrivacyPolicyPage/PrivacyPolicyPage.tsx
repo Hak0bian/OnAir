@@ -15,7 +15,10 @@ const PrivacyPolicyPage = () => {
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.privacy}</h2>
+                <div className='headerDiv'>
+                    <h2 className='sectionTitle'>{t.privacyTitle}</h2>
+                    <p className='sectionText'>{t.privacyText}</p>
+                </div>
             </div>
             <PrivacyPolicy />
         </section>

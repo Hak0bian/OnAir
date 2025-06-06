@@ -17,17 +17,14 @@ const searchMovieSlice = createSlice({
     reducers: {
         clearMovieResults(state){
             state.searchedMovies = []
-        },
-        handleInputValue(state, action){
-            state.inputValue = action.payload
         }
     },
     extraReducers(builder) {
         builder
         .addCase(searchMovieThunk.fulfilled, (state, action: PayloadAction<IMoviesReturnType>) => {
             state.searchedMovies = action.payload.results
-            state.movieNotFound = action.payload.results.length === 0;
             state.movieIsLoading = false
+            state.movieNotFound = action.payload.results.length === 0;
         })
         .addCase(searchMovieThunk.pending, (state) => {
             state.movieIsLoading = true
@@ -41,4 +38,4 @@ const searchMovieSlice = createSlice({
 })
 
 export default searchMovieSlice.reducer
-export const { clearMovieResults, handleInputValue } = searchMovieSlice.actions
+export const { clearMovieResults } = searchMovieSlice.actions

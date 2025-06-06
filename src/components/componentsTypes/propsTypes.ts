@@ -1,4 +1,4 @@
-import { IDetailsByIdType, IMoviesType } from "../../types";
+import { IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../types";
 
 export type IMovieSliderPropsType = {
     movies: Array<IMoviesType>, 
@@ -42,4 +42,8 @@ export type ITvSeriaTablePropsType = {
 
 export type IMovieCardPropsType = {
     movie: IDetailsByIdType | IMoviesType
+}
+
+export type ISeriesCardPropsType = {
+    seria: IDetailsByIdType | ITvSeriesType
 }

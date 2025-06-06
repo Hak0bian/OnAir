@@ -15,7 +15,10 @@ const HelpCenterPage = () => {
     return (
         <section>
             <div className='sectionHeader'>
-                <h2 className='sectionTitle'>{t.help}</h2>
+                <div className='headerDiv'>
+                    <h2 className='sectionTitle'>{t.helpTitle}</h2>
+                    <p className='sectionText'>{t.helpText}</p>
+                </div>
             </div>
             <HelpCenter/>
         </section>
