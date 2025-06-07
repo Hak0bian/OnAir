@@ -38,11 +38,6 @@ export interface IPropsTypeToo {
     selectedLanguage: string
 }
 
-export interface IActorBiography {
-    id: number;
-    biography: string;
-}
-
 
 // ******************************************
 

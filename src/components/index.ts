@@ -10,9 +10,8 @@ import HowItWorks from "./HowItWorks/HowItWorks";
 import ContactUs from "./ContactUs/ContactUs";
 import FormsPortal from "./FormsPortal/FormsPortal";
 import RecentlyUpdated from "./RecentlyUpdated/RecentlyUpdated";
+import Carousel from "./UI/Carousel/Carousel";
 
-import MoviesSlider from "./Movies/MoviesSlider/MoviesSlider";
-import MoviesPageSlider from "./Movies/MoviesPageSlider/MoviesPageSlider";
 import MovieCard from "./Movies/MovieCard/MovieCard";
 import MovieDetails from "./Movies/MovieDetails/MovieDetails";
 import MovieTable from "./Movies/MovieTable/MovieTable";
@@ -24,17 +23,20 @@ import Search from "./Search/Search";
 
 import ActorCard from "./Actors/ActorCard/ActorCard";
 import ActorDetails from "./Actors/ActorDetails/ActorDetails";
-import ActorsPageSlider from "./Actors/ActorsPageSlider/ActorsPageSlider";
-import ActorsSlider from "./Actors/ActorsSlider/ActorsSlider";
+import KnownForMoviesSlider from "./Actors/KnownForMoviesSlider/KnownForMoviesSlider";
+import KnownForSeriesSlider from "./Actors/KnownForSeriesSlider/KnownForSeriesSlider";
+
+import TvSeriesCard from "./TvSeries/TvSeriesCard/TvSeriesCard";
 import TvSeriaDetails from "./TvSeries/TvSeriaDetails/TvSeriaDetails";
 import TvSeriaTable from "./TvSeries/TvSeriaTable/TvSeriaTable";
+
 import SearchedMoviesList from "./Movies/SearchedMoviesList/SearchedMoviesList";
 import SearchedSeriesList from "./TvSeries/SearchedSeriesList/SearchedSeriesList";
 import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 
 
-export { Layout, Header, MoviesSlider, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MoviesPageSlider, MovieCard, MovieDetails, 
+export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, Search, ActorCard, 
-    ActorDetails, ActorsPageSlider, ActorsSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, 
-    TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList
+    ActorDetails, KnownForMoviesSlider, KnownForSeriesSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, TvSeriesCard, 
+    TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel
 }

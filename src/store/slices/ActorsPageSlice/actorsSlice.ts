@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IActorsReturnType, IActorsStateType, ISelectedActorType } from "../sliceTypes/stateTypes";
-import { actorsThunk, actorFullInfoThunk, actorBiographyThunk } from "./actorsThunk";
+import { actorsThunk, actorFullInfoThunk } from "./actorsThunk";
 
 const initialState: IActorsStateType = {
     actors: [],
@@ -43,21 +43,7 @@ const actorsSlice = createSlice({
         .addCase(actorFullInfoThunk.rejected, (state, action) => {
             state.error = action.payload as string
         })
-
-        .addCase(actorBiographyThunk.fulfilled, (state, action) => {
-            const { id, biography } = action.payload;
-            const actor = state.actors.find((a) => a.id === id);
-            if (actor) {
-                actor.biography = biography;
-            }
-        })
-        .addCase(actorBiographyThunk.pending, (state) => {
-            state.isLoading = true
-        })
-        .addCase(actorBiographyThunk.rejected, (state, action) => {
-            state.error = action.payload as string
-        })
-    },
+    }
 })
 
 export default actorsSlice.reducer

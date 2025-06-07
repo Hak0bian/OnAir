@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { ContactUs, Features, Header, RecentlyUpdated, SelectPlan } from '../../components'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
-import { actorsThunk, latestMoviesThunk, popularMoviesThunk, tvSeriesThunk } from '../../store/slices'
+import { ContactUs, Features, Header, RecentlyUpdated, SelectPlan } from '../../components'
+import { actorsThunk, moviesThunk, tvSeriesThunk } from '../../store/slices'
 import { translations } from '../../translations/translations'
 import styles from './HomePage.module.css'
 
@@ -11,8 +11,7 @@ const HomePage = () => {
   const t = translations[selectedLanguage].features
 
   useEffect(() => {
-    dispatch(latestMoviesThunk({ page: 1, selectedLanguage }))
-    dispatch(popularMoviesThunk({ page: 1, selectedLanguage }))
+    dispatch(moviesThunk({ page: 1, selectedLanguage }));
     dispatch(tvSeriesThunk({ page: 1, selectedLanguage }))
     dispatch(actorsThunk({ page: 1, selectedLanguage }))
   }, [selectedLanguage])

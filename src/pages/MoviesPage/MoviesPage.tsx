@@ -2,8 +2,9 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks"
 import { moviesThunk, changeMoviesPageNumber, genresListThunk, moviesByGenreThunk, clearmoviesByGenre } from "../../store/slices"
-import { MovieCard, MoviesPageSlider, Paginationn, SelectGenre } from "../../components"
+import { Carousel, MovieCard, Paginationn, SelectGenre } from "../../components"
 import { Box } from "@mui/material"
+
 
 const MoviesPage = () => {
   const dispatch = useAppDispatch()
@@ -11,8 +12,11 @@ const MoviesPage = () => {
   const { movies, page, totalPages } = useAppSelector((state) => state.moviesData)
   const { selectedGenreId, moviesByGenre } = useAppSelector((state) => state.genresData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData);
-  
 
+  const arr = moviesByGenre.length > 0 ? moviesByGenre : movies
+  const images = arr.filter(movie => movie?.backdrop_path)
+  .map(movie => `https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`);
+  
   useEffect(() => {
     dispatch(genresListThunk(selectedLanguage));
   }, [selectedLanguage]);
@@ -38,11 +42,7 @@ const MoviesPage = () => {
 
   return (
     <section>
-        {/* {
-          moviesByGenre.length > 0
-          ? <MoviesPageSlider movies={moviesByGenre} />
-          : <MoviesPageSlider movies={movies} />
-        } */}
+      <Carousel images={images} />
       <div className='container'>
         <SelectGenre />
 

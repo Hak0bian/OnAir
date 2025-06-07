@@ -186,7 +186,8 @@ export const translations: any = {
 
         actors: {
             search: "Search actor",
-            knownFor: "Known for",
+            knownForMovies: "Famous for movies",
+            knownForSeries: "Famous for series",
             noKnownFor: "No known works for this actor.",
             noBiography: "No biography available",
             seeAll: "See all",
@@ -550,6 +551,8 @@ export const translations: any = {
         actors: {
             search: "Поиск актера",
             knownFor: "Известность за",
+            knownForMovies: "Известн(а) своими фильмами",
+            knownForSeries: "Известн(а) своими сериалами",
             noKnownFor: "Нет известных работ.",
             noBiography: "Биография отсутствует",
             seeAll: "Смотреть все",

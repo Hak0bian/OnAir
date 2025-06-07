@@ -1,11 +1,10 @@
 import axios from "axios";
-import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo, ITvSeriesReturnType } from "../types";
+import { IDetailsByIdType, IMoviesReturnType, IPropsType, IPropsTypeToo, ITvSeriesReturnType, ITvSeriesType } from "../types";
 import { IActorsReturnType, IGenresReturnType, ISelectedActorType } from "../store/slices/sliceTypes/stateTypes";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const ACCEPT = import.meta.env.VITE_ACCEPT;
 const AUTHORIZATION = import.meta.env.VITE_AUTHORIZATION;
-const today = new Date().toISOString().split('T')[0];
 
 const instance = axios.create({
     baseURL: BASE_URL,
@@ -16,12 +15,6 @@ const instance = axios.create({
 })
 
 export const API = {
-    getLatestMovies({page, selectedLanguage}: IPropsType) {
-        return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&release_date.lte=${today}&language=${selectedLanguage}&page=${page}`)
-    },
-    getPopularMovies({page, selectedLanguage}: IPropsType) {
-        return instance.get<IMoviesReturnType>(`/movie/popular?include_adult=false&language=${selectedLanguage}&page=${page}`)
-    },
     getMovies({page, selectedLanguage}: IPropsType){
         return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&language=${selectedLanguage}&page=${page}`)
     },
@@ -45,8 +38,11 @@ export const API = {
     getActorById({id, selectedLanguage}: IPropsTypeToo){
         return instance.get<ISelectedActorType>(`/person/${id}?language=${selectedLanguage}`)
     },
-    getActorKnownFor({id, selectedLanguage}: IPropsTypeToo){
+    getActorKnownForMovies({id, selectedLanguage}: IPropsTypeToo){
         return instance.get(`/person/${id}/movie_credits?language=${selectedLanguage}`)
+    },
+    getActorKnownForSeries({id, selectedLanguage}: IPropsTypeToo){
+        return instance.get(`/person/${id}/tv_credits?language=${selectedLanguage}`)
     },
     searchActor(text: string){
         return instance.get<IActorsReturnType>(`/search/person?query=${text}`)
@@ -54,10 +50,10 @@ export const API = {
 
 
     getTvSeries({page, selectedLanguage}: IPropsType){
-        return instance.get(`/discover/tv?language=${selectedLanguage}&page=${page}&first_air_date_year=2025`)
+        return instance.get<ITvSeriesType>(`/discover/tv?language=${selectedLanguage}&page=${page}&first_air_date_year=2025`)
     },
     getTvSeriaById({id, selectedLanguage}: IPropsTypeToo){
-        return instance.get(`/tv/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
+        return instance.get<IDetailsByIdType>(`/tv/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
     },
     searchTvSeria(text: string){
         return instance.get<ITvSeriesReturnType>(`/search/tv?query=${text}`)

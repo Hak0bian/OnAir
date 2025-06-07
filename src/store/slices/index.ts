@@ -1,5 +1,3 @@
-import { latestMoviesThunk, popularMoviesThunk } from "./HomePageSlice/homeMoviesThunk";
-import { changeSeeAllPageNumber } from "./HomePageSlice/homeMoviesSlice";
 import { setMovieinLibrary, addMovieToLibrary, removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, 
     removeSeriaFromLibrary, clearLibrary } from "./LibraryPageSlice/librarySlice";
 import { genresListThunk, moviesByGenreThunk } from "./MovieGenresSlice/movieGenresThunk";
@@ -14,7 +12,6 @@ import { clearMovieResults } from "./SearchMovieSlice/searchMovieSlice";
 
 import { actorsThunk } from "./ActorsPageSlice/actorsThunk";
 import { actorFullInfoThunk } from "./ActorsPageSlice/actorsThunk";
-import { actorBiographyThunk } from "./ActorsPageSlice/actorsThunk";
 import { changeActorsPageNumber } from "./ActorsPageSlice/actorsSlice";
 import { searchActorThunk } from "./SearchActorSlice/searchActorThunk";
 import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
@@ -25,10 +22,10 @@ import { tvSeriaByIdThunk } from "./TvSeriesSlice/tvSeriesThunk";
 import { searchTvSeriesThunk } from "./SearchTvSeriesSlice/SearchTvSeriesThunk";
 import { clearTvSeriesResults } from "./SearchTvSeriesSlice/SearchTvSeriesSlice";
 
-export { latestMoviesThunk, popularMoviesThunk, changeSeeAllPageNumber, setMovieinLibrary, addMovieToLibrary, 
+export { setMovieinLibrary, addMovieToLibrary, 
     removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, 
     changeMoviesPageNumber, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
-    toggleTheme, actorsThunk, actorFullInfoThunk, actorBiographyThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
+    toggleTheme, actorsThunk, actorFullInfoThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
     tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults
 }

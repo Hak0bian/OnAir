@@ -1,10 +1,5 @@
 import { IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../types";
 
-export type IMovieSliderPropsType = {
-    movies: Array<IMoviesType>, 
-    title: string
-}
-
 export type IMovieTablePropsType = {
     selectedMovie: IDetailsByIdType | null
 }

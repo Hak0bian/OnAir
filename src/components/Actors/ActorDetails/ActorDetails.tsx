@@ -1,52 +1,38 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
 import { NavLink } from 'react-router-dom';
-import GradeIcon from '@mui/icons-material/Grade';
-import darkProfile from '../../../assets/images/dark-profile.png'
-import lightProfile from '../../../assets/images/light-profile.png'
+import { KnownForMoviesSlider, KnownForSeriesSlider } from '../../';
+import AboutActor from '../AboutActor/AboutActor';
 import styles from './ActorDetails.module.css'
-import KnownForSlider from '../KnownForSlider/KnownForSlider';
+
 
 const ActorDetails = () => {
     const { selectedActor } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
-    const { mode } = useAppSelector((state) => state.theme)
-    const profileImg = mode === 'dark' ? darkProfile : lightProfile
     const t = translations[selectedLanguage].actors
-
 
     return (
         <section className={styles.actorDetailsSec}>
-            <div className={styles.actorDetailsDiv}>
-                <div className={styles.actorPosterDiv}>
-                    <img src={selectedActor?.profile_path ? `https://image.tmdb.org/t/p/w400${selectedActor?.profile_path}` : profileImg} />
-                </div>
-                <div>
-                    <h2 className={styles.actorTitle}>{selectedActor?.name}</h2>
-                    {
-                        selectedActor?.known_for_department &&
-                        <p className={styles.department}>{selectedActor.known_for_department}</p>
-                    }
-                    <p className={styles.rating}>
-                        <GradeIcon className={styles.starIcon} />
-                        {selectedActor?.popularity.toFixed(1)}
-                    </p>
-                    <p className={styles.knownAS}>
-                        {selectedActor?.also_known_as?.map((names, ind) => (<span key={ind}> {names}, </span>))}
-                    </p>
-                    <p className={styles.biography}>{selectedActor?.biography}</p>
-                </div>
-            </div>
-
+            <AboutActor />
             <div className={styles.knownForBox}>
                 <div className={styles.slideTopDiv}>
-                    <h3 className={styles.slideTitle}>{t.knownFor}</h3>
+                    <h3 className={styles.slideTitle}>{t.knownForMovies}</h3>
                     {
-                        selectedActor?.known_for && selectedActor?.known_for?.length > 8 &&
-                        <NavLink to={`/Actors/actor/${selectedActor.id}/cast`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                        selectedActor?.known_for_movies && selectedActor?.known_for_movies?.length > 8 &&
+                        <NavLink to={`/Actors/actor/${selectedActor?.id}/fnown-for`} className={styles.seeAll}>{t.seeAll}</NavLink>
                     }
                 </div>
-                <KnownForSlider />
+                <KnownForMoviesSlider />
+            </div>
+            <div>
+                <div className={styles.slideTopDiv}>
+                    <h3 className={styles.slideTitle}>{t.knownForSeries}</h3>
+                    {
+                        selectedActor?.known_for_series && selectedActor?.known_for_series?.length > 8 &&
+                        <NavLink to={`/Actors/actor/${selectedActor?.id}/known-for`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    }
+                </div>
+                <KnownForSeriesSlider />
             </div>
         </section>
     )

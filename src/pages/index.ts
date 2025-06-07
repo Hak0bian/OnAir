@@ -1,7 +1,6 @@
 import HomePage from "./HomePage/HomePage";
 import MoviesPage from "./MoviesPage/MoviesPage";
 import LibraryPage from "./LibraryPage/LibraryPage";
-import SeeAllPage from "./SeeAllPage/SeeAllPage";
 import AboutMoviePage from "./AboutMoviePage/AboutMoviePage";
 import ActorsPage from "./ActorsPage/ActorsPage";
 import AboutActorPage from "./AboutActorPage/AboutActorPage";
@@ -16,7 +15,7 @@ import TvSeriesPage from "./TvSeriesPage/TvSeriesPage";
 import AboutTvSeriaPage from "./AboutTvSeriaPage/AboutTvSeriaPage";
 import RecommendationsPage from "./RecommendationsPage/RecommendationsPage";
 
-export { HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage, 
+export { HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage, 
     SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, 
     SearchResultsPage , TvSeriesPage, AboutTvSeriaPage, RecommendationsPage
 }

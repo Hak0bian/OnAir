@@ -1,4 +1,4 @@
-import { ICastType, IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../../types";
+import { IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../../types";
 
 export interface IHomeMoviesStateType {
     latestMovies: Array<IMoviesType>,
@@ -21,10 +21,6 @@ export interface IMoviesStateType {
     error: null | string
 }
 
-export interface IMovieCreditsType {
-    id: number;
-    cast: Array<ICastType>;
-}
 
 // *********************************************
 
@@ -97,7 +93,8 @@ export interface ISelectedActorType {
     popularity: number,
     also_known_as: string[],
     homepage: number | null,
-    known_for?: Array<IMoviesType>;
+    known_for_movies?: Array<IMoviesType>;
+    known_for_series?: Array<ITvSeriesType>
 }
 
 export type IActorsStateType = {

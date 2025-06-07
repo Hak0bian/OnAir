@@ -1,58 +1,9 @@
 .actorDetailsSec{
-    padding-top: 20px;
-}
-
-.actorDetailsDiv{
-    display: flex;
-    gap: 40px;
-    letter-spacing: .4px;
-}
-
-.actorPosterDiv{
-    min-width: 300px;
-    max-width: 300px;
-}
-
-.actorPosterDiv img {
-    font-size: 0;
-}
-
-.actorTitle{
-    font-size: 28px;
-}
-
-.knownAS{
-    padding: 4px 0;
-}
-
-.biography{
-    font-size: 14px;
-    font-weight: 300;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.biography::-webkit-scrollbar {
-    width: 8px; 
-}
-
-.biography::-webkit-scrollbar-track {
-    background-color: var(--text-color-gray);
-    border-radius: 12px;
-}
-
-.biography::-webkit-scrollbar-thumb {
-    background-color: var(--buttons-color);
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.biography::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-color-secondary);
+    padding-bottom: 40px;
 }
 
 .knownForBox{
-    padding: 20px 0 40px;
+    padding: 20px 0;
 }
 
 .secondary{

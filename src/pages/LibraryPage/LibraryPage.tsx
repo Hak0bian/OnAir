@@ -5,7 +5,7 @@ import { setMovieinLibrary, clearLibrary, setSeriainLibrary } from "../../store/
 import { translations } from "../../translations/translations";
 import TvSeriesCard from "../../components/TvSeries/TvSeriesCard/TvSeriesCard";
 import styles from './LibraryPage.module.css'
-// import Test from "../test/Test";
+
 
 const LibraryPage = () => {
   const dispatch = useAppDispatch()
@@ -32,7 +32,6 @@ const LibraryPage = () => {
 
   return (
     <section>
-      {/* <Test/> */}
       <div className='sectionHeader'>
         <div className='headerDiv'>
           <h2 className='sectionTitle'>{t.libraryTitle}</h2>

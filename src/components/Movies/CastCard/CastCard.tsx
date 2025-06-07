@@ -1,10 +1,10 @@
-import { ICastType } from '../../../store/slices/sliceTypes/stateTypes'
 import { NavLink } from 'react-router-dom'
 import { useAppSelector } from '../../../store/hooks/hooks';
 import GradeIcon from '@mui/icons-material/Grade';
 import darkProfile from '../../../assets/images/dark-profile.png'
 import lightProfile from '../../../assets/images/light-profile.png'
 import styles from './CastCard.module.css'
+import { ICastType } from '../../../types';
 
 const CastCard = ({ actor }: { actor: ICastType }) => {
   const { mode } = useAppSelector((state) => state.theme)

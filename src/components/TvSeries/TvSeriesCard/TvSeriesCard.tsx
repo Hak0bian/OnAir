@@ -1,13 +1,21 @@
 import { NavLink } from 'react-router-dom'
+import { ISeriesCardPropsType } from '../../componentsTypes/propsTypes';
+import { BiSolidMoviePlay } from "react-icons/bi";
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './TvSeriesCard.module.css'
-import { ISeriesCardPropsType } from '../../componentsTypes/propsTypes';
 
 const TvSeriesCard = ({seria} : ISeriesCardPropsType) => {
     return (
         <NavLink to={`/TV/Seria/${seria?.id}`}>
             <div className={styles.seriaCard}>
-                <img src={`https://image.tmdb.org/t/p/w400${seria?.poster_path}`} className={styles.slideImg}/>
+                <div className={styles.imageDiv}>
+                    {
+                        seria?.poster_path 
+                        ? <img src={`https://image.tmdb.org/t/p/w400${seria?.poster_path}`} className={styles.slideImg} />
+                        : <BiSolidMoviePlay className={styles.movieIcon}/>
+                    }
+                </div>
+                
                 <div className={styles.nameDiv}>
                     <h4>{seria?.name && seria?.name.length > 20 ? seria?.name.slice(0, 15) + "..." : seria?.name}</h4>
                     <div className={styles.dateAndRate}>

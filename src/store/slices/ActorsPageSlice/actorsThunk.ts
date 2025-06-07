@@ -20,28 +20,18 @@ export const actorFullInfoThunk = createAsyncThunk<ISelectedActorType, IPropsTyp
     "actorFullInfoThunk",
     async ({id, selectedLanguage}, { rejectWithValue }) => {
         try {
-            const [actorRes, knownForRes] = await Promise.all([
+            const [actorRes, knownForMoviesRes, knownForSeriesRes] = await Promise.all([
                 API.getActorById({id, selectedLanguage}),
-                API.getActorKnownFor({id, selectedLanguage})
+                API.getActorKnownForMovies({id, selectedLanguage}),
+                API.getActorKnownForSeries({id, selectedLanguage})
             ]);
             return {
                 ...actorRes.data,
-                known_for: knownForRes.data.crew,
+                known_for_movies: knownForMoviesRes?.data?.crew,
+                known_for_series: knownForSeriesRes?.data?.crew
             };
         } catch (err: any) {
             return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch actor info")
         }
     }
 )
-
-export const actorBiographyThunk = createAsyncThunk<{ id: number; biography: string }, IPropsTypeToo>(
-    'actorBiographyThunk',
-    async ({id, selectedLanguage}, { rejectWithValue }) => {
-        try {
-            const res = await API.getActorById({id, selectedLanguage})
-            return { id, biography: res.data.biography };
-        } catch (err: any) {
-            return rejectWithValue(err?.response?.data?.status_message || 'Failed to fetch biography');
-        }
-    }
-);

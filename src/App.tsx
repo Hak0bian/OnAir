@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import {
-  HomePage, MoviesPage, LibraryPage, SeeAllPage, AboutMoviePage, ActorsPage, AboutActorPage,
+  HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage,
   SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage,
   SearchResultsPage, TvSeriesPage,
   AboutTvSeriaPage,
@@ -24,7 +24,6 @@ function App() {
           <Route path='/Movies/page/:pageNum' element={<MoviesPage />} />
           <Route path='/Movies/movie/:id' element={<AboutMoviePage />} />
           <Route path='/Movies/:category' element={<RedirectToFirstPage />} />
-          <Route path='/Movies/:category/page/:pageNum' element={<SeeAllPage />} />
           <Route path='/Movies/movie/:movieId/cast' element={<SeeAllCastPage />} />
           <Route path='/Movies/movie/:movieId/recommendations' element={<RecommendationsPage />} />
 
