@@ -1,0 +1,10 @@
+.notFoundDiv{
+    background-color: #fff;
+    height: 90vh;
+    display: grid;
+    place-content: center;
+}
+
+.notFoundImg{
+    width: 800px;
+}

@@ -31,7 +31,7 @@ export const actorFullInfoThunk = createAsyncThunk<ISelectedActorType, IPropsTyp
                 known_for_series: knownForSeriesRes?.data?.crew
             };
         } catch (err: any) {
-            return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch actor info")
+            return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch selected actor")
         }
     }
 )

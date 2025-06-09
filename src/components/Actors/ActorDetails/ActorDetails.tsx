@@ -7,9 +7,12 @@ import styles from './ActorDetails.module.css'
 
 
 const ActorDetails = () => {
-    const { selectedActor } = useAppSelector((state => state.actorsData))
+    const { selectedActor, loadingInfo, errorInfo } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].actors
+
+    if (loadingInfo) return <h2 className='loading'>Loading...</h2>;
+    if (errorInfo) return <h2 className='error'>{errorInfo}</h2>;
 
     return (
         <section className={styles.actorDetailsSec}>
@@ -19,7 +22,7 @@ const ActorDetails = () => {
                     <h3 className={styles.slideTitle}>{t.knownForMovies}</h3>
                     {
                         selectedActor?.known_for_movies && selectedActor?.known_for_movies?.length > 8 &&
-                        <NavLink to={`/Actors/actor/${selectedActor?.id}/fnown-for`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                        <NavLink to={`/Actors/actor/${selectedActor?.id}/known-for-movies`} className={styles.seeAll}>{t.seeAll}</NavLink>
                     }
                 </div>
                 <KnownForMoviesSlider />
@@ -29,7 +32,7 @@ const ActorDetails = () => {
                     <h3 className={styles.slideTitle}>{t.knownForSeries}</h3>
                     {
                         selectedActor?.known_for_series && selectedActor?.known_for_series?.length > 8 &&
-                        <NavLink to={`/Actors/actor/${selectedActor?.id}/known-for`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                        <NavLink to={`/Actors/actor/${selectedActor?.id}/known-for-series`} className={styles.seeAll}>{t.seeAll}</NavLink>
                     }
                 </div>
                 <KnownForSeriesSlider />

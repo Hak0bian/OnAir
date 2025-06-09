@@ -8,8 +8,10 @@ const initialState: ITvSeriesStateType = {
     selectedSeria: null,
     page: 1,
     totalPages: 0,
-    isLoading: false,
-    error: null,
+    loadingSeries: false,
+    loadingInfo: false,
+    errorSeries: null,
+    errorInfo: null
 }
 
 const tvSeriesSlice = createSlice({
@@ -26,29 +28,27 @@ const tvSeriesSlice = createSlice({
         .addCase(tvSeriesThunk.fulfilled, (state, action: PayloadAction<ITvSeriesReturnType>) => {
             state.tvSeries = action.payload.results
             state.totalPages = action.payload.total_pages
-            state.isLoading = true
+            state.loadingSeries = false
         })
         .addCase(tvSeriesThunk.pending, (state) => {
-            state.isLoading = true
-            state.error = null
+            state.loadingSeries = true
         })
         .addCase(tvSeriesThunk.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.isLoading = false;
+            state.errorSeries = action.payload as string;
+           state.loadingSeries = false
         })
 
         // getTvSeriaById
         .addCase(tvSeriaByIdThunk.fulfilled, (state, action: PayloadAction<IDetailsByIdType>) => {
             state.selectedSeria = action.payload
-            state.isLoading = true
+            state.loadingInfo = false
         })
         .addCase(tvSeriaByIdThunk.pending, (state) => {
-            state.isLoading = true
-            state.error = null
+            state.loadingInfo = true
         })
         .addCase(tvSeriaByIdThunk.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.isLoading = false;
+            state.errorInfo = action.payload as string;
+            state.loadingInfo = false
         })
     }
 })

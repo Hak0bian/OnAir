@@ -32,15 +32,13 @@ const SeeAllCastPage = () => {
             : [];
 
     return (
-        <section>
-            <div className='container'>
-                <h2 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.cast}</h2>
-                <div className='gridDiv'>
-                    {castList.length > 0 &&
-                        castList.map((actor) => (
-                            <CastCard actor={actor} key={actor.id} />
-                        ))}
-                </div>
+        <section className='container'>
+            <h3 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.cast}</h3>
+            <div className='gridDiv'>
+                {castList.length > 0 &&
+                    castList.map((actor) => (
+                        <CastCard actor={actor} key={actor.id} />
+                    ))}
             </div>
         </section>
     );

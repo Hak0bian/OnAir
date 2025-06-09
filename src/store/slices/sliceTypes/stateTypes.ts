@@ -17,8 +17,10 @@ export interface IMoviesStateType {
     selectedMovie: IDetailsByIdType | null,
     page: number,
     totalPages: number,
-    isLoading: boolean,
-    error: null | string
+    loadingMovies: boolean,
+    loadingInfo: boolean,
+    errorMovies: null | string
+    errorInfo: null | string
 }
 
 
@@ -102,8 +104,10 @@ export type IActorsStateType = {
     selectedActor: ISelectedActorType | null;
     page: number;
     totalPages: number,
-    isLoading: boolean
-    error: null | string
+    loadingActors: boolean,
+    loadingInfo: boolean,
+    errorActors: null | string,
+    errorInfo: null | string
 }
 
 export interface IActorsReturnType {
@@ -133,8 +137,10 @@ export type ITvSeriesStateType = {
     selectedSeria: IDetailsByIdType | null,
     page: number,
     totalPages: number,
-    isLoading: boolean
-    error: null | string
+    loadingSeries: boolean,
+    loadingInfo: boolean,
+    errorSeries: string | null,
+    errorInfo: string | null,
 }
 
 

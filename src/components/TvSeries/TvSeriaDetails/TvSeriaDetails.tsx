@@ -8,15 +8,14 @@ import AboutTvSeria from '../AboutTvSeria/AboutTvSeria';
 import styles from './TvSeriaDetails.module.css'
 
 const TvSeriaDetails = () => {
-    const { selectedSeria } = useAppSelector((state) => state.tvSeriesData)
+    const { selectedSeria, loadingInfo, errorInfo } = useAppSelector((state) => state.tvSeriesData)
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].movies
     const seriaCast = selectedSeria?.credits?.cast
     const backdrop = selectedSeria?.backdrop_path ? `https://image.tmdb.org/t/p/w1280${selectedSeria?.backdrop_path}` : '';
 
-
-    // console.log(selectedSeria);
-        
+    if (loadingInfo) return <h2 className='loading'>Loading...</h2>;
+    if (errorInfo) return <h2 className='error'>{errorInfo}</h2>;
 
     return (
         <section className={styles.detailsSection}

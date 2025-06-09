@@ -61,7 +61,7 @@ const SearchMovie = () => {
             <IoMdClose className={styles.resetIcon} onClick={() => setInputValue('')}/>
             <div className={styles.resultsDiv}>
                 {
-                    !movieIsLoading && movieNotFound && showResults && inputValue.trim()
+                    !movieIsLoading && movieNotFound && inputValue.trim()
                         ? <p className={styles.notFound}>{t.noFoundMovies} “{inputValue}”</p>
                         : 
                         <SearchedMoviesList
@@ -70,7 +70,7 @@ const SearchMovie = () => {
                             setInputValue={setInputValue} />
                 }
                 {
-                    !seriaIsLoading && seriaNotFound && showResults && inputValue.trim()
+                    !seriaIsLoading && seriaNotFound && inputValue.trim()
                         ? <p className={styles.notFound}>{t.noFoundSeries} “{inputValue}”</p>
                         : <SearchedSeriesList
                             showResults={showResults}
@@ -78,7 +78,7 @@ const SearchMovie = () => {
                             setInputValue={setInputValue} />
                 }
                 {
-                    !actorIsLoading && actorNotFound && showResults && inputValue.trim()
+                    !actorIsLoading && actorNotFound && inputValue.trim()
                         ? <p className={styles.notFound}>{t.noFoundActors} “{inputValue}”</p>
                         : <SearchedActorsList 
                             showResults={showResults}

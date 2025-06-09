@@ -14,8 +14,11 @@ import SearchResultsPage from "./SearchResultsPage/SearchResultsPage";
 import TvSeriesPage from "./TvSeriesPage/TvSeriesPage";
 import AboutTvSeriaPage from "./AboutTvSeriaPage/AboutTvSeriaPage";
 import RecommendationsPage from "./RecommendationsPage/RecommendationsPage";
+import NotFoundPage from "./NotFoundPage/NotFoundPage";
+import KnownForMoviesPage from "./KnownForMoviesPage/KnownForMoviesPage";
+import KnownForSeriesPage from "./KnownForSeriesPage/KnownForSeriesPage";
 
-export { HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage, 
-    SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, 
-    SearchResultsPage , TvSeriesPage, AboutTvSeriaPage, RecommendationsPage
+export { HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage, SeeAllCastPage, 
+    HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, SearchResultsPage, 
+    TvSeriesPage, AboutTvSeriaPage, RecommendationsPage, NotFoundPage, KnownForMoviesPage, KnownForSeriesPage
 }

@@ -12,10 +12,10 @@ import '../global.css'
 
 
 const RecentlyUpdated = () => {
-    const [ value, setValue ] = useState('1');
-    const { movies } = useAppSelector((state) => state.moviesData);
-    const { actors } = useAppSelector((state) => state.actorsData)
-    const { tvSeries } = useAppSelector((state) => state.tvSeriesData)
+    const [value, setValue] = useState('1');
+    const { movies, loadingMovies, errorMovies } = useAppSelector((state) => state.moviesData);
+    const { tvSeries, loadingSeries, errorSeries } = useAppSelector((state) => state.tvSeriesData)
+    const { actors, loadingActors, errorActors } = useAppSelector((state) => state.actorsData)
 
     const handleChange = (_: any, newValue: string) => {
         setValue(newValue);
@@ -31,13 +31,15 @@ const RecentlyUpdated = () => {
                         <Tab label="Actors" value="3" className="tabItem" />
                     </TabList>
                 </div>
-                <TabPanel value="1" sx={{ padding: '28px 0 0' }}>
+                <TabPanel value="1" sx={{ padding: '0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {
-                                movies
-                                    .slice(0, 12)
-                                    .map((movie) => (<MovieCard key={movie.id} movie={movie} />))
+                                loadingMovies ? <p className='loading'>Loading...</p> 
+                                : errorMovies ? <p className='error'>{errorMovies}</p>
+                                : movies.slice(0, 12).map((movie) => (
+                                    <MovieCard key={movie.id} movie={movie} />
+                                ))
                             }
                         </div>
                         <div className={styles.catalogBtn}>
@@ -48,13 +50,15 @@ const RecentlyUpdated = () => {
                     </section>
                 </TabPanel>
 
-                <TabPanel value="2" sx={{ padding: '28px 0 0' }}>
+                <TabPanel value="2" sx={{ padding: '0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {
-                                tvSeries
-                                    .slice(0, 12)
-                                    .map((seria) => (<TvSeriesCard key={seria.id} seria={seria} />))
+                                loadingSeries ? <p className='loading'>Loading...</p> 
+                                : errorSeries ? <p className='error'>{errorSeries}</p>
+                                : tvSeries.slice(0, 12).map((seria) => (
+                                    <TvSeriesCard key={seria.id} seria={seria} />
+                                ))
                             }
                         </div>
                         <div className={styles.catalogBtn}>
@@ -65,13 +69,15 @@ const RecentlyUpdated = () => {
                     </section>
                 </TabPanel>
 
-                <TabPanel value="3" sx={{ padding: '28px 0 0' }}>
+                <TabPanel value="3" sx={{ padding: '0' }}>
                     <section>
                         <div className={styles.gridContainer}>
                             {
-                                actors
-                                    .slice(0, 12)
-                                    .map((actor) => (<ActorCard key={actor.id} actor={actor} />))
+                                loadingActors ? <p className='loading'>Loading...</p> 
+                                : errorActors ? <p className='error'>{errorActors}</p>
+                                : actors.slice(0, 12).map((actor) => (
+                                    <ActorCard key={actor.id} actor={actor} />
+                                ))
                             }
                         </div>
                         <div className={styles.catalogBtn}>

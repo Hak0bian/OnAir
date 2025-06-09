@@ -1,6 +1,6 @@
 .actorCard {
-    height: 320px;
-    max-height: 320px;
+    min-height: 300px;
+    max-height: 300px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 4px var(--bg-color-main);

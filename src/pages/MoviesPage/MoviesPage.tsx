@@ -3,20 +3,19 @@ import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks"
 import { moviesThunk, changeMoviesPageNumber, genresListThunk, moviesByGenreThunk, clearmoviesByGenre } from "../../store/slices"
 import { Carousel, MovieCard, Paginationn, SelectGenre } from "../../components"
-import { Box } from "@mui/material"
 
 
 const MoviesPage = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const { movies, page, totalPages } = useAppSelector((state) => state.moviesData)
+  const { movies, loadingMovies, errorMovies, page, totalPages } = useAppSelector((state) => state.moviesData)
   const { selectedGenreId, moviesByGenre } = useAppSelector((state) => state.genresData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData);
 
   const arr = moviesByGenre.length > 0 ? moviesByGenre : movies
   const images = arr.filter(movie => movie?.backdrop_path)
-  .map(movie => `https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`);
-  
+    .map(movie => `https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`);
+
   useEffect(() => {
     dispatch(genresListThunk(selectedLanguage));
   }, [selectedLanguage]);
@@ -42,31 +41,33 @@ const MoviesPage = () => {
 
   return (
     <section>
-      <Carousel images={images} />
-      <div className='container'>
-        <SelectGenre />
+      {
+        loadingMovies ? (
+          <p className='loading'>Loading...</p>
+        ) : errorMovies ? (
+          <p className='error'>{errorMovies}</p>
+        ) : (
+          <section>
+            <Carousel images={images} />
+            <div className='container'>
+              <SelectGenre />
 
-        <Box sx={{ display: 'grid', gap: 2, justifyContent: 'center', 
-          gridTemplateColumns: {
-              xs: 'repeat(2, 1fr)',
-              sm: 'repeat(3, 1fr)',
-              md: 'repeat(4, 1fr)',
-              lg: 'repeat(6, 1fr)',
-            }
-          }}
-        >
-          {
-            moviesByGenre.length > 0
-            ? (moviesByGenre.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
-              )))
-            : (movies.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
-              )))
-          }
-        </Box>
-        <Paginationn page={page} totalPages={totalPages} handleChangePage={handleChangePage} />
-      </div>
+              <div className='gridDiv'>
+                {
+                  moviesByGenre.length > 0
+                    ? (moviesByGenre.map((movie) => (
+                      <MovieCard key={movie.id} movie={movie} />
+                    )))
+                    : (movies.map((movie) => (
+                      <MovieCard key={movie.id} movie={movie} />
+                    )))
+                }
+              </div>
+              <Paginationn page={page} totalPages={totalPages} handleChangePage={handleChangePage} />
+            </div>
+          </section>
+        )
+      }
     </section>
   )
 }

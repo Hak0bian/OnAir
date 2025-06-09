@@ -31,7 +31,7 @@ const RecommendationsPage = () => {
     return (
         <section>
             <div className='container'>
-                <h2 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.recommendations}</h2>
+                <h3 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.recommendations}</h3>
                 <div className='gridDiv'>
                     {movieId && recMovies?.map(movie => (
                         <MovieSimilarCard key={movie.id} movie={movie} />

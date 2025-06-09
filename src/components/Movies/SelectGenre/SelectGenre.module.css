@@ -4,7 +4,7 @@
     outline: none;
     font-size: 16px;
     padding-left: 8px;
-    margin: 20px 0;
+    margin-top: 20px;
     border: 1px solid var(--text-color-gray);
     background-color: var(--bg-color);
     color: var(--text-color-gray);

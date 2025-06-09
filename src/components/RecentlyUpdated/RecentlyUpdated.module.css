@@ -3,6 +3,7 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 2;
     gap: 40px 16px;
+    padding-top: 28px;
 }
 
 .catalogBtn{

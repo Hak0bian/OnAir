@@ -9,8 +9,10 @@ const initialState: IMoviesStateType = {
     selectedMovie: null,
     page: 1,
     totalPages: 0,
-    isLoading: false,
-    error: null
+    loadingMovies: false,
+    loadingInfo: false,
+    errorMovies: null,
+    errorInfo: null
 }
 
 const moviesSlice = createSlice({
@@ -27,27 +29,27 @@ const moviesSlice = createSlice({
         .addCase(moviesThunk.fulfilled, (state, action: PayloadAction<IMoviesReturnType>) => {
             state.movies = action.payload.results;
             state.totalPages = action.payload.total_pages
-            state.isLoading = false
+            state.loadingMovies = false
         })
         .addCase(moviesThunk.pending, (state) => {
-            state.isLoading = true;
+            state.loadingMovies = true;
         })
         .addCase(moviesThunk.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.isLoading = false
+            state.errorMovies = action.payload as string;
+            state.loadingMovies = false
         })
 
         // getMovieById
         .addCase(movieByIdThunk.fulfilled, (state, action: PayloadAction<IDetailsByIdType>) => {
             state.selectedMovie = action.payload
-            state.isLoading = false
+            state.loadingInfo = false
         })
         .addCase(movieByIdThunk.pending, (state) => {
-            state.isLoading = true
+            state.loadingInfo = true
         })
         .addCase(movieByIdThunk.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.isLoading = false
+            state.errorInfo = action.payload as string;
+            state.loadingInfo = false
         })
     },
 })

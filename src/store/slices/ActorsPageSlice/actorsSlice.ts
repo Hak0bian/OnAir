@@ -7,8 +7,10 @@ const initialState: IActorsStateType = {
     selectedActor: null,
     page: 1,
     totalPages: 0,
-    isLoading: false,
-    error: null
+    loadingActors: false,
+    loadingInfo: false,
+    errorActors: null,
+    errorInfo: null
 }
 
 const actorsSlice = createSlice({
@@ -21,27 +23,31 @@ const actorsSlice = createSlice({
     },
     extraReducers(builder) {
         builder
+        // getActors
         .addCase(actorsThunk.fulfilled, (state, action: PayloadAction<IActorsReturnType>) => {
             state.actors = action.payload.results
             state.totalPages = action.payload.total_pages
-            state.isLoading = false
+            state.loadingActors = false
         })
         .addCase(actorsThunk.pending, (state) => {
-            state.isLoading = true
+            state.loadingActors = true
         })
         .addCase(actorsThunk.rejected, (state, action) => {
-            state.error = action.payload as string
+            state.errorActors = action.payload as string
+            state.loadingActors = false
         })
 
+        // getActorsById
         .addCase(actorFullInfoThunk.fulfilled, (state, action: PayloadAction<ISelectedActorType>) => {
             state.selectedActor = action.payload
-            state.isLoading = false
+            state.loadingInfo = false
         })
         .addCase(actorFullInfoThunk.pending, (state) => {
-            state.isLoading = true
+            state.loadingInfo = true
         })
         .addCase(actorFullInfoThunk.rejected, (state, action) => {
-            state.error = action.payload as string
+            state.errorInfo = action.payload as string
+            state.loadingInfo = false
         })
     }
 })

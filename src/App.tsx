@@ -1,20 +1,30 @@
 import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
-import {
-  HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage,
-  SeeAllCastPage, HelpCenterPage, PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage,
-  SearchResultsPage, TvSeriesPage,
-  AboutTvSeriaPage,
-  RecommendationsPage
-} from './pages'
-import { useEffect } from 'react';
+import { HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage,SeeAllCastPage, HelpCenterPage, 
+  PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, SearchResultsPage, TvSeriesPage, AboutTvSeriaPage,
+  RecommendationsPage, NotFoundPage, KnownForMoviesPage, KnownForSeriesPage } from './pages'
+import { useEffect, useState } from 'react';
+import LoadingSpinner from './components/UI/LoadingSpinner/LoadingSpinner';
 
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'dark';
     document.body.setAttribute('data-theme', theme);
+
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
+
+  if (loading) {
+    return (
+      <div className='spinerDiv'>
+        <LoadingSpinner />
+      </div>
+    );
+  }
   
   return (
     <section>
@@ -34,6 +44,9 @@ function App() {
 
           <Route path='/Actors/page/:pageNum' element={<ActorsPage />} />
           <Route path='/Actors/actor/:id' element={<AboutActorPage />} />
+          <Route path='Actors/actor/:id/known-for-movies' element={<KnownForMoviesPage />} />
+          <Route path='Actors/actor/:id/known-for-series' element={<KnownForSeriesPage />} />
+
           <Route path='/Library' element={<LibraryPage />} />
           <Route path='/Help-Center' element={<HelpCenterPage />} />
           <Route path='/Features' element={<FeaturesPage />} />
@@ -41,6 +54,7 @@ function App() {
           <Route path='/Contact-Us' element={<ContactUsPage />} />
           <Route path='/Privacy-Policy' element={<PrivacyPolicyPage />} />
           <Route path='/Search-Results' element={<SearchResultsPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>
       <FormsPortal />
