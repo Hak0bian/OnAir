@@ -27,8 +27,13 @@ const TvSeriaDetails = () => {
             <AboutTvSeria />
 
             <section className='container'>
-                <h3 className={styles.last}>{t.last}</h3>
-                <LastEpisode />
+                { 
+                    selectedSeria?.last_air_date &&  
+                    <>
+                        <h3 className={styles.last}>{t.last}</h3>
+                        <LastEpisode />
+                    </>
+                }
 
                 <div className={styles.slideTopDiv}>
                     <h3 className={styles.slideTitle}>{t.cast}</h3>

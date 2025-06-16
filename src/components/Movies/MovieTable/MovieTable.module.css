@@ -1,5 +1,9 @@
-.key{
-    color: var(--text-color-gray);
+.moviesTable td{
+    color: var(--text-color-main);
+}
+
+.moviesTable .key{
+    color: var(--text-color-gray-main);
     padding: 2px 40px 2px 0;
     vertical-align: top;
 }

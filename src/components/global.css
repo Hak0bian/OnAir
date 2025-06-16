@@ -11,7 +11,7 @@
 .swiper-pagination-knownFor .swiper-pagination-bullet {
     margin: 0 4px;
     background: var(--text-color-gray);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: 0.3s;
 }
 

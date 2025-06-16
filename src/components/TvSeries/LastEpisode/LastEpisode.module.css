@@ -2,6 +2,19 @@
     display: flex;
     gap: 20px;
     position: relative;
+    color: var(--text-color-main);
+}
+
+.posterDiv{
+    min-width: 300px;
+    min-height: 180px;
+    display: grid;
+    place-content: center;
+    background-color: #282828;
+}
+
+.movieIcon{
+    font-size: 60px;
 }
 
 .episodeInfo{
@@ -10,6 +23,10 @@
 
     p, span{
         padding: 4px 0;
+    }
+
+    h2{
+        font-weight: 300;
     }
 }
 
@@ -23,7 +40,7 @@
 
     span{
         font-size: 14px;
-        color: var(--text-color-gray);
+        color: var(--text-color-gray-main);
     }
 }
 
@@ -35,7 +52,7 @@
 .rating{
     display: flex;
     gap: 4px;
-    color: var(--text-color-primary);
+    color: var(--text-color-main);
     font-size: 15px;
 }
 

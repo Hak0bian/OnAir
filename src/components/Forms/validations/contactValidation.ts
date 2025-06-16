@@ -24,7 +24,7 @@ const contactValidation = (language: string) => {
             .max(50, t.max50),
         message: YUP
             .string()
-            .min(20, t.min20)
+            .min(10, t.min10)
             .max(300, t.max300)
             .required(t.message)
     });

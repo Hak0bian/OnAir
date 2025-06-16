@@ -65,3 +65,7 @@
         color: var(--text-color-primary);
     }
 }
+
+.hideDiv{
+    display: none;
+}

@@ -6,8 +6,8 @@
     font-size: 14px;
     font-weight: 600;
     letter-spacing: .4px;
-    background-color: var(--bg-color);
-    color: var(--text-color-primary);
+    background: none;
+    color: var(--text-color-main);
     cursor: pointer;
     transition: .3s;
 

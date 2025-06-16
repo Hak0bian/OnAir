@@ -3,11 +3,12 @@ import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
 import { clearActorsResults, clearMovieResults, clearTvSeriesResults } from "../../../store/slices";
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
 import { translations } from '../../../translations/translations';
+import { BiSolidMoviePlay } from "react-icons/bi";
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './SearchedSeriesList.module.css'
 
 
-const SearchedSeriesList = ({ showResults, inputValue, setInputValue }: ISearchPropsType) => {
+const SearchedSeriesList = ({inputValue, setInputValue }: ISearchPropsType) => {
     const { searchedSeries } = useAppSelector((state) => state.searchSeriesData);
     const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const t = translations[selectedLanguage].search
@@ -21,16 +22,22 @@ const SearchedSeriesList = ({ showResults, inputValue, setInputValue }: ISearchP
     }
 
     return (
-        <div className={showResults ? styles.hideDiv : ''}>
+        <div>
             {searchedSeries.length > 0 && (
                 <ul className={styles.resultList}>
                     <li className={styles.listTitle}>{t.series}</li>
                     {searchedSeries?.map((seria, ind) => (
                         <NavLink to={`/Movies/movie/${seria?.id}`} key={ind} onClick={handleClick}>
                             <li key={seria.id} className={styles.seriaListItem}>
-                                <img src={`https://image.tmdb.org/t/p/w200${seria?.backdrop_path}`} />
+                                <div className={styles.imageDiv}>
+                                    {
+                                        seria?.backdrop_path
+                                        ? <img src={`https://image.tmdb.org/t/p/w200${seria?.backdrop_path}`}/>
+                                        : <BiSolidMoviePlay className={styles.movieIcon} />
+                                    }
+                                </div>
                                 <div>
-                                    <p>{seria?.name}</p>
+                                    <p>{seria.name.length > 40 ? seria?.name.slice(0, 40) + "..." : seria?.name}</p>
                                     <p className={styles.rating}>
                                         <GradeIcon className={styles.starIcon} />
                                         {seria?.vote_average.toFixed(1)}

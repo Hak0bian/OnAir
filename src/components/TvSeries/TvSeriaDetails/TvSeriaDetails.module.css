@@ -19,8 +19,8 @@
 .last{
     padding: 40px 0 20px;
     font-weight: normal;
-    color: var(--text-color-gray);
     position: relative;
+    color: var(--text-color-gray-main);
 }
 
 
@@ -35,7 +35,7 @@
 .slideTitle{
     font-weight: normal;
     letter-spacing: .4px;
-    color: var(--text-color-gray);
+    color: var(--text-color-gray-main);
 }
 
 .seeAll{

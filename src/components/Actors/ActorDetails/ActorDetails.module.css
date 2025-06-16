@@ -6,13 +6,6 @@
     padding: 20px 0;
 }
 
-.secondary{
-    padding: 12px 0;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: var(--text-color-gray);
-}
-
 .noKnownFor{
     font-size: 18px;
     letter-spacing: .4px;
@@ -38,7 +31,6 @@
     font-size: 18px !important;
     color: var(--buttons-color);
 }
-
 
 
 .slideTopDiv{

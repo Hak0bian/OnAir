@@ -47,3 +47,16 @@
 .biography::-webkit-scrollbar-thumb:hover {
     background-color: var(--text-color-secondary);
 }
+
+.rating{
+    display: flex;
+    gap: 4px;
+    color: var(--text-color-primary);
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+
+.starIcon{
+    font-size: 18px !important;
+    color: var(--buttons-color);
+}

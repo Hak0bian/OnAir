@@ -9,7 +9,7 @@ const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
 
     return (
         <div>
-            <table>
+            <table className={styles.moviesTable}>
                 <tbody>
                     <tr>
                         <td className={styles.key}>{t.vote}</td>

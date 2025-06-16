@@ -5,7 +5,6 @@ export type IMovieTablePropsType = {
 }
 
 export type ISearchPropsType = {
-    showResults: boolean;
     inputValue: string;
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
 };

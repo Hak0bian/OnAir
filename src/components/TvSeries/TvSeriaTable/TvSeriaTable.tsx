@@ -9,7 +9,7 @@ const TvSeriaTable = ({ selectedSeria } : ITvSeriaTablePropsType ) => {
 
     return (
         <div>
-            <table>
+            <table className={styles.seraTable}>
                 <tbody>
                     <tr>
                         <td className={styles.key}>{t.season}</td>

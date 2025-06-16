@@ -148,7 +148,7 @@ export const translations: any = {
             },
             plan: "Plan is required",
             message: "Message is required",
-            min20: "Min length — 20",
+            min10: "Min length — 10",
             max300: "Max length — 300",
             max50: "Max length — 50"
         },
@@ -512,7 +512,7 @@ export const translations: any = {
             },
             plan: "Необходимо выбрать план",
             message: "Сообщение обязательно",
-            min20: "Минимальная длина — 20",
+            min10: "Минимальная длина — 10",
             max300: "Максимальная длина — 300",
             max50: "Максимальная длина — 50"
         },

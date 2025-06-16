@@ -12,7 +12,7 @@ const AboutMoviePage = () => {
     useEffect(() => {
         dispatch(movieByIdThunk({ id: Number(id), selectedLanguage}))
         window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [selectedLanguage])
+    }, [id, selectedLanguage])
 
     return (
         <section>

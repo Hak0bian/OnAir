@@ -1,18 +1,42 @@
-import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import { useRef } from "react";
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
+import emailjs from "@emailjs/browser";
 import MainButton from "../../UI/MainButton/MainButton";
-import styles from './ContactUsForm.module.css'
 import contactValidation from "../validations/contactValidation";
+import styles from './ContactUsForm.module.css';
 
+
+type FormValues = {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
 
 const ContactUsForm = () => {
-    const { selectedLanguage } = useAppSelector((state) => state.languagesData)
-    const t = translations[selectedLanguage].forms
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData);
+    const t = translations[selectedLanguage].forms;
+    const formRef = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = (_: any, { resetForm }: { resetForm: () => void }) => {
-        alert("Message sent successfully");
-        resetForm();
+    const handleSubmit = (_: any, { resetForm }: FormikHelpers<FormValues>) => {
+        if (!formRef.current) return;
+
+        emailjs
+            .sendForm(
+                'service_hab31ph',
+                'template_8kyhp9u',
+                formRef.current,
+                {publicKey: '3WiK1zFLYxTKjHs4f'}
+            )
+            .then(() => {
+                alert("Message sent successfully");
+                resetForm();
+            })
+            .catch((error: any) => {
+                console.error("Message send failed:", error.text);
+            });
     };
 
     return (
@@ -22,12 +46,12 @@ const ContactUsForm = () => {
                     name: "",
                     email: "",
                     subject: "",
-                    message: ""
+                    message: "",
                 }}
                 onSubmit={handleSubmit}
                 validationSchema={contactValidation(selectedLanguage)}
             >
-                <Form className={styles.contactUsForm}>
+                <Form className={styles.contactUsForm} ref={formRef}>
                     <div className={styles.labelsDiv}>
                         <label>
                             <Field name="name" placeholder={t.name} className={styles.inp} />
@@ -52,7 +76,7 @@ const ContactUsForm = () => {
                 </Form>
             </Formik>
         </div>
-    )
-}
+    );
+};
 
-export default ContactUsForm
+export default ContactUsForm;

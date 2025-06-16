@@ -19,7 +19,7 @@ export const API = {
         return instance.get<IMoviesReturnType>(`/discover/movie?include_adult=false&language=${selectedLanguage}&page=${page}`)
     },
     getMovieById({id, selectedLanguage}: IPropsTypeToo){
-        return instance.get<IDetailsByIdType>(`/movie/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
+        return instance.get<IDetailsByIdType>(`/movie/${id}?include_adult=false&language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
     },
     getGenres(selectedLanguage: string){
         return instance.get<IGenresReturnType>(`/genre/movie/list?language=${selectedLanguage}`)
@@ -50,10 +50,10 @@ export const API = {
 
 
     getTvSeries({page, selectedLanguage}: IPropsType){
-        return instance.get<ITvSeriesReturnType>(`/discover/tv?language=${selectedLanguage}&page=${page}&first_air_date_year=2025`)
+        return instance.get<ITvSeriesReturnType>(`/discover/tv?include_adult=false&language=${selectedLanguage}&page=${page}&first_air_date_year=2025`)
     },
     getTvSeriaById({id, selectedLanguage}: IPropsTypeToo){
-        return instance.get<IDetailsByIdType>(`/tv/${id}?language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
+        return instance.get<IDetailsByIdType>(`/tv/${id}?include_adult=false&language=${selectedLanguage}&append_to_response=videos,credits,images,similar`)
     },
     searchTvSeria(text: string){
         return instance.get<ITvSeriesReturnType>(`/search/tv?query=${text}`)

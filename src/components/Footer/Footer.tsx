@@ -3,14 +3,16 @@ import { showForgotPassForm, showSelectPlanForm, showSignInForm, showSignUpForm
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { translations } from '../../translations/translations';
 import { NavLink } from 'react-router-dom';
-import footerLogo from '../../assets/images/onair-logo-white.png'
+import logoOnDark from '../../assets/images/onair-logo-white.png'
+import logoOnLight  from "../../assets/images/onair-logo-light.png";
 import styles from './Footer.module.css'
 import ContactsIcons from '../ContactsIcons/ContactsIcons';
 
 const Footer = () => {
+  const dispatch = useAppDispatch()
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)
   const t = translations[selectedLanguage].footer;
-  const dispatch = useAppDispatch()
+  const { mode } = useAppSelector((state) => state.theme)
 
   const scrollToTopPage = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -38,7 +40,7 @@ const Footer = () => {
         <div className={styles.footerTopDiv}>
           <div className={styles.logoDiv}>
             <NavLink to={`/`} onClick={scrollToTopPage}>
-              <img src={footerLogo} />
+              <img src={mode === 'dark' ? logoOnDark : logoOnLight} />
             </NavLink>
             <p className={styles.footerText}>{t.text1}</p>
           </div>
