@@ -6,7 +6,7 @@ import { setTheme, toggleTheme } from "./ThemeSlice/themeSlice"
 
 import { changeSelectedGenreId, clearmoviesByGenre } from "./MovieGenresSlice/movieGenresSlice";
 import { moviesThunk, movieByIdThunk } from "./MoviesPageSlice/moviesThunk";
-import { changeMoviesPageNumber } from "./MoviesPageSlice/moviesSlice";
+import { changeMoviesPageNumber, changeMoviesSortBy } from "./MoviesPageSlice/moviesSlice";
 import { searchMovieThunk } from "./SearchMovieSlice/searchMovieThunk";
 import { clearMovieResults } from "./SearchMovieSlice/searchMovieSlice";
 
@@ -25,7 +25,7 @@ import { clearTvSeriesResults } from "./SearchTvSeriesSlice/SearchTvSeriesSlice"
 export { setMovieinLibrary, addMovieToLibrary, 
     removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, 
-    changeMoviesPageNumber, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
+    changeMoviesPageNumber, changeMoviesSortBy, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
     toggleTheme, actorsThunk, actorFullInfoThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
     tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults
 }

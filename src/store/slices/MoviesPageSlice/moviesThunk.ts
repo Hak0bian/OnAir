@@ -4,9 +4,9 @@ import { API } from "../../../api/api"
 
 export const moviesThunk = createAsyncThunk<IMoviesReturnType, IPropsType>(
     "moviesThunk",
-    async ({page, selectedLanguage}, { rejectWithValue }) => {
+    async ({page, selectedLanguage, sortBy}, { rejectWithValue }) => {
         try {
-            const res = await API.getMovies({page, selectedLanguage})
+            const res = await API.getMovies({page, selectedLanguage, sortBy})
             return res.data
         } catch (err: any) {
             return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch movies")

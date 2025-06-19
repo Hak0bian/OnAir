@@ -164,6 +164,13 @@ export const translations: any = {
             seeAll: "See all",
             recommendations: "Recommendations",
             castNotFound: "Cast not found",
+            filter: {
+                sort: "Sort by",
+                popularity: "Popularity",
+                rating: "Rating",
+                date: "Release Date",
+                vote: "Number of Votes"
+            },
             movieTable: {
                 date: "Date",
                 vote: "Vote/Votes",
@@ -528,6 +535,13 @@ export const translations: any = {
             seeAll: "Смотреть все",
             recommendations: "Рекомендации",
             castNotFound: "Актерский состав не найдено",
+            filter: {
+                sort: "Сортировать по",
+                popularity: "Популярность",
+                rating: "Рейтинг",
+                date: "Дата выхода",
+                vote: "Количество голосов"
+            },
             movieTable: {
                 date: "Дата",
                 vote: "Голосование/Голоса",

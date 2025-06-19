@@ -19,6 +19,7 @@ import MovieCastSlider from "./Movies/MovieCastSlider/MovieCastSlider";
 import Trailer from "./Movies/Trailer/Trailer";
 import RedirectToFirstPage from "./Movies/RedirectToFirstPage/RedirectToFirstPage";
 import SelectGenre from "./Movies/SelectGenre/SelectGenre";
+import MoviesFilter from "./Movies/MoviesFilter/MoviesFilter";
 import Search from "./Search/Search";
 
 import ActorCard from "./Actors/ActorCard/ActorCard";
@@ -36,7 +37,7 @@ import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 
 
 export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MovieCard, MovieDetails, 
-    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, Search, ActorCard, 
+    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, MoviesFilter, Search, ActorCard, 
     ActorDetails, KnownForMoviesSlider, KnownForSeriesSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, TvSeriesCard, 
     TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel
 }

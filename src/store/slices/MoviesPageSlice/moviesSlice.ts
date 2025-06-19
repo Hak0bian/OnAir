@@ -7,6 +7,7 @@ import { IMoviesStateType } from "../sliceTypes/stateTypes";
 const initialState: IMoviesStateType = {
     movies: [],
     selectedMovie: null,
+    sortBy: '',
     page: 1,
     totalPages: 0,
     loadingMovies: false,
@@ -22,6 +23,9 @@ const moviesSlice = createSlice({
         changeMoviesPageNumber(state, action: PayloadAction<number>) {
             state.page = action.payload
         },
+        changeMoviesSortBy(state, action: PayloadAction<string>) {
+            state.sortBy = action.payload
+        }
     },
     extraReducers(builder) {
         builder
@@ -55,4 +59,4 @@ const moviesSlice = createSlice({
 })
 
 export default moviesSlice.reducer
-export const { changeMoviesPageNumber } = moviesSlice.actions
+export const { changeMoviesPageNumber, changeMoviesSortBy } = moviesSlice.actions

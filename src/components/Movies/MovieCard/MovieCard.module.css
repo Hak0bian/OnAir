@@ -10,6 +10,7 @@
     min-height: 300px;
     display: grid;
     place-content: center;
+    background-color: var(--bg-color-options);
     
     img {
         width: 100%;

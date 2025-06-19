@@ -30,6 +30,7 @@ export interface IMoviesReturnType {
 export interface IPropsType {
     genreId?: number,
     page?: number,
+    sortBy?: string,
     selectedLanguage: string
 }
 

@@ -15,6 +15,7 @@ export interface IHomeMoviesStateType {
 export interface IMoviesStateType {
     movies: Array<IMoviesType>,
     selectedMovie: IDetailsByIdType | null,
+    sortBy: string,
     page: number,
     totalPages: number,
     loadingMovies: boolean,

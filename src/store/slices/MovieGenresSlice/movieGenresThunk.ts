@@ -17,9 +17,9 @@ export const genresListThunk = createAsyncThunk<IGenresReturnType, string>(
 
 export const moviesByGenreThunk = createAsyncThunk<IMoviesReturnType, IPropsType>(
     'moviesByGenreThunk',
-    async ({genreId, page, selectedLanguage}, { rejectWithValue }) => {
+    async ({genreId, page, selectedLanguage, sortBy}, { rejectWithValue }) => {
         try {
-            const res = await API.getMoviesByGenre({genreId, page, selectedLanguage})
+            const res = await API.getMoviesByGenre({genreId, page, selectedLanguage, sortBy})
             return res.data
         }catch(err: any) {
             return rejectWithValue(err?.response?.data?.status_message || "Failed to fetch movie genres")
