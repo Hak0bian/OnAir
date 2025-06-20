@@ -11,6 +11,7 @@ import ContactUs from "./ContactUs/ContactUs";
 import FormsPortal from "./FormsPortal/FormsPortal";
 import RecentlyUpdated from "./RecentlyUpdated/RecentlyUpdated";
 import Carousel from "./UI/Carousel/Carousel";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 import MovieCard from "./Movies/MovieCard/MovieCard";
 import MovieDetails from "./Movies/MovieDetails/MovieDetails";
@@ -39,5 +40,5 @@ import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, MoviesFilter, Search, ActorCard, 
     ActorDetails, KnownForMoviesSlider, KnownForSeriesSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, TvSeriesCard, 
-    TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel
+    TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel, BurgerMenu
 }

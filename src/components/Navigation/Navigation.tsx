@@ -11,6 +11,7 @@ import SelectLanguage from '../SelectLanguage/SelectLanguage'
 import MorePages from '../MorePages/MorePages'
 import Search from '../Search/Search'
 import styles from './Navigation.module.css'
+import BurgerMenu from '../BurgerMenu/BurgerMenu'
 
 
 const Navigation = () => {
@@ -20,11 +21,11 @@ const Navigation = () => {
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
     const { page: tvPage } = useAppSelector((state) => state.tvSeriesData)
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
-    const { mode } = useAppSelector((state) => state.theme)
     const t = translations[selectedLanguage].navigation
+    const { mode } = useAppSelector((state) => state.theme)
 
     const scrollToTopPage = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     const toggle = () => {
@@ -52,14 +53,15 @@ const Navigation = () => {
                     <NavLink to={`/Actors/page/${actorsPage}`} onClick={scrollToTopPage}>{t.actors}</NavLink>
                     <MorePages />
                 </div>
-
-
-                <div className={styles.navButtonsDiv}>
-                    <Search />
-                    <SelectLanguage />
-                    <MdSunny className={styles.themeBtn} onClick={toggle}/>
-                    <LuCircleUserRound onClick={openSignUpForm} className={styles.profileBtn}/>
+                <div className={styles.searchandButtons}>
+                    <div className={styles.searchDiv}><Search /></div>
+                    <div className={styles.navButtonsDiv}>
+                        <SelectLanguage />
+                        <MdSunny className={styles.themeBtn} onClick={toggle} />
+                        <LuCircleUserRound onClick={openSignUpForm} className={styles.profileBtn} />
+                    </div>
                 </div>
+                <BurgerMenu toggle={toggle} openSignUpForm={openSignUpForm}/>  
             </div>
         </nav>
     )

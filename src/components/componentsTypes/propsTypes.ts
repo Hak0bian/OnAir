@@ -41,3 +41,9 @@ export type IMovieCardPropsType = {
 export type ISeriesCardPropsType = {
     seria: IDetailsByIdType | ITvSeriesType
 }
+
+export type IBurgerMenuPropsType = {
+    toggle: () => void;
+    openSignUpForm: () => void;
+
+}

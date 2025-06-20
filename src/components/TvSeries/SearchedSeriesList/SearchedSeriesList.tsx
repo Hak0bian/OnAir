@@ -37,7 +37,7 @@ const SearchedSeriesList = ({inputValue, setInputValue }: ISearchPropsType) => {
                                     }
                                 </div>
                                 <div>
-                                    <p>{seria.name.length > 40 ? seria?.name.slice(0, 40) + "..." : seria?.name}</p>
+                                    <p className={styles.title}>{seria.name.length > 30 ? seria?.name.slice(0, 30) + "..." : seria?.name}</p>
                                     <p className={styles.rating}>
                                         <GradeIcon className={styles.starIcon} />
                                         {seria?.vote_average.toFixed(1)}

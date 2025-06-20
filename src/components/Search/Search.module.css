@@ -16,7 +16,7 @@
     padding-left: 8px;
     border-radius: 8px;
     border: none;
-    background-color: var(--bg-color-options);
+    background: none;
     color: var(--text-color-primary);
     letter-spacing: .4px;
 }
@@ -24,7 +24,7 @@
 .resultsDiv{
     width: 500px;
     position: absolute;
-    top: 50px;
+    top: 51px;
     z-index: 5;
     max-height: 500px;
     overflow-y: auto;
@@ -68,4 +68,28 @@
 
 .hideDiv{
     display: none;
+}
+
+
+@media screen and (max-width: 740px) {
+    .searchInput{
+        width: 260px;
+        height: 32px;
+    }
+    .resultsDiv{
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .searchDiv, .searchInput{
+        width: 100%;
+    }
+    .searchDiv{
+        background-color: rgb(0,0,0,0.2);
+    }
+    .resultsDiv{
+        width: 100%;
+        top: 40px;
+    }
 }

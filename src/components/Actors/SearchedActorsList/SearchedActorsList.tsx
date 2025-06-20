@@ -37,7 +37,7 @@ const SearchedActorsList = ({ inputValue, setInputValue }: ISearchPropsType) => 
                                     }
                                 </div>
                                 <div>
-                                    <p>{actor?.name}</p>
+                                    <p className={styles.title}>{actor?.name}</p>
                                     <p className={styles.rating}>
                                         <GradeIcon className={styles.starIcon} />
                                         {actor?.popularity.toFixed(1)}

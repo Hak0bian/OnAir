@@ -37,7 +37,7 @@ const SearchedMoviesList = ({inputValue, setInputValue }: ISearchPropsType) => {
                                     }
                                 </div>
                                 <div>
-                                    <p>{movie.title.length > 40 ? movie?.title.slice(0, 40) + "..." : movie?.title}</p>
+                                    <p className={styles.title}>{movie.title.length > 30 ? movie?.title.slice(0, 30) + "..." : movie?.title}</p>
                                     <p className={styles.rating}>
                                         <GradeIcon className={styles.starIcon} />
                                         {movie?.vote_average.toFixed(1)}

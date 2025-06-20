@@ -31,7 +31,8 @@
     gap: 32px;
 }
     
-.navMenu a{
+.navContainer a{
+    display: block;
     transition: .3s;
 
     &:hover{
@@ -39,6 +40,7 @@
     }
 }
 
+.searchandButtons, 
 .navButtonsDiv{
     display: flex;
     align-items: center;
@@ -55,5 +57,36 @@
 
     &:hover {
         color: var(--buttons-color);
+    }
+}
+
+
+/* ********************************************** */
+
+
+@media screen and (max-width: 1040px) {
+    navContainer{
+        justify-content: end;
+    }
+
+    .navMenu{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+    .navButtonsDiv{
+        display: none;
+    }
+    
+    .logo{
+        max-width: 70px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .searchDiv{
+        display: none;
     }
 }

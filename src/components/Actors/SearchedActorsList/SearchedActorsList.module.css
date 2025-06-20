@@ -21,13 +21,13 @@
         color: var(--text-color-secondary);
     }
 
-    .department{
-        padding: 4px 0;
-        font-size: 14px;
-        color: var(--text-color-gray);
-    }
 }
 
+.department{
+    padding: 4px 0;
+    font-size: 14px;
+    color: var(--text-color-gray);
+}
 
 .imageDiv{
     width: 60px;
@@ -78,4 +78,25 @@
 
 .hideDiv{
     display: none;
+}
+
+
+
+@media screen and (max-width: 740px) {
+    .imageDiv{
+        width: 50px;
+        height: 80px;
+    }
+
+    .rating, .department{
+        font-size: 12px;
+    }
+
+    .starIcon{
+        font-size: 14px !important;
+    }
+
+    .title{
+        font-size: 14px;
+    }
 }
