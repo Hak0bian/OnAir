@@ -39,47 +39,49 @@ const Footer = () => {
       <div className={styles.footerContainer}>
         <div className={styles.footerTopDiv}>
           <div className={styles.logoDiv}>
-            <NavLink to={`/`} onClick={scrollToTopPage}>
-              <img src={mode === 'dark' ? logoOnDark : logoOnLight} />
-            </NavLink>
-            <p className={styles.footerText}>{t.text1}</p>
+              <NavLink to={`/`} onClick={scrollToTopPage}>
+                <img src={mode === 'dark' ? logoOnDark : logoOnLight} className={styles.footerLogo}/>
+              </NavLink>
+              <p className={styles.footerText}>{t.text1}</p>
           </div>
 
-          <div className={styles.footerListDiv}>
-            <h3>{t.browse}</h3>
-            <ul>
-              <li><NavLink to={`/`} onClick={scrollToTopPage}>{t.home}</NavLink></li>
-              <li><NavLink to={`/Movies/page/1`}>{t.movies}</NavLink></li>
-              <li><NavLink to={`/TV/page/1`}>{t.tv}</NavLink></li>
-              <li><NavLink to={`/Actors/page/1`}>{t.actors}</NavLink></li>
-              <li><NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink></li>
-            </ul>
-          </div>
+          <div className={styles.footerLinks}>
+            <div className={styles.footerListDiv}>
+              <ul>
+                <li><h3>{t.browse}</h3></li>
+                <li><NavLink to={`/`} onClick={scrollToTopPage}>{t.home}</NavLink></li>
+                <li><NavLink to={`/Movies/page/1`}>{t.movies}</NavLink></li>
+                <li><NavLink to={`/TV/page/1`}>{t.tv}</NavLink></li>
+                <li><NavLink to={`/Actors/page/1`}>{t.actors}</NavLink></li>
+                <li><NavLink to={`/Library`} onClick={scrollToTopPage}>{t.library}</NavLink></li>
+              </ul>
+            </div>
 
-          <div className={styles.footerListDiv}>
-            <h3>{t.resources}</h3>
-            <ul>
-              <li><NavLink to={`/Help-Center`}>{t.help}</NavLink></li>
-              <li><NavLink to={`/Features`}>{t.features}</NavLink></li>
-              <li><NavLink to={`/Pricing-Plans`}>{t.plans}</NavLink></li>
-              <li><NavLink to={`/Contact-Us`}>{t.contact}</NavLink></li>
-              <li><NavLink to={`/Privacy-Policy`}>{t.privacy}</NavLink></li>
-            </ul>
-          </div>
+            <div className={styles.footerListDiv}>
+              <ul>
+                <li><h3>{t.resources}</h3></li>
+                <li><NavLink to={`/Help-Center`}>{t.help}</NavLink></li>
+                <li><NavLink to={`/Features`}>{t.features}</NavLink></li>
+                <li><NavLink to={`/Pricing-Plans`}>{t.plans}</NavLink></li>
+                <li><NavLink to={`/Contact-Us`}>{t.contact}</NavLink></li>
+                <li><NavLink to={`/Privacy-Policy`}>{t.privacy}</NavLink></li>
+              </ul>
+            </div>
 
-          <div className={styles.footerListDiv}>
-            <h3>{t.profile}</h3>
-            <ul>
-              <li><button className={styles.openFormBtn} onClick={openSignUpForm}>{t.signUp}</button></li>
-              <li><button className={styles.openFormBtn} onClick={openSignInForm}>{t.signIn}</button></li>
-              <li><button className={styles.openFormBtn} onClick={openforgotPassForm}>{t.forgot}</button></li>
-              <li><button className={styles.openFormBtn} onClick={openSelectPlanForm}>{t.choose}</button></li>
-            </ul>
+            <div className={styles.footerListDiv}>
+              <ul>
+                <li><h3>{t.profile}</h3></li>
+                <li><button className={styles.openFormBtn} onClick={openSignUpForm}>{t.signUp}</button></li>
+                <li><button className={styles.openFormBtn} onClick={openSignInForm}>{t.signIn}</button></li>
+                <li><button className={styles.openFormBtn} onClick={openforgotPassForm}>{t.forgot}</button></li>
+                <li><button className={styles.openFormBtn} onClick={openSelectPlanForm}>{t.choose}</button></li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div className={styles.footerBottomDiv}>
-          <p className={styles.text2}>{t.text2}</p>
+          <p className={styles.footerText2}>{t.text2}</p>
           <ContactsIcons />
         </div>
       </div>

@@ -23,9 +23,10 @@
 }
 
 .menu {
-    width: 360px;
+    width: 340px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    z-index: 5;
     top: 65px;
     right: 0;
     padding: 20px;
@@ -70,6 +71,17 @@
     display: none;
 }
 
+.overlay{
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6); 
+    z-index: 4; 
+    pointer-events: all;
+}
+
 
 @media screen and (max-width: 1040px) {
     .burgerIcon{
@@ -90,14 +102,13 @@
     .serachandButtons{
         display: block;
     }
-
     .navButtonsDiv{
         display: flex;
         align-items: center;
         gap: 8px;
     }
-    
-    .menu {
+    .menu,
+    .overlay {
         top: 55px;
     }
 }
@@ -105,5 +116,15 @@
 @media screen and (max-width: 540px) {
     .searchItem{
         display: block;
+    }
+    .menu{
+        padding: 20px 12px;
+        gap: 8px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .menu{
+        width: 100%;
     }
 }

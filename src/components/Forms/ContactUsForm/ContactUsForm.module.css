@@ -54,3 +54,17 @@
     padding-top: 4px;
     color: var(--text-color-secondary);
 }
+
+
+@media screen and (max-width: 1040px) {
+    .contactUsFormDiv{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .labelsDiv{
+        display: flex;
+        flex-direction: column;
+    }
+}

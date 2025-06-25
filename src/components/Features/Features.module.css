@@ -1,17 +1,16 @@
 .featuresContainer{
+    width: 100%;
     max-width: 1280px;
     margin: auto;
-    font-weight: normal;
     letter-spacing: .4px;
     line-height: 1.5;
 }
 
 .featuresText{
     font-size: 18px;
-    padding: 8px 0 28px;
+    padding: 8px 0 20px;
     color: var(--text-color-gray);
 }
-
 
 .svgsDiv{
     display: grid;
@@ -31,7 +30,41 @@
     }
 
     p{
-        padding-top: 8px;
+        padding-top: 4px;
         color: var(--text-color-gray);
+    }
+}
+
+
+@media screen and (max-width: 1040px) {
+    .svgsDiv{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .featuresText{
+        font-size: 16px;
+    }
+    .featureBox {
+    
+        h3{
+            font-size: 18px;
+            font-weight: 300;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .svgsDiv{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .featureBox{
+        gap: 12px;
+
+        h3{
+            font-size: 16px;
+        }
     }
 }

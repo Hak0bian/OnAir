@@ -3,13 +3,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 50%;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 } 
 
 .headerContainer{
-    max-width: 1240px;
-    min-height: 580px;
-    height: 90vh;
+    width: 100%;
+    max-width: 1280px;
+    height: 80vh;
+    padding: 0 20px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -30,4 +31,15 @@
     font-weight: 300;
     letter-spacing: .4px;
     line-height: 1.4;
+}
+
+
+@media screen and (max-width: 1040px) {
+    .header{
+        background-image: url(../../assets/images/onair-header-small.png);
+        margin-bottom: 28px;
+    }
+    .headerTitleDiv{
+        display: none;
+    }
 }

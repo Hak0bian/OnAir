@@ -1,6 +1,5 @@
 .seriaCard {
-    min-height: 300px;
-    max-height: 300px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 4px var(--bg-color-main);
@@ -67,3 +66,9 @@
     }
 }
 
+
+@media screen and (max-width: 440px) {
+    .seriaCard{
+        height: 240px;
+    }
+}

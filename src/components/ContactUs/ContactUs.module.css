@@ -1,10 +1,11 @@
 .contactUsContainer{
+    width: 100%;
     max-width: 1280px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     gap: 40px;
-    padding: 40px 0 80px;
+    padding: 40px 20px 80px;
 }
 
 .getInTouchDiv{
@@ -13,7 +14,7 @@
 }
 
 .getInTouchTitle{
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 300;
 }
 
@@ -22,4 +23,25 @@
     line-height: 1.4;
     padding: 20px 0;
     color: var(--text-color-gray);
+}
+
+
+@media screen and (max-width: 940px) {
+    .contactUsContainer{
+        display: block;
+        padding: 0 12px 60px;
+    }
+    .getInTouchDiv{
+        width: 100%;
+    }
+    .getInTouchTitle{
+        font-size: 22px;
+    }
+    .getInTouchText{
+        font-size: 16px;
+        padding: 8px 0 12px;
+    }
+}
+
+@media screen and (max-width: 740px) {
 }

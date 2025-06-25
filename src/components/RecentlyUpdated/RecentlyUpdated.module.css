@@ -1,7 +1,6 @@
 .gridContainer{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 2;
     gap: 40px 16px;
     padding-top: 28px;
 }
@@ -9,4 +8,31 @@
 .catalogBtn{
     text-align: center;
     padding: 48px 0 20px;
+}
+
+
+@media screen and (max-width: 1040px) {
+    .gridContainer{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .gridContainer{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        padding-top: 16px;
+    }
+    .catalogBtn{
+        padding: 28px 0 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .gridContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .catalogBtn{
+        padding: 36px 0 0;
+    }
 }

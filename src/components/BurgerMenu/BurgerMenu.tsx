@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
@@ -9,7 +9,7 @@ import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import styles from './BurgerMenu.module.css'
 import { Search } from '..';
 
-const BurgerMenu = ({toggle, openSignUpForm}: IBurgerMenuPropsType) => {
+const BurgerMenu = ({ toggle, openSignUpForm }: IBurgerMenuPropsType) => {
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
     const { page: tvPage } = useAppSelector((state) => state.tvSeriesData)
@@ -21,8 +21,17 @@ const BurgerMenu = ({toggle, openSignUpForm}: IBurgerMenuPropsType) => {
         setOpen(false)
     }
 
+    useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [open]);
+
     return (
         <div className={styles.burgerMenu}>
+            {open && <div className={styles.overlay} onClick={() => setOpen(false)} />}
             <div className={styles.burgerIcon} onClick={() => setOpen(!open)}>
                 <span className={open ? styles.open : ''}></span>
                 <span className={open ? styles.open : ''}></span>

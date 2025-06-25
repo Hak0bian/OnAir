@@ -30,26 +30,12 @@ body {
     background-size: cover;
     background-position:  0 0 ;    
     font-family: 'Roboto', sans-serif;
+    min-width: 340px;
+    min-height: 100vh;
 }
 
 .active {
     color: var(--text-color-secondary);
-}
-
-.container{
-    max-width: 1280px;
-    min-height: 100vh;
-    margin: auto;
-    padding-bottom: 60px;
-}
-
-.loading, 
-.error{
-    color: var(--text-color-primary);
-    text-align: center;
-    letter-spacing: .4px;
-    padding: 20px 0;
-    min-height: 60vh;
 }
 
 .spinerDiv{

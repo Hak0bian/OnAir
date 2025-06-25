@@ -49,19 +49,19 @@
         width: 16px;
         height: 16px;
     }
+}
 
-    .agreeBtn{
-        border: none;
-        background: none;
-        font-size: 16px;
-        color: var(--text-color-secondary);
-        transition: .3s;
-        cursor: pointer;
-    }
+.agreeBtn{
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: var(--text-color-secondary);
+    transition: .3s;
+    cursor: pointer;
+}
 
-    .agreeBtn:hover{
-        color: var(--text-color-primary);
-    }
+.agreeBtn:hover{
+    color: var(--text-color-primary);
 }
 
 .btnLabel button{
@@ -74,23 +74,50 @@
 
 .backLabel{
     text-align: center;
+}
 
-    .backBtn{
-        border: none;
-        background: none;
-        font-size: 16px;
-        color: var(--text-color-secondary);
-        transition: .3s;
-        cursor: pointer;
-    }
+.backBtn{
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: var(--text-color-secondary);
+    transition: .3s;
+    cursor: pointer;
+}
 
-    .backBtn:hover{
-        color: var(--text-color-primary);
-    }
+.backBtn:hover{
+    color: var(--text-color-primary);
 }
 
 .error{
     font-size: 12px;
     padding-top: 4px;
     color: var(--text-color-secondary);
+}
+
+
+@media screen and (max-width: 540px) {
+    .forgotFormDiv{
+        padding: 20px;
+    }
+    .logoDiv{
+        padding-bottom: 20px;
+    }
+    .inp{
+        height: 40px;
+        font-size: 14px;
+    }
+    .forgotForm{
+        gap: 12px;
+    }
+
+    .linkLabel, .backBtn,
+    .agreeBtn, .agreeLabel{
+        font-size: 14px;
+
+        input {
+            width: 14px;
+            height: 14px;
+        }
+    }
 }

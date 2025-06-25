@@ -8,16 +8,16 @@ const ContactsIcons = () => {
     return (
         <div className={styles.iconsDiv}>
             <a href="https://github.com/Hak0bian" target="_blank" rel="noopener noreferrer">
-                <GitHubIcon />
+                <GitHubIcon className={styles.icon} />
             </a>
             <a href="https://www.instagram.com/hak0bian" target="_blank" rel="noopener noreferrer">
-                <InstagramIcon />
+                <InstagramIcon className={styles.icon} />
             </a>
             <a href="https://www.linkedin.com/in/garik-hakobyan-3398b6361" target="_blank" rel="noopener noreferrer">
-                <LinkedInIcon />
+                <LinkedInIcon className={styles.icon} />
             </a>
             <a href="https://t.me/hak0bian" target="_blank" rel="noopener noreferrer">
-                <TelegramIcon />
+                <TelegramIcon className={styles.icon} />
             </a>
         </div>
     )

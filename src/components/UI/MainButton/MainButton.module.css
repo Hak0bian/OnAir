@@ -15,3 +15,10 @@
         color: #000000;
     }
 }
+
+
+/* @media screen and (max-width: 840px) {
+    .mainBtn{
+        width: 140px;
+    }
+} */

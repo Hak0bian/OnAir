@@ -78,3 +78,31 @@
     padding-top: 4px;
     color: var(--text-color-secondary);
 }
+
+
+@media screen and (max-width: 540px) {
+    .signInFormDiv{
+        padding: 20px;
+    }
+    .logoDiv{
+        padding-bottom: 20px;
+    }
+    .inp{
+        height: 40px;
+        font-size: 14px;
+    }
+    .signInForm{
+        gap: 12px;
+    }
+
+    .signUp,
+    .signUpLabel,
+    .rememberLabel{
+        font-size: 14px;
+
+        input {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
