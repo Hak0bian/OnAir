@@ -7,10 +7,16 @@
 
 .posterDiv{
     min-width: 300px;
-    min-height: 180px;
+    max-width: 300px;
     display: grid;
     place-content: center;
-    background-color: #282828;
+    background-color: var(--bg-color-options);
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .movieIcon{
@@ -45,9 +51,12 @@
 }
 
 .about{
-    width: 70%;
+    width: 80%;
 }
 
+.hiddenAbout{
+    display: none;
+}
 
 .rating{
     display: flex;
@@ -59,4 +68,47 @@
 .starIcon{
     font-size: 18px !important;
     color: var(--buttons-color);
+}
+
+
+@media screen and (max-width: 740px) {
+    .posterDiv{
+        min-width: 240px;
+        max-width: 240px;
+        width: 240px;
+    }
+    .episodeInfo h2{
+        font-size: 20px;
+    }
+    .about{
+        display: none;
+    }
+    .hiddenAbout{
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        padding-top: 12px;
+        letter-spacing: .4px;
+        font-weight: 300;
+        color: var(--text-color-main);
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .episodeDiv{
+        display: block;
+    }
+    .hiddenAbout{
+        padding-top: 0;
+    }
+    .episodeInfo{
+        padding-top: 8px;
+
+        h2{
+            font-size: 18px;
+        }
+    }
+    .episodeNum{
+        font-size: 14px;
+    }
 }

@@ -24,9 +24,8 @@ const TvSeriaDetails = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>
-            <AboutTvSeria />
-
             <section className='container'>
+                <AboutTvSeria />
                 { 
                     selectedSeria?.last_air_date &&  
                     <>

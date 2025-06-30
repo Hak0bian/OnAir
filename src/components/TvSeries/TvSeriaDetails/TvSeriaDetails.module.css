@@ -16,20 +16,18 @@
     z-index: 1;
 }
 
+.slideTopDiv,
 .last{
     padding: 40px 0 20px;
-    font-weight: normal;
     position: relative;
+    font-weight: normal;
     color: var(--text-color-gray-main);
 }
-
 
 .slideTopDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0 20px;
-    position: relative;
 }
 
 .slideTitle{
@@ -45,5 +43,22 @@
 
     &:hover{
         color: var(--text-color-primary);
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .last,
+    .slideTopDiv{
+        padding: 28px 0 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .detailsSection{
+        padding-bottom: 20px;
+    }
+    .seeAll{
+        font-size: 16px;
     }
 }

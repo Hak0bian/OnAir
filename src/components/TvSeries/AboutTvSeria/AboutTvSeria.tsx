@@ -39,7 +39,13 @@ const AboutTvSeria = () => {
                         </p>
                         <span>{selectedSeria?.first_air_date || '—'} - {selectedSeria?.last_air_date || '—'}</span>
                     </div>
-                    <TvSeriaTable selectedSeria={selectedSeria} />
+                    <div className={styles.tableDiv}>
+                        <TvSeriaTable selectedSeria={selectedSeria} />
+                    </div>
+                    <div className={styles.hiddenOverview}>
+                        <p className={styles.about}>{selectedSeria?.overview}</p>
+                    </div>
+                    
 
                     <div className={styles.buttonsDiv}>
                         <Trailer trailerKey={key} />
@@ -48,8 +54,13 @@ const AboutTvSeria = () => {
                 </div>
             </div>
 
-            <h3 className={styles.secondary}>{t.overview}</h3>
-            <p className={styles.about}>{selectedSeria?.overview}</p>
+            <div className={styles.bottomOverview}>
+                <h3 className={styles.secondary}>{t.overview}</h3>
+                <p className={styles.about}>{selectedSeria?.overview}</p>
+            </div>
+            <div className={styles.bottomTable}>
+                <TvSeriaTable selectedSeria={selectedSeria} />
+            </div>
         </section>
     )
 }

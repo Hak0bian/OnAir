@@ -1,10 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
-import { MovieCastSlider } from '../..'
+import { AboutMovie, MovieCastSlider, MoviesSimilarSlider } from '../..';
 import styles from './MovieDetails.module.css'
-import AboutMovie from '../AboutMovie/AboutMovie';
-import MoviesSimilarSlider from '../MoviesSimilarSlider/MoviesSimilarSlider';
 
 const MovieDetails = () => {
     const { selectedMovie, loadingInfo, errorInfo } = useAppSelector((state => state.moviesData))

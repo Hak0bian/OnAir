@@ -16,8 +16,10 @@ import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 import MovieCard from "./Movies/MovieCard/MovieCard";
 import MovieDetails from "./Movies/MovieDetails/MovieDetails";
+import AboutMovie from "./Movies/AboutMovie/AboutMovie";
 import MovieTable from "./Movies/MovieTable/MovieTable";
 import MovieCastSlider from "./Movies/MovieCastSlider/MovieCastSlider";
+import MoviesSimilarSlider from "./Movies/MoviesSimilarSlider/MoviesSimilarSlider";
 import Trailer from "./Movies/Trailer/Trailer";
 import RedirectToFirstPage from "./Movies/RedirectToFirstPage/RedirectToFirstPage";
 import SelectGenre from "./Movies/SelectGenre/SelectGenre";
@@ -38,8 +40,8 @@ import SearchedSeriesList from "./TvSeries/SearchedSeriesList/SearchedSeriesList
 import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 
 
-export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, PageIntro, MovieCard, MovieDetails, 
-    MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, MoviesFilter, Search, ActorCard, 
+export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, PageIntro, MovieCard, MovieDetails, AboutMovie,
+    MovieTable, MovieCastSlider, MoviesSimilarSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, MoviesFilter, Search, ActorCard, 
     ActorDetails, KnownForMoviesSlider, KnownForSeriesSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, TvSeriesCard, 
     TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel, BurgerMenu
 }

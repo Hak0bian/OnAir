@@ -7,3 +7,13 @@
     padding: 2px 40px 2px 0;
     vertical-align: top;
 }
+
+
+@media screen and (max-width: 1040px) {
+    .seraTable td{
+        font-size: 14px;
+    }
+    .seraTable .key{
+        padding: 2px 20px 2px 0;
+    }
+}

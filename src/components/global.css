@@ -9,7 +9,7 @@
 .swiper-pagination-actors .swiper-pagination-bullet,
 .swiper-pagination-cast .swiper-pagination-bullet,
 .swiper-pagination-knownFor .swiper-pagination-bullet {
-    margin: 0 4px;
+    margin: 0 4px !important;
     background: var(--text-color-gray);
     opacity: 0.8;
     transition: 0.3s;
