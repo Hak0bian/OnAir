@@ -16,7 +16,7 @@ const MovieCard = ({ movie }: IMovieCardPropsType ) => {
                     }
                 </div>
                 <div className={styles.titleDiv}>
-                    <h4>{movie?.title && movie?.title.length > 20 ? movie?.title.slice(0, 15) + "..." : movie?.title}</h4>
+                    <h4>{movie?.title && movie?.title.length > 15 ? movie?.title.slice(0, 15) + "..." : movie?.title}</h4>
                     <div className={styles.dateAndRate}>
                         <p className={styles.date}>{movie?.release_date}</p>
                         <p className={styles.rating}>

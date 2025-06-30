@@ -5,7 +5,6 @@ import { searchActorThunk, searchMovieThunk, searchTvSeriesThunk } from '../../s
 import { useSearchParams } from 'react-router-dom';
 import { translations } from '../../translations/translations';
 import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard';
-import styles from './SearchResultsPage.module.css'
 
 
 const SearchResultsPage = () => {
@@ -28,10 +27,10 @@ const SearchResultsPage = () => {
 
 
     return (
-        <section>
+        <section style={{paddingBottom: '20px'}}>
             <div className='container'>
-                <h3 className={styles.searchedTitle}>{t.searchedMovies}</h3>
-                <div className={styles.moviesDiv}>
+                <h3 className='pageTitle'>{t.searchedMovies}</h3>
+                <div className='gridDiv'>
                     {
                         movieIsLoading ? (
                             <p>Loading ...</p>
@@ -41,8 +40,8 @@ const SearchResultsPage = () => {
                     }
                 </div>
 
-                <h3 className={styles.searchedTitle}>{t.searchedSeries}</h3>
-                <div className={styles.moviesDiv}>
+                <h3 className='pageTitle'>{t.searchedSeries}</h3>
+                <div className='gridDiv'>
                     {
                         seriaIsLoading ? (
                             <p>Loading...</p>
@@ -51,8 +50,8 @@ const SearchResultsPage = () => {
                         ) : searchedSeries.map((seria) => <TvSeriesCard key={seria.id} seria={seria} />)
                     }
                 </div>
-                <h3 className={styles.searchedTitle}>{t.searchedActors}</h3>
-                <div className={styles.actorsDiv}>
+                <h3 className='pageTitle'>{t.searchedActors}</h3>
+                <div className='gridDiv'>
                     {
                         actorIsLoading ? (
                             <p>Loading...</p>

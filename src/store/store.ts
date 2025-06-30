@@ -10,6 +10,7 @@ import themeSlice from "./slices/ThemeSlice/themeSlice"
 import openCloseFormsSlice from "./slices/OpenCloseFormsSlice/OpenCloseFormsSlice"
 import tvSeriesSlice from "./slices/TvSeriesSlice/tvSeriesSlice"
 import searchTvSeriesSlice from "./slices/SearchTvSeriesSlice/SearchTvSeriesSlice"
+import burgerMenuSlice from "./slices/BurgerMenuSlice/BurgerMenuSlice"
 
 export const store = configureStore({
     reducer: {
@@ -23,7 +24,8 @@ export const store = configureStore({
         theme: themeSlice,
         formsData: openCloseFormsSlice,
         tvSeriesData: tvSeriesSlice,
-        searchSeriesData: searchTvSeriesSlice
+        searchSeriesData: searchTvSeriesSlice,
+        burgerMenu: burgerMenuSlice
     }
 })
 

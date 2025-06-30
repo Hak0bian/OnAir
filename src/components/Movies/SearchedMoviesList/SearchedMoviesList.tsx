@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
-import { clearActorsResults, clearMovieResults, clearTvSeriesResults } from "../../../store/slices";
+import { clearActorsResults, clearMovieResults, clearTvSeriesResults, setOpenBurger } from "../../../store/slices";
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
 import { translations } from '../../../translations/translations';
 import { BiSolidMoviePlay } from "react-icons/bi";
@@ -8,7 +8,7 @@ import GradeIcon from '@mui/icons-material/Grade';
 import styles from './SearchedMoviesList.module.css'
 
 
-const SearchedMoviesList = ({inputValue, setInputValue }: ISearchPropsType) => {
+const SearchedMoviesList = ({ inputValue, setInputValue }: ISearchPropsType) => {
     const { searchedMovies } = useAppSelector((state) => state.searchedMoviesData);
     const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const t = translations[selectedLanguage].search
@@ -19,6 +19,11 @@ const SearchedMoviesList = ({inputValue, setInputValue }: ISearchPropsType) => {
         dispatch(clearMovieResults())
         dispatch(clearActorsResults())
         dispatch(clearTvSeriesResults())
+        dispatch(setOpenBurger(false))
+    }
+
+    const handleSeeResults = () => {
+        dispatch(setOpenBurger(false))
     }
 
     return (
@@ -32,8 +37,8 @@ const SearchedMoviesList = ({inputValue, setInputValue }: ISearchPropsType) => {
                                 <div className={styles.imageDiv}>
                                     {
                                         movie?.backdrop_path
-                                        ? <img src={`https://image.tmdb.org/t/p/w200${movie?.backdrop_path}`}/>
-                                        : <BiSolidMoviePlay className={styles.movieIcon} />
+                                            ? <img src={`https://image.tmdb.org/t/p/w200${movie?.backdrop_path}`} />
+                                            : <BiSolidMoviePlay className={styles.movieIcon} />
                                     }
                                 </div>
                                 <div>
@@ -47,7 +52,7 @@ const SearchedMoviesList = ({inputValue, setInputValue }: ISearchPropsType) => {
                             </li>
                         </NavLink>
                     ))}
-                    <li className={styles.seeResults}>
+                    <li className={styles.seeResults} onClick={handleSeeResults}>
                         <NavLink to={`/Search-Results?query=${encodeURIComponent(inputValue)}`}>{t.seeResults}</NavLink>
                     </li>
                 </ul>

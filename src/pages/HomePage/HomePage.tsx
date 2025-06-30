@@ -16,6 +16,11 @@ const HomePage = () => {
     dispatch(actorsThunk({ page: 1, selectedLanguage }))
   }, [selectedLanguage])
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [])
+
+  
   return (
     <section>
       <Header />

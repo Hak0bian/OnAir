@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
-import { clearActorsResults, clearMovieResults, clearTvSeriesResults } from "../../../store/slices";
+import { clearActorsResults, clearMovieResults, clearTvSeriesResults, setOpenBurger } from "../../../store/slices";
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
 import { translations } from '../../../translations/translations';
 import { BiSolidMoviePlay } from "react-icons/bi";
@@ -19,6 +19,11 @@ const SearchedSeriesList = ({inputValue, setInputValue }: ISearchPropsType) => {
         dispatch(clearMovieResults())
         dispatch(clearActorsResults())
         dispatch(clearTvSeriesResults())
+        dispatch(setOpenBurger(false))
+    }
+
+    const handleSeeResults = () => {
+        dispatch(setOpenBurger(false))
     }
 
     return (
@@ -47,7 +52,7 @@ const SearchedSeriesList = ({inputValue, setInputValue }: ISearchPropsType) => {
                             </li>
                         </NavLink>
                     ))}
-                    <li className={styles.seeResults}>
+                    <li className={styles.seeResults} onClick={handleSeeResults}>
                         <NavLink to={`/Search-Results?query=${encodeURIComponent(inputValue)}`}>{t.seeResults}</NavLink>
                     </li>
                 </ul>

@@ -3,6 +3,7 @@ import { setMovieinLibrary, addMovieToLibrary, removeMovieFromLibrary, setSeriai
 import { genresListThunk, moviesByGenreThunk } from "./MovieGenresSlice/movieGenresThunk";
 import { changeLanguages } from "./LanguagesSlice/languagesSlice";
 import { setTheme, toggleTheme } from "./ThemeSlice/themeSlice"
+import { setOpenBurger } from "./BurgerMenuSlice/BurgerMenuSlice";
 
 import { changeSelectedGenreId, clearmoviesByGenre } from "./MovieGenresSlice/movieGenresSlice";
 import { moviesThunk, movieByIdThunk } from "./MoviesPageSlice/moviesThunk";
@@ -27,5 +28,5 @@ export { setMovieinLibrary, addMovieToLibrary,
     genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, 
     changeMoviesPageNumber, changeMoviesSortBy, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
     toggleTheme, actorsThunk, actorFullInfoThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
-    tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults
+    tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults, setOpenBurger
 }

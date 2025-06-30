@@ -38,37 +38,40 @@
         font-weight: 300;
         color: var(--text-color-main);
     }
+}
 
-    .dateAndRate{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;   
-        font-size: 14px;
-    }
-    
-    .date{
-        font-size: 14px;
-        letter-spacing: .4px;
-        color: var(--text-color-gray-main);
-        padding: 4px 0;
-    }
+.dateAndRate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    font-size: 14px;
+}
 
-    .rating{
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        color: var(--text-color-main);
-    }
+.date{
+    font-size: 14px;
+    letter-spacing: .4px;
+    color: var(--text-color-gray-main);
+    padding: 4px 0;
+}
 
-    .starIcon{
-        font-size: 18px !important;
-        color: var(--buttons-color);
-    }
+.rating{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-color-main);
+}
+
+.starIcon{
+    font-size: 18px !important;
+    color: var(--buttons-color);
 }
 
 
 @media screen and (max-width: 440px) {
     .seriaCard{
         height: 240px;
+    }
+    .nameDiv h4{
+        font-size: 15px;
     }
 }

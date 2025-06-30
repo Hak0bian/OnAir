@@ -129,6 +129,9 @@ export type IOpenCloseFormsStateType = {
     selectPlan: boolean;
 }
 
+export type IBurgerMenuStateType = {
+    openBurger: boolean
+}
 
 // ********************************************
 
@@ -143,7 +146,6 @@ export type ITvSeriesStateType = {
     errorSeries: string | null,
     errorInfo: string | null,
 }
-
 
 export type ISerachTvSeriesStateType = {
     searchedSeries: Array<ITvSeriesType>,

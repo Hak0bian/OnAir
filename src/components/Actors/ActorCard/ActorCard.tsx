@@ -15,7 +15,7 @@ const ActorCard = ({ actor }: { actor: IActorType }) => {
       <div className={styles.actorCard}>
         <img src={actor?.profile_path ? `https://image.tmdb.org/t/p/w400${actor?.profile_path}` : profileImg} />
         <div className={styles.titleDiv}>
-          <h4>{actor?.name.length > 20 ? actor?.name.slice(0, 15) + "..." : actor?.name}</h4>
+          <h4>{actor?.name.length > 15 ? actor?.name.slice(0, 15) + "..." : actor?.name}</h4>
           <div className={styles.dateAndRate}>
             <p className={styles.department}>{actor?.known_for_department}</p>
             <p className={styles.rating}>

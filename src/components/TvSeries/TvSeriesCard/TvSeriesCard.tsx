@@ -17,7 +17,7 @@ const TvSeriesCard = ({seria} : ISeriesCardPropsType) => {
                 </div>
                 
                 <div className={styles.nameDiv}>
-                    <h4>{seria?.name && seria?.name.length > 20 ? seria?.name.slice(0, 15) + "..." : seria?.name}</h4>
+                    <h4>{seria?.name && seria?.name.length > 15 ? seria?.name.slice(0, 15) + "..." : seria?.name}</h4>
                     <div className={styles.dateAndRate}>
                         <p className={styles.date}>{seria?.first_air_date}</p>
                         <p className={styles.rating}>

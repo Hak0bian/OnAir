@@ -1,28 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppSelector } from '../../store/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 import { MdSunny } from 'react-icons/md';
 import { LuCircleUserRound } from 'react-icons/lu';
 import { IBurgerMenuPropsType } from '../componentsTypes/propsTypes';
+import { Search } from '..';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import styles from './BurgerMenu.module.css'
-import { Search } from '..';
+import { setOpenBurger } from '../../store/slices';
 
 const BurgerMenu = ({ toggle, openSignUpForm }: IBurgerMenuPropsType) => {
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)
     const { page: actorsPage } = useAppSelector((state) => state.actorsData)
     const { page: tvPage } = useAppSelector((state) => state.tvSeriesData)
+    const { openBurger } = useAppSelector((state) => state.burgerMenu)
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].navigation
-    const [open, setOpen] = useState(false);
+    const dispatch = useAppDispatch()
 
     const handleClick = () => {
-        setOpen(false)
+        dispatch(setOpenBurger(false))
+    }
+    const openCloseBurger = () => {
+         dispatch(setOpenBurger(!openBurger))
     }
 
     useEffect(() => {
-        if (open) {
+        if (openBurger) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
@@ -31,14 +36,14 @@ const BurgerMenu = ({ toggle, openSignUpForm }: IBurgerMenuPropsType) => {
 
     return (
         <div className={styles.burgerMenu}>
-            {open && <div className={styles.overlay} onClick={() => setOpen(false)} />}
-            <div className={styles.burgerIcon} onClick={() => setOpen(!open)}>
-                <span className={open ? styles.open : ''}></span>
-                <span className={open ? styles.open : ''}></span>
-                <span className={open ? styles.open : ''}></span>
+            {openBurger && <div className={styles.overlay} onClick={handleClick} />}
+            <div className={styles.burgerIcon} onClick={openCloseBurger}>
+                <span className={openBurger ? styles.open : ''}></span>
+                <span className={openBurger ? styles.open : ''}></span>
+                <span className={openBurger ? styles.open : ''}></span>
             </div>
 
-            <ul className={`${styles.menu} ${open ? styles.show : ''}`}>
+            <ul className={`${styles.menu} ${openBurger ? styles.show : ''}`}>
                 <li className={styles.searchItem}><Search /></li>
                 <li onClick={handleClick}><NavLink to={`/`}>{t.home}</NavLink></li>
                 <li onClick={handleClick}><NavLink to={`/Movies/page/${moviesPage}`}>{t.movies}</NavLink></li>
@@ -58,7 +63,6 @@ const BurgerMenu = ({ toggle, openSignUpForm }: IBurgerMenuPropsType) => {
                     </div>
                 </li>
             </ul>
-
         </div>
     )
 }
