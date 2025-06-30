@@ -13,9 +13,7 @@ const CastCard = ({ actor }: { actor: ICastType }) => {
   return (
     <NavLink to={`/Actors/actor/${actor?.id}`}>
       <div className={styles.castCard}>
-        <div className={styles.actorImageDiv}>
-          <img src={actor?.profile_path ? `https://image.tmdb.org/t/p/w400${actor?.profile_path}` : profileImg} />
-        </div>
+        <img src={actor?.profile_path ? `https://image.tmdb.org/t/p/w400${actor?.profile_path}` : profileImg} />
         <div className={styles.castTitleDiv}>
           <h4>{actor?.name.length > 20 ? actor?.name.slice(0, 15) + "..." : actor?.name}</h4>
           <div className={styles.dateAndRate}>

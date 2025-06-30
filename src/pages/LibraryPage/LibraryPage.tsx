@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MainButton, MovieCard } from "../../components";
+import { MainButton, MovieCard, PageIntro } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { setMovieinLibrary, clearLibrary, setSeriainLibrary } from "../../store/slices";
 import { translations } from "../../translations/translations";
@@ -32,12 +32,7 @@ const LibraryPage = () => {
 
   return (
     <section>
-      <div className='sectionHeader'>
-        <div className='headerDiv'>
-          <h2 className='sectionTitle'>{t.libraryTitle}</h2>
-          <p className='sectionText'>{t.libraryText}</p>
-        </div>
-      </div>
+      <PageIntro title={t.libraryTitle} text={t.libraryText} />
 
       <div className={styles.libraryContainer}>
         {moviesInibrary.length === 0 && seriesInLibrary.length === 0 ? (
@@ -48,9 +43,9 @@ const LibraryPage = () => {
         ) : (
           <>
             {moviesInibrary.length > 0 && (
-              <div>
+              <div className={styles.block}>
                 <h3 className={styles.blockTitle}>{t.savedMovies}</h3>
-                <div className={styles.block}>
+                <div className='gridDiv'>
                   {moviesInibrary.map(movie => (
                     <MovieCard key={movie.id} movie={movie} />
                   ))}
@@ -59,9 +54,9 @@ const LibraryPage = () => {
             )}
 
             {seriesInLibrary.length > 0 && (
-              <div>
+              <div className={styles.block}>
                 <h3 className={styles.blockTitle}>{t.savedSeries}</h3>
-                <div className={styles.block}>
+                <div className='gridDiv'>
                   {seriesInLibrary.map(seria => (
                     <TvSeriesCard key={seria.id} seria={seria} />
                   ))}

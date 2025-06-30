@@ -51,7 +51,7 @@ const MoviesPage = () => {
           <section>
             <Carousel images={images} />
             <div className='container'>
-              <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ display: 'flex', gap: '12px' }}>
                 <SelectGenre />
                 <MoviesFilter />
               </div>

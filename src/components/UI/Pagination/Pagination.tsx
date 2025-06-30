@@ -1,7 +1,9 @@
 import { Pagination } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { IPaginationPropsType } from '../../componentsTypes/propsTypes';
 
 const Paginationn = ({ page, totalPages, handleChangePage }: IPaginationPropsType) => {
+    const isSmallScreen = useMediaQuery('(max-width:740px)');
     const changePage = (_event: React.ChangeEvent<unknown>, newPage: number) => {
         handleChangePage(newPage)
     }
@@ -11,7 +13,7 @@ const Paginationn = ({ page, totalPages, handleChangePage }: IPaginationPropsTyp
             count={Math.min(totalPages, 500)}
             page={page}
             onChange={changePage}
-            siblingCount={1}
+            siblingCount={isSmallScreen ? 0 : 1}
             boundaryCount={1}
             sx={{
                 mt: 6,

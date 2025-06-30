@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { Features } from '../../components'
+import { Features, PageIntro } from '../../components'
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
-import '../../components/global.css'
+import styles from './FeaturesPage.module.css'
 
 const FeaturesPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
@@ -14,13 +14,8 @@ const FeaturesPage = () => {
 
     return (
         <section>
-            <div className='sectionHeader'>
-                <div className='headerDiv'>
-                    <h2 className='sectionTitle'>{t.featuresTitle}</h2>
-                    <p className='sectionText'>{t.featuresText}</p>
-                </div>
-            </div>
-            <div style={{ padding: '80px 0' }}>
+            <PageIntro title={t.featuresTitle} text={t.featuresText}/>
+            <div className={styles.featuresContainer}>
                 <Features />
             </div>
         </section>

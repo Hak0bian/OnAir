@@ -4,6 +4,7 @@ import Paginationn from "./UI/Pagination/Pagination";
 import MainButton from "./UI/MainButton/MainButton"
 import LibraryMovieBtn from "./UI/LibraryMovieBtn/LibraryMovieBtn";
 import LibrarySeriaBtn from "./UI/LibrarySeriaBtn/LibrarySeriaBtn";
+import PageIntro from "./UI/PageIntro/PageIntro";
 import SelectPlan from "./SelectPlan/SelectPlan";
 import Features from "./Features/Features";
 import HowItWorks from "./HowItWorks/HowItWorks";
@@ -37,7 +38,7 @@ import SearchedSeriesList from "./TvSeries/SearchedSeriesList/SearchedSeriesList
 import SearchedActorsList from "./Actors/SearchedActorsList/SearchedActorsList";
 
 
-export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, MovieCard, MovieDetails, 
+export { Layout, Header, MainButton, LibraryMovieBtn, LibrarySeriaBtn, PageIntro, MovieCard, MovieDetails, 
     MovieTable, MovieCastSlider, Trailer, Paginationn, RedirectToFirstPage, SelectGenre, MoviesFilter, Search, ActorCard, 
     ActorDetails, KnownForMoviesSlider, KnownForSeriesSlider, SelectPlan, Features, HowItWorks, ContactUs, FormsPortal, RecentlyUpdated, TvSeriesCard, 
     TvSeriaDetails, TvSeriaTable, SearchedMoviesList, SearchedSeriesList, SearchedActorsList, Carousel, BurgerMenu

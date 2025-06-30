@@ -1,6 +1,4 @@
 .movieDetails{
-    max-width: 1280px;
-    margin: auto;
     color: var(--text-color-main);
 }
 
@@ -14,6 +12,7 @@
 .posterDiv{
     min-width: 280px;
     max-width: 280px;
+    margin-bottom: 8px;
 }
 
 .detailsTitle{
@@ -46,8 +45,7 @@
 
 .about{
     font-weight: 300;
-    padding-bottom: 16px;
-    width: 80%;
+    width: 90%;
 }
 
 .buttonsDiv{
@@ -68,4 +66,64 @@
 .starIcon{
     font-size: 18px !important;
     color: var(--buttons-color);
+}
+
+.hiddenOverview,
+.bottomTable{
+    display: none;
+}
+
+
+@media screen and (max-width: 1040px) {
+    .movieDetailsDiv{
+        gap: 12px;
+    }
+    .posterDiv{
+        min-width: 240px;
+        max-width: 240px;
+    }
+    .detailsTitle{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .logoImage{
+        max-width: 160px;
+    }
+    .tableDiv,
+    .bottomOverview{
+        display: none;
+    }
+    .hiddenOverview,
+    .bottomTable{
+        display: block;
+        font-size: 14px;
+    }
+    .buttonsDiv{
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .movieDetailsDiv{
+        display: block;
+    }
+    .tableDiv,
+    .bottomOverview{
+        display: block;
+        font-size: 14px;
+    }
+    .hiddenOverview,
+    .bottomTable{
+        display: none;
+    }
+    .about{
+        width: 100%;
+    }
+    .buttonsDiv{
+        flex-direction: row;
+        align-items: center;
+    }
 }

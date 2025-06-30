@@ -16,15 +16,14 @@ const MoviesSimilarSlider = () => {
                 recSeries && recSeries.length > 0
                 ? (<Swiper
                     spaceBetween={20}
-                    slidesPerView={6}
+                    slidesPerView={2}
                     loop={recSeries.length > 8}
                     autoplay={{ delay: 2000 }}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        440: { slidesPerView: 2 },
-                        640: { slidesPerView: 3 },
-                        840: { slidesPerView: 4 },
-                        1240: { slidesPerView: 6 },
+                        340: { slidesPerView: 2 },
+                        540: { slidesPerView: 3 },
+                        740: { slidesPerView: 4 },
+                        1040: { slidesPerView: 6 }
                     }}
                     pagination={{
                         el: `.swiper-pagination-knownFor`,

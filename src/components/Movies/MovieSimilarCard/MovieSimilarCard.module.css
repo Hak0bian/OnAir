@@ -1,6 +1,5 @@
 .movieCard {
-    height: 320px;
-    max-height: 320px;
+    height: 300px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 4px var(--bg-color-main);
@@ -54,5 +53,12 @@
     .starIcon{
         font-size: 18px !important;
         color: var(--buttons-color);
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+    .movieCard{
+        height: 240px;
     }
 }

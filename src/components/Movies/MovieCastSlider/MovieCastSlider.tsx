@@ -14,36 +14,35 @@ const MovieCastSlider = () => {
     const filteredMoviecast = selectedMovie?.credits?.cast.slice(0, 12);
 
     return (
-        <section style={{paddingBottom: '20px'}}>
+        <section>
             {
                 filteredMoviecast && filteredMoviecast.length > 0
-                ? (<Swiper
-                    spaceBetween={16}
-                    slidesPerView={6}
-                    loop={filteredMoviecast.length > 8}
-                    autoplay={{ delay: 2000 }}
-                    breakpoints={{
-                        340: { slidesPerView: 1 },
-                        440: { slidesPerView: 2 },
-                        640: { slidesPerView: 3 },
-                        840: { slidesPerView: 5 },
-                        1240: { slidesPerView: 6 }
-                    }}
-                    pagination={{
-                        el: `.swiper-pagination-cast`,
-                        clickable: true,           
-                        dynamicBullets: false,    
-                        type: 'bullets',              
-                    }}
-                >
-                    {filteredMoviecast.map((actor) => (
-                        <SwiperSlide>
-                            <CastCard actor={actor} />
-                        </SwiperSlide>
-                    ))}
-                    <div className='swiper-pagination-cast'></div>
-                </Swiper>)
-                : (<p>{t.movies.castNotFound}</p>)
+                    ? (<Swiper
+                        spaceBetween={16}
+                        slidesPerView={2}
+                        loop={filteredMoviecast.length > 8}
+                        autoplay={{ delay: 2000 }}
+                        breakpoints={{
+                            340: { slidesPerView: 2 },
+                            540: { slidesPerView: 3 },
+                            740: { slidesPerView: 4 },
+                            1040: { slidesPerView: 6 }
+                        }}
+                        pagination={{
+                            el: `.swiper-pagination-cast`,
+                            clickable: true,
+                            dynamicBullets: false,
+                            type: 'bullets',
+                        }}
+                    >
+                        {filteredMoviecast.map((actor) => (
+                            <SwiperSlide>
+                                <CastCard actor={actor} />
+                            </SwiperSlide>
+                        ))}
+                        <div className='swiper-pagination-cast'></div>
+                    </Swiper>)
+                    : (<p>{t.movies.castNotFound}</p>)
             }
         </section>
     );

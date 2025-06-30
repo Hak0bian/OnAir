@@ -23,9 +23,9 @@ const MovieDetails = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>
-            <AboutMovie />
+            <div className='container'>
+                <AboutMovie />
 
-            <section className='container'>
                 <div className={styles.slideTopDiv}>
                     <h3 className={styles.slideTitle}>{t.cast}</h3>
                     {
@@ -40,7 +40,7 @@ const MovieDetails = () => {
                     <NavLink to={`/Movies/movie/${selectedMovie?.id}/recommendations`} className={styles.seeAll}>{t.seeAll}</NavLink>
                 </div>
                 <MoviesSimilarSlider />
-            </section>
+            </div>
         </section>
     )
 }

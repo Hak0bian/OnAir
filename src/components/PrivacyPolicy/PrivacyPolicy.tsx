@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
             <p className={styles.mainText}>{t.mainText}</p>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title1}</h2>
+                <h3>{t.title1}</h3>
                 <ul>
                     <li>{t.item1_1}</li>
                     <li>{t.item1_2}</li>
@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title2}</h2>
+                <h3>{t.title2}</h3>
                 <ul>
                     <li>{t.item2_1}</li>
                     <li>{t.item2_2}</li>
@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title3}</h2>
+                <h3>{t.title3}</h3>
                 <ul>
                     <li>{t.item3_1}</li>
                     <li>{t.item3_2}</li>
@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title4}</h2>
+                <h3>{t.title4}</h3>
                 <ul>
                     <li>{t.item4_1}</li>
                     <li>{t.item4_2}</li>
@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title5}</h2>
+                <h3>{t.title5}</h3>
                 <ul>
                     <li>{t.item5_1}</li>
                     <li>{t.item5_2}</li>
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title6}</h2>
+                <h3>{t.title6}</h3>
                 <ul>
                     <li>{t.item6_1}</li>
                     <li>{t.item6_2}</li>
@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title7}</h2>
+                <h3>{t.title7}</h3>
                 <ul>
                     <li>{t.item7_1}</li>
                     <li>{t.item7_2}</li>
@@ -76,7 +76,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <div className={styles.privacyDiv}>
-                <h2>{t.title8}</h2>
+                <h3>{t.title8}</h3>
                 <ul>
                     <li>{t.item8_1}</li>
                     <li>{t.item8_2}</li>

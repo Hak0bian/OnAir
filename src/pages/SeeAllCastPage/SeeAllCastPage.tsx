@@ -33,7 +33,7 @@ const SeeAllCastPage = () => {
 
     return (
         <section className='container'>
-            <h3 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.cast}</h3>
+            <h3 className='pageTitle'>{t.cast}</h3>
             <div className='gridDiv'>
                 {castList.length > 0 &&
                     castList.map((actor) => (

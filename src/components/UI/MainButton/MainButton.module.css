@@ -4,7 +4,7 @@
     background: var(--buttons-color);
     border: none;
     border-radius: 40px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: .8px;
     cursor: pointer;
@@ -17,8 +17,10 @@
 }
 
 
-/* @media screen and (max-width: 840px) {
+@media screen and (max-width: 740px) {
     .mainBtn{
-        width: 140px;
+        width: 150px;
+        font-size: 14px;
+        font-weight: normal;
     }
-} */
+}

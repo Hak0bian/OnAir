@@ -1,30 +1,50 @@
 .libraryContainer{
+    width: 100%;
     max-width: 1280px;
     margin: auto;
     min-height: 60vh;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .emptyLibrary{
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 300;
     text-align: center;
     letter-spacing: .4px;
 }
 
 .block{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    padding-bottom: 60px;
+    padding: 0 20px;
 }
 
 .blockTitle{
     font-weight: 300;
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .clearBtnDiv{
     text-align: center;
-    padding-bottom: 40px;
+    padding: 12px 0 40px;
 }
 
+
+@media screen and (max-width: 740px) {
+    .libraryContainer{
+        padding: 12px 0;
+    }
+    .emptyLibrary{
+        font-size: 16px;
+    }
+    .block{
+        padding: 0 12px;
+    }
+    .blockTitle{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .emptyLibrary{
+        font-size: 14px;
+    }
+}

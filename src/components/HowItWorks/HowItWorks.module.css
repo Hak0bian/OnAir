@@ -1,9 +1,3 @@
-.howSection{
-    max-width: 1280px;
-    margin: auto;
-    padding-bottom: 80px;
-}
-
 .howContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -12,9 +6,9 @@
 
 .howTitle{
     width: 100%;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 300;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
 }
 
 .howBox{
@@ -24,7 +18,6 @@
         font-size: 48px;
         font-weight: 600;
         background-image: linear-gradient(to right, #FF5690, #E13C52);
-        background-clip: text;
         background-clip: text;
         color: transparent;
     }
@@ -38,5 +31,38 @@
     p{
         line-height: 1.5;
         color: var(--text-color-gray);
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .howTitle{
+        font-size: 22px;
+        padding-bottom: 8px;
+    }
+    .howBox{
+        width: 80%;
+
+        span{
+            font-size: 36px;
+        }
+        h3{
+            font-size: 16px;
+            padding: 4px 0;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+
+    .howContainer{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .howBox{
+        width: 100%;
     }
 }

@@ -3,6 +3,7 @@
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 4px var(--bg-color-main);
+    background-color: #1A1A1A;
     
     img {
         width: 100%;

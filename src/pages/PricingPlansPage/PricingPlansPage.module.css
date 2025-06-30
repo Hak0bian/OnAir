@@ -1,0 +1,12 @@
+.pricingContainer{
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+@media screen and (max-width: 740px) {
+    .pricingContainer{
+        padding: 28px 12px 60px;
+    }
+}

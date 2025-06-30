@@ -45,5 +45,9 @@ export type ISeriesCardPropsType = {
 export type IBurgerMenuPropsType = {
     toggle: () => void;
     openSignUpForm: () => void;
+}
 
+export type IPageIntroPropsType = {
+    title: string,
+    text: string
 }

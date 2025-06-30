@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
-import '../../components/global.css'
+import { PageIntro } from '../../components';
+import styles from './PrivacyPolicyPage.module.css'
 
 const PrivacyPolicyPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
@@ -14,13 +15,10 @@ const PrivacyPolicyPage = () => {
 
     return (
         <section>
-            <div className='sectionHeader'>
-                <div className='headerDiv'>
-                    <h2 className='sectionTitle'>{t.privacyTitle}</h2>
-                    <p className='sectionText'>{t.privacyText}</p>
-                </div>
+            <PageIntro title={t.privacyTitle} text={t.privacyText}/>
+            <div className={styles.privacyContainer}>
+                <PrivacyPolicy />
             </div>
-            <PrivacyPolicy />
         </section>
     )
 }

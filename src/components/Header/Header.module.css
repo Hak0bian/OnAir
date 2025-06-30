@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 1040px) {
     .header{
-        background-image: url(../../assets/images/onair-header-small.png);
+        background-image: url(../../assets/images/onair-header-tablet.png);
         margin-bottom: 28px;
     }
     .headerTitleDiv{

@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { useAppSelector } from '../../store/hooks/hooks'
 import { translations } from '../../translations/translations'
+import { PageIntro } from '../../components'
 import HelpCenter from '../../components/HelpCenter/HelpCenter'
-import '../../components/global.css'
+import styles from './HelpCenterPage.module.css'
 
 const HelpCenterPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
@@ -14,13 +15,10 @@ const HelpCenterPage = () => {
     
     return (
         <section>
-            <div className='sectionHeader'>
-                <div className='headerDiv'>
-                    <h2 className='sectionTitle'>{t.helpTitle}</h2>
-                    <p className='sectionText'>{t.helpText}</p>
-                </div>
+            <PageIntro title={t.helpTitle} text={t.helpText} />
+            <div className={styles.helpContainer}>
+                <HelpCenter/>
             </div>
-            <HelpCenter/>
         </section>
     )
 }

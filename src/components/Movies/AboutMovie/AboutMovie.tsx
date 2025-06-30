@@ -24,8 +24,8 @@ const AboutMovie = () => {
                 <div>
                     {
                         logo
-                        ? <img src={logo} alt={selectedMovie?.name} className={styles.logoImage} />
-                        : <h2 className={styles.detailsTitle}>{selectedMovie?.title}</h2>
+                            ? <img src={logo} alt={selectedMovie?.name} className={styles.logoImage} />
+                            : <h2 className={styles.detailsTitle}>{selectedMovie?.title}</h2>
                     }
                     {
                         selectedMovie?.genres && selectedMovie?.genres?.length > 0 &&
@@ -38,7 +38,12 @@ const AboutMovie = () => {
                         </p>
                         <span>{selectedMovie?.release_date}</span>
                     </div>
-                    <MovieTable selectedMovie={selectedMovie} />
+                    <div className={styles.tableDiv}>
+                        <MovieTable selectedMovie={selectedMovie} />
+                    </div>
+                    <div className={styles.hiddenOverview}>
+                        <p className={styles.about}>{selectedMovie?.overview}</p>
+                    </div>
 
                     <div className={styles.buttonsDiv}>
                         <Trailer trailerKey={key} />
@@ -47,8 +52,13 @@ const AboutMovie = () => {
                 </div>
             </div>
 
-            <h3 className={styles.secondary}>{t.overview}</h3>
-            <p className={styles.about}>{selectedMovie?.overview}</p>
+            <div className={styles.bottomOverview}>
+                <h3 className={styles.secondary}>{t.overview}</h3>
+                <p className={styles.about}>{selectedMovie?.overview}</p>
+            </div>
+            <div className={styles.bottomTable}>
+                <MovieTable selectedMovie={selectedMovie} />
+            </div>
         </section>
     )
 }
