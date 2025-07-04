@@ -3,6 +3,7 @@ import { translations } from '../../../translations/translations'
 import { ITvSeriaTablePropsType } from '../../componentsTypes/propsTypes'
 import styles from './TvSeriaTable.module.css'
 
+
 const TvSeriaTable = ({ selectedSeria } : ITvSeriaTablePropsType ) => {
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].movies.movieTable

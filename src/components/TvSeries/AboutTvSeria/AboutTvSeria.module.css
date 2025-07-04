@@ -12,7 +12,15 @@
 .posterDiv{
     min-width: 280px;
     max-width: 280px;
+    min-height: 400px;
     margin-bottom: 8px;
+    display: grid;
+    place-content: center;
+    background-color: var(--bg-color-options);
+}
+
+.movieIcon{
+    font-size: 60px;
 }
 
 .detailsTitle{
@@ -70,7 +78,8 @@
 }
 
 .hiddenOverview,
-.bottomTable{
+.bottomTable,
+.hiddenButtonsDiv{
     display: none;
 }
 
@@ -82,6 +91,7 @@
     .posterDiv{
         min-width: 240px;
         max-width: 240px;
+        min-height: 300px;
     }
     .detailsTitle{
         font-size: 24px;
@@ -112,7 +122,13 @@
 
 @media screen and (max-width: 540px) {
     .seriaDetailsDiv{
-        display: block;
+        flex-direction: column;
+        align-items: center;
+    }
+    .seriaName{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .tableDiv,
     .bottomOverview{
@@ -120,14 +136,24 @@
         font-size: 14px;
     }
     .hiddenOverview,
-    .bottomTable{
+    .bottomTable,
+    .buttonsDiv{
         display: none;
     }
     .about{
         width: 100%;
     }
-    .buttonsDiv{
+    .hiddenButtonsDiv{
+        display: flex;
         flex-direction: row;
         align-items: center;
+        gap: 8px;
+        padding-bottom: 12px;
+    }
+    .genre{
+        text-align: center;
+    }
+    .rating{
+        font-size: 14px;
     }
 }

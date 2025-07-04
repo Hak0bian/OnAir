@@ -15,7 +15,7 @@ const TvSeriesSimilarSlider = () => {
             {
                 recSeries && recSeries.length > 0
                 ? (<Swiper
-                    spaceBetween={20}
+                    spaceBetween={16}
                     slidesPerView={2}
                     loop={recSeries.length > 8}
                     autoplay={{ delay: 2000 }}

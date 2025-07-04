@@ -1,10 +1,12 @@
 import { useAppSelector } from '../../../store/hooks/hooks'
 import { translations } from '../../../translations/translations'
+import { BiSolidMoviePlay } from "react-icons/bi";
 import LibraryMovieBtn from '../../UI/LibraryMovieBtn/LibraryMovieBtn'
 import MovieTable from '../MovieTable/MovieTable'
 import Trailer from '../Trailer/Trailer'
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './AboutMovie.module.css'
+
 
 const AboutMovie = () => {
     const { selectedMovie } = useAppSelector((state => state.moviesData))
@@ -19,9 +21,13 @@ const AboutMovie = () => {
         <section className={styles.movieDetails}>
             <div className={styles.movieDetailsDiv}>
                 <div className={styles.posterDiv}>
-                    <img src={`https://image.tmdb.org/t/p/w400${selectedMovie?.poster_path}`} />
+                    {
+                        selectedMovie?.poster_path 
+                        ? <img src={`https://image.tmdb.org/t/p/w400${selectedMovie?.poster_path}`} />
+                        : <BiSolidMoviePlay className={styles.movieIcon}/>
+                    }
                 </div>
-                <div>
+                <div className={styles.movieName}>
                     {
                         logo
                             ? <img src={logo} alt={selectedMovie?.name} className={styles.logoImage} />
@@ -38,13 +44,16 @@ const AboutMovie = () => {
                         </p>
                         <span>{selectedMovie?.release_date}</span>
                     </div>
+                    <div className={styles.hiddenButtonsDiv}>
+                        <Trailer trailerKey={key} />
+                        {selectedMovie && <LibraryMovieBtn movie={selectedMovie} />}
+                    </div>
                     <div className={styles.tableDiv}>
                         <MovieTable selectedMovie={selectedMovie} />
                     </div>
                     <div className={styles.hiddenOverview}>
                         <p className={styles.about}>{selectedMovie?.overview}</p>
                     </div>
-
                     <div className={styles.buttonsDiv}>
                         <Trailer trailerKey={key} />
                         {selectedMovie && <LibraryMovieBtn movie={selectedMovie} />}

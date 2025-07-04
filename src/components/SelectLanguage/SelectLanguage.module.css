@@ -27,7 +27,7 @@
     position: absolute;
     top: 44px;
     z-index: 5;
-    padding: 8px;
+    padding: 8px 8px;
     background: var(--bg-color-options);
     border-top: 2px solid var(--text-color-secondary);
 
@@ -59,4 +59,10 @@
     max-height: 100px; 
     opacity: 1;
     pointer-events: auto;
+}
+
+@media screen and (max-width: 740px) {
+    .languageList{
+        padding: 8px 0;
+    }
 }

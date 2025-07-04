@@ -1,14 +1,14 @@
+import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
+import { IBurgerMenuPropsType } from '../componentsTypes/propsTypes';
+import { Search, SelectLanguage } from '..';
 import { MdSunny } from 'react-icons/md';
 import { LuCircleUserRound } from 'react-icons/lu';
-import { IBurgerMenuPropsType } from '../componentsTypes/propsTypes';
-import { Search } from '..';
-import SelectLanguage from '../SelectLanguage/SelectLanguage';
-import styles from './BurgerMenu.module.css'
 import { setOpenBurger } from '../../store/slices';
+import styles from './BurgerMenu.module.css'
+
 
 const BurgerMenu = ({ toggle, openSignUpForm }: IBurgerMenuPropsType) => {
     const { page: moviesPage } = useAppSelector((state) => state.moviesData)

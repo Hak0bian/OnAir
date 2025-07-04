@@ -4,6 +4,7 @@ import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 import styles from './FeaturesPage.module.css'
 
+
 const FeaturesPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles

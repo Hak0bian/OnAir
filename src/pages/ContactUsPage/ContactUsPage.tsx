@@ -3,6 +3,7 @@ import { ContactUs, PageIntro } from '../../components';
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 
+
 const ContactUsPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles

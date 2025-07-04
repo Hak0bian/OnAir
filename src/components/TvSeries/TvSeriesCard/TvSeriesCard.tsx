@@ -1,10 +1,15 @@
 import { NavLink } from 'react-router-dom'
 import { ISeriesCardPropsType } from '../../componentsTypes/propsTypes';
 import { BiSolidMoviePlay } from "react-icons/bi";
+import { useMediaQuery } from '@mui/material';
 import GradeIcon from '@mui/icons-material/Grade';
 import styles from './TvSeriesCard.module.css'
 
+
 const TvSeriesCard = ({seria} : ISeriesCardPropsType) => {
+    const isSmallScreen = useMediaQuery('(max-width: 540px)');
+    const titleLimit = isSmallScreen ? 12 : 15;
+
     return (
         <NavLink to={`/TV/Seria/${seria?.id}`}>
             <div className={styles.seriaCard}>
@@ -17,7 +22,11 @@ const TvSeriesCard = ({seria} : ISeriesCardPropsType) => {
                 </div>
                 
                 <div className={styles.nameDiv}>
-                    <h4>{seria?.name && seria?.name.length > 15 ? seria?.name.slice(0, 15) + "..." : seria?.name}</h4>
+                    <h4>
+                        {seria?.name && seria?.name.length > titleLimit
+                            ? seria?.name.slice(0, titleLimit) + "..."
+                            : seria?.name}
+                    </h4>
                     <div className={styles.dateAndRate}>
                         <p className={styles.date}>{seria?.first_air_date}</p>
                         <p className={styles.rating}>

@@ -2,10 +2,6 @@
     padding-bottom: 40px;
 }
 
-.knownForBox{
-    padding: 20px 0;
-}
-
 .noKnownFor{
     font-size: 18px;
     letter-spacing: .4px;
@@ -54,5 +50,22 @@
 
     &:hover{
         color: var(--text-color-primary);
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .slideTopDiv{
+        padding: 36px 0 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .actorDetailsSec{
+        padding-bottom: 20px;
+    }
+    .slideTitle,
+    .seeAll{
+        font-size: 16px;
     }
 }

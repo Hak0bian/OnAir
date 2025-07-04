@@ -4,6 +4,7 @@ import { translations } from '../../../translations/translations';
 import { AboutMovie, MovieCastSlider, MoviesSimilarSlider } from '../..';
 import styles from './MovieDetails.module.css'
 
+
 const MovieDetails = () => {
     const { selectedMovie, loadingInfo, errorInfo } = useAppSelector((state => state.moviesData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
@@ -11,8 +12,8 @@ const MovieDetails = () => {
     const movieCast = selectedMovie?.credits?.cast
     const backdrop = selectedMovie?.backdrop_path ? `https://image.tmdb.org/t/p/w1280${selectedMovie?.backdrop_path}` : '';
 
-    if (loadingInfo) return <h2 className='loading'>Loading...</h2>;
-    if (errorInfo) return <h2 className='error'>{errorInfo}</h2>;
+    if (loadingInfo) return <h3 className='loading'>Loading...</h3>;
+    if (errorInfo) return <h3 className='error'>{errorInfo}</h3>;
 
     return (
         <section className={styles.detailsSection}

@@ -5,8 +5,9 @@ import { translations } from '../../translations/translations';
 import { NavLink } from 'react-router-dom';
 import logoOnDark from '../../assets/images/onair-logo-white.png'
 import logoOnLight  from "../../assets/images/onair-logo-light.png";
-import styles from './Footer.module.css'
 import ContactsIcons from '../ContactsIcons/ContactsIcons';
+import styles from './Footer.module.css'
+
 
 const Footer = () => {
   const dispatch = useAppDispatch()

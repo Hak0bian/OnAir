@@ -1,10 +1,10 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
 import { translations } from '../../../translations/translations';
+import CastCard from '../CastCard/CastCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Pagination]);
 import 'swiper/swiper-bundle.min.css';
-import CastCard from '../CastCard/CastCard';
 
 
 const MovieCastSlider = () => {

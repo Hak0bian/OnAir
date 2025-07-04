@@ -11,8 +11,8 @@ const ActorDetails = () => {
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].actors
 
-    if (loadingInfo) return <h2 className='loading'>Loading...</h2>;
-    if (errorInfo) return <h2 className='error'>{errorInfo}</h2>;
+    if (loadingInfo) return <h3 className='loading'>Loading...</h3>;
+    if (errorInfo) return <h3 className='error'>{errorInfo}</h3>;
 
     return (
         <section className={styles.actorDetailsSec}>

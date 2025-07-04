@@ -72,11 +72,13 @@
     letter-spacing: 1px !important;
     color: var(--text-color-primary) !important;
     transition: .2s;
+    padding-bottom: 0 !important;
 }
 
 .tabItem.Mui-selected,
 .tabItem:hover{
     color: var(--text-color-secondary) !important;
+    padding-bottom: 0 !important;
 }
 
 .MuiTabs-indicator {
@@ -115,7 +117,7 @@
     text-align: center;
     letter-spacing: .4px;
     padding: 20px 0;
-    min-height: 60vh;
+    min-height: 70vh;
 }
 
 
@@ -144,5 +146,10 @@
 @media screen and (max-width: 540px) {
     .gridDiv{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .tabItem{
+        font-size: 12px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }

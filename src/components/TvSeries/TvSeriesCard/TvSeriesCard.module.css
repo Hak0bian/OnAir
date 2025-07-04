@@ -6,7 +6,7 @@
 }
 
 .imageDiv{
-    min-height: 300px;
+    height: 100%;
     display: grid;
     place-content: center;
     background-color: var(--bg-color-options);

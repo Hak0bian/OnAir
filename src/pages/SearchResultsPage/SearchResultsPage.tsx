@@ -8,14 +8,14 @@ import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard';
 
 
 const SearchResultsPage = () => {
+    const dispatch = useAppDispatch();
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get('query') || '';
     const { searchedMovies, movieIsLoading, movieNotFound } = useAppSelector((state) => state.searchedMoviesData);
     const { searchedActors, actorIsLoading, actorNotFound } = useAppSelector((state) => state.searchedActorsData);
     const { searchedSeries, seriaIsLoading, seriaNotFound } = useAppSelector((state) => state.searchSeriesData);
     const { selectedLanguage } = useAppSelector((state) => state.languagesData);
     const t = translations[selectedLanguage].search
-    const [searchParams] = useSearchParams();
-    const query = searchParams.get('query') || '';
-    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if (query.trim()) {
@@ -24,7 +24,6 @@ const SearchResultsPage = () => {
             dispatch(searchTvSeriesThunk(query));
         }
     }, []);
-
 
     return (
         <section style={{paddingBottom: '20px'}}>

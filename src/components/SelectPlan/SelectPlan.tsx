@@ -6,6 +6,7 @@ import SelectPlanForm from '../Forms/SelectPlanForm/SelectPlanForm'
 import MainButton from '../UI/MainButton/MainButton'
 import styles from './SelectPlan.module.css'
 
+
 const SelectPlan = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].selectPlan

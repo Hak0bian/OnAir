@@ -5,13 +5,10 @@ import { setOpenBurger, toggleTheme } from '../../store/slices'
 import { showSignUpForm } from '../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice'
 import { LuCircleUserRound } from "react-icons/lu";
 import { MdSunny } from "react-icons/md";
+import { BurgerMenu, Search, SelectLanguage, MorePages } from '..'
 import logoForDark from '../../assets/images/onair-logo.png'
 import logoForLight from '../../assets/images/onair-logo-light.png'
-import SelectLanguage from '../SelectLanguage/SelectLanguage'
-import MorePages from '../MorePages/MorePages'
-import Search from '../Search/Search'
 import styles from './Navigation.module.css'
-import BurgerMenu from '../BurgerMenu/BurgerMenu'
 
 
 const Navigation = () => {
@@ -40,10 +37,11 @@ const Navigation = () => {
     return (
         <nav className={styles.navigation}>
             <div className={styles.navContainer}>
-                <div className={styles.logoDiv} onClick={() => {
-                    clickOnLogo()
-                    navigate('/')
-                }}>
+                <div className={styles.logoDiv} 
+                    onClick={() => {
+                        clickOnLogo()
+                        navigate('/')
+                    }}>
                     <img src={mode === 'dark' ? logoForDark : logoForLight} className={styles.logo} />
                 </div>
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks"
 import { moviesThunk, changeMoviesPageNumber, genresListThunk, moviesByGenreThunk, clearmoviesByGenre } from "../../store/slices"
 import { Carousel, MovieCard, MoviesFilter, Paginationn, SelectGenre } from "../../components"
-
+import "../../components/global.css"
 
 const MoviesPage = () => {
   const dispatch = useAppDispatch()
@@ -11,7 +11,6 @@ const MoviesPage = () => {
   const { movies, sortBy, loadingMovies, errorMovies, page, totalPages } = useAppSelector((state) => state.moviesData)
   const { selectedGenreId, moviesByGenre } = useAppSelector((state) => state.genresData);
   const { selectedLanguage } = useAppSelector((state) => state.languagesData);
-  
   const arr = moviesByGenre.length > 0 ? moviesByGenre : movies
   const images = arr.filter(movie => movie?.backdrop_path)
     .map(movie => `https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`);
@@ -41,7 +40,7 @@ const MoviesPage = () => {
   }
 
   return (
-    <section>
+    <section style={{minHeight: '100vh'}}>
       {
         loadingMovies ? (
           <p className='loading'>Loading...</p>

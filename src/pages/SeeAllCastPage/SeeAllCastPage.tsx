@@ -2,8 +2,8 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { translations } from '../../translations/translations'
-import CastCard from '../../components/Movies/CastCard/CastCard'
 import { movieByIdThunk, tvSeriaByIdThunk } from '../../store/slices'
+import CastCard from '../../components/Movies/CastCard/CastCard'
 
 
 const SeeAllCastPage = () => {

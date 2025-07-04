@@ -1,6 +1,7 @@
-import { Dialog, DialogContent, IconButton } from '@mui/material';
-import { Formik, Form, Field, ErrorMessage } from "formik"
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
+import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Dialog, DialogContent, IconButton } from '@mui/material';
+import { showForgotPassForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 import { translations } from '../../../translations/translations';
 import { NavLink } from 'react-router-dom';
 import forgotValidation from '../validations/forgotValidation';
@@ -9,7 +10,6 @@ import logoForDark from '../../../assets/images/onair-logo.png'
 import logoForLight from '../../../assets/images/onair-logo-light.png'
 import MainButton from '../../UI/MainButton/MainButton'
 import styles from './ForgotPassForm.module.css'
-import { showForgotPassForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
 
 
 const ForgetPassForm = ({ handleOpenSignIn }: {handleOpenSignIn: () => void}) => {
@@ -66,7 +66,9 @@ const ForgetPassForm = ({ handleOpenSignIn }: {handleOpenSignIn: () => void}) =>
                                 <label className={styles.agreeLabel}>
                                     <Field type="checkbox" name="agree" />
                                     {t.agree}
-                                    <NavLink to={`/Privacy-Policy`} className={styles.agreeBtn}> {t.privacy} </NavLink>
+                                    <NavLink to={`/Privacy-Policy`} onClick={handleCloseForgot} className={styles.agreeBtn}> 
+                                        {t.privacy} 
+                                    </NavLink>
                                 </label>
                                 <label className={styles.btnLabel}>
                                     <MainButton text={t.recover} />

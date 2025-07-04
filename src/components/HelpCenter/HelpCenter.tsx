@@ -4,6 +4,7 @@ import { translations } from '../../translations/translations';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './HelpCenter.module.css'
 
+
 const HelpCenter = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].helpCenter

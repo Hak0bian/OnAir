@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom'
 import { FormsPortal, Layout, RedirectToFirstPage } from './components'
 import { HomePage, MoviesPage, LibraryPage, AboutMoviePage, ActorsPage, AboutActorPage,SeeAllCastPage, HelpCenterPage, 
   PrivacyPolicyPage, FeaturesPage, ContactUsPage, PricingPlansPage, SearchResultsPage, TvSeriesPage, AboutTvSeriaPage,
   RecommendationsPage, NotFoundPage, KnownForMoviesPage, KnownForSeriesPage } from './pages'
-import { useEffect, useState } from 'react';
 import LoadingSpinner from './components/UI/LoadingSpinner/LoadingSpinner';
 
 
@@ -25,6 +25,7 @@ function App() {
       </div>
     );
   }
+  
   
   return (
     <section>

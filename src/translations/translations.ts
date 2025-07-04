@@ -3,6 +3,7 @@ export const translations: any = {
         moreDetailsBtn: "More details",
         addLibraryBtn: "Add to my library",
         removeLibraryBtn: "Remove from library",
+        catalog: "To catalog",
 
         navigation: {
             home: "Home",
@@ -17,6 +18,10 @@ export const translations: any = {
                 plans: "Pricing Plans",
                 contact: "Contact Us",
                 privacy: "Privacy Policy"
+            },
+            language: {
+                eng: "English",
+                rus: "Russian"
             }
         },
 
@@ -357,7 +362,7 @@ export const translations: any = {
             profile: "Profile",
             signUp: "Sign Up",
             signIn: "Sign In",
-            forgot: "Forgot Password",
+            forgot: "Forgot Pass",
             choose: "Choose Plan",
 
             text1: "OnAir is always waiting for you. Come back to discover new genres and stories!",
@@ -373,6 +378,7 @@ export const translations: any = {
         moreDetailsBtn: "Подробнее",
         addLibraryBtn: "Добавить в библиотеку",
         removeLibraryBtn: "Удалить из библиотеки",
+        catalog: "Каталог",
 
         navigation: {
             home: "Главная ",
@@ -388,6 +394,10 @@ export const translations: any = {
                 contact: "Связаться с нами",
                 privacy: "Конфиденциальность"
             },
+            language: {
+                eng: "Английский",
+                rus: "Русский"
+            }
         },
 
         header: {
@@ -438,7 +448,7 @@ export const translations: any = {
             planName2: "Премиум",
             planName3: "Ультра",
             plan: "Бесплатно",
-            btn1: "Зарегистрироваться",
+            btn1: "Создать аккаунт",
             btn2: "Выбрать план",
             planList1: {
                 listItem1: "7 дней",
@@ -468,8 +478,8 @@ export const translations: any = {
             lastname: "Фамилия",
             email: "Электронная почта",
             pass: "Пароль",
-            agree: "Я согласен с",
-            privacy: "Конфиденциальности",
+            agree: "Я принимаю",
+            privacy: "Условия",
             have: "Уже есть аккаунт?",
             dontHave: "Нет аккаунта?",
             remember: "Запомнить меня",
@@ -479,7 +489,7 @@ export const translations: any = {
             back: "Назад",
             subject: "Тема",
             message: "Введите ваше сообщение...",
-            signUp: "Зарегистрироваться",
+            signUp: "Регистрация",
             signIn: "Войти",
             send: "Отправить",
 
@@ -565,11 +575,11 @@ export const translations: any = {
         actors: {
             search: "Поиск актера",
             knownFor: "Известность за",
-            knownForMovies: "Известн(а) своими фильмами",
-            knownForSeries: "Известн(а) своими сериалами",
+            knownForMovies: "Известн(а) по фильмам",
+            knownForSeries: "Известн(а) по сериалам",
             noKnownFor: "Нет известных работ.",
             noBiography: "Биография отсутствует",
-            seeAll: "Смотреть все",
+            seeAll: "Все",
         },
 
         library: {
@@ -728,7 +738,7 @@ export const translations: any = {
             features: "Наши функции",
             plans: "Тарифные планы",
             contact: "Контакты",
-            privacy: "Политика конфиденциальности",
+            privacy: "Конфиденциальность",
 
             profile: "Профиль",
             signUp: "Регистрация",

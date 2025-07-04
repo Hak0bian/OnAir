@@ -1,7 +1,8 @@
 import { useAppSelector } from '../../../store/hooks/hooks'
-import GradeIcon from '@mui/icons-material/Grade';
 import { BiSolidMoviePlay } from "react-icons/bi";
+import GradeIcon from '@mui/icons-material/Grade';
 import styles from './LastEpisode.module.css'
+
 
 const LastEpisode = () => {
     const { selectedSeria } = useAppSelector((state) => state.tvSeriesData)

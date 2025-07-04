@@ -5,6 +5,7 @@ import { actorFullInfoThunk } from '../../store/slices'
 import { translations } from '../../translations/translations'
 import { MovieCard } from '../../components'
 
+
 const KnownForMoviesPage = () => {
     const { id } = useParams()
     const dispatch = useAppDispatch();
@@ -21,7 +22,7 @@ const KnownForMoviesPage = () => {
 
     return (
         <section className='container'>
-            <h3 style={{ fontWeight: 'normal', paddingTop: '20px' }}>{t.knownForMovies}</h3>
+            <h3 className='pageTitle'>{t.knownForMovies}</h3>
             <div className='gridDiv'>
                 {
                     loadingInfo ? (

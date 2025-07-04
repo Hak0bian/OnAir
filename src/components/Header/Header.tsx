@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { changeMoviesPageNumber } from '../../store/slices'
+import { translations } from '../../translations/translations'
 import MainButton from '../UI/MainButton/MainButton'
 import styles from './Header.module.css'
-import { translations } from '../../translations/translations'
+
 
 const Header = () => {
     const dispatch = useAppDispatch()

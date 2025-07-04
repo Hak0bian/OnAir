@@ -2,6 +2,7 @@ import { useAppSelector } from '../../store/hooks/hooks'
 import { translations } from '../../translations/translations'
 import styles from './PrivacyPolicy.module.css'
 
+
 const PrivacyPolicy = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].privacy

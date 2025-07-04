@@ -6,6 +6,7 @@ import SwiperCore, { Autoplay, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Pagination]);
 import 'swiper/swiper-bundle.min.css';
 
+
 const KnownForMoviesSlider = () => {
     const { selectedActor } = useAppSelector((state => state.actorsData))
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
@@ -16,16 +17,15 @@ const KnownForMoviesSlider = () => {
             {
                 selectedActor?.known_for_movies && selectedActor?.known_for_movies?.length > 0
                 ? (<Swiper
-                    spaceBetween={20}
-                    slidesPerView={6}
+                    spaceBetween={16}
+                    slidesPerView={2}
                     loop={selectedActor?.known_for_movies?.length > 8}
                     autoplay={{ delay: 2000 }}
                     breakpoints={{
-                        0: { slidesPerView: 1 },
-                        440: { slidesPerView: 2 },
-                        640: { slidesPerView: 3 },
-                        840: { slidesPerView: 4 },
-                        1240: { slidesPerView: 6 },
+                        340: { slidesPerView: 2 },
+                        540: { slidesPerView: 3 },
+                        740: { slidesPerView: 4 },
+                        1040: { slidesPerView: 6 }
                     }}
                     pagination={{
                         el: `.swiper-pagination-knownFor`,

@@ -8,6 +8,7 @@
 .posterDiv{
     min-width: 300px;
     max-width: 300px;
+    min-height: 140px;
     display: grid;
     place-content: center;
     background-color: var(--bg-color-options);

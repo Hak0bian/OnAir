@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { RiArrowLeftWideLine, RiArrowRightWideLine } from "react-icons/ri"; 
 import './Carousel.css'; 
  
+
 const Carousel = ({ images }: { images: string[] }) => { 
     const containerRef = useRef<HTMLDivElement>(null); 
     const [carouselArray, setCarouselArray] = useState<HTMLImageElement[]>([]); 
@@ -70,6 +71,7 @@ const Carousel = ({ images }: { images: string[] }) => {
         return () => clearInterval(interval); 
     }, [carouselArray]); 
  
+    
     return ( 
         <div className="galery"> 
             <div className="galery-container" ref={containerRef}> 

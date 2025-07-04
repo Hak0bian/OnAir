@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { changeTvSeriesPageNumber, tvSeriesThunk } from '../../store/slices'
-import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard'
 import { Carousel, Paginationn } from '../../components'
-import { useNavigate } from 'react-router-dom'
+import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard'
 import '../../components/global.css'
+
 
 const TvSeriesPage = () => {
     const navigate = useNavigate()
@@ -28,10 +29,10 @@ const TvSeriesPage = () => {
 
 
     return (
-        <section>
+        <section style={{minHeight: '100vh'}}>
             {
                 loadingSeries ? (
-                    <p>Loading...</p>
+                    <p className='loading'>Loading...</p>
                 ) : errorSeries ? (
                     <p className='error'>{errorSeries}</p>
                 ) : (

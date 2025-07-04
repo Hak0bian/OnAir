@@ -14,7 +14,7 @@ const TvSeriaCastSlider = () => {
     const filteredSeriacast = selectedSeria?.credits?.cast.slice(0, 12);
 
     return (
-        <section style={{ paddingBottom: '20px' }}>
+        <section>
             {
                 filteredSeriacast && filteredSeriacast.length > 0
                     ? (<Swiper

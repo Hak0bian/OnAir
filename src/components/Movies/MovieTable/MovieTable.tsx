@@ -3,6 +3,7 @@ import { translations } from '../../../translations/translations'
 import { IMovieTablePropsType } from '../../componentsTypes/propsTypes'
 import styles from './MovieTable.module.css'
 
+
 const MovieTable = ({ selectedMovie }: IMovieTablePropsType) => {
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].movies.movieTable

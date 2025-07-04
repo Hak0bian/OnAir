@@ -1,6 +1,6 @@
 import { IDetailsByIdType, IMoviesType, ITvSeriesType } from "../../../types";
 
-export interface IHomeMoviesStateType {
+export type IHomeMoviesStateType = {
     latestMovies: Array<IMoviesType>,
     popularMovies: Array<IMoviesType>,
     popularError: null | string,
@@ -12,7 +12,7 @@ export interface IHomeMoviesStateType {
     totalPages: number
 }
 
-export interface IMoviesStateType {
+export type IMoviesStateType = {
     movies: Array<IMoviesType>,
     selectedMovie: IDetailsByIdType | null,
     sortBy: string,
@@ -27,7 +27,7 @@ export interface IMoviesStateType {
 
 // *********************************************
 
-export interface IMovieGenresStateType {
+export type IMovieGenresStateType = {
     genres: { id: number; name: string }[];
     moviesByGenre: Array<IMoviesType>,
     isLoading: boolean,
@@ -35,7 +35,7 @@ export interface IMovieGenresStateType {
     error: null | string
 }
 
-export interface IGenresReturnType {
+export type IGenresReturnType = {
     genres: { id: number; name: string }[];
 }
 
@@ -46,7 +46,7 @@ export type ILibraryStateType = {
 
 // *********************************************
 
-export interface ISearchMoviesStateType {
+export type ISearchMoviesStateType = {
     searchedMovies: Array<IMoviesType>,
     inputValue: string,
     movieIsLoading: boolean,
@@ -54,21 +54,21 @@ export interface ISearchMoviesStateType {
     error: null | string
 }
 
-export interface ISearchActorsStateType {
+export type ISearchActorsStateType = {
     searchedActors: Array<IActorType>,
     actorIsLoading: boolean,
     actorNotFound: boolean,
     error: null | string
 }
 
-export interface IԼanguagesStateType {
+export type IԼanguagesStateType = {
     selectedLanguage: string,
     isLoading: boolean
 }
 
 // *********************************************
 
-export interface IActorType {
+export type IActorType = {
     id: number;
     adult: boolean,
     name: string;
@@ -81,7 +81,7 @@ export interface IActorType {
     biography?: string | undefined
 }
 
-export interface ISelectedActorType {
+export type ISelectedActorType = {
     id: number;
     imdb_id: string,
     name: string;
@@ -111,7 +111,7 @@ export type IActorsStateType = {
     errorInfo: null | string
 }
 
-export interface IActorsReturnType {
+export type IActorsReturnType = {
     page: number,
     results: Array<IActorType>
     total_pages: number

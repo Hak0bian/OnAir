@@ -18,15 +18,19 @@ import { searchActorThunk } from "./SearchActorSlice/searchActorThunk";
 import { clearActorsResults } from "./SearchActorSlice/searchActorSlice";
 
 import { tvSeriesThunk } from "./TvSeriesSlice/tvSeriesThunk";
-import { changeTvSeriesPageNumber } from "./TvSeriesSlice/tvSeriesSlice";
 import { tvSeriaByIdThunk } from "./TvSeriesSlice/tvSeriesThunk";
+import { changeTvSeriesPageNumber } from "./TvSeriesSlice/tvSeriesSlice";
 import { searchTvSeriesThunk } from "./SearchTvSeriesSlice/SearchTvSeriesThunk";
 import { clearTvSeriesResults } from "./SearchTvSeriesSlice/SearchTvSeriesSlice";
 
-export { setMovieinLibrary, addMovieToLibrary, 
-    removeMovieFromLibrary, setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
-    genresListThunk, moviesByGenreThunk, changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, 
-    changeMoviesPageNumber, changeMoviesSortBy, searchMovieThunk, clearMovieResults, changeLanguages, setTheme, 
-    toggleTheme, actorsThunk, actorFullInfoThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
-    tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults, setOpenBurger
+
+export { setMovieinLibrary, addMovieToLibrary, removeMovieFromLibrary, 
+    setSeriainLibrary, addSeriaToLibrary, removeSeriaFromLibrary, clearLibrary, 
+    genresListThunk, moviesByGenreThunk, changeLanguages, setTheme, toggleTheme, setOpenBurger, 
+
+    changeSelectedGenreId, clearmoviesByGenre, moviesThunk, movieByIdThunk, changeMoviesPageNumber, 
+    changeMoviesSortBy, searchMovieThunk, clearMovieResults,
+
+    actorsThunk, actorFullInfoThunk, changeActorsPageNumber, searchActorThunk, clearActorsResults,
+    tvSeriesThunk, searchTvSeriesThunk, changeTvSeriesPageNumber, tvSeriaByIdThunk, clearTvSeriesResults
 }

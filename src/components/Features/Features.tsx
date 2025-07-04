@@ -3,6 +3,7 @@ import { translations } from '../../translations/translations'
 import FeaturesSvg from '../FeaturesSvg/FeaturesSvg'
 import styles from './Features.module.css'
 
+
 const Features = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].features

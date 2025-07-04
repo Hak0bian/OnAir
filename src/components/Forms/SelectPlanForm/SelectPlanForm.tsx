@@ -1,7 +1,5 @@
-import {
-    Dialog, DialogContent, IconButton, FormControl, InputLabel,
-    Select, MenuItem, RadioGroup, FormControlLabel, Radio
-} from '@mui/material';
+import { Dialog, DialogContent, IconButton, FormControl, InputLabel, 
+    Select, MenuItem, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { showSelectPlanForm } from '../../../store/slices/OpenCloseFormsSlice/OpenCloseFormsSlice';
@@ -10,7 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import validation from '../validations/registerValidation';
 import MainButton from '../../UI/MainButton/MainButton';
 import styles from './SelectPlanForm.module.css'
-import '../../global.css'
 
 
 const SelectPlanForm = () => {

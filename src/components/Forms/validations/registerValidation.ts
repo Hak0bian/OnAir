@@ -33,14 +33,6 @@ const registerValidation = (language: string) => {
             .matches(/[A-Z]/, t.pass.matches1)
             .matches(/[a-z]/, t.pass.matches2)
             .matches(/\d/, t.pass.matches3),
-        // password : YUP
-        //     .string()
-        //     .min(3, t.min)
-        //     .max(20, t.max)
-        //     .required(t.pass.req),
-        // plan: YUP
-        //     .string()
-        //     .required(t.plan),
     })
 }
 

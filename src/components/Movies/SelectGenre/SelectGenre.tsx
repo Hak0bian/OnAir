@@ -4,6 +4,7 @@ import { changeSelectedGenreId, changeMoviesPageNumber } from '../../../store/sl
 import { translations } from '../../../translations/translations';
 import styles from './SelectGenre.module.css'
 
+
 const SelectGenre = () => {
     const { genres, selectedGenreId } = useAppSelector((state) => state.genresData);
     const { selectedLanguage } = useAppSelector((state) => state.languagesData);

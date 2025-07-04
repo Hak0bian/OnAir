@@ -5,6 +5,7 @@ import { actorsThunk, moviesThunk, tvSeriesThunk } from '../../store/slices'
 import { translations } from '../../translations/translations'
 import styles from './HomePage.module.css'
 
+
 const HomePage = () => {
   const dispatch = useAppDispatch()
   const { selectedLanguage } = useAppSelector((state) => state.languagesData)

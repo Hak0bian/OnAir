@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
 import { clearActorsResults, clearMovieResults, clearTvSeriesResults, setOpenBurger } from "../../../store/slices";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks/hooks";
+import { NavLink } from 'react-router-dom'
 import { ISearchPropsType } from "../../componentsTypes/propsTypes";
 import { translations } from '../../../translations/translations';
 import { BiSolidMoviePlay } from "react-icons/bi";

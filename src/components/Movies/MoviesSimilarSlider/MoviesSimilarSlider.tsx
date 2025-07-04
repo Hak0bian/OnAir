@@ -1,9 +1,9 @@
 import { useAppSelector } from '../../../store/hooks/hooks';
+import MovieSimilarCard from '../MovieSimilarCard/MovieSimilarCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 SwiperCore.use([Autoplay, Pagination]);
 import 'swiper/swiper-bundle.min.css';
-import MovieSimilarCard from '../MovieSimilarCard/MovieSimilarCard';
 
 
 const MoviesSimilarSlider = () => {
@@ -15,7 +15,7 @@ const MoviesSimilarSlider = () => {
             {
                 recSeries && recSeries.length > 0
                 ? (<Swiper
-                    spaceBetween={20}
+                    spaceBetween={16}
                     slidesPerView={2}
                     loop={recSeries.length > 8}
                     autoplay={{ delay: 2000 }}

@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { tvSeriaByIdThunk } from '../../store/slices';
 import { TvSeriaDetails } from '../../components';
 
+
 const AboutTvSeriaPage = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch()
@@ -13,7 +14,6 @@ const AboutTvSeriaPage = () => {
         dispatch(tvSeriaByIdThunk({ id: Number(id), selectedLanguage }))
         window.scrollTo({ top: 0, behavior: "smooth" })
     }, [id, selectedLanguage])
-
 
     return (
         <section>

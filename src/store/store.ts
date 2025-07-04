@@ -12,6 +12,7 @@ import tvSeriesSlice from "./slices/TvSeriesSlice/tvSeriesSlice"
 import searchTvSeriesSlice from "./slices/SearchTvSeriesSlice/SearchTvSeriesSlice"
 import burgerMenuSlice from "./slices/BurgerMenuSlice/BurgerMenuSlice"
 
+
 export const store = configureStore({
     reducer: {
         moviesData: moviesSlice,

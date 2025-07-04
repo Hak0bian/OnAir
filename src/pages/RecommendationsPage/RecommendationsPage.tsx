@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks'
 import { useEffect } from 'react'
 import { movieByIdThunk, tvSeriaByIdThunk } from '../../store/slices';
 import { translations } from '../../translations/translations';
-import TvSeriesCard from '../../components/TvSeries/TvSeriesCard/TvSeriesCard';
-import MovieSimilarCard from '../../components/Movies/MovieSimilarCard/MovieSimilarCard';
+import { MovieSimilarCard, TvSeriesCard } from '../../components';
+
 
 const RecommendationsPage = () => {
     const { movieId, seriaId } = useParams();

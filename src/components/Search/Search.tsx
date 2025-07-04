@@ -52,7 +52,6 @@ const SearchMovie = () => {
         return () => clearTimeout(delaySearch);
     }, [inputValue]);
 
-
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (

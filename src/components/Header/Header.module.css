@@ -46,12 +46,18 @@
 
 @media screen and (max-width: 740px) {
     .headerContainer{
-        height: 60vh;
+        height: 65vh;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .headerContainer{
+        height: 50vh;
     }
 }
 
 @media screen and (max-width: 440px) {
     .headerContainer{
-        height: 50vh;
+        height: 45vh;
     }
 }

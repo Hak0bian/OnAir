@@ -7,7 +7,6 @@ import MainButton from "../../UI/MainButton/MainButton";
 import contactValidation from "../validations/contactValidation";
 import styles from './ContactUsForm.module.css';
 
-
 type FormValues = {
     name: string;
     email: string;

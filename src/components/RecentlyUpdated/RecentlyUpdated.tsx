@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks/hooks';
 import { MovieCard, TvSeriesCard, ActorCard } from '../index';
+import { translations } from '../../translations/translations';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import MainButton from '../UI/MainButton/MainButton';
 import styles from './RecentlyUpdated.module.css'
-import '../global.css'
 
 
 const RecentlyUpdated = () => {
@@ -16,6 +16,8 @@ const RecentlyUpdated = () => {
     const { movies, loadingMovies, errorMovies } = useAppSelector((state) => state.moviesData);
     const { tvSeries, loadingSeries, errorSeries } = useAppSelector((state) => state.tvSeriesData)
     const { actors, loadingActors, errorActors } = useAppSelector((state) => state.actorsData)
+    const { selectedLanguage } = useAppSelector((state) => state.languagesData)
+    const t = translations[selectedLanguage]
 
     const handleChange = (_: any, newValue: string) => {
         setValue(newValue);
@@ -26,9 +28,9 @@ const RecentlyUpdated = () => {
             <TabContext value={value}>
                 <div>
                     <TabList onChange={handleChange}>
-                        <Tab label="Movies" value="1" className="tabItem" />
-                        <Tab label="TV Series" value="2" className="tabItem" />
-                        <Tab label="Actors" value="3" className="tabItem" />
+                        <Tab label={t.navigation.movies} value="1" className="tabItem" />
+                        <Tab label={t.navigation.tv} value="2" className="tabItem" />
+                        <Tab label={t.navigation.actors} value="3" className="tabItem" />
                     </TabList>
                 </div>
                 <TabPanel value="1" sx={{ padding: '0' }}>
@@ -44,7 +46,7 @@ const RecentlyUpdated = () => {
                         </div>
                         <div className={styles.catalogBtn}>
                             <NavLink to={`/Movies/page/1`}>
-                                <MainButton text='To catalog' />
+                                <MainButton text={t.catalog} />
                             </NavLink>
                         </div>
                     </section>

@@ -4,6 +4,7 @@ import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 import styles from './MorePages.module.css'
 
+
 const MorePages = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].navigation.morePages

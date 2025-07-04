@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import { movieByIdThunk } from '../../store//slices';
 import { MovieDetails } from '../../components';
 
+
 const AboutMoviePage = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch()

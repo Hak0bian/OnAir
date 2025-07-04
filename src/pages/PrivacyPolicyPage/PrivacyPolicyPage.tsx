@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
 import { useAppSelector } from '../../store/hooks/hooks';
 import { translations } from '../../translations/translations';
 import { PageIntro } from '../../components';
+import PrivacyPolicy from '../../components/PrivacyPolicy/PrivacyPolicy'
 import styles from './PrivacyPolicyPage.module.css'
+
 
 const PrivacyPolicyPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)

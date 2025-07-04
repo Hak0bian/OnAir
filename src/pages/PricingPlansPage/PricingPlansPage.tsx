@@ -4,6 +4,7 @@ import { translations } from '../../translations/translations'
 import { useEffect } from 'react'
 import styles from './PricingPlansPage.module.css'
 
+
 const PricingPlansPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles

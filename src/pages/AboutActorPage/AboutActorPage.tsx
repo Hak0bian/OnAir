@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks/hooks";
 import { actorFullInfoThunk } from "../../store/slices";
 import { ActorDetails } from "../../components";
 
+
 const AboutActorPage = () => {
     const {id} = useParams();
     const dispatch = useAppDispatch()

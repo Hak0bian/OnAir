@@ -1,6 +1,7 @@
 import { Pagination } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { IPaginationPropsType } from '../../componentsTypes/propsTypes';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 const Paginationn = ({ page, totalPages, handleChangePage }: IPaginationPropsType) => {
     const isSmallScreen = useMediaQuery('(max-width:740px)');

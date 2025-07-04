@@ -5,6 +5,7 @@ import { PageIntro } from '../../components'
 import HelpCenter from '../../components/HelpCenter/HelpCenter'
 import styles from './HelpCenterPage.module.css'
 
+
 const HelpCenterPage = () => {
     const { selectedLanguage } = useAppSelector((state) => state.languagesData)
     const t = translations[selectedLanguage].pageTitles

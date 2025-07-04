@@ -5,17 +5,19 @@
     padding-top: 20px;
 }
 
-.actorPosterDiv{
-    min-width: 300px;
-    max-width: 300px;
+.posterDiv{
+    min-width: 280px;
+    max-width: 280px;
 }
 
 .actorPosterDiv img {
     font-size: 0;
 }
 
-.actorTitle{
-    font-size: 28px;
+.department{
+    font-size: 14px;
+    color: var(--text-color-secondary);
+    padding-bottom: 4px;
 }
 
 .knownAS{
@@ -24,7 +26,9 @@
 
 .biography{
     font-size: 14px;
+    margin-top: 4px;
     font-weight: 300;
+    line-height: 1.2;
     max-height: 260px;
     overflow-y: auto;
 }
@@ -52,11 +56,60 @@
     display: flex;
     gap: 4px;
     color: var(--text-color-primary);
-    padding-bottom: 8px;
     font-size: 15px;
 }
 
 .starIcon{
     font-size: 18px !important;
     color: var(--buttons-color);
+}
+
+
+@media screen and (max-width: 1040px) {
+    .actorDetailsDiv{
+        gap: 12px;
+    }
+    .posterDiv{
+        min-width: 240px;
+        max-width: 240px;
+    }
+    .actorTitle{
+        font-size: 24px;
+    }
+    .biography{
+        max-height: 200px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .actorDetailsDiv{
+        flex-direction: column;
+    }
+    .actorTitle{
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .flexDiv{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .rating,
+    .knownAS{
+        font-size: 14px;
+    }
+    .actorDetailsDiv{
+        align-items: center;
+    }
+    .actorTitle,
+    .knownAS{
+        text-align: center;
+    }
+    .flexDiv{
+        justify-content: center;
+    }
+    .biography{
+        max-height: 300px;
+        font-weight: 200;
+    }
 }
