@@ -19,7 +19,7 @@ const KnownForSeriesSlider = () => {
                 ? (<Swiper
                     spaceBetween={16}
                     slidesPerView={2}
-                    loop={selectedActor?.known_for_series?.length > 8}
+                    loop={selectedActor?.known_for_series?.length > 6}
                     autoplay={{ delay: 2000 }}
                     breakpoints={{
                         340: { slidesPerView: 2 },

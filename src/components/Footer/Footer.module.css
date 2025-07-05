@@ -109,9 +109,11 @@ footer{
     .footerLinks{
         gap: 16px;
     }
-    .footerText,
-    .footerText2{
+    .footerText{
         font-size: 14px;
+    }
+    .footerText2{
+        font-size: 12px;
     }
     .footerListDiv{
         h3{

@@ -10,6 +10,7 @@ const MovieDetails = () => {
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].movies
     const movieCast = selectedMovie?.credits?.cast
+    const movieSimilar = selectedMovie?.similar?.results
     const backdrop = selectedMovie?.backdrop_path ? `https://image.tmdb.org/t/p/w1280${selectedMovie?.backdrop_path}` : '';
 
     if (loadingInfo) return <h3 className='loading'>Loading...</h3>;
@@ -36,7 +37,10 @@ const MovieDetails = () => {
 
                 <div className={styles.slideTopDiv}>
                     <h3 className={styles.slideTitle}>{t.recommendations}</h3>
-                    <NavLink to={`/Movies/movie/${selectedMovie?.id}/recommendations`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    {
+                        movieSimilar && movieSimilar.length > 8 &&
+                        <NavLink to={`/Movies/movie/${selectedMovie?.id}/recommendations`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    }
                 </div>
                 <MoviesSimilarSlider />
             </div>

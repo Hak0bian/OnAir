@@ -13,6 +13,7 @@ const TvSeriaDetails = () => {
     const { selectedLanguage } = useAppSelector((state => state.languagesData))
     const t = translations[selectedLanguage].movies
     const seriaCast = selectedSeria?.credits?.cast
+    const seriaSimilar = selectedSeria?.similar?.results
     const backdrop = selectedSeria?.backdrop_path ? `https://image.tmdb.org/t/p/w1280${selectedSeria?.backdrop_path}` : '';
 
     if (loadingInfo) return <h3 className='loading'>Loading...</h3>;
@@ -46,7 +47,10 @@ const TvSeriaDetails = () => {
 
                 <div className={styles.slideTopDiv}>
                     <h3 className={styles.slideTitle}>{t.recommendations}</h3>
-                    <NavLink to={`/TV/Seria/${selectedSeria?.id}/recommendations`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    {
+                        seriaSimilar && seriaSimilar?.length > 8 &&
+                        <NavLink to={`/TV/Seria/${selectedSeria?.id}/recommendations`} className={styles.seeAll}>{t.seeAll}</NavLink>
+                    }
                 </div>
                 <TvSeriesSimilarSlider />
             </section>

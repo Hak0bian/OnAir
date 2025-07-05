@@ -20,7 +20,7 @@ const TvSeriaCastSlider = () => {
                     ? (<Swiper
                         spaceBetween={16}
                         slidesPerView={2}
-                        loop={filteredSeriacast.length > 8}
+                        loop={filteredSeriacast.length > 6}
                         autoplay={{ delay: 2000 }}
                         breakpoints={{
                             340: { slidesPerView: 2 },

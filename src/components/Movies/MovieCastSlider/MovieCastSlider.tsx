@@ -20,7 +20,7 @@ const MovieCastSlider = () => {
                     ? (<Swiper
                         spaceBetween={16}
                         slidesPerView={2}
-                        loop={filteredMoviecast.length > 8}
+                        loop={filteredMoviecast.length > 6}
                         autoplay={{ delay: 2000 }}
                         breakpoints={{
                             340: { slidesPerView: 2 },
